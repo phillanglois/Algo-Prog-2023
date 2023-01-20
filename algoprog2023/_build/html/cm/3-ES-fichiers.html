@@ -1,0 +1,2261 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3. Entrées-sorties simples avec des fichiers &#8212; Algo-Prog 2023</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Complexités" href="4-complexite.html" />
+    <link rel="prev" title="2. Fonctions et tableaux" href="2-fonctions-tableaux.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo2023.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algo-Prog 2023</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../bonjour.html">
+                    Bienvenu en Algo-Prog !
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Présentation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0-presentation-2023.html">
+   1. Algorithmique et Programmation en 2022
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="competences.html">
+   2. Compétences
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Les bases
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-fonctions.html">
+   1. Fonctions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-fonctions-tableaux.html">
+   2. Fonctions et tableaux
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Entrées-sorties simples avec des fichiers
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithmique
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-complexite.html">
+   1. Complexités
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-recursivite.html">
+   2. Récursivité
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programmation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-types_composes.html">
+   1. Les types composés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-fonctions-avancees.html">
+   2. Sous-programme et affectation – aspects avancés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-ES-avancees.html">
+   3. Les entrées-sorties (E/S) : aspects avancés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-modules-utiles.html">
+   4. Modules utiles
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Annexes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a0-boucles-avancees.html">
+   1. Boucles et tableaux
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a1-booleens.html">
+   2. Annexe : les booléens en python (&gt;3.6)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a2-ndarray.html">
+   3. Les ‘ndarray’ : de vrais tableaux en python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a3-exceptions.html">
+   4. Exceptions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  TD
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/prealable-td.html">
+   1. Préalables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/td1.html">
+   2. Feuille 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/td2.html">
+   3. Feuille 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/td3.html">
+   4. Feuille 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/td4.html">
+   5. Feuille 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/td5.html">
+   6. Feuille 5
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/phillanglois/Algo-Prog-2023/main?urlpath=tree/algoprog2023/cm/3-ES-fichiers.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/phillanglois/Algo-Prog-2023/issues/new?title=Issue%20on%20page%20%2Fcm/3-ES-fichiers.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/cm/3-ES-fichiers.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notions-generales-et-vocabulaire-important">
+   3.1. Notions générales et vocabulaire important
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fichier-fichier-texte-et-fichier-binaire">
+     3.1.1. Fichier, fichier texte et fichier binaire
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#programmer-avec-des-fichier-principes">
+     3.1.2. Programmer avec des fichier : principes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trois-exemples-simples-pour-savoir-faire">
+   3.2. Trois exemples simples pour savoir faire
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#premier-exemple-lectures-de-str">
+     3.2.1. Premier exemple : lectures de
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       str
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#objectif">
+       Objectif
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deux-fichiers-de-test">
+       Deux fichiers de test
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lecture-ligne-a-ligne-avec-readline-qui-fournit-une-str-par-ligne">
+       Lecture ligne à ligne avec
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         .readline()
+        </span>
+       </code>
+       qui fournit une
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         str
+        </span>
+       </code>
+       par ligne
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#nettoyage-des-caracteres-speciaux-de-fin-de-ligne">
+       Nettoyage des caractères spéciaux de fin de ligne
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#traitement-le-premier-test-de-nb-occ">
+       Traitement : le premier test de
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         nb_occ()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exploitation-du-second-fichier">
+       Exploitation du second fichier
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deuxieme-exemple-lecture-readline-avec-conversion-de-type-et-effets-dynamiques">
+     3.2.2. Deuxième exemple : lecture
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .readline()
+      </span>
+     </code>
+     avec conversion de type et effets dynamiques
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Objectif
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#la-forme-d-un-fichier-de-test">
+       La forme d’un fichier de test
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conversions-et-effets-dynamiques">
+       Conversions et effets dynamiques
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lecture-avec-la-clause-with">
+       Lecture avec la clause
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         with
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lecture-readline-avec-with-et-typage">
+       Lecture
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         .readline()
+        </span>
+       </code>
+       avec
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         with
+        </span>
+       </code>
+       et typage
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#test-unitaire-de-prod-scal">
+       Test unitaire de
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         prod_scal()
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#troisieme-exemple-ecritures-simples-avec-write">
+     3.2.3. Troisième exemple : écritures simples avec
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .write()
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#construction-d-un-cas-test-de-nb-occ">
+       Construction d’un cas test de
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         nb_occ()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#enregistrement-dans-un-fichier-de-test">
+       Enregistrement dans un fichier de test
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exploitation-du-fichier-de-test">
+       Exploitation du fichier de test
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#synthese-et-minimum-a-savoir-faire">
+     3.2.4. Synthèse et minimum à savoir-faire
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#complements">
+   3.3. Compléments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lecture-complete-read-fournit-une-str">
+     3.3.1. Lecture complète :
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .read()
+      </span>
+     </code>
+     fournit une
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       str
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#principe">
+       Principe
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemple-classique">
+       Exemple classique
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lecture-complete-readlines-fournit-une-list-de-str">
+     3.3.2. Lecture complète :
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       readlines()
+      </span>
+     </code>
+     fournit une
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       list
+      </span>
+     </code>
+     de
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       str
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Principe
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#star-exemple-classique">
+       (
+       <span class="math notranslate nohighlight">
+        \(\star\)
+       </span>
+       ) Exemple classique
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#origine-classique-des-problemes-d-es">
+     3.3.3. Origine classique des problèmes d’ES
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bien-controler-ses-print">
+     3.3.4. Bien contrôler ses
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       print()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synthese">
+   3.4. Synthèse
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#avoir-les-idees-claires">
+     3.4.1. Avoir les idées claires
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#savoir-faire">
+     3.4.2. Savoir-faire
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-dernier-conseil">
+     3.4.3. Un dernier conseil
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ce-qu-il-restera-a-voir">
+     3.4.4. Ce qu’il restera à voir
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Entrées-sorties simples avec des fichiers</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notions-generales-et-vocabulaire-important">
+   3.1. Notions générales et vocabulaire important
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fichier-fichier-texte-et-fichier-binaire">
+     3.1.1. Fichier, fichier texte et fichier binaire
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#programmer-avec-des-fichier-principes">
+     3.1.2. Programmer avec des fichier : principes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trois-exemples-simples-pour-savoir-faire">
+   3.2. Trois exemples simples pour savoir faire
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#premier-exemple-lectures-de-str">
+     3.2.1. Premier exemple : lectures de
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       str
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#objectif">
+       Objectif
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deux-fichiers-de-test">
+       Deux fichiers de test
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lecture-ligne-a-ligne-avec-readline-qui-fournit-une-str-par-ligne">
+       Lecture ligne à ligne avec
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         .readline()
+        </span>
+       </code>
+       qui fournit une
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         str
+        </span>
+       </code>
+       par ligne
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#nettoyage-des-caracteres-speciaux-de-fin-de-ligne">
+       Nettoyage des caractères spéciaux de fin de ligne
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#traitement-le-premier-test-de-nb-occ">
+       Traitement : le premier test de
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         nb_occ()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exploitation-du-second-fichier">
+       Exploitation du second fichier
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deuxieme-exemple-lecture-readline-avec-conversion-de-type-et-effets-dynamiques">
+     3.2.2. Deuxième exemple : lecture
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .readline()
+      </span>
+     </code>
+     avec conversion de type et effets dynamiques
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Objectif
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#la-forme-d-un-fichier-de-test">
+       La forme d’un fichier de test
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conversions-et-effets-dynamiques">
+       Conversions et effets dynamiques
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lecture-avec-la-clause-with">
+       Lecture avec la clause
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         with
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lecture-readline-avec-with-et-typage">
+       Lecture
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         .readline()
+        </span>
+       </code>
+       avec
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         with
+        </span>
+       </code>
+       et typage
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#test-unitaire-de-prod-scal">
+       Test unitaire de
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         prod_scal()
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#troisieme-exemple-ecritures-simples-avec-write">
+     3.2.3. Troisième exemple : écritures simples avec
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .write()
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#construction-d-un-cas-test-de-nb-occ">
+       Construction d’un cas test de
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         nb_occ()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#enregistrement-dans-un-fichier-de-test">
+       Enregistrement dans un fichier de test
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exploitation-du-fichier-de-test">
+       Exploitation du fichier de test
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#synthese-et-minimum-a-savoir-faire">
+     3.2.4. Synthèse et minimum à savoir-faire
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#complements">
+   3.3. Compléments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lecture-complete-read-fournit-une-str">
+     3.3.1. Lecture complète :
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .read()
+      </span>
+     </code>
+     fournit une
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       str
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#principe">
+       Principe
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemple-classique">
+       Exemple classique
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lecture-complete-readlines-fournit-une-list-de-str">
+     3.3.2. Lecture complète :
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       readlines()
+      </span>
+     </code>
+     fournit une
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       list
+      </span>
+     </code>
+     de
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       str
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Principe
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#star-exemple-classique">
+       (
+       <span class="math notranslate nohighlight">
+        \(\star\)
+       </span>
+       ) Exemple classique
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#origine-classique-des-problemes-d-es">
+     3.3.3. Origine classique des problèmes d’ES
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bien-controler-ses-print">
+     3.3.4. Bien contrôler ses
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       print()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synthese">
+   3.4. Synthèse
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#avoir-les-idees-claires">
+     3.4.1. Avoir les idées claires
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#savoir-faire">
+     3.4.2. Savoir-faire
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-dernier-conseil">
+     3.4.3. Un dernier conseil
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ce-qu-il-restera-a-voir">
+     3.4.4. Ce qu’il restera à voir
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="entrees-sorties-simples-avec-des-fichiers">
+<span id="ch-es-fichiers"></span><h1><span class="section-number">3. </span>Entrées-sorties simples avec des fichiers<a class="headerlink" href="#entrees-sorties-simples-avec-des-fichiers" title="Permalink to this headline">#</a></h1>
+<p>Mis à jour : Jan 20, 2023, lecture : 15 minutes minimum, PhL.</p>
+<p>Chapitre où on étudie comment effectuer des entrées-sorties (E/S) simples à l’aide de fichiers.</p>
+<p>Jusqu’à présent les entrées-sorties ont été générées à grands coups de <code class="docutils literal notranslate"><span class="pre">print()</span></code> et d’<code class="docutils literal notranslate"> <span class="pre">input()</span></code> pour interagir avec l’écran ou le clavier.
+Les entrées-sorties ne sont pas limitées au couple écran-clavier.
+Bien au contraire, ces derniers ne sont que des cas particuliers d’une notion plus générale : celle de <em>fichier</em>.</p>
+<section id="notions-generales-et-vocabulaire-important">
+<h2><span class="section-number">3.1. </span>Notions générales et vocabulaire important<a class="headerlink" href="#notions-generales-et-vocabulaire-important" title="Permalink to this headline">#</a></h2>
+<section id="fichier-fichier-texte-et-fichier-binaire">
+<h3><span class="section-number">3.1.1. </span>Fichier, fichier texte et fichier binaire<a class="headerlink" href="#fichier-fichier-texte-et-fichier-binaire" title="Permalink to this headline">#</a></h3>
+<p>A la différence de la mémoire de l’ordinateur, le fichier (<em>file</em> en anglais) permet de stocker de l’information et la retrouver si l’alimentation électrique de l’ordinateur est interrompue.<br />
+Par information, on entend des données de tout type (nombres, sons, images,…), des programmes, des bibliothèques de composants du logiciel, …<br />
+“Physiquement”, les <a class="reference external" href="https://fr.wikipedia.org/wiki/M%C3%A9moire_de_masse">supports matériels de ces fichiers</a> sont variés et évoluent selon les technologies disponibles : cartes perforées, bandes magnétiques, disques optiques, mémoires flash …</p>
+<p>En pratique, il faut distinguer les <em>fichiers</em> dits <strong>texte</strong> (ou fichiers textuels) des <em>fichiers</em> (dits) <strong>binaires</strong>.</p>
+<ul class="simple">
+<li><p>Les fichiers texte  contiennent de l’information exploitable par l’humain</p></li>
+<li><p>Les fichiers binaire contiennent de l’information uniquement exploitable par l’ordinateur</p></li>
+</ul>
+<p>Bien sûr, ces deux familles de fichiers sont au final une suite de bits stockés sur un support physique.<br />
+Dans ce chapitre, l’accent sera surtout mis sur les fichiers de texte utiles pour nos développements de taille modeste.</p>
+</section>
+<section id="programmer-avec-des-fichier-principes">
+<h3><span class="section-number">3.1.2. </span>Programmer avec des fichier : principes<a class="headerlink" href="#programmer-avec-des-fichier-principes" title="Permalink to this headline">#</a></h3>
+<p>La plupart des langages de programmation distinguent les fichiers (dits) logiques des fichiers (dits) physiques.</p>
+<ul class="simple">
+<li><p>Les <strong>fichiers logiques</strong> sont des variables manipulées par le programme</p>
+<ul>
+<li><p>Ce sont des variables d’un nouveau type : le type <em>fichier</em></p></li>
+</ul>
+</li>
+<li><p>Les <strong>fichiers physiques</strong> sont les supports effectifs du stockage de l’information (en mémoire, sur disque, sur clé, …).</p>
+<ul>
+<li><p>Ils sont identifiés par le “chemin” système de leur localisation (le <em>path</em>)(<code class="docutils literal notranslate"><span class="pre">/home/mon_user_id/work/le_fichier.txt</span></code>)</p></li>
+<li><p>Ils ne sont manipulés qu’une seule fois : lors de l’association fichier logique <span class="math notranslate nohighlight">\(\to\)</span> fichier physique</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Utiliser un fichier</strong> (en lecture, écriture ou lecture-écriture) consiste en les 4 étapes suivantes.</p>
+<ol class="simple">
+<li><p><strong>associer le fichier logique</strong> à <strong>un fichier physique</strong></p></li>
+<li><p><strong>ouvrir</strong> le fichier logique</p></li>
+<li><p>effectuer les <strong>traitements</strong> désirés sur le fichier logique</p></li>
+<li><p><strong>fermer</strong> le fichier logique</p></li>
+</ol>
+<p>L’étape d’ouverture du fichier précise le <strong>type des traitements</strong> qui seront effectués en distinguant :</p>
+<ul class="simple">
+<li><p>la lecture : <em>read</em></p></li>
+<li><p>l’écriture : <em>write</em></p></li>
+<li><p>la lecture + l’écriture : <em>readwrite</em></p></li>
+</ul>
+<p><strong>Organisation :</strong></p>
+<ul class="simple">
+<li><p>Un fichier est décomposé en <strong>lignes</strong> et se termine par un symbole de fin de fichier : <em>EOF (end of file)</em></p></li>
+<li><p>Une ligne est une <strong>suite de caractères</strong> et se termine par un symbole de fin de ligne : <em>EOL (end of line)</em></p></li>
+<li><p>Les traitements correspondent à un <em>accès séquentiel</em> du fichier, en commençant à ligne 1.</p></li>
+</ul>
+<p><strong>Remarque.</strong></p>
+<p>Le symbole de fin de ligne varie selon les systèmes d’exploitation <a class="reference external" href="https://fr.wikipedia.org/wiki/Fin_de_ligne">lien wikipedia</a> ou, en mieux, la <a class="reference external" href="https://en.wikipedia.org/wiki/Newline">version en anglais</a>.
+Il en est de même pour le <a class="reference external" href="https://en.wikipedia.org/wiki/End-of-file">symbole de fin de fichier</a>.</p>
+<p>Dans ce qui suit, on identifiera le symbole de fin de ligne avec <strong>le caractère spécial <code class="docutils literal notranslate"><span class="pre">\n</span></code></strong>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Aspect historique<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Fichier à accès direct <em>vs.</em> à accès séquentiel.</strong></p>
+<p class="sd-card-text">On distingue :</p>
+<ul class="simple">
+<li><p class="sd-card-text">les fichiers qui permettent d’accéder <em>directement</em> à une ligne (et l’enregistrement) quelconque de leur contenu,</p></li>
+<li><p class="sd-card-text">les fichiers qui nécessitent un parcours systématique et <em>séquentiel</em> à partir de la dernière ligne accédée (et donc depuis le début du fichier lors de la première opération).</p></li>
+</ul>
+<p class="sd-card-text">Ces différents comportements sont essentiellement dues à des aspects matériels.
+Historiquement, les fichiers stockés sur des bandes magnétiques (!) étaient à accès séquentiel.</p>
+<p class="sd-card-text">La plupart des fichiers utilisables aujourd’hui sont à accès direct – ce qui sera le cas dans ce qui suit.</p>
+</div>
+</details></section>
+</section>
+<section id="trois-exemples-simples-pour-savoir-faire">
+<h2><span class="section-number">3.2. </span>Trois exemples simples pour savoir faire<a class="headerlink" href="#trois-exemples-simples-pour-savoir-faire" title="Permalink to this headline">#</a></h2>
+<div class="alert alert-info">
+<p>Objectif 10 : On se limite à des manipulations simples (lecture ou écriture) de fichier de texte.</p>
+</div><p>Un premier objectif de ce chapitre est de faciliter les tests de vos développements en limitant la perte de temps liée à la saisie au clavier, perte de temps qui est d’autant plus élevée que le nombre de saisies est élevé (nombreuses valeurs ou nombreux essais).</p>
+<p>La forme des fichiers dépend des valeurs stockées mais aussi des facilités de lecture-écriture du langage.
+Un fichier structuré de façon simple, voire simpliste, fera l’objet de procédures d’entrée-sortie faciles à écrire.<br />
+Inversement, les traitements d’un fichier structuré de façon plus complexe seront vite plus techniques à écrire.
+En contre-partie, le fichier simple sera souvent moins commode à manipuler via l’éditeur de texte qu’un fichier dont la structure reflète déjà celle de l’information qu’il contient.</p>
+<p>Face à ce compromis, nos premiers exemples visent des procédures d’entrées-sorties simples pour python.</p>
+<ul class="simple">
+<li><p>Le premier manipule <em>uniquement</em> des chaînes de caractères et se limite à des lectures</p></li>
+<li><p>Le deuxième effectue des lectures et traitements sur des entiers et des flottants</p></li>
+<li><p>Le troisième effectue des écritures d’entiers et de flottants</p></li>
+</ul>
+<section id="premier-exemple-lectures-de-str">
+<h3><span class="section-number">3.2.1. </span>Premier exemple : lectures de <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#premier-exemple-lectures-de-str" title="Permalink to this headline">#</a></h3>
+<section id="objectif">
+<h4>Objectif<a class="headerlink" href="#objectif" title="Permalink to this headline">#</a></h4>
+<p>Je veux tester la fonction <code class="docutils literal notranslate"><span class="pre">nb_occ()</span></code> qui compte le nombre d’occurrences d’une lettre dans une chaîne de caractères.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nb_occ</span> <span class="p">(</span><span class="n">char</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">texte</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;calcule et retourne le nombre d&#39;occurrences de char dans texte&#39;&#39;&#39;</span>
+    <span class="n">nb</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">texte</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">texte</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">char</span><span class="p">:</span>
+            <span class="n">nb</span> <span class="o">=</span> <span class="n">nb</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">nb</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="deux-fichiers-de-test">
+<h4>Deux fichiers de test<a class="headerlink" href="#deux-fichiers-de-test" title="Permalink to this headline">#</a></h4>
+<p>Je décide de compléter plusieurs fichiers texte composés de 2 lignes selon le modèle suivant :</p>
+<blockquote>
+<div><p>le caractère cherché<br />
+la chaîne de caractères à explorer</p>
+</div></blockquote>
+<p>Les fichiers <code class="docutils literal notranslate"><span class="pre">test_nb_occ0.txt</span></code> et <code class="docutils literal notranslate"><span class="pre">test_nb_occ1.txt</span></code> sont deux exemples de tels fichiers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>tmp/test_nb_occ0.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>z
+anticonstitutionnellement
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>tmp/test_nb_occ1.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n
+anticonstitutionnellement
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lecture-ligne-a-ligne-avec-readline-qui-fournit-une-str-par-ligne">
+<h4>Lecture ligne à ligne avec <code class="docutils literal notranslate"><span class="pre">.readline()</span></code> qui fournit une <code class="docutils literal notranslate"><span class="pre">str</span></code> par ligne<a class="headerlink" href="#lecture-ligne-a-ligne-avec-readline-qui-fournit-une-str-par-ligne" title="Permalink to this headline">#</a></h4>
+<p>La fonction-méthode python <code class="docutils literal notranslate"><span class="pre">.readline()</span></code> permet :</p>
+<ul class="simple">
+<li><p>de parcourir séquentiellement le fichier ligne après ligne,</p></li>
+<li><p>et chaque ligne lue est fournie comme une <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p></li>
+</ul>
+<p>Chaque ligne des fichiers de test contient une chaîne de caractères.
+Cette lecture avec <code class="docutils literal notranslate"><span class="pre">.readline()</span></code> est donc tout à fait adaptée.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>La fonction-méthode <code class="docutils literal notranslate"><span class="pre">.readline()</span></code> est une fonction particulière.
+Il s’agit en fait d’une <em>méthode</em>.
+Une méthode est une fonction dont l’appel est préfixé par l’identifiant d’une variable (un objet en fait) suivi d’un <code class="docutils literal notranslate"><span class="pre">.</span></code>
+On parlera donc de <em>fonction-méthode</em>.</p>
+<p>Exemple. <code class="docutils literal notranslate"><span class="pre">mon_fichier.readline()</span></code> pour indiquer que <code class="docutils literal notranslate"><span class="pre">readline()</span></code> s’applique au fichier (logique) de nom <code class="docutils literal notranslate"><span class="pre">mon_fichier</span></code>.</p>
+<p>On pourrait se demander pourquoi <code class="docutils literal notranslate"><span class="pre">mon_fichier</span></code> n’est pas un paramètre de l’appel de <code class="docutils literal notranslate"><span class="pre">readline()</span></code>, c-a-d. que <code class="docutils literal notranslate"><span class="pre">mon_fichier</span></code> pourrait apparaître entre <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code> lors de l’appel. Ce point sera clarifié ultérieurement. Ce n’est certainement pas la première fois que vous rencontrez cette <strong>notation préfixée pointée</strong>. Ce ne sera pas la dernière. Ce n’est pas le cas ici avec <code class="docutils literal notranslate"><span class="pre">.readline()</span></code> mais des paramètres autres que celui préfixé peuvent apparaître entre <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code> lors de l’appel.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># association et ouverture du fichier -- noter le mode &quot;r&quot; pour read</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./tmp/test_nb_occ0.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+
+<span class="c1"># lecture séquentielle par ligne. </span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># lecture du caractère </span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># lecture du mot</span>
+
+<span class="c1"># fermeture    </span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notez le préfixe <code class="docutils literal notranslate"><span class="pre">f</span></code> devant <code class="docutils literal notranslate"><span class="pre">.readline()</span></code> où <code class="docutils literal notranslate"><span class="pre">f</span></code> est le nom du fichier logique défini à l’association/ouverture.</p>
+</div>
+<p>Les 4 étapes association/ouverture/lecture/fermeture de ce fichier sont effectuées.</p>
+<p>Le traitement des entrées n’est pourtant <strong>pas terminé</strong>.</p>
+</section>
+<section id="nettoyage-des-caracteres-speciaux-de-fin-de-ligne">
+<h4>Nettoyage des caractères spéciaux de fin de ligne<a class="headerlink" href="#nettoyage-des-caracteres-speciaux-de-fin-de-ligne" title="Permalink to this headline">#</a></h4>
+<p>Observons plus en détail ce qui a été <em>effectivement</em> lu.<br />
+Un focus sur le caractère <code class="docutils literal notranslate"><span class="pre">c</span></code> lu à la première ligne du fichier suffit à comprendre.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>z
+
+&lt;class &#39;str&#39;&gt;
+2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Surprise : <code class="docutils literal notranslate"><span class="pre">c</span></code> est un caractère de longueur 2 !?</p>
+<p>En effet, la première ligne du fichier est composé d’un caractère (ici <code class="docutils literal notranslate"><span class="pre">z</span></code>). Mais elle est aussi terminée par le caractère spécial d’EOL, ici <code class="docutils literal notranslate"><span class="pre">\n</span></code>. Ce qui fait 2 caractères au total lus par <code class="docutils literal notranslate"><span class="pre">.readline()</span></code>.</p>
+<p>On peut le vérifier en convertissant <code class="docutils literal notranslate"><span class="pre">c</span></code> en <code class="docutils literal notranslate"><span class="pre">lst</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;z&#39;, &#39;\n&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il faut donc “nettoyer” chaque ligne lue de ce caractère spécial si le traitement à effectuer le nécessite.
+C’est très souvent le cas.</p>
+<p>Les tranches de <code class="docutils literal notranslate"><span class="pre">str</span></code> ou de <code class="docutils literal notranslate"><span class="pre">lst</span></code>  python (<em>slice</em>) rendent ce nettoyage facile : on rappelle que le dernier élément d’un tableau est d’indice -1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># tranche de tableau qui &quot;supprime&quot; la dernière valeur de c </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>z
+</pre></div>
+</div>
+</div>
+</div>
+<p>Et de même pour le mot lu en seconde ligne du fichier :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">:</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">m</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>anticonstitutionnellement
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Remarques.</strong></p>
+<ul class="simple">
+<li><p>On a ajouté un test de la présence du <em>EOL</em> car la dernière ligne d’un fichier ne se termine pas nécessairement ainsi.</p></li>
+<li><p>Les caractères spéciaux et la notion d’<em>échappement</em> (avec un <code class="docutils literal notranslate"><span class="pre">\</span></code>) sont traités dans cette <a class="reference internal" href="5-types_composes.html#sec-echappement"><span class="std std-ref">section</span></a> sur les <code class="docutils literal notranslate"><span class="pre">str</span></code> du chapitre sur les type composés.</p></li>
+</ul>
+</section>
+<section id="traitement-le-premier-test-de-nb-occ">
+<h4>Traitement : le premier test de <code class="docutils literal notranslate"><span class="pre">nb_occ()</span></code><a class="headerlink" href="#traitement-le-premier-test-de-nb-occ" title="Permalink to this headline">#</a></h4>
+<p>Passons enfin au traitement proprement dit, ici le test le la fonction <code class="docutils literal notranslate"><span class="pre">nb_occ()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">nb_occ</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>On a donc lu le premier fichier de test de <code class="docutils literal notranslate"><span class="pre">nb_occ</span></code>. La fonction a passé avec succès le test défini par les paramètres lus dans ce fichier. L’exécution sans erreur de l’instruction <code class="docutils literal notranslate"><span class="pre">assert</span></code> permet de continuer.</p>
+<p><strong>Rmq.</strong> Les fichiers <em>physiques</em> doivent exister pour être ouverts, lus, modifiés, fermés.</p>
+</section>
+<section id="exploitation-du-second-fichier">
+<h4>Exploitation du second fichier<a class="headerlink" href="#exploitation-du-second-fichier" title="Permalink to this headline">#</a></h4>
+<p>On recommence lecture et test pour le second fichier de test où 5 occurrences de la lettre <code class="docutils literal notranslate"><span class="pre">n</span></code> sont attendus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>tmp/test_nb_occ1.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n
+anticonstitutionnellement
+</pre></div>
+</div>
+</div>
+</div>
+<p>On supprime directement le <em>EOL</em> à chaque lecture à l’aide de la tranche <code class="docutils literal notranslate"><span class="pre">[:-1]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># association et ouverture du fichier -- noter le mode &quot;r&quot; pour read</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./tmp/test_nb_occ1.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+
+<span class="c1"># lecture séquentielle par ligne</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># lecture du caractère </span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># lecture du mot</span>
+
+<span class="c1"># fermeture    </span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># affichage par curiosité</span>
+<span class="c1">#print(list(c), m, nb_occ(c, m))</span>
+
+<span class="c1"># test</span>
+<span class="k">assert</span> <span class="n">nb_occ</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ce second test de <code class="docutils literal notranslate"><span class="pre">nb_occ()</span></code> est aussi validé.</p>
+<p><strong>Extensions possibles.</strong></p>
+<p>Il vient naturellement à l’idée de rassembler dans un seul fichier plusieurs cas tests, voire même les résultats attendus de chacun de ces tests. Même dans ce cas simple, de telles extensions sont vite plus compliquées qu’il y parait. En effet, ajouter par exemple les résultats attendus revient à ajouter des valeurs entières (les nombres d’occurrences attendus) dans un traitement pour l’instant limité à de la manipulation de <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
+<p>L’exemple suivant permet d’illustrer un cas similaire.</p>
+</section>
+</section>
+<section id="deuxieme-exemple-lecture-readline-avec-conversion-de-type-et-effets-dynamiques">
+<h3><span class="section-number">3.2.2. </span>Deuxième exemple : lecture <code class="docutils literal notranslate"><span class="pre">.readline()</span></code> avec conversion de type et effets dynamiques<a class="headerlink" href="#deuxieme-exemple-lecture-readline-avec-conversion-de-type-et-effets-dynamiques" title="Permalink to this headline">#</a></h3>
+<section id="id1">
+<h4>Objectif<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
+<p>Je veux tester la fonction de produit scalaire suivante.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prod_scal</span><span class="p">(</span><span class="n">u</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">v</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">n</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;calcule et retourne le produit scalaire u^t.v où u et v sont de taille n&#39;&#39;&#39;</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="n">n</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">+</span> <span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="la-forme-d-un-fichier-de-test">
+<h4>La forme d’un fichier de test<a class="headerlink" href="#la-forme-d-un-fichier-de-test" title="Permalink to this headline">#</a></h4>
+<p>Je décide de compléter un fichier texte selon le modèle suivant :</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(n\)</span><br />
+<span class="math notranslate nohighlight">\(u\)</span><br />
+<span class="math notranslate nohighlight">\(v\)</span><br />
+<span class="math notranslate nohighlight">\(u^t v\)</span></p>
+</div></blockquote>
+<p>Ainsi :</p>
+<ol class="simple">
+<li><p>la première donne la taille <span class="math notranslate nohighlight">\(n\)</span> des vecteurs,</p></li>
+<li><p>les <span class="math notranslate nohighlight">\(n\)</span> lignes suivantes donne les composantes de <span class="math notranslate nohighlight">\(u\)</span>,</p></li>
+<li><p>les <span class="math notranslate nohighlight">\(n\)</span> lignes suivantes celles de <span class="math notranslate nohighlight">\(v\)</span>,</p></li>
+<li><p>enfin la dernière indique la valeur du produit scalaire (calculée “à la main”).</p></li>
+</ol>
+<p>Ainsi, je vais pouvoir comparer le résultat de <code class="docutils literal notranslate"><span class="pre">prod_scal()</span></code> et celui attendu, et ce sur des vecteurs de tailles arbitraire. Chaque choix (<span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(u\)</span>, <span class="math notranslate nohighlight">\(v\)</span>, <span class="math notranslate nohighlight">\(u^t v\)</span>) est un <em>cas test</em> pour <code class="docutils literal notranslate"><span class="pre">prod_scal()</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">test_prod_scal.txt</span></code> est un exemple d’un premier cas test : 2 vecteurs de taille 4 de produit scalaire égal à 2.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>./tmp/test_prod_scal.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+1.
+1.
+1.
+1.
+1.
+1.
+-1.
+1.
+2.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="conversions-et-effets-dynamiques">
+<h4>Conversions et effets dynamiques<a class="headerlink" href="#conversions-et-effets-dynamiques" title="Permalink to this headline">#</a></h4>
+<p><strong>Analyse préliminaire</strong></p>
+<ol class="simple">
+<li><p>Conversions <code class="docutils literal notranslate"><span class="pre">str</span></code> <span class="math notranslate nohighlight">\(\to\)</span> valeurs numériques</p>
+<ul class="simple">
+<li><p>Le fichier de texte contient <em>uniquement</em> des caractères, des <code class="docutils literal notranslate"><span class="pre">str</span></code> en python.</p></li>
+<li><p>Pourtant, ces <code class="docutils literal notranslate"><span class="pre">str</span></code> correspondent à un <code class="docutils literal notranslate"><span class="pre">int</span></code> ou des <code class="docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p>Ainsi, des conversions adaptées devront être effectuées pendant (ou après) la lecture :</p>
+<ul>
+<li><p>conversion en <code class="docutils literal notranslate"><span class="pre">int</span></code> pour la ligne 1</p></li>
+<li><p>conversions en <code class="docutils literal notranslate"><span class="pre">float</span></code> pour les autres</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Conséquences dynamiques</p>
+<ul class="simple">
+<li><p>La taille des vecteurs est connue <em>après</em> avoir lu la valeur pour <code class="docutils literal notranslate"><span class="pre">n</span></code> (ligne 1)</p></li>
+<li><p>Les vecteurs devront être créés une fois <code class="docutils literal notranslate"><span class="pre">n</span></code> connu</p></li>
+<li><p>La lecture de la suite du fichier (composantes des 2 vecteurs, résultat attendu) dépend aussi de la valeur lue pour <span class="math notranslate nohighlight">\(n\)</span></p></li>
+</ul>
+</li>
+<li><p>Rappel : la gestion des fins de ligne</p>
+<ul class="simple">
+<li><p>Chaque ligne du fichier se termine par un caractère spécial <em>EOL</em>, ici <code class="docutils literal notranslate"><span class="pre">\n</span></code></p></li>
+<li><p>Comme précédemment, ces caractères spéciaux seront lus aussi et un traitement adapté sera défini – par exemple, les supprimer.</p></li>
+</ul>
+</li>
+</ol>
+<p>On va profiter de cet exemple pour donner <strong>une autre construction</strong> python des 4 étapes association/ouverture/lecture/fermeture de ce fichier.</p>
+<ul class="simple">
+<li><p>La lecture est toujours effectuée ligne après ligne avec <code class="docutils literal notranslate"><span class="pre">.readline()</span></code></p></li>
+<li><p>mais la construction avec la clause de contexte <code class="docutils literal notranslate"><span class="pre">with</span></code> permet de se dégager de l’ouverture et la fermeture au préalable obligatoires.</p></li>
+</ul>
+</section>
+<section id="lecture-avec-la-clause-with">
+<h4>Lecture avec la clause <code class="docutils literal notranslate"><span class="pre">with</span></code><a class="headerlink" href="#lecture-avec-la-clause-with" title="Permalink to this headline">#</a></h4>
+<p>Cette lecture de la première ligne uniquement pour commencer en illustrant cette nouvelle construction très utile en pratique.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># association/ouverture/lecture/fermeture avec clause with</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./tmp/test_prod_scal.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># la taille n : lecture et nettoyage du EOL</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 1 &lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>On retrouve la configuration de l’exemple précédent sans à avoir à utiliser les instructions <code class="docutils literal notranslate"><span class="pre">open()</span></code>et <code class="docutils literal notranslate"><span class="pre">.close()</span></code>.</p>
+<p>Occupons-nous maintenant du typage des valeurs lues.</p>
+</section>
+<section id="lecture-readline-avec-with-et-typage">
+<h4>Lecture <code class="docutils literal notranslate"><span class="pre">.readline()</span></code> avec <code class="docutils literal notranslate"><span class="pre">with</span></code> et typage<a class="headerlink" href="#lecture-readline-avec-with-et-typage" title="Permalink to this headline">#</a></h4>
+<p>Le nettoyage de chaque ligne étant effectué après la lecture et avant l’affectation, le typage est aisé : d’abord un <code class="docutils literal notranslate"><span class="pre">int</span></code> puis des <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># association/ouverture/fermeture avec clause with</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./tmp/test_prod_scal.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># la taille n : lecture</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    
+    <span class="c1"># premier vecteur : création et lecture</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="c1"># second vecteur : création et lecture</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="c1"># produit scalaire : resultat attendu </span>
+    <span class="n">ps_exact</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Remarque.</strong> Ne pas oublier le nettoyage de <em>EOL</em> lors de chaque <code class="docutils literal notranslate"><span class="pre">readline()</span></code>.</p>
+<p>Il ne reste plus qu’à tester.</p>
+</section>
+<section id="test-unitaire-de-prod-scal">
+<h4>Test unitaire de <code class="docutils literal notranslate"><span class="pre">prod_scal()</span></code><a class="headerlink" href="#test-unitaire-de-prod-scal" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">prod_scal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="o">==</span> <span class="n">ps_exact</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Le test ainsi validé nous rassure sur la correction de <code class="docutils literal notranslate"><span class="pre">prod_scal()</span></code>.</p>
+<p>Bien sûr, des extensions similaires à celles explicitées à l’exemple précédent sont tentantes.
+On vous invite à continuer en ce sens en exercice.</p>
+</section>
+</section>
+<section id="troisieme-exemple-ecritures-simples-avec-write">
+<h3><span class="section-number">3.2.3. </span>Troisième exemple : écritures simples avec <code class="docutils literal notranslate"><span class="pre">.write()</span></code><a class="headerlink" href="#troisieme-exemple-ecritures-simples-avec-write" title="Permalink to this headline">#</a></h3>
+<p>On termine en montrant comment l’écriture simple <em>dans</em> des fichiers textes s’obtient de façon très similaire avec la fonction méthode <code class="docutils literal notranslate"><span class="pre">.write()</span></code>.</p>
+<p>Toujours les 4 étapes mais :</p>
+<ul class="simple">
+<li><p>l’ouverture du fichier s’effectue en mode <code class="docutils literal notranslate"><span class="pre">w</span></code> (<em>write</em>) ou <code class="docutils literal notranslate"><span class="pre">a</span></code> (<em>append</em> : ajouter à la fin)</p></li>
+<li><p>la fonction-méthode <code class="docutils literal notranslate"><span class="pre">.write()</span></code> permet l’écriture d’une <code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p>la conversion vers des <code class="docutils literal notranslate"><span class="pre">str</span></code> sera donc un préalable</p></li>
+<li><p>ainsi que la gestion des <em>EOL</em>, ici <code class="docutils literal notranslate"><span class="pre">\n</span></code> pour effectuer les sauts de lignes souhaités dans le fichier</p>
+<ul>
+<li><p>en effet, <code class="docutils literal notranslate"><span class="pre">.write()</span></code> écrit la <code class="docutils literal notranslate"><span class="pre">str</span></code> à la suite de la dernière écriture effectuée.</p></li>
+</ul>
+</li>
+</ul>
+<section id="construction-d-un-cas-test-de-nb-occ">
+<h4>Construction d’un cas test de <code class="docutils literal notranslate"><span class="pre">nb_occ()</span></code><a class="headerlink" href="#construction-d-un-cas-test-de-nb-occ" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Préparation des données à stocker</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="c1"># une taille de vecteurs au hasard</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># un choix de composantes tel que ps_exact == n</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## vérifications</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">prod_scal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 [1.0, 2.0, 3.0, 4.0, 5.0] [1.0, 0.5, 0.3333333333333333, 0.25, 0.2] 5.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="enregistrement-dans-un-fichier-de-test">
+<h4>Enregistrement dans un fichier de test<a class="headerlink" href="#enregistrement-dans-un-fichier-de-test" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># association/ouverture/fermeture avec clause with</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./tmp/test_prod_scal_write.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="nb">str</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>  <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="p">)</span>  <span class="c1"># ==ps_exact        </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>On vérifie que le fichier <code class="docutils literal notranslate"> <span class="pre">./tmp/test_prod_scal_write.txt</span></code> a bien été créé et son contenu.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls<span class="w"> </span>-l<span class="w"> </span>tmp/test_prod_scal*.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-r--r--  1 langlois  staff  30 20 jan 16:57 tmp/test_prod_scal.txt
+-rw-r--r--  1 langlois  staff  91 20 jan 16:57 tmp/test_prod_scal2.txt
+-rw-r--r--  1 langlois  staff  97 20 jan 16:57 tmp/test_prod_scal3.txt
+-rw-r--r--  1 langlois  staff  62 20 jan 18:22 tmp/test_prod_scal_write.txt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>tmp/test_prod_scal_write.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+1.0
+2.0
+3.0
+4.0
+5.0
+1.0
+0.5
+0.3333333333333333
+0.25
+0.2
+5.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>L’ouverture en écriture (mode <code class="docutils literal notranslate"><span class="pre">w</span></code>) écrase éventuellement un fichier physique existant et de même nom.</p>
+</div>
+</section>
+<section id="exploitation-du-fichier-de-test">
+<h4>Exploitation du fichier de test<a class="headerlink" href="#exploitation-du-fichier-de-test" title="Permalink to this headline">#</a></h4>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-kebab-horizontal" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M6 12a2 2 0 11-4 0 2 2 0 014 0zm8 0a2 2 0 11-4 0 2 2 0 014 0zm6 2a2 2 0 100-4 2 2 0 000 4z"></path></svg><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Il suffit maintenant de lire ce fichier et d’effectuer le test.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># association/ouverture/fermeture avec clause with</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./tmp/test_prod_scal_write.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># la taille n : lecture</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    
+    <span class="c1"># premier vecteur : création et lecture</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="c1"># second vecteur : création et lecture</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="c1"># produit scalaire : resultat attendu </span>
+    <span class="n">ps_exact</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  
+    
+<span class="k">assert</span> <span class="n">ps_exact</span> <span class="o">==</span> <span class="n">prod_scal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">On est rassuré.</p>
+</div>
+</details></section>
+</section>
+<section id="synthese-et-minimum-a-savoir-faire">
+<h3><span class="section-number">3.2.4. </span>Synthèse et minimum à savoir-faire<a class="headerlink" href="#synthese-et-minimum-a-savoir-faire" title="Permalink to this headline">#</a></h3>
+<p>Pour ce qui concerne les entrées en se limitant à des fichiers où chaque valeur est stockée sur une ligne, on a vu :</p>
+<ul class="simple">
+<li><p>les 4 étapes classiques association/ouverture/lecture/fermeture,</p></li>
+<li><p>la construction simplifiée avec la clause <code class="docutils literal notranslate"><span class="pre">with</span></code>,</p></li>
+<li><p>la lecture séquentielle ligne après ligne avec <code class="docutils literal notranslate"><span class="pre">.readline()</span></code>,</p></li>
+<li><p>l’écriture simple avec <code class="docutils literal notranslate"><span class="pre">.write()</span></code>,</p></li>
+<li><p>la gestion des caractères spéciaux <em>EOL</em>,</p></li>
+<li><p>la conversion des lectures <code class="docutils literal notranslate"><span class="pre">str</span></code> vers des types adaptés aux traitements à effectuer,</p></li>
+<li><p>et inversement pour les écritures.</p></li>
+</ul>
+<p>On a naturellement complété cette présentation par l’écriture de tests unitaires à l’aide d’instructions <code class="docutils literal notranslate"><span class="pre">assert</span></code>.</p>
+<p>Bien maîtriser le <code class="docutils literal notranslate"><span class="pre">print()</span></code> peut faire gagner du temps. Se reporter à <a class="reference internal" href="#sec-print"><span class="std std-ref">cette section</span></a> si besoin.</p>
+<p>(sec:EScomplements)</p>
+</section>
+</section>
+<section id="complements">
+<h2><span class="section-number">3.3. </span>Compléments<a class="headerlink" href="#complements" title="Permalink to this headline">#</a></h2>
+<div class="alert alert-warning">
+<p>A lire en seconde lecture</p>
+</div><p>Cette section pour introduire d’autres fonctions de lecture-écriture que <code class="docutils literal notranslate"><span class="pre">.readline()</span></code>et <code class="docutils literal notranslate"><span class="pre">.write()</span></code>.</p>
+<ul class="simple">
+<li><p>Des lectures complètes du fichier</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">.read()</span></code>: lit tout le fichier et retourne un <code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.readlines()</span></code>: lit tout le fichier et retourne une <code class="docutils literal notranslate"><span class="pre">list</span></code> de <code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+</ul>
+</li>
+<li><p>Une autre lecture partielle</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">.read(oct)</span></code>: lit <code class="docutils literal notranslate"><span class="pre">oct</span></code> octets dans le fichier et retourne un <code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+</ul>
+</li>
+<li><p>Ecriture ligne à ligne</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">.writelines()</span></code>: écrit une <code class="docutils literal notranslate"><span class="pre">list</span></code> de <code class="docutils literal notranslate"><span class="pre">str</span></code>, ligne après ligne dans le fichier</p></li>
+</ul>
+</li>
+</ul>
+<p>Selon les besoins, ces fonctions facilitent l’écriture des entrées-sorties sur fichier.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Noter le <code class="docutils literal notranslate"><span class="pre">s</span></code> dans <code class="docutils literal notranslate"><span class="pre">.readlines()</span></code>, et de façon symétrique dans <code class="docutils literal notranslate"><span class="pre">.writelines()</span></code>.</p>
+</div>
+<section id="lecture-complete-read-fournit-une-str">
+<h3><span class="section-number">3.3.1. </span>Lecture complète : <code class="docutils literal notranslate"><span class="pre">.read()</span></code> fournit une <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#lecture-complete-read-fournit-une-str" title="Permalink to this headline">#</a></h3>
+<p>Les fichiers de test précédents peuvent bien sûr être “lu d’une seule fois” : lecture complète <em>vs.</em> lecture ligne à ligne.</p>
+<section id="principe">
+<h4>Principe<a class="headerlink" href="#principe" title="Permalink to this headline">#</a></h4>
+<p>La fonction-méthode <code class="docutils literal notranslate"><span class="pre">.read()</span></code> effectue cette lecture complète et retourne une chaîne de caractères <em>unique</em>.</p>
+<p>Un exemple sur un de nos précédents fichiers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># association et ouverture du fichier -- noter le mode &quot;r&quot; pour read</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./tmp/test_prod_scal.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+
+<span class="c1"># lecture complète du fichier et maj d&#39;un string</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>    
+
+<span class="c1"># fermeture    </span>
+<span class="n">f</span><span class="o">.</span> <span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><strong>ATTENTION au <code class="docutils literal notranslate"><span class="pre">read()</span></code> !</strong></p>
+<p>Comme le dit le manuel (7.2.1):</p>
+<blockquote>
+<div><p>it’s your problem if the file is twice as large as your machine’s memory.</p>
+</div></blockquote>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+1.
+1.
+1.
+1.
+1.
+1.
+-1.
+1.
+2.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>La lecture complète du fichier ne fait pas disparaître la structuration du fichier en lignes.
+Les caractères spéciaux <em>EOL</em> sont toujours présents dans la chaîne de caractères issue du <code class="docutils literal notranslate"><span class="pre">.read()</span></code>.
+Un <code class="docutils literal notranslate"><span class="pre">print()</span></code> trop naïf peut être trompeur.</p>
+</div>
+<p>Se reporter à la <a class="reference internal" href="#sec-print"><span class="std std-ref">section</span></a> pour re-visiter le <code class="docutils literal notranslate"><span class="pre">print</span></code> si besoin était.</p>
+<p>Bien sûr, nos précédents fichiers et traitements ne sont pas adaptés à cette lecture complète et la <code class="docutils literal notranslate"><span class="pre">str</span></code> unique qui en découle. En revanche, un exemple classique de l’intérêt de <code class="docutils literal notranslate"><span class="pre">.read()</span></code> est la lecture complète d’un fichier qui contient un texte (même long) enregistré dans un format brut : utf-8 par exemple, voir <a class="reference external" href="https://zestedesavoir.com/tutoriels/1114/comprendre-les-encodages/2-histoire/">cet article facile à lire</a> pour plus de détails.</p>
+</section>
+<section id="exemple-classique">
+<h4>Exemple classique<a class="headerlink" href="#exemple-classique" title="Permalink to this headline">#</a></h4>
+<p>L’exemple suivant illustre l’utilisation classique du <code class="docutils literal notranslate"><span class="pre">.read().</span></code></p>
+<p>Le roman <em>La disparition</em> de G. Perec (1968) est
+<a class="reference external" href="https://fr.wikipedia.org/wiki/La_Disparition_(roman)">bien connu</a>
+pour l’absence de la lettre <code class="docutils literal notranslate"><span class="pre">e</span></code> dans ses 300 pages – <a class="reference external" href="https://jazlebontemps.com/2016/12/15/la-disparition-roman-de-georges-perec-1968/">entre autres</a> .</p>
+<p>Hélas, je n’ai pas réussi à trouver un fichier texte contenant une version parfaite de ce roman (n’hésitez-pas à combler ce manque). <code class="docutils literal notranslate"><span class="pre">./tmp/ladisparition.txt</span></code> est un exemple d’un tel fichier “imparfait”.</p>
+<p>Vérifions-le en utilisant la fonction-méthode <a class="reference external" href="https://docs.python.org/fr/3.9/library/stdtypes.html?highlight=str.count#str.count"><code class="docutils literal notranslate"><span class="pre">.count</span></code></a> qui s’applique à une <code class="docutils literal notranslate"><span class="pre">str</span></code> et retourne le nombre d’occurrences de son argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./tmp/ladisparition.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">full_roman</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">full_roman</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">full_roman</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>400233
+9
+</pre></div>
+</div>
+</div>
+</div>
+<p>En effet, il y a 5 occurrences de trop de la lettre <code class="docutils literal notranslate"><span class="pre">e</span></code> dans ce roman (j’ai laissé le titre et le nom de l’auteur en début de fichier).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>head<span class="w"> </span>-3<span class="w"> </span>./tmp/ladisparition.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Georges Perec 
+La disparition 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="lecture-complete-readlines-fournit-une-list-de-str">
+<h3><span class="section-number">3.3.2. </span>Lecture complète : <code class="docutils literal notranslate"><span class="pre">readlines()</span></code> fournit une <code class="docutils literal notranslate"><span class="pre">list</span></code> de  <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#lecture-complete-readlines-fournit-une-list-de-str" title="Permalink to this headline">#</a></h3>
+<section id="id2">
+<h4>Principe<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
+<p>De façon similaire, <code class="docutils literal notranslate"><span class="pre">.readlines()</span></code> (avec un ‘s’ à la fin) effectue une lecture complète du fichier et retourne une liste de <code class="docutils literal notranslate"><span class="pre">str</span></code>, liste composée de chaque ligne du fichier.</p>
+<p>L’exemple suivant nous aide à exhiber les caractère spéciaux <code class="docutils literal notranslate"><span class="pre">\n</span></code> non encore “nettoyés”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># association et ouverture du fichier -- noter le mode &quot;r&quot; pour read</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./tmp/test_prod_scal.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+
+<span class="c1"># lecture complète et maj d&#39;une liste de str</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>    
+
+<span class="c1"># fermeture    </span>
+<span class="n">f</span><span class="o">.</span> <span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;4\n&#39;, &#39;1.\n&#39;, &#39;1.\n&#39;, &#39;1.\n&#39;, &#39;1.\n&#39;, &#39;1.\n&#39;, &#39;1.\n&#39;, &#39;-1.\n&#39;, &#39;1.\n&#39;, &#39;2.\n&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercice.</strong>
+Expliquer les résultats obtenus par :</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">len(s)</span></code> issu de <code class="docutils literal notranslate"><span class="pre">.read()</span></code></p>
+</div></blockquote>
+<p>et</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">len(l)</span></code> issu de <code class="docutils literal notranslate"><span class="pre">.readlines()</span></code></p>
+</div></blockquote>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Réponse.<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">elem</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;-&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="m">4</span>-&gt;2
+<span class="m">1</span>.-&gt;3
+<span class="m">1</span>.-&gt;3
+<span class="m">1</span>.-&gt;3
+<span class="m">1</span>.-&gt;3
+<span class="m">1</span>.-&gt;3
+<span class="m">1</span>.-&gt;3
+-1.-&gt;4
+<span class="m">1</span>.-&gt;3
+<span class="m">2</span>.-&gt;3
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="star-exemple-classique">
+<h4>(<span class="math notranslate nohighlight">\(\star\)</span>) Exemple classique<a class="headerlink" href="#star-exemple-classique" title="Permalink to this headline">#</a></h4>
+<p>On peut maintenant traiter des fichiers plus commodes pour tester <code class="docutils literal notranslate"><span class="pre">prod_scal()</span></code>.</p>
+<p>Plusieurs cas-tests sont regroupés dans le suivant de façon plus lisible :</p>
+<ul class="simple">
+<li><p>comme précédemment, chaque cas test est défini par le quadruplet <span class="math notranslate nohighlight">\((n, x, y, x^t y).\)</span></p></li>
+<li><p>chacun de ces paramètres est écrit sur une ligne</p></li>
+<li><p>chaque cas test est terminé par une ligne vide.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>./tmp/test_prod_scal3.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+1.
+1.
+1.
+
+2
+1. 1.
+1. 1.
+2.
+
+2
+-1. 1.
+1. 1.
+0.
+
+2
+0. 0.
+1. 1.
+0.
+
+4
+1. 1. 1. 1.
+1. 1. 1. 1.
+4.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cette procédure d’ES (un peu technique) nécessite des transformations de <code class="docutils literal notranslate"><span class="pre">str</span></code>, par exemple la fonction-méthode <code class="docutils literal notranslate"><span class="pre">.split()</span></code>, qui sont présentées au chapitre <a class="reference internal" href="5-types_composes.html#ch-typescomposes"><span class="std std-ref"><em>Types composés</em></span></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lecture du fichier de données cas-test</span>
+<span class="c1"># et préparation des données pour tests</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./tmp/test_prod_scal3.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">l_data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+<span class="c1">#print(l_data)</span>
+
+<span class="c1"># nettoyage en place</span>
+<span class="n">l_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">l_data</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;data nettoyées: &quot;</span><span class="p">,</span> <span class="n">l_data</span><span class="p">)</span>
+
+<span class="c1"># décompte du nombre de cas-test</span>
+<span class="n">nbcastest</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">l_data</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">elem</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span> <span class="c1"># chaque cas-test se termine par une ligne vide</span>
+        <span class="n">nbcastest</span> <span class="o">=</span> <span class="n">nbcastest</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="c1">#print(nbcastest)</span>
+
+<span class="c1"># tab_castest pour stocker les paramètres de chaque cas test</span>
+<span class="n">tab_castest</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbcastest</span><span class="p">)</span> <span class="p">]</span>
+<span class="c1"># maj paramètres : n, x[n], y[n], x^t.y exact soit 4 valeurs dont 2 listes de float</span>
+
+<span class="n">i_elem</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># indice dans l_data</span>
+<span class="k">for</span> <span class="n">numtest</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbcastest</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">l_data</span><span class="p">[</span><span class="n">i_elem</span><span class="p">])</span>
+    <span class="c1"># les parametres sont rangés dans un vecteur de taille 4 (un objet/struct serait mieux)</span>
+    <span class="n">tab_castest</span><span class="p">[</span><span class="n">numtest</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+    <span class="n">tab_castest</span><span class="p">[</span><span class="n">numtest</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">n</span> <span class="c1"># n du cas test</span>
+    <span class="n">tab_castest</span><span class="p">[</span><span class="n">numtest</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">l_data</span><span class="p">[</span><span class="n">i_elem</span> <span class="o">+</span> <span class="mi">3</span><span class="p">])</span> <span class="c1"># prod scal exact du cas test</span>
+    <span class="n">tab_castest</span><span class="p">[</span><span class="n">numtest</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">l_data</span><span class="p">[</span><span class="n">i_elem</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)]</span> <span class="c1"># x[n] du cas test</span>
+    <span class="n">tab_castest</span><span class="p">[</span><span class="n">numtest</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">l_data</span><span class="p">[</span><span class="n">i_elem</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)]</span> <span class="c1"># y[n] du cas test</span>
+    <span class="n">i_elem</span> <span class="o">=</span> <span class="n">i_elem</span> <span class="o">+</span> <span class="mi">5</span> <span class="c1"># +1 final pour ligne vide</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;les cas tests: &quot;</span><span class="p">,</span> <span class="n">tab_castest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data nettoyées:  [&#39;1&#39;, &#39;1.&#39;, &#39;1.&#39;, &#39;1.&#39;, &#39;&#39;, &#39;2&#39;, &#39;1. 1.&#39;, &#39;1. 1.&#39;, &#39;2.&#39;, &#39;&#39;, &#39;2&#39;, &#39;-1. 1.&#39;, &#39;1. 1.&#39;, &#39;0.&#39;, &#39;&#39;, &#39;2&#39;, &#39;0. 0.&#39;, &#39;1. 1.&#39;, &#39;0.&#39;, &#39;&#39;, &#39;4&#39;, &#39;1. 1. 1. 1.&#39;, &#39;1. 1. 1. 1.&#39;, &#39;4.&#39;, &#39;&#39;]
+les cas tests:  [[1, [1.0], [1.0], 1.0], [2, [1.0, 1.0], [1.0, 1.0], 2.0], [2, [-1.0, 1.0], [1.0, 1.0], 0.0], [2, [0.0, 0.0], [1.0, 1.0], 0.0], [4, [1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0], 4.0]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># la vérification de `prod_scal()`</span>
+<span class="k">for</span> <span class="n">nb</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tab_castest</span><span class="p">)):</span>
+    <span class="n">castest</span> <span class="o">=</span> <span class="n">tab_castest</span><span class="p">[</span><span class="n">nb</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">prod_scal</span><span class="p">(</span><span class="n">castest</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">castest</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">castest</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="n">castest</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Et voilà le travail !
+Il est maintenant facile d’étendre les cas tests de <code class="docutils literal notranslate"><span class="pre">prod_scal()</span></code> en complétant le fichier <code class="docutils literal notranslate"><span class="pre">./tmp/test_prod_scal3.txt</span></code> selon le format adopté`</p>
+</section>
+</section>
+<section id="origine-classique-des-problemes-d-es">
+<h3><span class="section-number">3.3.3. </span>Origine classique des problèmes d’ES<a class="headerlink" href="#origine-classique-des-problemes-d-es" title="Permalink to this headline">#</a></h3>
+<p>La gestion des caractères spéciaux, <code class="docutils literal notranslate"><span class="pre">\n</span></code> entre autres.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f.read()</span></code> peut lire et retourner le caractère <code class="docutils literal notranslate"><span class="pre">\n</span></code> ou  la chaîne vide <code class="docutils literal notranslate"><span class="pre">''</span></code>, ce qui est différent :</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">\n</span></code> = une ligne vide … de caractères “classiques” : elle est réduite au caractère spécial qui désigne <em>EOL</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">''</span></code> = pas de ligne : on a atteint la fin du fichier <em>EOF</em></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f.readlines()</span></code> (comme <code class="docutils literal notranslate"><span class="pre">f.readline()</span></code>) lit une ligne complète, caractère spécial (<code class="docutils literal notranslate"><span class="pre">\n</span></code>) compris.</p>
+<ul>
+<li><p>il retourne donc <em>aussi</em> ce <code class="docutils literal notranslate"><span class="pre">\n</span></code> de <em>EOL</em></p></li>
+<li><p>sauf dans le cas de la dernière ligne si celle-ci n’en comporte pas !</p></li>
+</ul>
+</li>
+</ul>
+<p>En pratique, on retiendra :</p>
+<ul class="simple">
+<li><p>que la dernière ligne d’un fichier peut être source de problème,</p></li>
+<li><p>entre autres car les éditeurs de texte (et les systèmes d’exploitation) peuvent ajouter certains caractères non entrés par l’utilisateur lors de l’enregistrement et de la fermeture du fichier.</p></li>
+</ul>
+</section>
+<section id="bien-controler-ses-print">
+<span id="sec-print"></span><h3><span class="section-number">3.3.4. </span>Bien contrôler ses <code class="docutils literal notranslate"><span class="pre">print()</span></code><a class="headerlink" href="#bien-controler-ses-print" title="Permalink to this headline">#</a></h3>
+<p>Deux exemples pour :</p>
+<ol class="simple">
+<li><p>rappeler comment utiliser <code class="docutils literal notranslate"><span class="pre">sep</span></code> et <code class="docutils literal notranslate"><span class="pre">end</span></code></p></li>
+<li><p>expliciter l’effet du caractère spécial <code class="docutils literal notranslate"><span class="pre">\n</span></code> (nouvelle ligne) dans l’affichage d’une chaîne de caractères avec <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#rappel : sep, end</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;azertyuiop&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;@@&quot;</span><span class="p">)</span> <span class="c1"># par defaut : end=&#39;\n&#39;</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;azertyuiop</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>azertyuiop*azertyuiop*azertyuiop--@@
+azertyuiop
+*azertyuiop
+*azertyuiop
+--
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># s est _une_ chaine de caractères</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;azer</span><span class="se">\n</span><span class="s2">tyuiop&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>azer
+tyuiop
+azer
+tyuiop
+azer
+tyuiop--
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nous reviendrons sur les caractères spéciaux dans le chapitre sur les chaînes de caratères.</p>
+<p><strong>Quiz</strong></p>
+<p>Quelle est la dernière ligne du fichier <code class="docutils literal notranslate"><span class="pre">./tmp/fichier_entrees.txt</span></code> ?</p>
+<ol class="simple">
+<li><p>188</p></li>
+<li><p>188\n</p></li>
+<li><p>\n</p></li>
+<li><p>‘’ (ligne vide)</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat<span class="w"> </span>./tmp/fichier_entrees.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+99
+21
+33
+44
+33
+188
+</pre></div>
+</div>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-kebab-horizontal" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M6 12a2 2 0 11-4 0 2 2 0 014 0zm8 0a2 2 0 11-4 0 2 2 0 014 0zm6 2a2 2 0 100-4 2 2 0 000 4z"></path></svg><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Réponse. <code class="docutils literal notranslate"><span class="pre">.readlines()</span></code> est votre ami.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./tmp/fichier_entrees.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">l_st</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">l_st</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="s1">&#39;6\n&#39;</span>,<span class="w"> </span><span class="s1">&#39;99\n&#39;</span>,<span class="w"> </span><span class="s1">&#39;21\n&#39;</span>,<span class="w"> </span><span class="s1">&#39;33\n&#39;</span>,<span class="w"> </span><span class="s1">&#39;44\n&#39;</span>,<span class="w"> </span><span class="s1">&#39;33\n&#39;</span>,<span class="w"> </span><span class="s1">&#39;188\n&#39;</span><span class="o">]</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+</section>
+<section id="synthese">
+<h2><span class="section-number">3.4. </span>Synthèse<a class="headerlink" href="#synthese" title="Permalink to this headline">#</a></h2>
+<section id="avoir-les-idees-claires">
+<h3><span class="section-number">3.4.1. </span>Avoir les idées claires<a class="headerlink" href="#avoir-les-idees-claires" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Distinguer fichier logique <em>vs.</em> physique, texte <em>vs.</em> binaire, mode lecture <em>vs.</em> écriture (<em>vs.</em> lecture-écriture)</p></li>
+<li><p>Connaître les 4 étapes de manipulation d’un fichier : association/ouverture/lecture-écriture/fermeture</p></li>
+<li><p>Distinguer représentation textuelle et valeur (numérique)</p></li>
+</ul>
+</section>
+<section id="savoir-faire">
+<h3><span class="section-number">3.4.2. </span>Savoir-faire<a class="headerlink" href="#savoir-faire" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Savoir écrire les lectures-écritures simples de fichier texte avec <code class="docutils literal notranslate"><span class="pre">.readline()</span></code> et <code class="docutils literal notranslate"><span class="pre">.write()</span></code></p></li>
+<li><p>Comprendre et gérer l’effet des caractères spéciaux</p></li>
+<li><p>(<span class="math notranslate nohighlight">\(\star \)</span>) Savoir écrire les lectures-écritures de fichiers texte avec les instructions python adaptées</p></li>
+</ul>
+</section>
+<section id="un-dernier-conseil">
+<h3><span class="section-number">3.4.3. </span>Un dernier conseil<a class="headerlink" href="#un-dernier-conseil" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Le risque d’erreur lors de la mise au point du traitement d’ES sur fichier est important.</p></li>
+<li><p>Il n’est pas rare de perdre tout ou partie d’un fichier à lire.</p></li>
+<li><p>On ne peut donc que conseiller :</p></li>
+</ul>
+<ol class="simple">
+<li><p>de <strong>commencer par</strong> effectuer une copie de sauvegarde des fichiers originaux avant tout développement de code d’ES</p></li>
+<li><p>de vérifier pas à pas la mise au point de ces traitement avec des <code class="docutils literal notranslate"><span class="pre">print()</span></code> bien choisis – qui seront bien sûr commentés une fois le traitement validé.</p></li>
+</ol>
+</section>
+<section id="ce-qu-il-restera-a-voir">
+<h3><span class="section-number">3.4.4. </span>Ce qu’il restera à voir<a class="headerlink" href="#ce-qu-il-restera-a-voir" title="Permalink to this headline">#</a></h3>
+<p>Ce chapitre s’est limité à la manipulation de fichiers texte.
+Lorsque les données à sauvegarder sont volumineuses et souvent accédées, il est classique d’avoir recours à des <strong>fichiers binaires</strong>. En python, ces fichiers sont définis en ajoutant la caractéristique <code class="docutils literal notranslate"><span class="pre">b</span></code>  au mode <code class="docutils literal notranslate"><span class="pre">r</span></code>, <code class="docutils literal notranslate"><span class="pre">w</span></code>, ou <code class="docutils literal notranslate"><span class="pre">a</span></code> lors de l’association/ouverture du fichier. Ensuite, les traitements décrits dans ce chapitre s’appliquent globalement.</p>
+<p>Le chapitre <a class="reference internal" href="9-ES-avancees.html#ch-es-avancees"><span class="std std-ref">ES avancées</span></a> complète celui-ci en présentant comment <em>formater</em> les données lues ou écrites dans les fichiers.</p>
+<p>On peut se déplacer dans un fichier pour accéder à un enregistrement quelconque (une ligne ou une fraction de ligne). Ce type de traitement nécessite de caractériser comment la position de ces enregistrements  est définie – par le langage de programmation et en général en nombre d’octets depuis le début du fichier. Le lecteur intéressé se reportera à la documentation (de python) pour ces manipulations un peu techniques.</p>
+<p>Les traitements précédents permettent de créer et d’exploiter des fichiers, et ce indépendamment de leur stockage dans le <em>système de fichiers</em> de l’environnement utilisé (Linux, w*** ou m***).
+Il est utile de compléter ces traitements par de la <em>manipulation</em> de fichiers de façon similaire à celle vue en cours de Système au semestre 1. Pour cela, python propose les modules suivants :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">os</span></code> qui permet de se déplacer dans l’arborescence du système de fichiers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">os.path</span></code>, sous-module du précédent, qui permet de lister des fichiers, des répertoires et certaines de leurs caractéristiques</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shutil</span></code> qui permet de copier, déplacer et supprimer des fichiers ou des parties d’arborescence.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./cm"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="2-fonctions-tableaux.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Fonctions et tableaux</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="4-complexite.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Complexités</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ph. Langlois<br/>
+  
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,1465 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>1. Algorithmique et Programmation en 2022 &#8212; Algo-Prog 2023</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Compétences" href="competences.html" />
+    <link rel="prev" title="Bienvenu en Algo-Prog !" href="../bonjour.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo2023.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algo-Prog 2023</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../bonjour.html">
+                    Bienvenu en Algo-Prog !
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Présentation
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Algorithmique et Programmation en 2022
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="competences.html">
+   2. Compétences
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Les bases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-fonctions.html">
+   1. Fonctions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-fonctions-tableaux.html">
+   2. Fonctions et tableaux
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-ES-fichiers.html">
+   3. Entrées-sorties simples avec des fichiers
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithmique
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-complexite.html">
+   1. Complexités
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-recursivite.html">
+   2. Récursivité
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programmation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-types_composes.html">
+   1. Les types composés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-fonctions-avancees.html">
+   2. Sous-programme et affectation – aspects avancés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-ES-avancees.html">
+   3. Les entrées-sorties (E/S) : aspects avancés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-modules-utiles.html">
+   4. Modules utiles
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Annexes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a0-boucles-avancees.html">
+   1. Boucles et tableaux
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a1-booleens.html">
+   2. Annexe : les booléens en python (&gt;3.6)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a2-ndarray.html">
+   3. Les ‘ndarray’ : de vrais tableaux en python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a3-exceptions.html">
+   4. Exceptions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  TD
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/prealable-td.html">
+   1. Préalables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/td1.html">
+   2. Feuille 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/td2.html">
+   3. Feuille 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/td3.html">
+   4. Feuille 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/td4.html">
+   5. Feuille 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/td5.html">
+   6. Feuille 5
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/phillanglois/Algo-Prog-2023/issues/new?title=Issue%20on%20page%20%2Fcm/0-presentation-2023.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/cm/0-presentation-2023.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algo-prog-version-2022">
+   1.1. Algo-Prog : version 2022
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#version-2022">
+     1.1.1. Version 2022
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#controle-de-connaissances-et-dates-importantes">
+     1.1.2. Contrôle de connaissances et dates importantes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structure-de-l-enseignement">
+   1.2. Structure de l’enseignement
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#organisation">
+     1.2.1. Organisation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cm">
+     1.2.2. CM
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-tres-grande-importance-des-cm">
+     1.2.3. La très grande importance des CM
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-td-pour-reflechir-et-travailler-en-petit-groupe">
+     1.2.4. Les TD pour réfléchir et travailler en petit groupe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-tp-pour-maitriser-les-notions-et-acquerir-du-savoir-faire-personnel">
+     1.2.5. Les TP pour maîtriser les notions et acquérir du savoir-faire personnel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-outils-pour-mieux-comprendre-mieux-retenir">
+     1.2.6. Les outils pour mieux comprendre, mieux retenir
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#savoirs-savoir-faire-savoir-etre">
+   1.3. Savoirs, savoir faire, savoir être
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acquis-du-semestre-1-et-prerequis">
+     1.3.1. Acquis du semestre 1 et prérequis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programme-detaille-aspects-plutot-algorithmique">
+   1.4. Programme détaillé : aspects plutôt algorithmique
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programme-detaille-aspects-plus-programmation">
+   1.5. Programme détaillé : aspects plus programmation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supports-de-cours">
+   1.6. Supports de cours
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#travailler-en-python">
+   1.7. Travailler en python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#important-de-quoi-a-t-on-absolument-besoin">
+     1.7.1. IMPORTANT : De quoi a-t-on
+     <em>
+      absolument
+     </em>
+     besoin ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#en-pratique">
+     1.7.2. En pratique
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#installer-un-environnement-python">
+       Installer un environnement python
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#distributions-python-classiques">
+       Distributions python classiques
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#environnement-de-travail-en-autonomie-pour-machine-etudiant">
+       Environnement de travail en autonomie pour machine étudiant
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#monsieur">
+     1.7.3. Monsieur ….
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references-bibliographiques">
+   1.8. Références bibliographiques
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algo-et-prog">
+     1.8.1. Algo et prog
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ellipses">
+       Ellipses
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hatier">
+       Hatier
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#nathan">
+       Nathan
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#approfondisssement-en-algo">
+     1.8.2. Approfondisssement en algo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#approfondisssement-en-programmation-python">
+     1.8.3. Approfondisssement en programmation Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   1.9. Conclusion
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Algorithmique et Programmation en 2022</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algo-prog-version-2022">
+   1.1. Algo-Prog : version 2022
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#version-2022">
+     1.1.1. Version 2022
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#controle-de-connaissances-et-dates-importantes">
+     1.1.2. Contrôle de connaissances et dates importantes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structure-de-l-enseignement">
+   1.2. Structure de l’enseignement
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#organisation">
+     1.2.1. Organisation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cm">
+     1.2.2. CM
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-tres-grande-importance-des-cm">
+     1.2.3. La très grande importance des CM
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-td-pour-reflechir-et-travailler-en-petit-groupe">
+     1.2.4. Les TD pour réfléchir et travailler en petit groupe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-tp-pour-maitriser-les-notions-et-acquerir-du-savoir-faire-personnel">
+     1.2.5. Les TP pour maîtriser les notions et acquérir du savoir-faire personnel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-outils-pour-mieux-comprendre-mieux-retenir">
+     1.2.6. Les outils pour mieux comprendre, mieux retenir
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#savoirs-savoir-faire-savoir-etre">
+   1.3. Savoirs, savoir faire, savoir être
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acquis-du-semestre-1-et-prerequis">
+     1.3.1. Acquis du semestre 1 et prérequis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programme-detaille-aspects-plutot-algorithmique">
+   1.4. Programme détaillé : aspects plutôt algorithmique
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programme-detaille-aspects-plus-programmation">
+   1.5. Programme détaillé : aspects plus programmation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supports-de-cours">
+   1.6. Supports de cours
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#travailler-en-python">
+   1.7. Travailler en python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#important-de-quoi-a-t-on-absolument-besoin">
+     1.7.1. IMPORTANT : De quoi a-t-on
+     <em>
+      absolument
+     </em>
+     besoin ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#en-pratique">
+     1.7.2. En pratique
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#installer-un-environnement-python">
+       Installer un environnement python
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#distributions-python-classiques">
+       Distributions python classiques
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#environnement-de-travail-en-autonomie-pour-machine-etudiant">
+       Environnement de travail en autonomie pour machine étudiant
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#monsieur">
+     1.7.3. Monsieur ….
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references-bibliographiques">
+   1.8. Références bibliographiques
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algo-et-prog">
+     1.8.1. Algo et prog
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ellipses">
+       Ellipses
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hatier">
+       Hatier
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#nathan">
+       Nathan
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#approfondisssement-en-algo">
+     1.8.2. Approfondisssement en algo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#approfondisssement-en-programmation-python">
+     1.8.3. Approfondisssement en programmation Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   1.9. Conclusion
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="algorithmique-et-programmation-en-2022">
+<span id="ch-intro"></span><h1><span class="section-number">1. </span>Algorithmique et Programmation en 2022<a class="headerlink" href="#algorithmique-et-programmation-en-2022" title="Permalink to this headline">#</a></h1>
+<p>Mis à jour : Jan 20, 2023, lecture : 10 minutes minimum, PhL.</p>
+<ul class="simple">
+<li><p>Vous : <strong>L1 math-info</strong></p></li>
+<li><p>Moi : <strong>Philippe Langlois</strong></p></li>
+<li><p>Comment me contacter : <img alt="" src="../_images/mail_phl.png" /></p></li>
+<li><p>Comment me rencontrer : sur RDV <em>DEMANDÉ PAR E-MAIL</em></p></li>
+<li><p>Où me rencontrer : au bâtiment B, étage 1, à gauche (laboratoire DALI).</p></li>
+</ul>
+<section id="algo-prog-version-2022">
+<h2><span class="section-number">1.1. </span>Algo-Prog : version 2022<a class="headerlink" href="#algo-prog-version-2022" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Les <a class="reference external" href="https://phillanglois.github.io/Algo-Prog/">supports du CM</a> régulièrement mis à jour.</p></li>
+<li><p>Les autres ressources sont sur l’espace moodle de cet enseignement.</p></li>
+</ul>
+<section id="version-2022">
+<h3><span class="section-number">1.1.1. </span>Version 2022<a class="headerlink" href="#version-2022" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>nouvelle offre de formation 2021-2025 : algo + prog = 1 UE</p></li>
+<li><p>12 séances de CM : 3h/semaine</p></li>
+<li><p>12 séances de TD-TP : 3h/semaine</p></li>
+<li><p>chargés de TD : Ph. Langlois (2), Vincent Zucca</p></li>
+<li><p>Démarrage : CM en semaine 3 (<code class="docutils literal notranslate"><span class="pre">sd</span></code>=s3), TD en s4, vacances en s9, s17-s18</p></li>
+</ul>
+</section>
+<section id="controle-de-connaissances-et-dates-importantes">
+<h3><span class="section-number">1.1.2. </span>Contrôle de connaissances et dates importantes<a class="headerlink" href="#controle-de-connaissances-et-dates-importantes" title="Permalink to this headline">#</a></h3>
+<p>CC : contrôle “dit” continu, CT contrôle “dit” terminal</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Note UE = CC1/2 + CC2/4 + CT/4</strong></p>
+</div>
+<ul class="simple">
+<li><p>modifié le 04.07.22 ~~CC1 : 0.2 * TP1 + 0.8 * TP2~~</p></li>
+<li><p>CC1 : 0.2 * TP1 + 0.4 * TP2 + 0.4 * TP3</p>
+<ul>
+<li><p>1/3-parcours : TP1 à rendre en <code class="docutils literal notranslate"><span class="pre">sd</span></code>+7</p></li>
+<li><p>2/3-parcours : TP2  individuel, en temps limité, sur machine UPVD : 3h à <code class="docutils literal notranslate"><span class="pre">sd</span></code>+12</p></li>
+<li><p>fin de semestre : TP3 individuel, en temps limité, sur machine UPVD : 3h à <code class="docutils literal notranslate"><span class="pre">sd</span></code>+14</p></li>
+</ul>
+</li>
+<li><p>CC2 : écrit mi-parcours, 2h à <code class="docutils literal notranslate"><span class="pre">sd</span></code>+8</p></li>
+<li><p>CT : écrit de fin de semestre, 2h pendant semaine examen</p></li>
+</ul>
+<p><strong>Dates.</strong> Les dates de ces évaluations sont annoncées en début de <a class="reference internal" href="../bonjour.html#ch-bonjour"><span class="std std-ref">la page d’accueil du cours</span></a>.</p>
+</section>
+</section>
+<section id="structure-de-l-enseignement">
+<h2><span class="section-number">1.2. </span>Structure de l’enseignement<a class="headerlink" href="#structure-de-l-enseignement" title="Permalink to this headline">#</a></h2>
+<section id="organisation">
+<h3><span class="section-number">1.2.1. </span>Organisation<a class="headerlink" href="#organisation" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>11 chapitres, 11 semaines, 11 séances de CM, 11 séances de TD ou TP</p></li>
+<li><p>“12ème séance” : écrit mi-parcours, TP de fin de semestre</p></li>
+<li><p>Chaque chapitre :</p>
+<ul>
+<li><p>explicitation des compétences : savoirs, savoir-faires</p></li>
+<li><p>un quizz d’aide à la compréhension et la mémorisation de ces compétences</p></li>
+<li><p><em>l’enseignant</em> … présente et explique des exercices détaillés en CM</p></li>
+<li><p><em>vous</em> … travaillez sur des exercices de TD et de TP, les contrôles des années précédentes, …</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="cm">
+<h3><span class="section-number">1.2.2. </span>CM<a class="headerlink" href="#cm" title="Permalink to this headline">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Le CM est <strong>essentiel</strong> à la compréhension globale de l’UE issue de l’articulation de toutes les notions traitées.</p>
+</div>
+<p>Alternance de séquence pour séance de 3 heures :</p>
+<ul class="simple">
+<li><p>“matière de cours” : nouvelles notions (40 min)</p></li>
+<li><p>d’exercices dirigés et d’interactions : quizz, questions/réponses, … (10 min)</p></li>
+<li><p>pause (10 min)</p></li>
+</ul>
+</section>
+<section id="la-tres-grande-importance-des-cm">
+<h3><span class="section-number">1.2.3. </span>La très grande importance des CM<a class="headerlink" href="#la-tres-grande-importance-des-cm" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><strong>Tout</strong> ce qui est nécessaire à votre compréhension est présenté en cours avec des explications orales adaptées, les répétitions nécessaires des points importants, les mises en garde sur les notions difficiles,  ce qui est essentiel <em>vs.</em> ce qui est plus secondaire, les compétences à acquérir : savoir, savoir faire et savoir être, ce qui est attendu pour le contrôle de connaissance, ce qui relève de l’objectif 10 <em>vs.</em> de l’objectif 20, …</p>
+<ul>
+<li><p>les 2/3 du travail de compréhension/mémorisation reposent sur les CM</p></li>
+</ul>
+</li>
+<li><p><strong>Morale</strong> : ne manquer aucun CM, être attentif, prendre des notes, poser des questions, <strong>se poser</strong> des questions, demander des pauses pour reprendre une attention maximale</p>
+<ul>
+<li><p>les notes de cours fournies sont trompeuses : comme un film sans le son</p></li>
+</ul>
+</li>
+<li><p><strong>Méthodologie</strong> :</p>
+<ul>
+<li><p>relire le cours le soir de l’amphi (15-20 min)</p></li>
+<li><p>le reprendre en détail 4-5 jours après en préparant  des exercices de TD ou de TP – en groupe : ça aide !</p></li>
+<li><p>faire une auto-évaluation de ce que <em>vous</em> en avez retenu la veille du cours suivant : le chapitre compétences est utile.</p></li>
+<li><p>identifier les questions à poser en séance de TD ou en CM</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="les-td-pour-reflechir-et-travailler-en-petit-groupe">
+<h3><span class="section-number">1.2.4. </span>Les TD pour réfléchir et travailler en petit groupe<a class="headerlink" href="#les-td-pour-reflechir-et-travailler-en-petit-groupe" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>séance de 1h25</p></li>
+<li><p>par groupe de 2 à <strong>4</strong></p></li>
+<li><p><strong>objectif 10</strong> ou <strong>objectif 20</strong></p>
+<ul>
+<li><p>feuilles de TD en 2 parties</p></li>
+<li><p>objectif 10 :</p>
+<ul>
+<li><p>applications basiques du cours, démarche guidée</p></li>
+<li><p>pour celles et ceux qui ne veulent pas continuer en informatique au delà du L2 math-info</p></li>
+</ul>
+</li>
+<li><p>objectif 20 :</p>
+<ul>
+<li><p>applications plus avancées du cours, démarche plus autonome</p></li>
+<li><p>pour celles et ceux qui <strong>veulent continuer</strong> en licence et master informatique, CAPES  informatique (nouveau !), …</p></li>
+</ul>
+</li>
+<li><p>comment choisir son niveau d’objectif ?</p>
+<ul>
+<li><p>note algo semestre 1 &lt; 10 –&gt; objectif 10</p></li>
+<li><p>le choix n’est pas définitif</p></li>
+<li><p>méthodologie : <strong>chaque (groupe) d’étudiants</strong> définit <strong>son rythme</strong> en suivant le parcours proposé par le chargé de TD.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="les-tp-pour-maitriser-les-notions-et-acquerir-du-savoir-faire-personnel">
+<h3><span class="section-number">1.2.5. </span>Les TP pour maîtriser les notions et acquérir du savoir-faire personnel<a class="headerlink" href="#les-tp-pour-maitriser-les-notions-et-acquerir-du-savoir-faire-personnel" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>1 TP = un <em>notebook jupyter</em></p></li>
+<li><p>codage, expérimentation et approfondissement :</p>
+<ul>
+<li><p>des TD d’algo</p></li>
+<li><p>du CM de Programmation</p></li>
+</ul>
+</li>
+<li><p>exemples de TP avec dead-line (pour l’évaluation de CC) :</p>
+<ul>
+<li><p>mini base de données</p></li>
+<li><p>traitement d’images</p></li>
+<li><p>cryptographie</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="les-outils-pour-mieux-comprendre-mieux-retenir">
+<h3><span class="section-number">1.2.6. </span>Les outils pour mieux comprendre, mieux retenir<a class="headerlink" href="#les-outils-pour-mieux-comprendre-mieux-retenir" title="Permalink to this headline">#</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Pratiquer pour maîtriser</strong></p>
+</div>
+<ul class="simple">
+<li><p>un environnement python qui fonctionne</p></li>
+<li><p>les <a class="reference external" href="https://jupyter.org/try">notebook jupyter</a></p>
+<ul>
+<li><p>sur votre machine : <em>la solution à privilégier</em></p></li>
+<li><p>en ligne : <a class="reference external" href="https://colab.research.google.com">google colab</a>, <a class="reference external" href="https://cocalc.com">cocalc</a></p></li>
+<li><p><em>Débuter avec les notebooks</em>. De Denis Pinsard et disponible sur moodle</p></li>
+<li><p>première séance  de TD</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="http://pythontutor.com">python tutor</a></p>
+<ul>
+<li><p>permet de visualiser l’effet des instruactions d’un petit code</p></li>
+<li><p>très utile au début pour comprendre des <em>effets de programmation</em>, pas d’algorithmique</p></li>
+<li><p>complément de l’idle python</p></li>
+<li><p>demo</p></li>
+</ul>
+</li>
+<li><p>les quizz en ligne (moodle)</p></li>
+</ul>
+</section>
+</section>
+<section id="savoirs-savoir-faire-savoir-etre">
+<h2><span class="section-number">1.3. </span>Savoirs, savoir faire, savoir être<a class="headerlink" href="#savoirs-savoir-faire-savoir-etre" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Des connaissances à connaître :)</p></li>
+<li><p>Des techniques à savoir mettre en oeuvre</p></li>
+<li><p>Des outils à savoir utiliser</p></li>
+<li><p>Des ressources à savoir mobiliser</p></li>
+</ul>
+<section id="acquis-du-semestre-1-et-prerequis">
+<h3><span class="section-number">1.3.1. </span>Acquis du semestre 1 et prérequis<a class="headerlink" href="#acquis-du-semestre-1-et-prerequis" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Savoir différencier les <em>types</em> de données :</p>
+<ul>
+<li><p>type scalaire : booléen, entier, réels, caractères</p></li>
+<li><p>type composés : chaîne de caractères, vecteur, matrice, …</p></li>
+</ul>
+</li>
+<li><p>Connaître leur <em>représentation</em> dans un langage informatique donné</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code></p></li>
+<li><p>et les changement de types associés : <code class="docutils literal notranslate"><span class="pre">int()</span></code>, <code class="docutils literal notranslate"><span class="pre">float()</span></code>, …</p></li>
+<li><p>(python) : un rappel sur le “type” <code class="docutils literal notranslate"><span class="pre">bool</span></code>est proposé en <a class="reference internal" href="a1-booleens.html"><span class="doc std std-doc">annexe du cours</span></a>.</p></li>
+</ul>
+</li>
+<li><p>Bien différencier <em>valeur</em> vs. <em>variable</em> vs. <em>constante</em></p>
+<ul>
+<li><p><em>évaluation</em></p></li>
+<li><p>et comprendre comment le modèle d’exécution en modifie l’état</p></li>
+<li><p><em>affectation</em> : <code class="docutils literal notranslate"><span class="pre">=</span></code></p></li>
+</ul>
+</li>
+<li><p>Bien comprendre le modèle <em>séquentiel</em> de l’exécution d’un algorithme</p>
+<ul>
+<li><p><em>instruction</em></p></li>
+<li><p><em>expression</em> (“formule”)</p></li>
+</ul>
+</li>
+<li><p>Comprendre que les structures de contrôle permettent de <em>casser</em> la séquentialité de l’exécution d’un algorithme</p>
+<ul>
+<li><p>branchement conditionnel  : <em>choisir</em></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...:</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span> <span class="pre">...:</span></code>,  <code class="docutils literal notranslate"><span class="pre">else:</span></code></p></li>
+</ul>
+</li>
+<li><p>répétitions : <em>répéter</em></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">while</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">.</span> <span class="pre">in</span> <span class="pre">...</span></code>, (<code class="docutils literal notranslate"><span class="pre">break</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code>)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Distinguer : les <em>entrées</em> vs. le <em>traitement</em> vs. la <em>sortie</em></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">input()</span></code>, <code class="docutils literal notranslate"><span class="pre">print()</span></code></p></li>
+</ul>
+</li>
+<li><p>Spécificités python</p>
+<ul>
+<li><p><em>indentation</em></p></li>
+<li><p>typage dynamique</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="programme-detaille-aspects-plutot-algorithmique">
+<h2><span class="section-number">1.4. </span>Programme détaillé : aspects plutôt algorithmique<a class="headerlink" href="#programme-detaille-aspects-plutot-algorithmique" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Utilisation avancée de boucles et de tableaux</p>
+<ul>
+<li><p>boucles imbriquées, indépendantes ou non</p></li>
+<li><p>traitements divers avec des tableaux 1D ou plus</p></li>
+<li><p>premières estimations de complexité</p></li>
+</ul>
+</li>
+<li><p>Complexité</p>
+<ul>
+<li><p>combien <em>coûte</em> un algorithme pour résoudre un pb donné ?</p></li>
+<li><p>combien de temps ? combien de place mémoire ?</p></li>
+<li><p>tous les problèmes coûtent pareils ?</p></li>
+<li><p>notions : complexité en temps, pire cas, complexité asymptotique</p></li>
+<li><p>exemples d’algos plutôt numériques et leurs complexités</p>
+<ul>
+<li><p>différentes évaluations de polynômes</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Récursivité :</p>
+<ul>
+<li><p><strong>la notion centrale du semestre</strong></p></li>
+<li><p>principes</p></li>
+<li><p>applications</p></li>
+<li><p>notions : itératif vs. récursif, pile/arbre des appels, complexité</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>La récursion s’appuie sur la notion de <em>fonction</em> présentée dans les aspects plutôt programmation.</p>
+</div>
+<ul class="simple">
+<li><p>Rechercher</p>
+<ul>
+<li><p>recherche séquentielle</p></li>
+<li><p>recherche dichotomique</p></li>
+<li><p>notions : les algos, leurs complexités, (les preuves)</p></li>
+<li><p>versions itératives ou récursives de ces algorithmes</p></li>
+</ul>
+</li>
+<li><p>Trier</p>
+<ul>
+<li><p>des algorithmes de tris dits naïfs  : algos, complexité, (preuve)</p></li>
+<li><p>des algorithmes de tris dits rapides : : algos, complexité, (preuve)</p></li>
+<li><p>versions itératives ou récursives de ces algorithmes</p></li>
+</ul>
+</li>
+<li><p>Compléments si assez de temps : prouver la terminaison et la correction d’un algorithme</p>
+<ul>
+<li><p>l’algo fournit la/les solution/s en un temps fini</p></li>
+<li><p>l’algo résoud bien le pb</p></li>
+<li><p>notions : invariant de boucle, preuve de terminaison</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="programme-detaille-aspects-plus-programmation">
+<h2><span class="section-number">1.5. </span>Programme détaillé : aspects plus programmation<a class="headerlink" href="#programme-detaille-aspects-plus-programmation" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Types de donnnées scalaires</p>
+<ul>
+<li><p>rappels</p></li>
+<li><p>approfondissement : introspection</p></li>
+</ul>
+</li>
+<li><p>Fonctions <strong>une notion centrale</strong></p>
+<ul>
+<li><p>fonctions prédéfinies ou existantes</p></li>
+<li><p>en-tête, corps, appel, paramètres formels et effectifs.</p></li>
+<li><p>portée, visibilité, variables locales vs. paramètres</p></li>
+<li><p>mode de passage des paramètres</p></li>
+<li><p>exemples du cours : doubler, permuter</p></li>
+</ul>
+</li>
+<li><p>Tableaux 1D :</p>
+<ul>
+<li><p>rappel : avec des listes python (<code class="docutils literal notranslate"><span class="pre">lst</span></code>)</p></li>
+<li><p>exemples du cours : Lire, stocker, moyenne/min/max d’un tableau (valeurs, indices)</p></li>
+<li><p>applications : les vecteurs, les chaînes de caractères</p></li>
+</ul>
+</li>
+<li><p>Tableaux 2D, 3D ; application au traitement d’images</p>
+<ul>
+<li><p>avec des listes (de listes) python</p></li>
+<li><p>images et matrices</p></li>
+<li><p>boucles imbriquées</p></li>
+<li><p>exemples du cours :</p>
+<ul>
+<li><p>traitement d’images : initialisation niveaux de gris, transformations d’images (miroir, contraste, contours, …)</p></li>
+<li><p>algorithmes sur les matrices : vérification (identité, symétrie), calcul (produit de matrices,…) , génération de formes particulières (transposée, …)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Par manque de temps, les <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> de <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, ne sont pas abordés en séance bien que très utiles en pratique.
+Ces ressources pourront être découvertes de façon autome et utilisées par les étudiants (objectif 20) qui le souhaitent.</p>
+</div>
+<ul>
+<li><p>Autres types de données composés</p>
+<ul class="simple">
+<li><p>listes (<code class="docutils literal notranslate"><span class="pre">lst</span></code>) : fonctions et méthodes</p></li>
+<li><p>n-uplets (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>), ensembles (<code class="docutils literal notranslate"><span class="pre">set</span></code>), dictionnaires (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</p></li>
+</ul>
+</li>
+<li><p>Entrées/sorties et fichiers</p>
+<ul class="simple">
+<li><p>Très pratique pour tester ses développements :</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Bannir les entrées au clavier !</strong>
+Plus d’<code class="docutils literal notranslate"><span class="pre">input()</span></code> à tours de bras SVP !!!</p>
+</div>
+<ul class="simple">
+<li><p>Chapître traité assez tôt dans le semestre</p></li>
+</ul>
+</li>
+<li><p>Modules</p>
+<ul class="simple">
+<li><p>utilisation de modules existants</p></li>
+<li><p>exemple d’outils :<code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">time</span></code></p></li>
+<li><p>définition de ses modules</p></li>
+</ul>
+</li>
+<li><p>Exceptions</p>
+<ul class="simple">
+<li><p>En annexe par manque de temps</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="supports-de-cours">
+<h2><span class="section-number">1.6. </span>Supports de cours<a class="headerlink" href="#supports-de-cours" title="Permalink to this headline">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Excepté les supports de cours cette année, toutes les autres ressources sont sur moodle et sont mises à jour <strong>très</strong> régulièrement</p>
+</div>
+<ul class="simple">
+<li><p>CM : notebook python (version pdf, html)</p></li>
+<li><p>TD : feuilles d’exercices (pdf)</p></li>
+<li><p>TP : notebook python (versions ipynb, pdf, html)</p></li>
+<li><p>sujets et correction des CC et CT des années précédentes</p></li>
+</ul>
+<p>Au fur et à mesure du semestre :</p>
+<ul class="simple">
+<li><p>TD : corrections des exercices objectif 10</p></li>
+</ul>
+</section>
+<section id="travailler-en-python">
+<h2><span class="section-number">1.7. </span>Travailler en python<a class="headerlink" href="#travailler-en-python" title="Permalink to this headline">#</a></h2>
+<p>Il est indispensable :</p>
+<ul class="simple">
+<li><p>d’avoir accès à un environnement de programmation python, si possible assez complet,</p></li>
+<li><p>d’avoir son propre ordinateur configuré de façon complète et selon vos préférences.</p></li>
+</ul>
+<p>Il y a déjà 3 choix d’OS possibles : windows, linux et mac os ; les 2 premiers étant disponibles sur les ordinateurs de l’UPVD.</p>
+<p>Ensuite, les <a class="reference external" href="#En%20pratique">distributions python</a> sont assez variées, et peuvent différer selon les OS .</p>
+<p>Il est aisé <em>pour chacun</em> de trouver ce qui correspond à ses contraintes matérielles et ses envies.</p>
+<section id="important-de-quoi-a-t-on-absolument-besoin">
+<h3><span class="section-number">1.7.1. </span>IMPORTANT : De quoi a-t-on <em>absolument</em> besoin ?<a class="headerlink" href="#important-de-quoi-a-t-on-absolument-besoin" title="Permalink to this headline">#</a></h3>
+<p>Ce qui suit est une liste minimale de composants utiles cette année et les années à venir.
+Elle peut sembler longue mais en pratique, ces composants “arrivent” d’un seul coup avec une distribution – cf. paragraphe suivant.</p>
+<ul class="simple">
+<li><p>l’<code class="docutils literal notranslate"><span class="pre">IDLE</span></code> python 3</p>
+<ul>
+<li><p>éditeur, interpréteur, débugger utilisé en TP au semestre 1</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code></p>
+<ul>
+<li><p>pour intégrer dans <em>un unique fichier</em> du texte, des maths (<span class="math notranslate nohighlight">\(\LaTeX\)</span>) et du code python qui s’exécute, les résultats de ces éxecutions (valeurs, courbes, images, …) et exporter tout ça en <code class="docutils literal notranslate"><span class="pre">html</span></code>ou <code class="docutils literal notranslate"><span class="pre">pdf</span></code> ou en <code class="docutils literal notranslate"><span class="pre">slide</span></code></p></li>
+<li><p>très utile pour les exercices</p></li>
+<li><p><em>utilisé pour les TP de programmation à rendre</em></p></li>
+<li><p>utilisable dans toutes les matières ou presque</p></li>
+</ul>
+</li>
+<li><p>les gestionnaire de paquets (modules) python pour compléter et mettre à jour son environnement</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span></code>: plus complet si distribution anaconda utilisée (solution recommandée)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span></code> : classique</p></li>
+<li><p>Exemple d’utilisation :</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span></code> : <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">le_module_que_je_veux</span></code> et voilà, c’est fini !</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span></code> : pareil <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">update</span></code>, <code class="docutils literal notranslate"><span class="pre">install</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>modules indispensables</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span> </code> : fournit des <em>vrais</em> tableaux multi-dimentionnels et des tas de fonctions et types numériques pour effectuer du calcul</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>: pour le traitement graphique de données, et en particulier :</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> pour des affichages élaborés</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">matplotlib.image</span></code>  pour le traitement d’images</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tkinter</span></code> : pour réaliser des interfaces graphiques</p></li>
+</ul>
+</li>
+<li><p>modules utiles mais optionnels cette année</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">scipy</span> </code>: scientific python qui rassemble des modules de calcul scientifiques (dont <code class="docutils literal notranslate"><span class="pre">numpy</span></code>)</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Pièges</strong></p>
+<ul class="simple">
+<li><p>Ne pas confondre <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">2</span></code> et <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">3</span></code></p></li>
+</ul>
+<p><strong>Conseil</strong></p>
+<ul class="simple">
+<li><p>Choisir une distribution la plus complète possible dès le début.</p></li>
+</ul>
+</section>
+<section id="en-pratique">
+<h3><span class="section-number">1.7.2. </span>En pratique<a class="headerlink" href="#en-pratique" title="Permalink to this headline">#</a></h3>
+<section id="installer-un-environnement-python">
+<h4>Installer un environnement python<a class="headerlink" href="#installer-un-environnement-python" title="Permalink to this headline">#</a></h4>
+<p>On conseille d’installer la distribution Anaconda.<br />
+Dans ce cadre, on peut s’aider des  liens ci-après.
+Le web est bien sûr plein de tutos et autres sites explicatifs …</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://zestedesavoir.com/tutoriels/1448/installer-un-environnement-de-developpement-python-avec-conda/">Un tutoriel</a></p></li>
+<li><p><a class="reference external" href="https://www.davidculley.com/installing-python-on-a-mac/">Un autre</a> pour mac mais/et en anglais, très complet : le début seul devrait vous suffire.</p></li>
+</ul>
+</section>
+<section id="distributions-python-classiques">
+<h4>Distributions python classiques<a class="headerlink" href="#distributions-python-classiques" title="Permalink to this headline">#</a></h4>
+<p>On télécharge, on installe, on travaille !</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a>  : à privilégier (pour son gestionnaire <code class="docutils literal notranslate"><span class="pre">conda</span></code>) sauf choix perso justifié.</p></li>
+<li><p><a class="reference external" href="http://www.enthought.com/products/epd.php">Enthought Python Distribution</a> : très complet</p></li>
+<li><p><a class="reference external" href="https://thonny.org/">Thonny</a> Attention : Thonny installe sa propre version de Python par défaut.</p></li>
+<li><p><a class="reference external" href="http://www.pyzo.org">Pyzo</a></p></li>
+<li><p><a class="reference external" href="http://sagemath.org/">SAGEMATH</a>  : bcp plus général qu’un simple environnement python. A conseiller pour ceux qui veulent continuer en … mathématiques.</p></li>
+</ul>
+</section>
+<section id="environnement-de-travail-en-autonomie-pour-machine-etudiant">
+<h4>Environnement de travail en autonomie pour machine étudiant<a class="headerlink" href="#environnement-de-travail-en-autonomie-pour-machine-etudiant" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://edupython.tuxfamily.org">edupython</a> issu d’AmiensPython mais <strong><a class="reference external" href="http://edupython.tuxfamily.org/documentation/index.php?title=Installation_et_Configuration">pour windows</a></strong></p>
+<ul>
+<li><p>Moteur Python : version 3.7.6</p></li>
+<li><p>Editeur : PyScripteur (version 3.6.3)</p></li>
+<li><p>Administration de base de données : SQLite Database Browser (version 3.11.2)</p></li>
+<li><p><strong>Jupiter notebook préinstallé</strong></p></li>
+<li><p>Module lycée</p></li>
+<li><p>Calcul numérique: Numpy (version 1.18.3) et Scipy (version 1.4.1)</p></li>
+<li><p>Sorties graphiques: Matplotlib (version 3.1.3)</p></li>
+<li><p>Calcul formel: Sympy (version 1.5.1)</p></li>
+<li><p>Traitement d’images: PIL (Pillow 7.0.0) et Open CV (Version 4.2.0)</p></li>
+<li><p>Liaison série: Serial (version 2.7)</p></li>
+<li><p>Base de données: SQLite3 (version standard) et mysql (version 8.0.13)</p></li>
+<li><p>Traitement de données: Pandas (version 1.0 3)</p></li>
+<li><p>Réalisation de jeux: Pygame (version 1.9.4)</p></li>
+<li><p>Autres: pyknon (musique), Nanpy (Arduino), Follium (cartes), scikit-learn (IA)…</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="monsieur">
+<h3><span class="section-number">1.7.3. </span>Monsieur ….<a class="headerlink" href="#monsieur" title="Permalink to this headline">#</a></h3>
+<p><strong>Non : je ne sais pas pourquoi “<em>ça ne marche pas quand …</em>” !</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Quand ma voiture/moto est en panne, je m’adresse à un garagiste.<br />
+Pourtant je sais la conduire.
+Pourtant j’ai fait des études qui me permett(rai)ent de participer à sa conception, sa construction, sa mise au point, sa diffusion, …</p>
+</div>
+</section>
+</section>
+<section id="references-bibliographiques">
+<h2><span class="section-number">1.8. </span>Références bibliographiques<a class="headerlink" href="#references-bibliographiques" title="Permalink to this headline">#</a></h2>
+<section id="algo-et-prog">
+<h3><span class="section-number">1.8.1. </span>Algo et prog<a class="headerlink" href="#algo-et-prog" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Informatique pour tous en CPGE avec Python et nouveaux programmes 2013 :</p>
+<ul>
+<li><p>B. Wack <em>et al.</em> (Eyrolles)</p></li>
+<li><p>Th. Audibert et A. Oussalah. (Ellipses)</p></li>
+<li><p>E. Le Nagard (Pearson)</p></li>
+</ul>
+</li>
+</ul>
+<p>L’introduction de la spécialité NSI (Numérique et Science Informatique) a donné l’opportunité de la publication de nombreux ouvrages de niveau Première ou Terminale. Le programme de ces classes étant assez ambitieux, ces ouvrages sont de bonnes premières références, voire de très bonnes pour les étudiant.e.s Objectif 10.</p>
+<section id="ellipses">
+<h4>Ellipses<a class="headerlink" href="#ellipses" title="Permalink to this headline">#</a></h4>
+<p>Titre : Spécialité Numérique et sciences informatiques : 30 leçons avec exercices corrigés - Première - Nouveaux programmes
+Auteur(s) : Balabonski Thibaut, Conchon Sylvain, Filliâtre Jean-Christophe, Nguyen Kim
+Editeur : Ellipses
+ISBN : 9782340033641 (Première)
+Volume niveau Terminale en préparation.</p>
+<p>Titre : Spécialité Numérique et sciences informatiques - Première, , Terminale  - nouveaux programmes
+Auteur(s) : Serge Bays (Auteur) Bertrand Hauchecorne (Direction)
+Editeur : Ellipses
+Collection	Prepas Sciences
+ISBN : 2340031729 (Première), 2340038448 (Terminale)</p>
+<p>Titre : Spécialité NSI (numérique et sciences informatiques) - Première - nouveaux programmes
+Auteur(s) : Legrand David
+Editeur : Ellipses
+Collection Parcours et méthodes
+ISBN : 9782340038578 (Première),</p>
+<p>Spécialité Numérique et sciences informatiques - Première - nouveaux programmes
+Cécile Canu (Auteur)
+Editeur : Ellipses
+Collection Competences Attendues
+ISBN : 2340031788</p>
+<p>Titre : Spécialité NSI - Numérique et sciences informatiques - Terminale - nouveaux programmes
+Auteur(s) : Jean-Christophe Bonnefoy (Auteur) Bertrand Petit (Auteur)
+Editeur : Ellipses
+Collection Competences Attendues
+ISBN :  2340038154</p>
+</section>
+<section id="hatier">
+<h4>Hatier<a class="headerlink" href="#hatier" title="Permalink to this headline">#</a></h4>
+<p>Titre : NSI 1ère générale (spécialité) - Prépabac Cours &amp; entraînement.
+Nouveau programme, nouveau bac (2020-2021)
+Auteur(s) : Céline Adobet (Auteur) Guillaume Connan (Auteur) Gérard Rozsavolgyi (Auteur) Laurent Signac (Auteur)
+Nouveau programme de Première (2020-2021)
+Editeur : Hatier
+Collection	: Prepabac Entrainement Progress
+ISBN : 2401052305
+Version e-book : 8,99€</p>
+<p>Titre : NSI Tle générale (spécialité) - Prépabac Cours &amp; entraînement.
+Nouveau programme, nouveau bac (2020-2021)
+Auteur(s) : Guillaume Connan (Auteur) Vojislav Petrov (Auteur) Gérard Rozsavolgyi (Auteur) Laurent Signac (Auteur)
+Editeur : Hatier
+Collection	: Prepabac Entrainement Progress
+ISBN : 2401064613
+Version e-book : 8,99€</p>
+</section>
+<section id="nathan">
+<h4>Nathan<a class="headerlink" href="#nathan" title="Permalink to this headline">#</a></h4>
+<p>Titre : Interros des Lycées Numérique Sciences Informatiques - Première, Terminale
+Auteur(s) :  Stéphane Pasquet (Auteur) MIKAEL LEOPOLDOFF
+Editeur : Nathan
+Collection: Interros des Lycées
+ISBN : 2091574651 (Première),  2091575437  (Terminale)</p>
+</section>
+</section>
+<section id="approfondisssement-en-algo">
+<h3><span class="section-number">1.8.2. </span>Approfondisssement en algo<a class="headerlink" href="#approfondisssement-en-algo" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Des petits livres</p>
+<ul>
+<li><p>Cormen</p></li>
+<li><p>Damphousse</p></li>
+</ul>
+</li>
+<li><p>Des gros, voire très gros, livres</p>
+<ul>
+<li><p>Cormen <em>et al.</em></p></li>
+<li><p>Knuth</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="approfondisssement-en-programmation-python">
+<h3><span class="section-number">1.8.3. </span>Approfondisssement en programmation Python<a class="headerlink" href="#approfondisssement-en-programmation-python" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>poly ou bouquin de Cordeau-Pointal (fr)</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/reference/index.html">ref python 3</a>  (eng)</p></li>
+</ul>
+</section>
+</section>
+<section id="conclusion">
+<h2><span class="section-number">1.9. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<p>Bon courage et bon travail ce semestre !</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./cm"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../bonjour.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Bienvenu en Algo-Prog !</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="competences.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Compétences</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ph. Langlois<br/>
+  
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

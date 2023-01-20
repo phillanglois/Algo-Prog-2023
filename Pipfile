@@ -1,0 +1,30 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+numpy = "*"
+notebook = "*"
+autopep8 = "*"
+matplotlib = "*"
+ghp-import = "*"
+jupyter = "*"
+jupyterlab = "*"
+jupyter-contrib-nbextensions = "*"
+jupyterlab-spellchecker = "*"
+jupyterlab-language-pack-fr-fr = "*"
+sphinxnotes-strike = "*"
+nbdime = "*"
+nbgrader = {path = "./nbgrader"}
+jupyter-book = "*"
+jinja2 = "==3.0.3"
+pandas = "*"
+jupyterlab-mathjax3 = "*"
+scipy = "*"
+gmpy2 = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"

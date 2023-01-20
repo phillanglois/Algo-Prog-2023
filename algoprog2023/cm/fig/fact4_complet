@@ -1,0 +1,15 @@
+digraph {
+	4
+	3
+	2
+	f4 [label="fact(4)"]
+	f3 [label="fact(3)"]
+	f2 [label="fact(2)"]
+	f1 [label="fact(1)" color=red]
+	f4 -> 4
+	f3 -> 3
+	f2 -> 2
+	f4 -> f3
+	f3 -> f2
+	f2 -> f1
+}

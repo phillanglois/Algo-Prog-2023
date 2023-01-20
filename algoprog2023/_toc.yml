@@ -1,0 +1,49 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: bonjour
+defaults:  # The defaults key will be applied to all chapters and sub-sections
+  titlesonly: True
+options:
+  numbered: 3
+parts:
+  - caption: Présentation
+    numbered: 3
+    chapters:
+    - file: cm/0-presentation-2023
+    - file: cm/competences
+  - caption: Les bases
+    numbered: 3
+    chapters:
+    - file: cm/1-fonctions
+    - file: cm/2-fonctions-tableaux
+    - file: cm/3-ES-fichiers
+  - caption: Algorithmique
+    numbered: 3
+    chapters:
+    - file: cm/4-complexite
+    - file: cm/6-recursivite
+  - caption: Programmation
+    numbered: 3
+    chapters:
+    - file: cm/5-types_composes
+    - file: cm/7-fonctions-avancees
+    - file: cm/9-ES-avancees
+    - file: cm/11-modules-utiles
+  - caption: Annexes
+    numbered: 3
+    chapters:
+    - file: cm/a0-boucles-avancees
+    - file: cm/a1-booleens
+    - file: cm/a2-ndarray
+    - file: cm/a3-exceptions
+  - caption: TD
+    numbered: 3
+    chapters:
+    - file: td/prealable-td
+    - file: td/td1
+    - file: td/td2
+    - file: td/td3
+    - file: td/td4
+    - file: td/td5
