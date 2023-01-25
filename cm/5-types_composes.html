@@ -262,6 +262,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Diapos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../slides/1_sl.html">
+   1. Fonctions
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav></div>
@@ -844,7 +856,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="les-types-composes">
 <span id="ch-typescomposes"></span><h1><span class="section-number">1. </span>Les types composés<a class="headerlink" href="#les-types-composes" title="Permalink to this headline">#</a></h1>
-<p>Mis à jour : Jan 20, 2023, lecture : 14
+<p>Mis à jour : Jan 25, 2023, lecture : 14
 minutes minimum, PhL.</p>
 <p>Les types composés ou <em>conteneurs</em> de python sont  introduits  dans ce chapitre :</p>
 <ul class="simple">
@@ -1550,14 +1562,14 @@ lst: [&#39;r&#39;, &#39;a&#39;, &#39;n&#39;, &#39;t&#39;, &#39;a&#39;, &#39;n&#3
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 [3, 1, 2] [3, 1, 2]
-140586056629184 140586056629184
+140532386425728 140532386425728
 
 duplication avec copy.copy : 
 False
 [3, 1, 2] [999, 1, 2]
 duplication par affectation de tranche complète : 
 False True
-140586056619264 140586056629184
+140532385484736 140532386425728
 </pre></div>
 </div>
 </div>
@@ -1869,9 +1881,9 @@ bnor! 5
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>abc 140585980919600
-abc 140585980919600
-abcdef 140586056418928
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>abc 140532309524336
+abc 140532309524336
+abcdef 140532386393328
 </pre></div>
 </div>
 </div>
@@ -1972,10 +1984,10 @@ BONJOUR ! True False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140586056560944
-140586056560944
-140586056561520
-140586056561520
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140532386380336
+140532386380336
+140532386377776
+140532386377776
 </pre></div>
 </div>
 </div>
@@ -2223,16 +2235,16 @@ Bonjour &quot;collègue&quot; !
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;e&#39;, &#39;y&#39;, &#39;o&#39;, &#39;a&#39;, &#39;u&#39;, &#39;i&#39;} 6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;o&#39;, &#39;u&#39;, &#39;a&#39;, &#39;y&#39;, &#39;i&#39;, &#39;e&#39;} 6
 True
 False
-aie : {&#39;e&#39;, &#39;a&#39;, &#39;i&#39;}
-voyelles : {&#39;e&#39;, &#39;y&#39;, &#39;o&#39;, &#39;a&#39;, &#39;u&#39;, &#39;i&#39;}
-union : {&#39;e&#39;, &#39;y&#39;, &#39;o&#39;, &#39;a&#39;, &#39;u&#39;, &#39;i&#39;}
-autre union : {&#39;e&#39;, &#39;y&#39;, &#39;o&#39;, &#39;b&#39;, &#39;f&#39;, &#39;a&#39;, &#39;u&#39;, &#39;i&#39;}
-intersection : {&#39;e&#39;, &#39;a&#39;, &#39;i&#39;}
-difference :  set() {&#39;f&#39;, &#39;b&#39;}
-difference symétrique:  {&#39;u&#39;, &#39;y&#39;, &#39;o&#39;}
+aie : {&#39;i&#39;, &#39;e&#39;, &#39;a&#39;}
+voyelles : {&#39;o&#39;, &#39;u&#39;, &#39;a&#39;, &#39;y&#39;, &#39;i&#39;, &#39;e&#39;}
+union : {&#39;o&#39;, &#39;u&#39;, &#39;a&#39;, &#39;y&#39;, &#39;i&#39;, &#39;e&#39;}
+autre union : {&#39;o&#39;, &#39;u&#39;, &#39;a&#39;, &#39;y&#39;, &#39;b&#39;, &#39;i&#39;, &#39;f&#39;, &#39;e&#39;}
+intersection : {&#39;i&#39;, &#39;e&#39;, &#39;a&#39;}
+difference :  set() {&#39;b&#39;, &#39;f&#39;}
+difference symétrique:  {&#39;o&#39;, &#39;u&#39;, &#39;y&#39;}
 inclusions : True True False False
 </pre></div>
 </div>
