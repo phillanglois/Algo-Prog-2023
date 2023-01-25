@@ -15,6 +15,24 @@ Dans/avec un notebook jupyter :
 - savoir mettre en oeuvre de la programmation simple en python (niveau semestre 1) dans un notebook jupyter 
 - savoir documenter cette programmation (énoncés, descriptions, ...) avec markdown
 
+
+## Boucles avancées (pré-requis du semestre 1)
+
+### Avoir les idées claires
+
+- Structure de données : représentation d'un tableau multidimensionnel comme une liste de listes  
+- Structure de contrôle de type boucles imbriquées indépendantes et dépendantes : 
+    - intérêt et exemples simples, 
+    - dénombrer les itérations de ces constructions.
+
+### Ce qu'il faut savoir faire 
+
+**Cadre** : en/pour python 
+
+- Définir et écrire un traitement classique de tableau multidimensionnel  : parcours simple, parcours conditionnel 
+- Ecrire une initialisation de tableau multidimensionnel en python (représenté par des listes)
+- Identifier les cas particuliers liés à la structure de tableau : tableau de dimension 0, tableau vide
+
 ## Fonctions
 
 ### Avoir les idées claires
@@ -32,6 +50,7 @@ Dans/avec un notebook jupyter :
 - identifier la portée des variables : 
     - variables locales _vs._ variables plus globales  
 - se souvenir que l'effet de bord est indésirable  
+- définir et écrire une spécification de fonction avec des paramètres de type tableau  
 
 
 ### Ce qu'il faut savoir faire 
@@ -43,23 +62,6 @@ Dans/avec un notebook jupyter :
 - définir et écrire des appels simples (tests unitaires) 
 - définir et écrire l'implémentation d'une fonction associée à une spécification 
 
-## Boucles avancées
-
-### Avoir les idées claires
-
-- Structure de données : représentation d'un tableau multidimensionnel comme une liste de listes  
-- Structure de contrôle de type boucles imbriquées indépendantes et dépendantes : 
-    - intérêt et exemples simples, 
-    - dénombrer les itérations de ces constructions.
-
-### Ce qu'il faut savoir faire 
-
-**Cadre** : en/pour python 
-
-- Définir et écrire un traitement classique de tableau multidimensionnel  : parcours simple, parcours conditionnel 
-- Ecrire une initialisation de tableau multidimensionnel en python (représenté par des listes)
-- Définir et écrire une spécification de fonction avec des paramètres de type tableau  
-- Identifier les cas particuliers liés à la structure de tableau : tableau de dimension 0, tableau vide
 
 ## Entrées-Sorties simples avec des fichiers
 
