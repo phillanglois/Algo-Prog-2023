@@ -1,0 +1,784 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tortue et graphes &#8212; Algo-Prog 2022</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Préalables" href="../td/prealable-td.html" />
+    <link rel="prev" title="Exceptions" href="a3-exceptions.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo2022.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algo-Prog 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bonjour.html">
+   Bienvenu en Algo-Prog !
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Présentation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0-presentation-2022.html">
+   Algorithmique et Programmation en 2022
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="competences-2022.html">
+   Compétences
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Les bases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-fonctions.html">
+   Fonctions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-boucles-avancees.html">
+   Boucles, tableaux et fonctions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-ES-fichiers.html">
+   Entrées-sorties simples avec des fichiers
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithmique
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-complexite.html">
+   Complexités
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-recursivite.html">
+   Récursivité
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-rechercher.html">
+   Rechercher
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-trier.html">
+   Trier
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programmation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-types_composes.html">
+   Les types composés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-fonctions-avancees.html">
+   Sous-programme et affectation – aspects avancés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-ES-avancees.html">
+   Les entrées-sorties (E/S) : aspects avancés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-modules-utiles.html">
+   Modules utiles
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Annexes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a1-booleens.html">
+   Annexe : les booléens en python (&gt;3.6)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a2-ndarray.html">
+   Les ‘ndarray’ : de vrais tableaux en python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a3-exceptions.html">
+   Exceptions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Tortue et graphes
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  TD
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/prealable-td.html">
+   Préalables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/td1.html">
+   Feuille 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/td2.html">
+   Feuille 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/td3.html">
+   Feuille 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/td4.html">
+   Feuille 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/td5.html">
+   Feuille 5
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
+                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/cm/a4-tortuegraphe.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        <a class="issues-button"
+            href="https://github.com/phillanglois/Algo-Prog/issues/new?title=Issue%20on%20page%20%2Fcm/a4-tortuegraphe.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
+        title="Mode plein écran"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/phillanglois/Algo-Prog/main?urlpath=tree/algoprog2022/cm/a4-tortuegraphe.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="lancement Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenu
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-venir">
+   A venir
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pour-tracer-des-segments-de-von-koch-avec-turtle">
+   Pour tracer des segments de Von Koch avec turtle !
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pour-tracer-des-graphes">
+     Pour tracer des graphes
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Tortue et graphes</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contenu </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-venir">
+   A venir
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pour-tracer-des-segments-de-von-koch-avec-turtle">
+   Pour tracer des segments de Von Koch avec turtle !
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pour-tracer-des-graphes">
+     Pour tracer des graphes
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="tortue-et-graphes">
+<span id="ann-turtledot"></span><h1>Tortue et graphes<a class="headerlink" href="#tortue-et-graphes" title="Permalink to this headline">¶</a></h1>
+<p>Mis à jour : Mar 29, 2022, lecture : 1
+minutes minimum, PhL.</p>
+<div class="section" id="a-venir">
+<h2>A venir<a class="headerlink" href="#a-venir" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Autres algorithmes récursifs importants</p>
+<ul class="simple">
+<li><p>recherche séquentielle et dichotomique : voir chapitre “Rechercher”</p></li>
+<li><p>trier : tri fusion, tri rapide : voir chapitre “Trier”</p></li>
+</ul>
+</li>
+<li><p>Etablir la complexité d’algos récursifs</p>
+<ul class="simple">
+<li><p>La fonction de complexité est une suite récursive : la complexité de la résolution récursive d’un problème de taille n est fonction de la complexité de la résolution (récursive) du problème de taille réduite.</p></li>
+<li><p>exemple : <span class="math notranslate nohighlight">\(C(n) = 2 \times C(n/2) + 1\)</span> et <span class="math notranslate nohighlight">\(C(1) = 1\)</span></p></li>
+<li><p>autre exemple : <span class="math notranslate nohighlight">\(C(n) = p \times C(n/p) + f(p)\)</span> et <span class="math notranslate nohighlight">\(C(1) = 1\)</span></p></li>
+<li><p>…</p></li>
+<li><p>est traité en dernière partie du chapitre “Complexités”</p></li>
+</ul>
+</li>
+<li><p>Prouver la terminaison et la correction de ces algos récursifs</p>
+<ul class="simple">
+<li><p>est traité dans le chapitre “Prouver”</p></li>
+</ul>
+</li>
+<li><p>Dé-récursifier : récursif -&gt; itératif (quand on peut)</p>
+<ul class="simple">
+<li><p>voir les slides du cours de 2016 : <a class="reference external" href="http://perso.univ-perp.fr/langlois/images/pdf/ens/L1/s7-sl4.pdf">http://perso.univ-perp.fr/langlois/images/pdf/ens/L1/s7-sl4.pdf</a></p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="pour-tracer-des-segments-de-von-koch-avec-turtle">
+<span id="ann-tracevk"></span><h2>Pour tracer des segments de Von Koch avec turtle !<a class="headerlink" href="#pour-tracer-des-segments-de-von-koch-avec-turtle" title="Permalink to this headline">¶</a></h2>
+<p>Turtle utilise un affichage dans une fenêtre extérieure via tcl-tk.<br />
+Il est possible que cet affichage cohabite mal avec le notebook jupyter.<br />
+Il est préférable d’exécuter ces séquences de code python hors du notebook (idle, terminal, …).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span> <span class="k">as</span> <span class="nn">t</span>
+<span class="c1">#help(t)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Turtle : mouvements elementaires&quot;&quot;&quot;</span>
+
+<span class="c1"># init : taille ecran en pixels, clear ecran, reset des variablesm</span>
+<span class="n">t</span><span class="o">.</span><span class="n">screensize</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span> <span class="c1"># pour aller plus vite</span>
+<span class="n">t</span><span class="o">.</span><span class="n">degrees</span><span class="p">()</span> <span class="c1"># angles en deg</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;Utilise le module turtle </span>
+<span class="sd">Ouvre une fenêtre </span>
+<span class="sd">et trace 3 segments de VK</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="k">def</span> <span class="nf">segment</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;segment de von Koch</span>
+<span class="sd">    recursion sur n pour decouper le segment de longueur d et</span>
+<span class="sd">    tracer d (longueur du segment) pixels si n==0&quot;&quot;&quot;</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">pencolor</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>        
+
+    <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">dsur3</span> <span class="o">=</span> <span class="n">d</span><span class="o">//</span><span class="mi">3</span>
+        <span class="n">segment</span><span class="p">(</span><span class="n">dsur3</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+        <span class="n">segment</span><span class="p">(</span><span class="n">dsur3</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+        <span class="n">segment</span><span class="p">(</span><span class="n">dsur3</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+        <span class="n">segment</span><span class="p">(</span><span class="n">dsur3</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># init        </span>
+<span class="n">t</span><span class="o">.</span><span class="n">screensize</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span> <span class="c1"># pour aller plus vite</span>
+<span class="n">t</span><span class="o">.</span><span class="n">degrees</span><span class="p">()</span> <span class="c1"># angles en deg</span>
+
+<span class="c1"># taille</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="c1">#nbiter = input(&quot;nombre d&#39;iterations = &quot;)</span>
+<span class="n">nbiter</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mi">150</span> <span class="c1"># espace vertical entre 2 traces</span>
+
+<span class="c1"># point de depart</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+
+<span class="c1"># trace et changement point de depart</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbiter</span><span class="p">):</span>
+    <span class="c1"># deplacement au point de depart</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+
+    <span class="c1"># trace </span>
+    <span class="n">segment</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    
+    <span class="c1"># maj point de depart</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">h</span><span class="p">)</span>
+
+<span class="c1"># pour attendre avant d&#39;effacer la fenetre turtle</span>
+<span class="n">v</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;OK ?&quot;</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+<span class="c1"># pour que le trace reste a l ecran</span>
+<span class="n">t</span><span class="o">.</span> <span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;trace (nbiter) flocons de VK&#39;&#39;&#39;</span>
+<span class="k">def</span> <span class="nf">flocon</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; trace flocon de VK en utilisant segment&#39;&#39;&#39;</span>
+    <span class="n">segment</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+    <span class="n">segment</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+    <span class="n">segment</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+
+<span class="c1">#nbiter = input(&quot;nombre d&#39;iterations = &quot;)</span>
+<span class="n">nbiter</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mi">150</span> <span class="c1"># espace vertical entre 2 traces</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> <span class="c1"># point de depart</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">84</span>  <span class="c1"># taille</span>
+
+<span class="c1"># trace et changement point de depart</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbiter</span><span class="p">):</span>
+    <span class="c1"># deplacement au point de depart</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+
+    <span class="c1"># trace </span>
+    <span class="n">flocon</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    
+    <span class="c1"># maj point de depart</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">h</span><span class="p">)</span>
+
+<span class="c1"># pour attendre avant d&#39;effacer la fenetre turtle</span>
+<span class="n">v</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;OK ?&quot;</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="section" id="pour-tracer-des-graphes">
+<span id="ann-graphviz"></span><h3>Pour tracer des graphes<a class="headerlink" href="#pour-tracer-des-graphes" title="Permalink to this headline">¶</a></h3>
+<p>Un arbre est un graphe.
+Commençons avec une première construction simple de l’arbre des appels de <code class="docutils literal notranslate"><span class="pre">fact(4)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">graphviz</span> <span class="k">as</span> <span class="nn">gvz</span>
+<span class="kn">import</span> <span class="nn">functools</span>
+
+<span class="c1">#help(gvz)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">/var/folders/32/9hkmzrf11t38ckpktjnyfsfc0000gn/T/ipykernel_82080/3586426686.py</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">graphviz</span> <span class="k">as</span> <span class="nn">gvz</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">functools</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">#help(gvz)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;graphviz&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39; arbre des appels du calcul de fact(4) : construction simple&#39;&#39;&#39;</span>
+<span class="n">fact4</span> <span class="o">=</span> <span class="n">gvz</span><span class="o">.</span><span class="n">Digraph</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;jpg&#39;</span><span class="p">)</span>
+<span class="n">fact4</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;f4&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;fact(4)&#39;</span><span class="p">)</span>
+<span class="n">fact4</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;f3&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;fact(3)&#39;</span><span class="p">)</span>
+<span class="n">fact4</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;f2&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;fact(2)&#39;</span><span class="p">)</span>
+<span class="n">fact4</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;f1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;fact(1)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">fact4</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">&#39;f4&#39;</span><span class="p">,</span> <span class="s1">&#39;f3&#39;</span><span class="p">)</span>
+<span class="n">fact4</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">&#39;f3&#39;</span><span class="p">,</span> <span class="s1">&#39;f2&#39;</span><span class="p">)</span>
+<span class="n">fact4</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">&#39;f2&#39;</span><span class="p">,</span> <span class="s1">&#39;f1&#39;</span><span class="p">)</span>
+
+<span class="n">file_out</span> <span class="o">=</span> <span class="n">fact4</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s1">&#39;fig/fact4_dot&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">/var/folders/32/9hkmzrf11t38ckpktjnyfsfc0000gn/T/ipykernel_82080/3148325599.py</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="sd">&#39;&#39;&#39; arbre des appels du calcul de fact(4) : construction simple&#39;&#39;&#39;</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">fact4</span> <span class="o">=</span> <span class="n">gvz</span><span class="o">.</span><span class="n">Digraph</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;jpg&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">fact4</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;f4&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;fact(4)&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">fact4</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;f3&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;fact(3)&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">fact4</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">&#39;f2&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;fact(2)&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;gvz&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;Affichage arbre construit avec le code précédent&#39;&#39;&#39;</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Image</span>
+<span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;fig/fact4_dot.jpg&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Affichage arbre construit avec le code précédent
+</pre></div>
+</div>
+<img alt="../_images/a4-tortuegraphe_10_1.jpg" src="../_images/a4-tortuegraphe_10_1.jpg" />
+</div>
+</div>
+<p>Arbre des appels du calcul de fact(4) : construction plus complète</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39; arbre des appels du calcul de fact(4) : construction plus complète&#39;&#39;&#39;</span>
+
+<span class="n">digraph</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">gvz</span><span class="o">.</span><span class="n">Digraph</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;jpg&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">add_nodes</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">nodes</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="n">graph</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">**</span><span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">graph</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">graph</span>
+
+<span class="k">def</span> <span class="nf">add_edges</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">edges</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="n">graph</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="o">*</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">**</span><span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">graph</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="o">*</span><span class="n">e</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">graph</span>
+
+<span class="sd">&#39;&#39;&#39; arbre complet de l&#39;évaluation fact(4)&#39;&#39;&#39;</span>
+<span class="n">fact4_complet</span> <span class="o">=</span> <span class="n">add_edges</span><span class="p">(</span>
+    <span class="n">add_nodes</span><span class="p">(</span><span class="n">digraph</span><span class="p">(),</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;4&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;f4&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;fact(4)&#39;</span><span class="p">}),</span>
+        <span class="p">(</span><span class="s1">&#39;f3&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;fact(3)&#39;</span><span class="p">}),</span>
+        <span class="p">(</span><span class="s1">&#39;f2&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;fact(2)&#39;</span><span class="p">}),</span>
+        <span class="p">(</span><span class="s1">&#39;f1&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;fact(1)&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="s1">&#39;red&#39;</span><span class="p">}),</span>
+    <span class="p">]),</span>
+    <span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;f4&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;f3&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;f2&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;f4&#39;</span><span class="p">,</span> <span class="s1">&#39;f3&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;f3&#39;</span><span class="p">,</span> <span class="s1">&#39;f2&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;f2&#39;</span><span class="p">,</span> <span class="s1">&#39;f1&#39;</span><span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s1">&#39;fig/fact4_complet&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">/var/folders/32/9hkmzrf11t38ckpktjnyfsfc0000gn/T/ipykernel_82080/2968239175.py</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="sd">&#39;&#39;&#39; arbre des appels du calcul de fact(4) : construction plus complète&#39;&#39;&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">digraph</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">gvz</span><span class="o">.</span><span class="n">Digraph</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;jpg&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">add_nodes</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">nodes</span><span class="p">):</span>
+
+<span class="ne">NameError</span>: name &#39;functools&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;Affichage arbre&#39;&#39;&#39;</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Image</span>
+<span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;fig/fact4_complet.jpg&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Affichage arbre
+</pre></div>
+</div>
+<img alt="../_images/a4-tortuegraphe_13_1.jpg" src="../_images/a4-tortuegraphe_13_1.jpg" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./cm"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="a3-exceptions.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Exceptions</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../td/prealable-td.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Préalables</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Par Ph. Langlois<br/>
+    
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

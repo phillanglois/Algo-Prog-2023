@@ -1,0 +1,2564 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>1. Les types composés &#8212; Algo-Prog 2023</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Sous-programme et affectation – aspects avancés" href="7-fonctions-avancees.html" />
+    <link rel="prev" title="2. Récursivité" href="6-recursivite.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo2023.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algo-Prog 2023</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../bonjour.html">
+                    Bienvenu en Algo-Prog !
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Présentation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0-presentation-2023.html">
+   1. Algorithmique et Programmation en 2022
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="competences.html">
+   2. Compétences
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Les bases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-fonctions.html">
+   1. Fonctions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-fonctions-tableaux.html">
+   2. Fonctions et tableaux
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-ES-fichiers.html">
+   3. Entrées-sorties simples avec des fichiers
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithmique
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-complexite.html">
+   1. Complexités
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-recursivite.html">
+   2. Récursivité
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programmation
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Les types composés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-fonctions-avancees.html">
+   2. Sous-programme et affectation – aspects avancés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-ES-avancees.html">
+   3. Les entrées-sorties (E/S) : aspects avancés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-modules-utiles.html">
+   4. Modules utiles
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Annexes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a0-boucles-avancees.html">
+   1. Boucles et tableaux
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a1-booleens.html">
+   2. Annexe : les booléens en python (&gt;3.6)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a2-ndarray.html">
+   3. Les ‘ndarray’ : de vrais tableaux en python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="a3-exceptions.html">
+   4. Exceptions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  TD
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/prealable-td.html">
+   1. Préalables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/td1.html">
+   2. Feuille 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/td2.html">
+   3. Feuille 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/td3.html">
+   4. Feuille 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/td4.html">
+   5. Feuille 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../td/td5.html">
+   6. Feuille 5
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/phillanglois/Algo-Prog-2023/main?urlpath=tree/algoprog2023/cm/5-types_composes.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/phillanglois/Algo-Prog-2023/issues/new?title=Issue%20on%20page%20%2Fcm/5-types_composes.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/cm/5-types_composes.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-types-composes-ou-conteneurs-en-python">
+   1.1. Les types composés ou
+   <em>
+    conteneurs
+   </em>
+   en python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-questions-abordees-dans-ce-chapitre">
+     1.1.1. Les questions abordées dans ce chapitre
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-vision-classique">
+     1.1.2. La vision classique
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-conteneurs-python">
+     1.1.3. Les conteneurs python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ce-qui-est-commun-aux-conteneurs-python">
+   1.2. Ce qui est commun aux conteneurs python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operations-communes-aux-conteneurs-python">
+     1.2.1. Opérations communes aux conteneurs python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conteneurs-iterables-et-sequences">
+     1.2.2. Conteneurs itérables et séquences
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-tuple">
+   1.3. Les
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     tuple
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-listes-list">
+   1.4. Les listes
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     list
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-une-liste">
+     1.4.1. Créer une liste
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methodes-sur-des-listes">
+     1.4.2. Méthodes sur des listes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#affectation-entre-listes">
+     1.4.3. Affectation entre listes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-dictionnaires-dict">
+   1.5. Les dictionnaires
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dict
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tableau-associatif">
+     1.5.1. Tableau associatif
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dictionnaire-dict-en-python">
+     1.5.2. Dictionnaire
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dict
+      </span>
+     </code>
+     en python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-chaines-de-caracteres-str">
+   1.6. Les chaînes de caractères
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     str
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operations">
+     1.6.1. Opérations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fonctions-methodes">
+     1.6.2. Fonctions-méthodes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-caracteres-speciaux-ou-caracteres-sequences-d-echappement">
+     1.6.3. Les caractères spéciaux ou caractères/séquences d’échappement
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-ensembles-set-et-frozenset">
+   1.7. Les ensembles
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     set
+    </span>
+   </code>
+   et
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     frozenset
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specifier-des-fonctions-avec-des-types-composes">
+   1.8. Spécifier des fonctions avec des types composés
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parametres-de-type-compose-predefini">
+     1.8.1. Paramètres de type composé prédéfini
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#star-mieux-expliciter-le-type-compose">
+     1.8.2. (
+     <span class="math notranslate nohighlight">
+      \(\star\)
+     </span>
+     ) Mieux expliciter le type composé
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synthese">
+   1.9. Synthèse
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#avoir-les-idees-claires">
+     1.9.1. Avoir les idées claires
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#savoir-faire">
+     1.9.2. Savoir faire
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Les types composés</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-types-composes-ou-conteneurs-en-python">
+   1.1. Les types composés ou
+   <em>
+    conteneurs
+   </em>
+   en python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-questions-abordees-dans-ce-chapitre">
+     1.1.1. Les questions abordées dans ce chapitre
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-vision-classique">
+     1.1.2. La vision classique
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-conteneurs-python">
+     1.1.3. Les conteneurs python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ce-qui-est-commun-aux-conteneurs-python">
+   1.2. Ce qui est commun aux conteneurs python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operations-communes-aux-conteneurs-python">
+     1.2.1. Opérations communes aux conteneurs python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conteneurs-iterables-et-sequences">
+     1.2.2. Conteneurs itérables et séquences
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-tuple">
+   1.3. Les
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     tuple
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-listes-list">
+   1.4. Les listes
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     list
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-une-liste">
+     1.4.1. Créer une liste
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methodes-sur-des-listes">
+     1.4.2. Méthodes sur des listes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#affectation-entre-listes">
+     1.4.3. Affectation entre listes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-dictionnaires-dict">
+   1.5. Les dictionnaires
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dict
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tableau-associatif">
+     1.5.1. Tableau associatif
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dictionnaire-dict-en-python">
+     1.5.2. Dictionnaire
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       dict
+      </span>
+     </code>
+     en python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-chaines-de-caracteres-str">
+   1.6. Les chaînes de caractères
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     str
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operations">
+     1.6.1. Opérations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fonctions-methodes">
+     1.6.2. Fonctions-méthodes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-caracteres-speciaux-ou-caracteres-sequences-d-echappement">
+     1.6.3. Les caractères spéciaux ou caractères/séquences d’échappement
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-ensembles-set-et-frozenset">
+   1.7. Les ensembles
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     set
+    </span>
+   </code>
+   et
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     frozenset
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specifier-des-fonctions-avec-des-types-composes">
+   1.8. Spécifier des fonctions avec des types composés
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parametres-de-type-compose-predefini">
+     1.8.1. Paramètres de type composé prédéfini
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#star-mieux-expliciter-le-type-compose">
+     1.8.2. (
+     <span class="math notranslate nohighlight">
+      \(\star\)
+     </span>
+     ) Mieux expliciter le type composé
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synthese">
+   1.9. Synthèse
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#avoir-les-idees-claires">
+     1.9.1. Avoir les idées claires
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#savoir-faire">
+     1.9.2. Savoir faire
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="les-types-composes">
+<span id="ch-typescomposes"></span><h1><span class="section-number">1. </span>Les types composés<a class="headerlink" href="#les-types-composes" title="Permalink to this headline">#</a></h1>
+<p>Mis à jour : Jan 20, 2023, lecture : 14
+minutes minimum, PhL.</p>
+<p>Les types composés ou <em>conteneurs</em> de python sont  introduits  dans ce chapitre :</p>
+<ul class="simple">
+<li><p>les types <em>non mutables</em> de python : <code class="docutils literal notranslate"><span class="pre">tuple</span></code> et <code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p>les types <em>mutables</em> de python : <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code> et <code class="docutils literal notranslate"><span class="pre">dict</span></code></p></li>
+</ul>
+<p><strong>Rmq de vocabulaire :</strong></p>
+<p>J’utilise les termes <em>mutable</em> et <em>non mutable</em>.<br />
+La version française de la documentation de python préfère les termes <em>muable</em> et <em>immuable</em>.</p>
+<section id="les-types-composes-ou-conteneurs-en-python">
+<h2><span class="section-number">1.1. </span>Les types composés ou <em>conteneurs</em> en python<a class="headerlink" href="#les-types-composes-ou-conteneurs-en-python" title="Permalink to this headline">#</a></h2>
+<p>Les types scalaires permettent de manipuler des <em>valeurs scalaires</em> comme les :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">complex</span></code></p></li>
+<li><p>les caractères (souvent dénotés de type <em>char</em> mais absent en python)</p></li>
+</ul>
+<p>Un type composé permet de <strong>regrouper plusieurs valeurs</strong>, de même type ou non, scalaire ou non, <strong>dans une seule variable</strong> (ou un seul objet).</p>
+<p><strong>Vocabulaire.</strong>
+Ces types composés sont appelés des <em>conteneurs</em> en python.
+Ce sont aussi des premiers exemples de <em>structures de données</em> en algorithmique.</p>
+<p><strong>Exercice.</strong> Vous en connaissaissez déjà au moins un. Lequel ?</p>
+<section id="les-questions-abordees-dans-ce-chapitre">
+<h3><span class="section-number">1.1.1. </span>Les questions abordées dans ce chapitre<a class="headerlink" href="#les-questions-abordees-dans-ce-chapitre" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Comment créer un conteneur ?</p></li>
+<li><p>Comment accéder à une valeur dans un conteneur ?</p></li>
+<li><p>Comment modifier un conteneur ?</p>
+<ul>
+<li><p>Comment modifier une de ses valeurs ?</p></li>
+<li><p>Comment ajouter ou supprimer une valeur ?</p></li>
+</ul>
+</li>
+<li><p>Comment parcourir (toutes) les valeurs d’un conteneur ?</p></li>
+</ul>
+<p>Les réponses à ces questions dépendent :</p>
+<ul class="simple">
+<li><p>du type de conteneur,</p></li>
+<li><p>de son caratère mutable ou non,</p></li>
+<li><p>de son caractère itérable ou non,</p></li>
+<li><p>de son caractère séquençable ou non.</p></li>
+</ul>
+<p>(<span class="math notranslate nohighlight">\(\star\)</span>) Les deux dernières caractéristiques (itérable, séquençable) seront abordées en seconde lecture.</p>
+<p>(<span class="math notranslate nohighlight">\(\star\)</span>) On analysera aussi la complexité des ces différents traitements selon les principaux types composés.</p>
+</section>
+<section id="la-vision-classique">
+<h3><span class="section-number">1.1.2. </span>La vision classique<a class="headerlink" href="#la-vision-classique" title="Permalink to this headline">#</a></h3>
+<p>Dans la plupart des langages de programmation, les types composés <em>classiques</em> sont les suivants.</p>
+<p><strong>Les tableaux</strong>, déjà revus dans ce <span class="xref myst">chapitre</span>, sont définis comme des ensembles de valeurs <em>de même type</em> et de nombre <em>connu et fixé</em> “une fois pour toute” lors de leur définition (ce nombre est la <em>taille</em> ou la <em>dimension</em> du tableau) et dont les valeurs sont <em>ainsi stockées de façon contigüe en mémoire</em>.<br />
+- les valeurs sont accédées par un ou des <em>indice</em> indiqué entre un ou plusieurs <code class="docutils literal notranslate"><span class="pre">[]</span></code></p>
+<p><strong>Les enregistrements</strong> ou <strong>structures</strong> sont définis comme un ensemble de valeurs de <em>types quelconques</em>. Le nombre de valeurs est défini “une fois pour toutes” mais sans hypothèse  sur le mode de stockage.<br />
+- les enregistrements sont composés de <em>champs nommés</em> aussi appelés <em>attributs</em><br />
+- la valeur stockée dans le champ d’un enregistrement est accessible en <em>notation pointée</em> : <code class="docutils literal notranslate"><span class="pre">id_de_variable.nom_du_champ</span></code>.</p>
+<p>Aucun type composé natif de python ne correspond exactement aux 2 types composés classiques tableau et enregistrement.
+Le module <code class="docutils literal notranslate"><span class="pre">numpy</span></code> définit  “de vrais” tableaux, les <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>, que nous abordons dans cette <a class="reference internal" href="a2-ndarray.html#ann-ndarray"><span class="std std-ref">annexe</span></a>.</p>
+<p>Exemple : Une structure <code class="docutils literal notranslate"><span class="pre">etudiant</span></code> pourrait être définie à partir des 4 champs suivants :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">etudiant.numero_etud</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">etudiant.nom</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">etudiant.prenom</span></code> et</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">etudiant.diplome</span></code>.</p></li>
+</ul>
+</section>
+<section id="les-conteneurs-python">
+<h3><span class="section-number">1.1.3. </span>Les conteneurs python<a class="headerlink" href="#les-conteneurs-python" title="Permalink to this headline">#</a></h3>
+<p><strong>Vocabulaire python :</strong>  un <em>conteneur</em> est une variable (un objet) de type composé</p>
+<p>Les conteneurs python sont répartis en 2 familles.</p>
+<ol class="simple">
+<li><p>Les conteneurs <strong>non mutables</strong> dont <em>la forme et les valeurs</em> sont <em>fixées</em> une fois pour toute lors de leur définition :</p>
+<ul class="simple">
+<li><p>les chaines de caractères : <code class="docutils literal notranslate"><span class="pre">str</span></code> écrits avec des <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">...</span> <span class="pre">&quot;</span></code> ou des <code class="docutils literal notranslate"><span class="pre">...</span></code></p></li>
+<li><p>les t-uplets ou <code class="docutils literal notranslate"><span class="pre">tuple</span></code> : des valeurs écrites entre <code class="docutils literal notranslate"><span class="pre">(</span>&#160; <span class="pre">)</span></code> et séparées par des <code class="docutils literal notranslate"><span class="pre">,</span></code></p></li>
+<li><p>les ensembles ou <code class="docutils literal notranslate"><span class="pre">set</span></code> : des valeurs écrites avec des <code class="docutils literal notranslate"><span class="pre">{</span>&#160;&#160; <span class="pre">}</span></code> et séparées par des <code class="docutils literal notranslate"><span class="pre">,</span></code></p></li>
+</ul>
+</li>
+<li><p>Les conteneurs <strong>mutables</strong> qui peuvent changer de forme et de valeurs.</p>
+<ul class="simple">
+<li><p>des listes ou <code class="docutils literal notranslate"><span class="pre">list</span></code> : des valeurs écrits entre <code class="docutils literal notranslate"><span class="pre">[</span>&#160; <span class="pre">]</span></code> et séparées par des <code class="docutils literal notranslate"><span class="pre">,</span></code></p></li>
+<li><p>des dictionnaires (tableaux associatifs) ou <code class="docutils literal notranslate"><span class="pre">dict</span></code> : des couples de valeurs écrits entre <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code> et séparées par des <code class="docutils literal notranslate"><span class="pre">,</span></code></p></li>
+<li><p>les fichiers de texte</p></li>
+</ul>
+</li>
+</ol>
+<p>Les fichiers (le type <code class="docutils literal notranslate"><span class="pre">file</span></code>) sont aussi des conteneurs.
+Ils ne sont pas abordés ici et font l’objet de ce <a class="reference internal" href="3-ES-fichiers.html#ch-es-fichiers"><span class="std std-ref">chapitre</span></a>.</p>
+</section>
+</section>
+<section id="ce-qui-est-commun-aux-conteneurs-python">
+<h2><span class="section-number">1.2. </span>Ce qui est commun aux conteneurs python<a class="headerlink" href="#ce-qui-est-commun-aux-conteneurs-python" title="Permalink to this headline">#</a></h2>
+<section id="operations-communes-aux-conteneurs-python">
+<h3><span class="section-number">1.2.1. </span>Opérations communes aux conteneurs python<a class="headerlink" href="#operations-communes-aux-conteneurs-python" title="Permalink to this headline">#</a></h3>
+<p><strong>Accès à l’élément</strong> par indexation :</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">v[1]</span></code>,<code class="docutils literal notranslate"><span class="pre">m[3][2]</span></code>, <code class="docutils literal notranslate"><span class="pre">st[-1]</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple[-len(tuple)]</span></code>, <code class="docutils literal notranslate"><span class="pre">d[clé]</span></code></p>
+</div></blockquote>
+<ul class="simple">
+<li><p>L‘“indice” est indiqué entre <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code></p></li>
+<li><p>Un conteneur <em>ordonné par des indices entiers</em> est appelé une <strong>séquence</strong>.</p></li>
+</ul>
+<p><strong>Tranche</strong> d’un conteneur (<em>slice</em>):</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">conteneur[i:j]</span></code> est composé des valeurs de l’indice <code class="docutils literal notranslate"><span class="pre">i</span></code> à <code class="docutils literal notranslate"><span class="pre">j-1</span></code></p>
+</div></blockquote>
+<p>Des fonctions de base qui s’appliquent à une variable conteneur:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">len()</span></code> qui renvoie le nombre de valeurs du conteneur</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min()</span></code>, <code class="docutils literal notranslate"><span class="pre">max()</span></code>, <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> si une relation d’ordre s’applique <em>aux éléments</em></p>
+<ul class="simple">
+<li><p>Rmq: <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> modifie l’état du conteneur.</p></li>
+</ul>
+</li>
+<li><p><strong>itération sur les <em>valeurs</em></strong> d’un conteneur :</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">val</span> <span class="pre">in</span> <span class="pre">conteneur:</span></code></p>
+</div></blockquote>
+<ul class="simple">
+<li><p>pythonerie utile en pratique pour parcourir les valeurs d’un conteneur sans se soucier de son “indice”</p></li>
+<li><p>cette itération s’effectue indépendamment de l’existence ou non d’un ordre sur les <em>valeurs</em> du conteneur, ie. séquence ou non séquence.</p></li>
+<li><p>tous les conteneurs sont ainsi des <strong>itérables</strong>.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Exercice.</strong> Que pensez-vous de la variable <code class="docutils literal notranslate"><span class="pre">v</span></code> définie par <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">range(10)</span></code> par exemple ?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">val</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>range(0, 10)
+0,1,2,3,4,5,6,7,8,9,
+&lt;class &#39;range&#39;&gt; &lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Réponse :</em> <code class="docutils literal notranslate"><span class="pre">v</span></code> peut être vue comme un ensemble ordonné itérable de valeurs entières. Ici le terme <em>ensemble</em> est à comprendre au sens mathématique ; il ne s’agit pas des ensembles <code class="docutils literal notranslate"><span class="pre">set</span></code> de python présentés plus loin.</p>
+<p>L’exemple suivant illustre la différence entre un tableau et un conteneur de type <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">exp</span>
+
+<span class="n">en_vrac</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;z&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">3.14159</span><span class="p">,</span> <span class="n">exp</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">en_vrac</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">en_vrac</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;list&#39;&gt; 10
+</pre></div>
+</div>
+</div>
+</div>
+<p>Et maintenant quelques manipulations avec les opérations de base sur ces conteneurs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">en_vrac</span><span class="p">)</span>
+
+<span class="c1"># conversion de type : list -&gt; tuple</span>
+<span class="n">des_float</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">en_vrac</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span> 
+
+<span class="c1"># len, min, max</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">des_float</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">des_float</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">des_float</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">des_float</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;z&#39;, &#39;e&#39;, &#39;r&#39;, &#39;t&#39;, 1, 2, 3, 3.14159, 2.718281828459045]
+(3.14159, 2.718281828459045) 2 2.718281828459045 3.14159
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># accès par indexation et tranche</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">en_vrac</span><span class="p">,</span> <span class="n">des_float</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">en_vrac</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">type</span><span class="p">(</span><span class="n">en_vrac</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">]),</span> <span class="nb">type</span><span class="p">(</span><span class="n">des_float</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">type</span><span class="p">(</span><span class="n">des_float</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;z&#39;, &#39;e&#39;, &#39;r&#39;, &#39;t&#39;, 1, 2, 3, 3.14159, 2.718281828459045] (3.14159, 2.718281828459045)
+&lt;class &#39;str&#39;&gt; &lt;class &#39;int&#39;&gt; &lt;class &#39;float&#39;&gt; &lt;class &#39;tuple&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># les tranches de conteneurs sont souvent très utiles.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">en_vrac</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">des_float</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;z&#39;, &#39;e&#39;, &#39;r&#39;, &#39;t&#39;, 1, 2, 3, 3.14159]
+(2.718281828459045,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># conversion en `str` et concaténations</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">en_vrac</span><span class="p">)</span>
+<span class="n">st</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">en_vrac</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]:</span>
+    <span class="c1">#st = st + c     # non : normal !</span>
+    <span class="n">st</span> <span class="o">=</span> <span class="n">st</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>  <span class="c1"># concatenation de chaines de caractères</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">st</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">st</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;z&#39;, &#39;e&#39;, &#39;r&#39;, &#39;t&#39;, 1, 2, 3, 3.14159, 2.718281828459045]
+azert123 &lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Le caractère non mutable d’une <code class="docutils literal notranslate"><span class="pre">str</span></code> explique le comportement suivant.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sorted sur `str` retourne une `list` </span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">st</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">st</span><span class="p">)))</span>
+
+<span class="n">st2</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">st</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">st2</span><span class="p">,</span> <span class="nb">type</span> <span class="p">(</span><span class="n">st2</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">st</span><span class="p">)),</span> <span class="nb">len</span><span class="p">(</span><span class="n">st2</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;a&#39;, &#39;e&#39;, &#39;r&#39;, &#39;t&#39;, &#39;z&#39;] &lt;class &#39;list&#39;&gt;
+[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;a&#39;, &#39;e&#39;, &#39;r&#39;, &#39;t&#39;, &#39;z&#39;] &lt;class &#39;str&#39;&gt;
+8 40
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="conteneurs-iterables-et-sequences">
+<h3><span class="section-number">1.2.2. </span>Conteneurs itérables et séquences<a class="headerlink" href="#conteneurs-iterables-et-sequences" title="Permalink to this headline">#</a></h3>
+<p>Tous les conteneurs sont (des) <em>itérables</em>.</p>
+<ul class="simple">
+<li><p>la construction suivante a du sens et permet le parcours des <em>valeurs</em> du conteneur</p></li>
+</ul>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">val</span> <span class="pre">in</span> <span class="pre">cont:</span></code><br />
+<code class="docutils literal notranslate">&#160;&#160; <span class="pre">...</span></code></p>
+</div></blockquote>
+<p>Mais tous les conteneurs ne sont pas des <em>séquences</em>.</p>
+<p>Une <strong>séquence</strong> est un conteneur indexé par des entiers</p>
+<ul class="simple">
+<li><p>types python : <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code> et <code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p>les valeurs sont ainsi <em>ordonnées</em> dans le conteneur</p></li>
+</ul>
+<p>Les dictionnaires <code class="docutils literal notranslate"><span class="pre">dict</span></code> et les ensembles <code class="docutils literal notranslate"><span class="pre">set</span></code> sont itérables mais pas des séquences.</p>
+<p><strong>Fonctions supplémentaires</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">cont</span></code> est un conteneur.</p>
+<ul class="simple">
+<li><p>concaténation : <code class="docutils literal notranslate"><span class="pre">cont1</span> <span class="pre">+</span> <span class="pre">cont2</span></code></p></li>
+<li><p>duplication : <code class="docutils literal notranslate"><span class="pre">cont</span> <span class="pre">*</span> <span class="pre">cst</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reversed(cont)</span></code> renvoie le conteneur <em>itérable</em> en ordre inverse</p></li>
+</ul>
+<p>Et aussi les 2 fonctions-méthodes suivantes dont on n’oubliera pas qu’elle peuvent “coûter très cher” :</p>
+<ul class="simple">
+<li><p>correspondance valeur -&gt; indice  :
+<code class="docutils literal notranslate"><span class="pre">cont.index(val)</span></code>
+retourne le plus petit (ou premier) indice d’une valeur argument présente dans le conteneur <code class="docutils literal notranslate"><span class="pre">cont</span></code>, génère une exception si la valeur est absente</p></li>
+<li><p>décompte :
+<code class="docutils literal notranslate"><span class="pre">cont.count(val)</span></code>
+retourne le nombre d’occurrences de <code class="docutils literal notranslate"><span class="pre">val</span></code> dans le conteneur <code class="docutils literal notranslate"><span class="pre">cont</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">en_vrac</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;, &#39;z&#39;, &#39;e&#39;, &#39;r&#39;, &#39;t&#39;, 1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">st</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">en_vrac</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]):</span>
+    <span class="n">st</span> <span class="o">=</span> <span class="n">st</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>  <span class="c1"># concatenation de chaines de caractères</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">st</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">st</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>321treza [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;a&#39;, &#39;e&#39;, &#39;r&#39;, &#39;t&#39;, &#39;z&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">st1</span> <span class="o">=</span> <span class="n">st</span> <span class="o">+</span> <span class="n">st</span>
+<span class="n">st2</span> <span class="o">=</span> <span class="n">st</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">st</span><span class="p">,</span> <span class="n">st1</span><span class="p">,</span> <span class="n">st1</span> <span class="o">==</span> <span class="n">st2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>321treza 321treza321treza True
+1
+7
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="les-tuple">
+<h2><span class="section-number">1.3. </span>Les <code class="docutils literal notranslate"><span class="pre">tuple</span></code><a class="headerlink" href="#les-tuple" title="Permalink to this headline">#</a></h2>
+<p><strong><code class="docutils literal notranslate"><span class="pre">tuple</span></code></strong> ( ou t-uplets) : <em>conteneur</em> <em>non mutable</em> de valeurs <em>écrites entre <code class="docutils literal notranslate"><span class="pre">(</span>&#160; <span class="pre">)</span></code></em> ,  séparées par des <code class="docutils literal notranslate"><span class="pre">,</span></code>, et <em>indexées de 0 à <code class="docutils literal notranslate"><span class="pre">len(tuple)-1</span></code></em>.</p>
+<blockquote>
+<div><p>(3, “bonjour”, 7, 1.32)</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Bien identifier les 4 aspects qui définissent un tuple</p></li>
+<li><p>En pratique, les parenthèses sont facultatives</p>
+<ul>
+<li><p>donc un tuple singleton peut être noté : <code class="docutils literal notranslate"><span class="pre">a,</span></code></p></li>
+<li><p><strong>Ne pas oublier la <code class="docutils literal notranslate"><span class="pre">,</span></code>!!</strong></p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+
+<span class="c1"># ATTENTION !</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>  
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;tuple&#39;&gt;
+&lt;class &#39;int&#39;&gt;
+&lt;class &#39;tuple&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-info">
+<p>On préférera donc écrire les tuples systématiquement entre parenthèses.</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># premières manipulations de tuple</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">c</span> <span class="o">+</span> <span class="n">c</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">c</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span><span class="p">,)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3, 1, 2, 3)
+(1, 2, 3, 4) (1, 2, 3, 1, 2, 3, 1, 2, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Attention.</strong></p>
+<ul class="simple">
+<li><p>Les <code class="docutils literal notranslate"><span class="pre">tuple</span></code> sont non mutables donc modifier <code class="docutils literal notranslate"><span class="pre">c</span></code> (ici par concaténation à l’avant-dernière ligne) créé en fait une <em>nouvelle</em> variable <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p></li>
+<li><p>L’exécution <a class="reference external" href="https://pythontutor.com/visualize.html#code=c%20%3D%20%281,2,3%29%0Ac2%20%3D%20c%20%2B%20c%0Ad1%20%3D%20c%20*%203%0Ac%20%3D%20c%20%2B%20%284,%29&amp;cumulative=false&amp;curInstr=4&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">pythontutor</a>
+illustre bien ce point important.</p></li>
+</ul>
+<p><strong>Exercice.</strong> Que penser de la fonction à la spécification incomplète suivante ?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">permuter</span><span class="p">(</span><span class="n">a</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;il manque la spécification de la sortie&#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">permuter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="o">=</span> <span class="n">permuter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">u</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="p">),</span> <span class="nb">type</span><span class="p">(</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3 7 &lt;class &#39;int&#39;&gt; &lt;class &#39;int&#39;&gt;
+7 3 &lt;class &#39;int&#39;&gt; &lt;class &#39;int&#39;&gt;
+3 7 &lt;class &#39;int&#39;&gt; &lt;class &#39;tuple&#39;&gt; &lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#d1[2] = 7 lève TypeError: &#39;tuple&#39; object does not support item assignment</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># manipulations de tuple avec les fonctions de base</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">d1</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">d1</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3, 4) (1, 2, 3, 1, 2, 3, 1, 2, 3)
+2 2
+3
+(1, 2, 3, 4) (1, 2, 3, 4, 1, 2, 3, 4)
+2 2
+2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Le code suivant :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;on a dit _non_ mutable !&quot;</span><span class="p">)</span>
+<span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">11</span>
+</pre></div>
+</div>
+<p>déclenche l’erreur suivante:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="n">b869b5ab11d8</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+      <span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;on a dit _non_ mutable !&quot;</span><span class="p">)</span>
+<span class="o">----&gt;</span> <span class="mi">2</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">11</span>
+
+<span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;tuple&#39;</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">item</span> <span class="n">assignment</span>
+</pre></div>
+</div>
+</section>
+<section id="les-listes-list">
+<h2><span class="section-number">1.4. </span>Les listes <code class="docutils literal notranslate"><span class="pre">list</span></code><a class="headerlink" href="#les-listes-list" title="Permalink to this headline">#</a></h2>
+<p><strong><code class="docutils literal notranslate"><span class="pre">list</span></code></strong> : <em>conteneur</em> <strong>mutable</strong> de valeurs <em>écrites entre <code class="docutils literal notranslate"><span class="pre">[</span>&#160; <span class="pre">]</span></code></em>,  séparées par des <code class="docutils literal notranslate"><span class="pre">,</span></code>, et <em>indexées de 0 à <code class="docutils literal notranslate"><span class="pre">len(lst)-1</span></code></em></p>
+<blockquote>
+<div><p>[3, “bonjour”, 7, 1.32]</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Les valeurs sont de type quelconque – non nécessairement unique.</p></li>
+</ul>
+<p>En pratique, les listes python sont des structures de données sophistiquées, très souples d’utilisation.</p>
+<section id="creer-une-liste">
+<h3><span class="section-number">1.4.1. </span>Créer une liste<a class="headerlink" href="#creer-une-liste" title="Permalink to this headline">#</a></h3>
+<p>Une liste peut être construite comme suit :</p>
+<ul class="simple">
+<li><p>à partir d’une liste vide notée : <code class="docutils literal notranslate"><span class="pre">[]</span></code></p></li>
+<li><p>explicitement (ou aussi dit <em>en extension</em>) avec des valeurs séparées par des <code class="docutils literal notranslate"><span class="pre">,</span></code> et entre <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>: <code class="docutils literal notranslate"><span class="pre">[a]</span></code>, <code class="docutils literal notranslate"><span class="pre">[a,</span> <span class="pre">b,</span> <span class="pre">c]</span></code></p></li>
+<li><p><strong>en compréhension</strong> : <code class="docutils literal notranslate"><span class="pre">[x</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">iterable]</span></code></p></li>
+<li><p>avec le constructeur de type : <code class="docutils literal notranslate"><span class="pre">list()</span></code> ou <code class="docutils literal notranslate"><span class="pre">list(iterable)</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># une liste explicite</span>
+<span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">sous_liste</span> <span class="o">=</span> <span class="n">liste</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">un_a_trois</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">autre</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">un_a_trois</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">sous_liste</span><span class="p">,</span> <span class="n">autre</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">un_a_trois</span> <span class="o">==</span> <span class="n">autre</span><span class="p">,</span> <span class="n">autre</span> <span class="o">==</span> <span class="n">sous_liste</span><span class="p">)</span>
+
+<span class="c1"># les carres des elements</span>
+<span class="n">les_carres</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">les_carres</span><span class="p">)</span>
+
+<span class="c1"># Afficher les nombres pairs</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">liste</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">])</span>
+<span class="c1"># Plus simple que filtrer, egalement :)</span>
+
+<span class="c1">#Affiche les carres pairs (combinaison des deux)</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">liste</span> <span class="k">if</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">])</span>
+<span class="c1"># ou print([x for x in [a ** 2 for a in liste] if x % 2 == 0])</span>
+  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6, 7] [1, 2, 3] [1, 2, 3]
+False True
+[1, 4, 9, 16, 25, 36, 49]
+[2, 4, 6]
+[4, 16, 36]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="methodes-sur-des-listes">
+<h3><span class="section-number">1.4.2. </span>Méthodes sur des listes<a class="headerlink" href="#methodes-sur-des-listes" title="Permalink to this headline">#</a></h3>
+<p><strong>Rappel :</strong> Une <em>méthode</em> est une fonction qui s’applique à <em>une</em> variable (un objet) avec une notation pointée – et non des parenthèses.</p>
+<p><strong>Compléments :</strong></p>
+<ul class="simple">
+<li><p>Une méthode peut être une fonction de plusieurs paramètres.</p></li>
+<li><p>Le paramètre indispensable est celui mis devant le <code class="docutils literal notranslate"><span class="pre">.</span></code> de <em>la notation pointée obligatoire</em>.</p></li>
+<li><p>Les paramètres supplémentaires sont des arguments entre parenthèses en plus de la notation pointée.</p></li>
+<li><p>Remarquer que les méthodes suivantes modifient la liste à laquelle elles s’appliquent.</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Syntaxe</p></th>
+<th class="head"><p>Effet</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">une_lst.append(val)</span></code></p></td>
+<td><p>ajoute la valeur <code class="docutils literal notranslate"><span class="pre">val</span></code> à la fin de <code class="docutils literal notranslate"><span class="pre">une_lst</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">une_lst.extend(seq)</span></code></p></td>
+<td><p>ajoute la séquence <code class="docutils literal notranslate"><span class="pre">seq</span></code> à la fin de <code class="docutils literal notranslate"><span class="pre">une_lst</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">une_lst.insert(idx,val)</span></code></p></td>
+<td><p><em>insère</em> la valeur <code class="docutils literal notranslate"><span class="pre">val</span></code> en position <code class="docutils literal notranslate"><span class="pre">idx</span></code> dans <code class="docutils literal notranslate"><span class="pre">une_lst</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">une_lst.remove(val)</span></code></p></td>
+<td><p>supprime la valeur <code class="docutils literal notranslate"><span class="pre">val</span></code> de <code class="docutils literal notranslate"><span class="pre">une_lst</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">une_lst.pop()</span></code></p></td>
+<td><p>supprime la <strong>dernière valeur</strong> de <code class="docutils literal notranslate"><span class="pre">une_lst</span></code> (s’utilise comme procédure)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">une_lst.pop(idx)</span></code></p></td>
+<td><p>supprime la valeur d’indice <code class="docutils literal notranslate"><span class="pre">idx</span></code> de <code class="docutils literal notranslate"><span class="pre">une_lst</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">une_lst.sort()</span></code></p></td>
+<td><p>trie <code class="docutils literal notranslate"><span class="pre">une_lst</span></code> <strong>en place</strong> (s’utilise comme procédure)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">une_lst.reverse()</span></code></p></td>
+<td><p>inverse <code class="docutils literal notranslate"><span class="pre">une_lst</span></code> <strong>en place</strong> (s’utilise comme procédure)</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rmq.</strong></p>
+<ul class="simple">
+<li><p>Les accès, modifications (ajout/suppression de valeur) et parcours d’une liste sont des opérations simples (et optimisées) grâce à ces méthodes.</p></li>
+<li><p>Ainsi comme déjà indiqué, les listes en python sont des structures de données qui cachent une importante sophistication.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">les_daltons</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Jo&quot;</span><span class="p">,</span> <span class="s2">&quot;Jack&quot;</span><span class="p">,</span> <span class="s2">&quot;William&quot;</span><span class="p">,</span> <span class="s2">&quot;Averell&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">les_daltons</span><span class="p">)</span>
+<span class="n">les_daltons</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;le méchant&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">les_daltons</span><span class="p">)</span>
+<span class="n">les_daltons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Ma Dalton&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">les_daltons</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Jo&#39;, &#39;Jack&#39;, &#39;William&#39;, &#39;Averell&#39;]
+[&#39;le méchant&#39;, &#39;Jack&#39;, &#39;William&#39;, &#39;Averell&#39;]
+[&#39;le méchant&#39;, &#39;Jack&#39;, &#39;William&#39;, &#39;Averell&#39;, &#39;Ma Dalton&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Voir les différences de comportement des 2 cas suivants</span>
+<span class="c1">#chien_stupide = (&quot;rantanplan&quot;,)   # c&#39;est un tuple</span>
+<span class="n">chien_stupide</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;rantanplan&quot;</span><span class="p">)</span>    <span class="c1"># c&#39;est une str</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">chien_stupide</span><span class="p">))</span>
+<span class="n">les_daltons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chien_stupide</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">les_daltons</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;on comprend :&quot;</span><span class="p">)</span>
+<span class="n">lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">chien_stupide</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;lst:&quot;</span><span class="p">,</span><span class="n">lst</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
+[&#39;le méchant&#39;, &#39;Jack&#39;, &#39;William&#39;, &#39;Averell&#39;, &#39;Ma Dalton&#39;, &#39;rantanplan&#39;]
+on comprend :
+lst: [&#39;r&#39;, &#39;a&#39;, &#39;n&#39;, &#39;t&#39;, &#39;a&#39;, &#39;n&#39;, &#39;p&#39;, &#39;l&#39;, &#39;a&#39;, &#39;n&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;on corrige :&quot;</span><span class="p">,</span> <span class="n">les_daltons</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">les_daltons</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;Averell&quot;</span><span class="p">:</span>
+    <span class="n">les_daltons</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">les_daltons</span><span class="p">)</span>
+<span class="n">les_daltons</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">les_daltons</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>on corrige : [&#39;le méchant&#39;, &#39;Jack&#39;, &#39;William&#39;, &#39;Averell&#39;, &#39;Ma Dalton&#39;, &#39;rantanplan&#39;]
+[&#39;le méchant&#39;, &#39;Jack&#39;, &#39;William&#39;, &#39;Averell&#39;]
+[&#39;Jack&#39;, &#39;William&#39;, &#39;Averell&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">les_daltons</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">les_daltons</span><span class="p">)</span>
+<span class="n">les_daltons</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">les_daltons</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Averell&#39;, &#39;William&#39;, &#39;Jack&#39;]
+[&#39;Averell&#39;, &#39;Jack&#39;, &#39;William&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="affectation-entre-listes">
+<h3><span class="section-number">1.4.3. </span>Affectation entre listes<a class="headerlink" href="#affectation-entre-listes" title="Permalink to this headline">#</a></h3>
+<div class="alert alert-block alert-danger">
+<p><strong>ATTENTION</strong> : l’affectation <code class="docutils literal notranslate"><span class="pre">liste_destination</span> <span class="pre">=</span> <span class="pre">liste_source</span></code> <strong>ne crée pas une nouvelle</strong> <code class="docutils literal notranslate"><span class="pre">liste_destination</span></code>.</p>
+</div> 
+<ul class="simple">
+<li><p>L’effet de cette affectation est la création d’un nouveau <em>nom de liste</em> qui désigne <em>le même ensemble de valeurs en mémoire</em> que celui désignés par l’autre nom <code class="docutils literal notranslate"><span class="pre">liste_source</span></code>.</p></li>
+<li><p>Ainsi la modification de ces valeurs, qui est possible ici car les listes sont <em>mutables</em>, en utilisant un des deux noms (identifiant) <em>source</em> ou <em>destination</em>, agira <em>indifféremment</em> de l’identifiant utilisé : il n’y a qu’un seul ensemble de valeurs stockées en mémoire.</p></li>
+<li><p>Il est bien sûr possible de <em>dupliquer</em> ces valeurs et les désigner effectivement avec deux identificateurs différents. Plusieurs solutions existent en python dont :</p>
+<ul>
+<li><p>la fonction <code class="docutils literal notranslate"><span class="pre">copy</span></code>du module <code class="docutils literal notranslate"><span class="pre">copy</span></code></p></li>
+<li><p>l’affectation de tranches complètes.</p></li>
+</ul>
+</li>
+</ul>
+<p>Ce comportement, commun aux <em>types composés mutables</em> et qui peut surprendre, sera étudié en détail dans le chapitre <em>“Fonctions : aspects avancés”</em>.</p>
+<p>Si besoin, l’utilisation de <code class="docutils literal notranslate"><span class="pre">copy.copy</span></code> (importé du module <code class="docutils literal notranslate"><span class="pre">copy</span></code>) sera la solution.</p>
+<p>Cette particularité permet d’introduire les deux notions importantes suivantes qui sont classiques en programmation – au delà de python.</p>
+<ul class="simple">
+<li><p>Notion d’<strong>effet de bord</strong> : la modification par un identifiant agit sur les valeurs “de” l’autre identifiant.</p></li>
+<li><p>Notion de <strong>référence</strong> : l’identifiant d’une variable (mutable) est une <em>référence</em> vers un espace de mémoire.</p></li>
+</ul>
+<p><a class="reference external" href="https://goo.gl/GK6Gc7">Illustration avec python tutor</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">copy</span> 
+
+<span class="n">liste1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">liste2</span> <span class="o">=</span> <span class="n">liste1</span>
+<span class="n">liste2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste1</span> <span class="o">==</span> <span class="n">liste2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste1</span><span class="p">,</span> <span class="n">liste2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">liste1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;duplication avec copy.copy : &quot;</span><span class="p">)</span>
+<span class="n">new_liste</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">liste1</span><span class="p">)</span>
+<span class="n">new_liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">999</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_liste</span> <span class="o">==</span> <span class="n">liste1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste1</span><span class="p">,</span> <span class="n">new_liste</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;duplication par affectation de tranche complète : &quot;</span><span class="p">)</span>
+<span class="n">liste3</span> <span class="o">=</span> <span class="n">liste1</span><span class="p">[:]</span>
+<span class="n">liste1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">liste3</span> <span class="o">==</span> <span class="n">liste1</span><span class="p">,</span> <span class="n">liste1</span><span class="o">==</span><span class="n">liste2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">liste3</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">liste1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+[3, 1, 2] [3, 1, 2]
+140201255446848 140201255446848
+
+duplication avec copy.copy : 
+False
+[3, 1, 2] [999, 1, 2]
+duplication par affectation de tranche complète : 
+False True
+140201255427200 140201255446848
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="les-dictionnaires-dict">
+<h2><span class="section-number">1.5. </span>Les dictionnaires  <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#les-dictionnaires-dict" title="Permalink to this headline">#</a></h2>
+<p>Les dictionnaires python sont des <em>tableaux associatifs</em>.</p>
+<section id="tableau-associatif">
+<h3><span class="section-number">1.5.1. </span>Tableau associatif<a class="headerlink" href="#tableau-associatif" title="Permalink to this headline">#</a></h3>
+<p>Structure de données classique (hors python)</p>
+<ul class="simple">
+<li><p>type de donnée <em>composé</em></p></li>
+<li><p>formé par les <em>couples</em> <code class="docutils literal notranslate"><span class="pre">clé</span> <span class="pre">-&gt;</span> <span class="pre">valeur</span></code></p></li>
+<li><p>la <code class="docutils literal notranslate"><span class="pre">clé</span></code> est unique dans le tableau associatif :</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">clé</span></code> permet de désigner (d’atteindre) <code class="docutils literal notranslate"><span class="pre">valeur</span></code> dans le dictionnaire</p></li>
+<li><p>Dans un tableau associatif, la clé joue même rôle que l’indice dans un tableau.</p></li>
+</ul>
+</li>
+<li><p>cette <code class="docutils literal notranslate"><span class="pre">clé</span></code> n’induit pas un ordre sur les valeurs du tableau associatif – même si la clé est un entier !</p></li>
+</ul>
+</section>
+<section id="dictionnaire-dict-en-python">
+<h3><span class="section-number">1.5.2. </span>Dictionnaire <code class="docutils literal notranslate"><span class="pre">dict</span></code> en python<a class="headerlink" href="#dictionnaire-dict-en-python" title="Permalink to this headline">#</a></h3>
+<p><strong>Syntaxe.</strong></p>
+<ul class="simple">
+<li><p>des couples <code class="docutils literal notranslate"><span class="pre">clé</span> <span class="pre">:</span> <span class="pre">valeur</span></code> – bien noter la séparation avec <code class="docutils literal notranslate"><span class="pre">:</span></code></p></li>
+<li><p>écrits entre <code class="docutils literal notranslate"><span class="pre">{</span>&#160; <span class="pre">}</span></code> et</p></li>
+<li><p>séparées par des <code class="docutils literal notranslate"><span class="pre">,</span></code></p></li>
+</ul>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">{clé1:</span> <span class="pre">val1,</span> <span class="pre">clé2:</span> <span class="pre">val2,</span> <span class="pre">...}</span></code></p>
+</div></blockquote>
+<ul class="simple">
+<li><p><em>Mutable</em>, itérable mais non séquençable</p></li>
+<li><p><strong>Accès</strong> à la valeur : <code class="docutils literal notranslate"><span class="pre">un_dict[clé]</span></code></p>
+<ul>
+<li><p>similaire à l’accès à la valeur dans une liste, dans une chaîne de caractères, …</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h_lever_WE</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;samedi&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;dimanche&#39;</span><span class="p">:</span> <span class="mi">9</span> <span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">h_lever_WE</span><span class="p">[</span><span class="s1">&#39;samedi&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">h_lever_WE</span><span class="p">[</span><span class="s1">&#39;dimanche&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Rmq.</strong></p>
+<ul class="simple">
+<li><p>Un dictionnaire n’est pas “ordonné par ses indices” :</p>
+<ul>
+<li><p>Cette absence d’ordre justifie le caractère <em>non séquençable</em> de cette structure.</p></li>
+<li><p>Différent des <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code> et <code class="docutils literal notranslate"><span class="pre">list</span></code> qui sont des conteneurs <em>séquençables</em>.</p></li>
+</ul>
+</li>
+<li><p>Les valeurs peuvent être de <em>type quelconque</em></p>
+<ul>
+<li><p>voir exemple suivant</p></li>
+</ul>
+</li>
+<li><p>L’<strong>accès <code class="docutils literal notranslate"><span class="pre">clé</span> <span class="pre">-&gt;</span> <span class="pre">valeur</span></code></strong> s’effectue en temps constant (très court en pratique : technique de <em>hachage</em> )</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jour</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">res</span> <span class="o">=</span> <span class="s2">&quot;toto&quot;</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="c1"># ce dictionnaire utilise comme clés les valeurs des 3 variables précédentes</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">jour</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span><span class="s2">&quot;bonjour&quot;</span><span class="p">,</span> <span class="s2">&quot;nombre&quot;</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span> <span class="n">res</span><span class="p">:</span><span class="mf">1.32</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2: 3, &#39;&#39;: &#39;bonjour&#39;, &#39;nombre&#39;: 7, &#39;toto&#39;: 1.32}
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Opérateurs, fonctions et méthodes.</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">len()</span></code> : retourne le nombre de valeurs de l’argument</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">les_daltons</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;le_mechant&quot;</span><span class="p">:</span> <span class="s2">&quot;Jo&quot;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span> <span class="s2">&quot;Jack&quot;</span><span class="p">,</span>  <span class="mi">3</span><span class="p">:</span> <span class="s2">&quot;William&quot;</span><span class="p">,</span> <span class="s2">&quot;le_cretin&quot;</span><span class="p">:</span> <span class="s2">&quot;Averell&quot;</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">les_daltons</span><span class="p">),</span> <span class="n">les_daltons</span><span class="p">)</span>
+<span class="n">non</span> <span class="o">=</span> <span class="p">(</span><span class="n">les_daltons</span><span class="p">[</span><span class="s2">&quot;le_mechant&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">les_daltons</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;non:&quot;</span><span class="p">,</span> <span class="n">non</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 {&#39;le_mechant&#39;: &#39;Jo&#39;, &#39;2&#39;: &#39;Jack&#39;, 3: &#39;William&#39;, &#39;le_cretin&#39;: &#39;Averell&#39;}
+non: False
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Rmq.</strong></p>
+<ul class="simple">
+<li><p>Les clés d’un dictionnaire sont de type quelconque et non constant.</p></li>
+<li><p>En pratique, préférer des clés qui donnent un sens à la valeur correspondante et au dictionnaire.</p></li>
+</ul>
+<p><strong>Méthodes introspectives</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.keys()</span></code> : fonction-méthode qui retourne la liste des <code class="docutils literal notranslate"><span class="pre">clé</span></code>  de l’argument</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.values()</span></code> : fonction-méthode qui retourne la liste des <code class="docutils literal notranslate"><span class="pre">val</span></code> de l’argument</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.items()</span></code> : fonction-méthode qui retourne la liste des couples <code class="docutils literal notranslate"><span class="pre">clé:val</span></code> de l’argument</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">les_daltons</span><span class="p">)</span>
+
+<span class="n">les_cles</span> <span class="o">=</span> <span class="n">les_daltons</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">les_cles</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">les_cles</span><span class="p">))</span>
+<span class="c1"># type(les_cles[0]) produit TypeError: &#39;dict_keys&#39; object is not subscriptable</span>
+
+<span class="n">les_noms</span> <span class="o">=</span> <span class="n">les_daltons</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">les_noms</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">les_noms</span><span class="p">))</span>
+
+<span class="n">tout</span> <span class="o">=</span> <span class="n">les_daltons</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tout</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">tout</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;le_mechant&#39;: &#39;Jo&#39;, &#39;2&#39;: &#39;Jack&#39;, 3: &#39;William&#39;, &#39;le_cretin&#39;: &#39;Averell&#39;}
+dict_keys([&#39;le_mechant&#39;, &#39;2&#39;, 3, &#39;le_cretin&#39;])
+&lt;class &#39;dict_keys&#39;&gt;
+dict_values([&#39;Jo&#39;, &#39;Jack&#39;, &#39;William&#39;, &#39;Averell&#39;]) &lt;class &#39;dict_values&#39;&gt;
+dict_items([(&#39;le_mechant&#39;, &#39;Jo&#39;), (&#39;2&#39;, &#39;Jack&#39;), (3, &#39;William&#39;), (&#39;le_cretin&#39;, &#39;Averell&#39;)]) &lt;class &#39;dict_items&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Parcourir</strong> un dictionnaire</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cle</span> <span class="pre">in</span> <span class="pre">un_dict</span></code>: appartenance d’une clé</p>
+<ul>
+<li><p>utilisable dans <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">...</span></code> et produit un parcours <em>sur les clés</em>.</p></li>
+</ul>
+</li>
+<li><p>On peut itérer sur les`<em>valeurs</em> du dictionnaire mais selon un ordre aléatoire.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">iter(un_dict)</span></code> retourne un tuple (séquence) qui sert d’itérateur</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Attention : l&#39;itération simple suivante parcourt les clés&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">les_daltons</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attention : l&#39;itération simple suivante parcourt les clés
+le_mechant
+2
+3
+le_cretin
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">iter</span><span class="p">(</span><span class="n">les_daltons</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">iter</span><span class="p">(</span><span class="n">les_daltons</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">iter</span><span class="p">(</span><span class="n">les_daltons</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>le_mechant
+2
+3
+le_cretin
+--
+Jo
+Jack
+William
+Averell
+--
+(&#39;le_mechant&#39;, &#39;Jo&#39;) &lt;class &#39;tuple&#39;&gt;
+(&#39;2&#39;, &#39;Jack&#39;) &lt;class &#39;tuple&#39;&gt;
+(3, &#39;William&#39;) &lt;class &#39;tuple&#39;&gt;
+(&#39;le_cretin&#39;, &#39;Averell&#39;) &lt;class &#39;tuple&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Modifier un dictionnaire</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.pop(cle)</span></code> : <em>efface</em> <code class="docutils literal notranslate"><span class="pre">(cle:val)</span></code> et retourne <code class="docutils literal notranslate"><span class="pre">val</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">un_dic[cle]</span></code> détruit l’entrée <code class="docutils literal notranslate"><span class="pre">cle</span> <span class="pre">:</span> <span class="pre">val</span></code> du dictionnaire <code class="docutils literal notranslate"><span class="pre">un_dic</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.update(autre_dict)</span></code> :  ajout ou maj avec un <code class="docutils literal notranslate"><span class="pre">autre_dict</span></code> (et écrasement si clé commune)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.clear()</span></code> : efface le dictionnaire</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mutable : ajout, retrait, modification&quot;</span><span class="p">)</span>
+<span class="n">les_daltons</span><span class="p">[</span><span class="s2">&quot;la_maman&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Ma Dalton&quot;</span> <span class="c1">#ajout</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">les_daltons</span><span class="p">)</span>
+<span class="k">del</span> <span class="n">les_daltons</span><span class="p">[</span><span class="s2">&quot;le_mechant&quot;</span><span class="p">]</span> <span class="c1">#retrait</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">les_daltons</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;le_mechant&quot;</span> <span class="ow">in</span> <span class="n">les_daltons</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">les_daltons</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span> 
+
+<span class="n">animaux_fideles</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;le_cretin&quot;</span><span class="p">:</span><span class="s2">&quot;Rantanplan&quot;</span><span class="p">,</span> <span class="s2">&quot;la_classe&quot;</span><span class="p">:</span> <span class="s2">&quot;Jolly Jumper&quot;</span><span class="p">}</span>
+<span class="n">animaux_fideles</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;la_classe&quot;</span><span class="p">)</span> <span class="c1">#retrait</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">animaux_fideles</span><span class="p">)</span>
+<span class="n">les_daltons</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">animaux_fideles</span><span class="p">)</span> <span class="c1"># ajout-réduction de dictionnaires</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;changement de cretin : &quot;</span><span class="p">,</span> <span class="n">les_daltons</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mutable : ajout, retrait, modification
+{&#39;le_mechant&#39;: &#39;Jo&#39;, &#39;2&#39;: &#39;Jack&#39;, 3: &#39;William&#39;, &#39;le_cretin&#39;: &#39;Averell&#39;, &#39;la_maman&#39;: &#39;Ma Dalton&#39;}
+{&#39;2&#39;: &#39;Jack&#39;, 3: &#39;William&#39;, &#39;le_cretin&#39;: &#39;Averell&#39;, &#39;la_maman&#39;: &#39;Ma Dalton&#39;}
+False 4
+
+{&#39;le_cretin&#39;: &#39;Rantanplan&#39;}
+changement de cretin :  {&#39;2&#39;: &#39;Jack&#39;, 3: &#39;William&#39;, &#39;le_cretin&#39;: &#39;Rantanplan&#39;, &#39;la_maman&#39;: &#39;Ma Dalton&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="les-chaines-de-caracteres-str">
+<h2><span class="section-number">1.6. </span>Les chaînes de caractères <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#les-chaines-de-caracteres-str" title="Permalink to this headline">#</a></h2>
+<p>Leur importance pratique mériterait presque un chapitre dédié.
+Bien relire cette section plusieurs fois.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">str</span></code> (string) ou chaîne de caractères :</strong> type de donnée <em>non mutable</em> composé d’une suite ordonnée de caractères  (<em>séquence</em>)</p>
+<ul class="simple">
+<li><p>syntaxe : s’écrit indifféremment avec <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> et <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code></p></li>
+</ul>
+<section id="operations">
+<h3><span class="section-number">1.6.1. </span>Opérations<a class="headerlink" href="#operations" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">len()</span></code>, concaténation, répétition</p></li>
+</ul>
+<p><strong>Accès</strong></p>
+<ul class="simple">
+<li><p>par indexation : <code class="docutils literal notranslate"><span class="pre">s[i]</span></code>, <code class="docutils literal notranslate"><span class="pre">s[0]</span></code>, <code class="docutils literal notranslate"><span class="pre">s[-1]</span></code></p></li>
+<li><p>par extraction de sous-chaînes ou tranches de <code class="docutils literal notranslate"><span class="pre">str</span></code> : <code class="docutils literal notranslate"><span class="pre">s[i:j]</span></code>, <code class="docutils literal notranslate"><span class="pre">s[:]</span></code>, <code class="docutils literal notranslate"><span class="pre">s[i:]</span></code>, <code class="docutils literal notranslate"><span class="pre">s[-2:]</span></code>, <code class="docutils literal notranslate"><span class="pre">s[1:10:2]</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hello</span> <span class="o">=</span> <span class="s1">&#39;bonjour !&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hello</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">hello</span><span class="p">))</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">hello</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">hello</span><span class="p">):</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>! 9
+bnor! 5
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Modification</strong></p>
+<ul class="simple">
+<li><p>Une <code class="docutils literal notranslate"><span class="pre">str</span></code> est <em><strong>non</strong> mutable</em></p></li>
+<li><p>Toute modification de sa valeur</p>
+<ul>
+<li><p>créé une nouvelle <code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p>et détruit la précédente ;</p></li>
+<li><p>ce qui justifie que la nouvelle <code class="docutils literal notranslate"><span class="pre">str</span></code> puisse être désignée par le même identifiant.</p></li>
+<li><p>Se souvenir des illustrations pythontutor déjà vues (copie de <code class="docutils literal notranslate"><span class="pre">list</span></code>, concaténation de <code class="docutils literal notranslate"><span class="pre">str</span></code>).</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;abc&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">s</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="s1">&#39;def&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>abc 140201177612016
+abc 140201177612016
+abcdef 140201255385136
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fonctions-methodes">
+<h3><span class="section-number">1.6.2. </span>Fonctions-méthodes<a class="headerlink" href="#fonctions-methodes" title="Permalink to this headline">#</a></h3>
+<p>Ces fonctions-méthodes spécifiques aux <code class="docutils literal notranslate"><span class="pre">str</span></code> sont utiles en pratique.<br />
+Savoir qu’elles existent est suffisant dans le cadre de ce cours.<br />
+Les identifiants sont en général bien explicites.</p>
+<p>On distingue surtout deux types de fonctions-méthodes.</p>
+<p>Celles qui retournent un <code class="docutils literal notranslate"><span class="pre">bool</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.isupper()</span></code>, <code class="docutils literal notranslate"><span class="pre">.istitle()</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.isalnum()</span></code> (comprendre <em>is alpha and num</em>),  <code class="docutils literal notranslate"><span class="pre">.isalpha()</span></code>, <code class="docutils literal notranslate"><span class="pre">.isdigit()</span></code>, <code class="docutils literal notranslate"><span class="pre">.isspace()</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.startswith()</span></code>, <code class="docutils literal notranslate"><span class="pre">.endswith()</span></code></p></li>
+</ul>
+<p>Celles qui modifient l’argument <code class="docutils literal notranslate"><span class="pre">arg</span></code> :</p>
+<ul class="simple">
+<li><p>la casse des caractères : <code class="docutils literal notranslate"><span class="pre">.upper()</span></code>, <code class="docutils literal notranslate"><span class="pre">.lower()</span></code>, <code class="docutils literal notranslate"><span class="pre">.capitalize()</span></code>, <code class="docutils literal notranslate"><span class="pre">.swapcase()</span></code></p></li>
+<li><p>la justification : <code class="docutils literal notranslate"><span class="pre">.expantabs(nb)</span></code>, <code class="docutils literal notranslate"><span class="pre">.center(width)</span></code>, <code class="docutils literal notranslate"><span class="pre">.ljust()</span></code>, <code class="docutils literal notranslate"><span class="pre">.rjust()</span></code>, <code class="docutils literal notranslate"><span class="pre">.zfill(width)</span></code> (comprendre <em>zero fill</em>),</p></li>
+</ul>
+<p>ou aussi :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.replace(old,</span> <span class="pre">new,</span> <span class="pre">count)</span></code> où <code class="docutils literal notranslate"><span class="pre">count</span></code> est le nombre de remplacements à effectuer,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.join(cont)</span></code> concatène les chaînes du conteneur <code class="docutils literal notranslate"><span class="pre">cont</span></code> en intercalant <code class="docutils literal notranslate"><span class="pre">arg</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.split(seps)</span></code> partage la chaîne <code class="docutils literal notranslate"><span class="pre">arg</span></code> selons <code class="docutils literal notranslate"><span class="pre">seps</span></code> et retourne le tout sous forme de <code class="docutils literal notranslate"><span class="pre">list</span></code> de <code class="docutils literal notranslate"><span class="pre">str</span></code> ;</p>
+<ul>
+<li><p><strong>très utile en pratique</strong> pour manipuler les mots d’un texte par exemple.</p></li>
+</ul>
+</li>
+</ul>
+<p>On finit en mentionnant cette dernière méthode de recherche :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.find(substr,</span> <span class="pre">deb,</span> <span class="pre">fin)</span></code> qui retourne l’indice de <code class="docutils literal notranslate"><span class="pre">substr</span></code> dans <code class="docutils literal notranslate"><span class="pre">arg[deb,fin]</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hello</span> <span class="o">=</span> <span class="s1">&#39;bonjour !&#39;</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">hello</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;z&#39;</span> <span class="ow">in</span> <span class="n">t</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span> <span class="ow">in</span> <span class="n">t</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">plus_fort</span> <span class="o">=</span> <span class="n">hello</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hello</span><span class="p">,</span> <span class="n">hello</span><span class="o">.</span><span class="n">isupper</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plus_fort</span><span class="p">,</span> <span class="n">plus_fort</span><span class="o">.</span><span class="n">isupper</span><span class="p">(),</span> <span class="n">plus_fort</span><span class="o">.</span><span class="n">isalpha</span><span class="p">(),</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">liste_de_deux</span> <span class="o">=</span> <span class="n">plus_fort</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;.split:&quot;</span><span class="p">,</span> <span class="n">liste_de_deux</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">liste_de_deux</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">liste_de_deux</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">liste_de_deux</span> <span class="o">=</span> <span class="s1">&#39;zz!zz&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">liste_de_deux</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;.join:&quot;</span><span class="p">,</span> <span class="n">liste_de_deux</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">liste_de_deux</span><span class="p">),</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">deux_fois_plus_fort</span> <span class="o">=</span> <span class="n">liste_de_deux</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">,</span> <span class="s1">&#39;@&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">liste_de_deux</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;@&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;.replace:&quot;</span><span class="p">,</span> <span class="n">deux_fois_plus_fort</span><span class="p">)</span>
+
+<span class="n">deux_fois_plus_fort</span> <span class="o">=</span> <span class="n">liste_de_deux</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">,</span> <span class="s1">&#39;@&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">liste_de_deux</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;@&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;.replace:&quot;</span><span class="p">,</span> <span class="n">deux_fois_plus_fort</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False True
+[&#39;b&#39;, &#39;nj&#39;, &#39;ur !&#39;]
+bonjour ! False
+BONJOUR ! True False 
+
+.split: [&#39;BONJOUR&#39;, &#39;!&#39;] &lt;class &#39;list&#39;&gt; &lt;class &#39;str&#39;&gt; 
+
+.join: BONJOURzz!zz! &lt;class &#39;str&#39;&gt; 
+
+.replace: BONJOURzz@BONJOURzz!zz!@zz!
+.replace: BONJOURzz@BONJOURzz!zz!@zz@BONJOURzz!zz!@
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Rappel sur les fonctions-méthodes qui “modifient” une <code class="docutils literal notranslate"><span class="pre">str</span></code></strong></p>
+<ul class="simple">
+<li><p>Le caractère <em>non mutable</em> des <code class="docutils literal notranslate"><span class="pre">str</span></code> n’est pas mis en défaut par les méthodes de <em>modification</em></p></li>
+<li><p>Celles-ci créent de <em>nouvelles</em> <code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hello</span> <span class="o">=</span> <span class="s1">&#39;bonjour !&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">hello</span><span class="p">))</span>
+
+<span class="n">bjr</span> <span class="o">=</span> <span class="n">hello</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">bjr</span><span class="p">))</span>
+
+<span class="n">plus_fort</span> <span class="o">=</span> <span class="n">hello</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">plus_fort</span><span class="p">))</span>
+
+<span class="n">hello</span> <span class="o">=</span> <span class="n">plus_fort</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">hello</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140201255361328
+140201255361328
+140201255358640
+140201255358640
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="les-caracteres-speciaux-ou-caracteres-sequences-d-echappement">
+<span id="sec-echappement"></span><h3><span class="section-number">1.6.3. </span>Les caractères spéciaux ou caractères/séquences d’échappement<a class="headerlink" href="#les-caracteres-speciaux-ou-caracteres-sequences-d-echappement" title="Permalink to this headline">#</a></h3>
+<p><strong>Caractère d’échappement :</strong> “backslash” <code class="docutils literal notranslate"><span class="pre">\</span></code></p>
+<p><strong>Caractères spéciaux ou séquences d’échappement :</strong> l’association du “backslash” <code class="docutils literal notranslate"><span class="pre">\</span></code> et de certains symboles (ou  suite de symboles) a un sens particulier dans une chaîne de caractères.<br />
+Cela permet par exemple d’interpréter différemment les symboles <code class="docutils literal notranslate"><span class="pre">'</span></code> ou <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> ou <code class="docutils literal notranslate"> </code>.</p>
+<p><strong>Quelques exemples (<span class="math notranslate nohighlight">\(\star\)</span>) à connaitre :</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">\'</span></code> ou <code class="docutils literal notranslate"><span class="pre">\&quot;</span></code> ou <code class="docutils literal notranslate"><span class="pre">\\</span></code> ou <code class="docutils literal notranslate"><span class="pre">\/</span></code> : les symboles <code class="docutils literal notranslate"><span class="pre">'</span></code> ou <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> ou <code class="docutils literal notranslate"><span class="pre">\</span></code> ou <code class="docutils literal notranslate"><span class="pre">/</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\b</span></code> : <em>backspace</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\t</span></code> <code class="docutils literal notranslate"><span class="pre">\v</span></code>: tabulation horizontale ou verticale</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\n</span></code> : <em>new line</em> saut de ligne</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\f</span></code> : <em>form feed</em>  saut de page</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\r</span></code> : retour en début de ligne</p></li>
+</ul>
+<p><strong>Remarques.</strong></p>
+<ul class="simple">
+<li><p>Cette notion se retrouve dans d’autres langages de programmation : C, …</p></li>
+<li><p>On parle aussi de <em>séquence d’échappement</em> mais retenons que l’association <em><code class="docutils literal notranslate"><span class="pre">\</span></code> suivie d’un caractère</em> est “comptée” comme un seul caractère : un caractère spécial.</p></li>
+</ul>
+<p><strong>Exemples.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;bonjour&#39;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">bonjour&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;s1:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;s2:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">,</span> <span class="n">s1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;]&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">,</span> <span class="n">s2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;]&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bonjour
+	bonjour
+s1: 7
+s2: 8
+[ b ]
+[ 	 ]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Comment utiliser le symbole <code class="docutils literal notranslate"><span class="pre">\</span></code> sans qu’il s’évalue comme l’annonce d’une séquence d’échappement ?</strong></p>
+<ul class="simple">
+<li><p>avec lui même !</p></li>
+<li><p>ainsi <code class="docutils literal notranslate"><span class="pre">\\</span></code> s’évalue comme le caractère <code class="docutils literal notranslate"><span class="pre">\</span></code></p></li>
+<li><p>et <code class="docutils literal notranslate"><span class="pre">\\n</span></code> comme la chaîne de <strong>2</strong> caractères non évalués <code class="docutils literal notranslate"><span class="pre">\n</span></code> (piégeux !).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2"> texte avec &#39;</span><span class="se">\\</span><span class="s2">&#39; au début et à la fin </span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bo</span><span class="se">\n</span><span class="s2">jour&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bo</span><span class="se">\\</span><span class="s2">njour&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bo</span><span class="se">\\</span><span class="s2">n</span><span class="se">\b\b</span><span class="s2">njour&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ texte avec &#39;\&#39; au début et à la fin \
+
+Bo
+jour
+Bo\njour
+Bo\nnjour
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ainsi le <code class="docutils literal notranslate"><span class="pre">\</span></code> évite d’évaluer “normalement” le symbole qui le suit.</p>
+<p><strong>Rmq.</strong><br />
+Dans l’exemple suivant, expliquer pourquoi <code class="docutils literal notranslate"><span class="pre">va</span></code> (aux lignes affichées 2 et 4) n’est pas à la même colonne entre le premier et le second <code class="docutils literal notranslate"><span class="pre">print</span></code> ?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bonjour </span><span class="se">\&quot;</span><span class="s1">mon ami</span><span class="se">\&quot;</span><span class="s1"> ! </span><span class="se">\n</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> </span><span class="se">\t</span><span class="s1">  Ca va ?&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bonjour </span><span class="se">\&quot;</span><span class="s1">mon ami</span><span class="se">\&quot;</span><span class="s1"> ! </span><span class="se">\n</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> </span><span class="se">\t</span><span class="s1">  Ca va ? </span><span class="se">\r</span><span class="s1"> Comment&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bonjour &quot;mon ami&quot; ! 
+ 	 	  Ca va ?
+Bonjour &quot;mon ami&quot; ! 
+ 	 	  Ca va ? 
+ Comment
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Réponse :</em></p>
+<ol class="simple">
+<li><p><strong>Analyse du premier <code class="docutils literal notranslate"><span class="pre">print()</span></code></strong> : on s’intéresse à l’<em>interprétation</em> par le <code class="docutils literal notranslate"><span class="pre">print()</span></code> de la chaîne de caractère argument.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">\n</span></code> et <code class="docutils literal notranslate"><span class="pre">\t</span></code> sont resp. les symboles du <em>saut à la ligne</em> et de la <em>tabulation</em></p></li>
+<li><p>la tabulation est interprétée <em>dans mon environnement</em> comme 7 (caractères) espaces</p></li>
+<li><p><strong>lors de l’affichage</strong>, la chaîne à afficher à partir du <code class="docutils literal notranslate"><span class="pre">\n</span></code> est donc <em>interprétée</em> comme :</p>
+<ul>
+<li><p>1 espace</p></li>
+<li><p>7 espaces (1 tabulation)</p></li>
+<li><p>1 espace</p></li>
+<li><p>7 espaces (1 tabulation)</p></li>
+<li><p>2 espaces</p></li>
+<li><p>les 7 caractères <code class="docutils literal notranslate"><span class="pre">Ca</span> <span class="pre">va</span> <span class="pre">?</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Soit donc au total 25 caractères affichés sur la seconde ligne (après le <code class="docutils literal notranslate"><span class="pre">\n</span></code>).</p></li>
+</ul>
+</li>
+</ol>
+<ol class="simple">
+<li><p><strong>Analyse de second <code class="docutils literal notranslate"><span class="pre">print()</span></code></strong> : on va expliciter la valeur de la chaîne de caractères sans se soucier dans un premier temps de son interprétation à l’affichage, cad. lors de l’exécution du <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">\t</span></code> est une chaîne de caractères de longueur 1, cad. un caractère :</p>
+<ul>
+<li><p>essayer <code class="docutils literal notranslate"><span class="pre">type('\t')</span></code> et <code class="docutils literal notranslate"><span class="pre">len('\t')</span></code></p></li>
+</ul>
+</li>
+<li><p>à partir du <code class="docutils literal notranslate"><span class="pre">\n</span></code>, la chaîne de caractères <code class="docutils literal notranslate"> <span class="pre">\t</span> <span class="pre">\t</span>&#160; <span class="pre">Ca</span> <span class="pre">va</span> <span class="pre">?</span></code>  est de longueur 13</p>
+<ul>
+<li><p>essayer <code class="docutils literal notranslate"><span class="pre">len('</span> <span class="pre">\t</span> <span class="pre">\t</span>&#160; <span class="pre">Ca</span> <span class="pre">va</span> <span class="pre">?')</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\r</span></code> revient en début de ligne dans <em>cette chaîne de caractères</em></p>
+<ul>
+<li><p>cad. juste après le <code class="docutils literal notranslate"><span class="pre">\n</span></code></p></li>
+<li><p>et donc “recule” (la position d’entrée) de 13 caractères sur cette ligne</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"> <span class="pre">Comment</span></code> est un chaîne de caractères de longueur 8</p>
+<ul>
+<li><p>elle est placée aux 8 premiers caractères à partir de la position du curseur, cad. du début de la ligne</p></li>
+<li><p>et ainsi <em>écrase</em> les 8 premiers caractères de la chaîne <code class="docutils literal notranslate"> <span class="pre">\t</span> <span class="pre">\t</span>&#160; <span class="pre">Ca</span> <span class="pre">va</span> <span class="pre">?</span></code></p></li>
+<li><p>ces 8 premiers caractères sont : <code class="docutils literal notranslate"> <span class="pre">\t</span> <span class="pre">\t</span>&#160; <span class="pre">Ca</span></code></p></li>
+</ul>
+</li>
+<li><p>donc la chaîne de caractètes à afficher devient, à partir du <code class="docutils literal notranslate"><span class="pre">\n</span></code>: <code class="docutils literal notranslate"> <span class="pre">Comment</span> <span class="pre">va</span> <span class="pre">?</span></code></p>
+<ul>
+<li><p>on peut vérifier que <code class="docutils literal notranslate"><span class="pre">len(&quot;</span> <span class="pre">Comment</span> <span class="pre">va</span> <span class="pre">?&quot;)</span></code> retourne 13.</p></li>
+</ul>
+</li>
+<li><p>L’affichage obtenu est conforme à l’analyse.</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[</span><span class="se">\t</span><span class="s1">]&#39;</span><span class="p">)</span>
+<span class="n">tab</span> <span class="o">=</span> <span class="s1">&#39;[&#39;</span> <span class="o">+</span> <span class="s1">&#39;x&#39;</span><span class="o">*</span><span class="mi">7</span> <span class="o">+</span> <span class="s1">&#39;]&#39;</span>  <span class="c1"># sept x entre crochets</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bonjour </span><span class="se">\&quot;</span><span class="s1">collègue</span><span class="se">\&quot;</span><span class="s1"> ! </span><span class="se">\n</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> </span><span class="se">\t</span><span class="s1">  Ca va ?&#39;</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">*</span><span class="mi">25</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bonjour </span><span class="se">\&quot;</span><span class="s1">collègue</span><span class="se">\&quot;</span><span class="s1"> ! </span><span class="se">\n</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> </span><span class="se">\t</span><span class="s1">  Ca va ? </span><span class="se">\r</span><span class="s1"> Comment&#39;</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">*</span><span class="mi">13</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[	]
+[xxxxxxx]
+
+Bonjour &quot;collègue&quot; ! 
+ 	 	  Ca va ?
+.........................
+Bonjour &quot;collègue&quot; ! 
+ 	 	  Ca va ? 
+ Comment
+.............
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39; Comment va ?&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="les-ensembles-set-et-frozenset">
+<h2><span class="section-number">1.7. </span>Les ensembles   <code class="docutils literal notranslate"><span class="pre">set</span></code> et <code class="docutils literal notranslate"><span class="pre">frozenset</span></code><a class="headerlink" href="#les-ensembles-set-et-frozenset" title="Permalink to this headline">#</a></h2>
+<p><strong><code class="docutils literal notranslate"><span class="pre">set</span></code></strong> (ensemble) : type composé de valeurs <strong>uniques</strong> écrites entre <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code> et séparées par des <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
+<blockquote>
+<div><p>{3, “bonjour”, 7, 1.32}</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">set</span></code>: ensemble <em>mutable</em></p></li>
+<li><p>(<span class="math notranslate nohighlight">\(\star\)</span>) <code class="docutils literal notranslate"><span class="pre">frozenset</span></code> : ensemble <em>non mutable</em></p></li>
+</ul>
+<p>La fonction <code class="docutils literal notranslate"><span class="pre">set()</span></code> permet de créer un ensemble à partir d’un tuple ou d’une chaîne de caractères.</p>
+<p><strong>Opérations :</strong></p>
+<ul class="simple">
+<li><p>opérations ensemblistes (des maths) :</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">in</span></code> et <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> :  appartenance ou non</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">|</span></code> : union</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&amp;</span></code> : intersection</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code>: différence</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">^</span></code>: différence symétrique  (complémentaire de l’intersection)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> ou <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> : inclusion ensembliste, resp. <em>est un sous-ensemble de</em> vs. <em>est inclus strictement dans</em>; <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">&lt;</span> <span class="pre">B</span></code> == <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">&lt;=</span> <span class="pre">B</span></code> and <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">!=</span> <span class="pre">B</span></code> (et de même : <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>)</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bof</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">}</span>
+<span class="n">voyelles</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s1">&#39;aeiouy&#39;</span><span class="p">)</span>
+<span class="n">aie</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s1">&#39;aie&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">voyelles</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">voyelles</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="n">voyelles</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="n">bof</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;aie :&quot;</span><span class="p">,</span> <span class="n">aie</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;voyelles :&quot;</span><span class="p">,</span> <span class="n">voyelles</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;union :&quot;</span><span class="p">,</span> <span class="n">voyelles</span> <span class="o">|</span> <span class="n">aie</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;autre union :&quot;</span><span class="p">,</span> <span class="n">voyelles</span> <span class="o">|</span> <span class="n">bof</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;intersection :&quot;</span><span class="p">,</span> <span class="n">voyelles</span> <span class="o">&amp;</span> <span class="n">aie</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;difference : &quot;</span><span class="p">,</span> <span class="n">aie</span> <span class="o">-</span> <span class="n">voyelles</span><span class="p">,</span> <span class="n">bof</span> <span class="o">-</span> <span class="n">voyelles</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;difference symétrique: &quot;</span><span class="p">,</span> <span class="n">aie</span> <span class="o">^</span> <span class="n">voyelles</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;inclusions :&quot;</span><span class="p">,</span> <span class="n">aie</span> <span class="o">&lt;</span> <span class="n">voyelles</span><span class="p">,</span> <span class="n">aie</span> <span class="o">&lt;=</span> <span class="n">voyelles</span><span class="p">,</span> <span class="n">aie</span> <span class="o">&gt;=</span> <span class="n">voyelles</span><span class="p">,</span> <span class="n">bof</span> <span class="o">&lt;</span> <span class="n">voyelles</span><span class="p">)</span>
+ 
+<span class="c1">#print(aie[1])  # déclenche une erreur : l&#39;accès indexé n&#39;est pas possible dans un ensemble</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;e&#39;, &#39;i&#39;, &#39;y&#39;, &#39;o&#39;, &#39;a&#39;, &#39;u&#39;} 6
+True
+False
+aie : {&#39;e&#39;, &#39;a&#39;, &#39;i&#39;}
+voyelles : {&#39;e&#39;, &#39;i&#39;, &#39;y&#39;, &#39;o&#39;, &#39;a&#39;, &#39;u&#39;}
+union : {&#39;e&#39;, &#39;i&#39;, &#39;y&#39;, &#39;o&#39;, &#39;a&#39;, &#39;u&#39;}
+autre union : {&#39;e&#39;, &#39;f&#39;, &#39;i&#39;, &#39;b&#39;, &#39;y&#39;, &#39;o&#39;, &#39;a&#39;, &#39;u&#39;}
+intersection : {&#39;a&#39;, &#39;i&#39;, &#39;e&#39;}
+difference :  set() {&#39;b&#39;, &#39;f&#39;}
+difference symétrique:  {&#39;y&#39;, &#39;o&#39;, &#39;u&#39;}
+inclusions : True True False False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="specifier-des-fonctions-avec-des-types-composes">
+<h2><span class="section-number">1.8. </span>Spécifier des fonctions avec des types composés<a class="headerlink" href="#specifier-des-fonctions-avec-des-types-composes" title="Permalink to this headline">#</a></h2>
+<p>Les fonctions peuvent manipuler des arguments de type composé.</p>
+<p>On a déjà vu beaucoup d’exemples avec les tableaux.
+Ces derniers ayant été représentés en python par le type (composé) <em>liste</em>, on sait expliciter le <em>type</em> de tels paramètres à l’aide de <code class="docutils literal notranslate"><span class="pre">List</span></code> (avec une majuscule) du module <code class="docutils literal notranslate"><span class="pre">typing</span></code>.</p>
+<p>On va étendre cette approche aux type composés vus dans ce chapitre.</p>
+<div class="alert alert-block alert-info">
+<p>Depuis python <strong>3.9</strong>, il est possible de paramètrer les types prédéfinis avec des <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> de façon similaire à celle décrite dans la section 2 de cette partie.</p>
+<p>Il n’est donc plus nécessaire de passer par les types “avec majuscule” de <code class="docutils literal notranslate"><span class="pre">typing</span></code>.</p>
+</div><section id="parametres-de-type-compose-predefini">
+<h3><span class="section-number">1.8.1. </span>Paramètres de type composé prédéfini<a class="headerlink" href="#parametres-de-type-compose-predefini" title="Permalink to this headline">#</a></h3>
+<p>Les types composés prédéfinis de python sont renvoyés par la fonction <code class="docutils literal notranslate"><span class="pre">type()</span></code> (appliquée à une variable).</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">list</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dict</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tuple</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">set</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unTuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">uneListe</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">]</span>
+<span class="n">unDictionnaire</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;le_mechant&quot;</span><span class="p">:</span><span class="s2">&quot;Jo&quot;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span><span class="s2">&quot;Jack&quot;</span><span class="p">,</span>  <span class="mi">3</span><span class="p">:</span><span class="s2">&quot;William&quot;</span><span class="p">,</span> <span class="s2">&quot;le_cretin&quot;</span><span class="p">:</span> <span class="s2">&quot;Averell&quot;</span><span class="p">}</span>
+<span class="n">unEnsemble</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">}</span>
+<span class="n">uneChaineDeCaracteres</span> <span class="o">=</span> <span class="s2">&quot;bof&quot;</span>
+
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">(</span><span class="n">unTuple</span><span class="p">,</span> <span class="n">uneListe</span><span class="p">,</span> <span class="n">unDictionnaire</span><span class="p">,</span> <span class="n">unEnsemble</span><span class="p">,</span> <span class="n">uneChaineDeCaracteres</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;tuple&#39;&gt;
+&lt;class &#39;list&#39;&gt;
+&lt;class &#39;dict&#39;&gt;
+&lt;class &#39;set&#39;&gt;
+&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Solution minimale.</strong> On peut donc <strong>utiliser ces types prédéfinis</strong> pour spécifier le type des paramètres d’une fonction.</p>
+<div class="alert alert-block alert-info">
+<p>Par la suite, on utilisera au moins cette solution minimale pour toutes les spécifications de fonction avec des paramètres de type composé.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nb_caracteres</span><span class="p">(</span><span class="n">s</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">nb_entrees</span><span class="p">(</span><span class="n">d</span> <span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">card</span><span class="p">(</span><span class="n">s</span> <span class="p">:</span> <span class="nb">set</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="c1"># exemple de 2 fonctions d&#39;identifiant identiques </span>
+<span class="c1"># mais de signature différentes grâce au typage de</span>
+<span class="c1"># ses paramètres formels</span>
+<span class="c1"># On appelle aussi cette homonymie de la &quot;surcharge de fonctions&quot;</span>
+<span class="k">def</span> <span class="nf">nb_val</span><span class="p">(</span><span class="n">l</span> <span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">nb_val</span><span class="p">(</span><span class="n">t</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+  
+<span class="nb">print</span><span class="p">(</span><span class="n">nb_caracteres</span><span class="p">(</span><span class="n">uneChaineDeCaracteres</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nb_entrees</span><span class="p">(</span><span class="n">unDictionnaire</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">card</span><span class="p">(</span><span class="n">unEnsemble</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">(</span><span class="n">uneListe</span><span class="p">,</span> <span class="n">unTuple</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nb_val</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+4
+3
+13
+13
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Rmq.</strong> Dans l’exemple précédent, on a 2 fonctions d’identifiant identique <code class="docutils literal notranslate"><span class="pre">nb_val()</span></code> mais de signatures différentes grâce au typage de leurs paramètres formels.</p>
+<p>On a par exemple déjà signalé cette caractéristique avec les différents sens du symbole <code class="docutils literal notranslate"><span class="pre">+</span></code> selon qu’il s’applique à des entiers, des flottants, des chaînes de caractères, …</p>
+<p>On appelle aussi cette homonymie de la <em>surcharge de fonctions</em>.</p>
+</section>
+<section id="star-mieux-expliciter-le-type-compose">
+<h3><span class="section-number">1.8.2. </span>(<span class="math notranslate nohighlight">\(\star\)</span>) Mieux expliciter le type composé<a class="headerlink" href="#star-mieux-expliciter-le-type-compose" title="Permalink to this headline">#</a></h3>
+<p>Comme on l’a fait pour <em>mieux</em> expliciter les tableaux, on peut utiliser le module <code class="docutils literal notranslate"><span class="pre">typing</span></code> pour aussi expliciter “l’intérieur” d’un type composé, cad. le type de ses composants.</p>
+<p>Par exemple, le type d’un tableau 2D de valeurs entières (type composé qui regroupe des valeurs de même type)  a été spécifié par :</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">List[List[int]]</span></code></p>
+</div></blockquote>
+<p>On a ainsi explicité :</p>
+<ul class="simple">
+<li><p>la dimension du tableau : ici 2 et la représentation comme une liste de listes</p></li>
+<li><p>le type de ses valeurs  : ici des entiers, <em>ie.</em> des <code class="docutils literal notranslate"><span class="pre">int</span></code></p></li>
+</ul>
+<p>Ce qui n’était pas possible avec le seul type prédéfini <code class="docutils literal notranslate"><span class="pre">list</span></code> (avec un <code class="docutils literal notranslate"><span class="pre">l</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+
+<span class="k">def</span> <span class="nf">maxTab2D</span><span class="p">(</span> <span class="n">t</span> <span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">d1</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">d2</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">d1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">d2</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">m</span><span class="p">:</span>
+                <span class="n">m</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> 
+    <span class="k">return</span> <span class="n">m</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">maxTab2D</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]],</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Une solution satisfaisante.</strong>
+Le module <code class="docutils literal notranslate"><span class="pre">typing</span></code> introduit les types prédéfinis “avec majuscule” suivants  :</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">List</span></code> , <code class="docutils literal notranslate"><span class="pre">Dict</span></code>, <code class="docutils literal notranslate"><span class="pre">Tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">Set</span></code></p>
+</div></blockquote>
+<p>et</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">Union</span></code></p>
+</div></blockquote>
+<p>Ces types permettent d’expliciter “l’intérieur” des arguments de type composé. La syntaxe s’appuie sur les crochets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> déjà rencontrés pour les tableaux-listes.</p>
+<p><strong>Exemples.</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Tuple[int,</span> <span class="pre">float,</span> <span class="pre">str]</span></code> est un <em>tuple</em> triplet composé d’un entier, d’un flottant et d’une chaîne de caractères.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dict[str,</span> <span class="pre">int]</span></code> est un dictionnaire de couples <em>clés:valeur</em> de types  <code class="docutils literal notranslate"><span class="pre">str:int</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Union</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Union[int,</span> <span class="pre">float]</span></code> est un paramètre de type <code class="docutils literal notranslate"><span class="pre">int</span></code> ou <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
+<li><p>Il convient par exemple pour écrire une seule version de la fonction <code class="docutils literal notranslate"><span class="pre">nb_val()</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+<p>Ces types paramètrables pourront être utiles pour  spécifier au mieux des paramètres de fonctions de type composé.</p>
+<p>On y accède après l’importation suivante.</p>
+<p><strong>Rmq.</strong> Depuis python 3.9, une approche similaire est possible avec les types prédéfinis python (sans majuscule).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Set</span><span class="p">,</span> <span class="n">Union</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nb_entrees</span><span class="p">(</span><span class="n">d</span> <span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">card</span><span class="p">(</span><span class="n">s</span> <span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="c1"># exemple d&#39;Union pour la surcharge</span>
+<span class="k">def</span> <span class="nf">nb_val</span><span class="p">(</span><span class="n">cont</span> <span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">cont</span><span class="p">)</span>
+
+<span class="n">unTuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">uneListe</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">]</span>
+<span class="n">unDictionnaire</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;le_mechant&quot;</span><span class="p">:</span><span class="s2">&quot;Jo&quot;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span><span class="s2">&quot;Jack&quot;</span><span class="p">,</span>  <span class="mi">3</span><span class="p">:</span><span class="s2">&quot;William&quot;</span><span class="p">,</span> <span class="s2">&quot;le_cretin&quot;</span><span class="p">:</span> <span class="s2">&quot;Averell&quot;</span><span class="p">}</span>
+<span class="n">unEnsemble</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">}</span>
+<span class="n">uneChaineDeCaracteres</span> <span class="o">=</span> <span class="s2">&quot;bof&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">nb_entrees</span><span class="p">(</span><span class="n">unDictionnaire</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">card</span><span class="p">(</span><span class="n">unEnsemble</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">(</span><span class="n">uneListe</span><span class="p">,</span> <span class="n">unTuple</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nb_val</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+3
+3
+3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># autre exmple avec Union</span>
+<span class="k">def</span> <span class="nf">maxListe</span><span class="p">(</span> <span class="n">l</span> <span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;</span> <span class="n">m</span><span class="p">:</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
+    <span class="k">return</span> <span class="n">m</span>
+
+<span class="n">resI</span> <span class="o">=</span> <span class="n">maxListe</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">resF</span> <span class="o">=</span> <span class="n">maxListe</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">resI</span><span class="p">,</span> <span class="n">resF</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2 2.2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Consulter la <a class="reference external" href="https://docs.python.org/fr/3/library/typing.html?highlight=typing#typing.Union">documentation</a>
+pour d’autres constructions plus avancées et très utiles.</p>
+</section>
+</section>
+<section id="synthese">
+<h2><span class="section-number">1.9. </span>Synthèse<a class="headerlink" href="#synthese" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Conteneurs non mutables : <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code> (et <code class="docutils literal notranslate"><span class="pre">frozenset</span></code>)</p></li>
+<li><p>Conteneurs  mutables : <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code></p></li>
+<li><p>Création, accès aux valeurs, parcours et modification</p></li>
+<li><p>Des fonctions (pour les non mutables) et des fonction-méthodes</p></li>
+<li><p><strong>Attention</strong> : la modification de non mutable cache une recopie en mémoire</p></li>
+<li><p><strong>Attention</strong> : bien que très simples à utiliser, certaines fonctions-méthodes sont d’un coût algorithmique élevé (complexité non constante)</p></li>
+<li><p>Quels mutables choisir ?</p>
+<ul>
+<li><p>les <code class="docutils literal notranslate"><span class="pre">list</span></code> pour des tableaux 1D de valeurs de type qcq et où le traitement demande de la souplesse</p></li>
+<li><p>les <code class="docutils literal notranslate"><span class="pre">dict</span></code> pour des clés <code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p>(<span class="math notranslate nohighlight">\(\star\)</span>) mais aussi les <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> pour du calcul numérique type algèbre linéaire ou les tableaux multi-dimensionnels de valeurs numériques – voir <a class="reference internal" href="a2-ndarray.html#ann-ndarray"><span class="std std-ref">cette annexe</span></a>.</p></li>
+</ul>
+</li>
+<li><p>La spécification d’arguments de type composé avec le module <code class="docutils literal notranslate"><span class="pre">typing</span></code> ou plus directement en python&gt;=3.9</p></li>
+</ul>
+<section id="avoir-les-idees-claires">
+<h3><span class="section-number">1.9.1. </span>Avoir les idées claires<a class="headerlink" href="#avoir-les-idees-claires" title="Permalink to this headline">#</a></h3>
+<p>Distinguer les  caractéristiques des structures de données :
+tuple, liste, dictionnaire, ensemble, et chaîne de caractères
+– aussi appelés type composé ou conteneur en python :</p>
+<ul class="simple">
+<li><p>pour une représentation,un stockage des données et des traitements adaptés au problème</p></li>
+<li><p>pour effectuer l’accès aux valeurs, le parcours (séquences, itérateur), et la modification ou la copie (mutabilité) de ces SD</p></li>
+<li><p>(<span class="math notranslate nohighlight">\(\star\)</span>) Connaître les complexités de ces traitements</p></li>
+</ul>
+</section>
+<section id="savoir-faire">
+<h3><span class="section-number">1.9.2. </span>Savoir faire<a class="headerlink" href="#savoir-faire" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Connaitre la syntaxe python de définition et manipulation de ces SD</p></li>
+<li><p>Créer des listes et dictionnaires en compréhension</p></li>
+<li><p>Connaître les méthodes (prédéfinies) utiles au traitement, en particulier des chaînes de caractères</p></li>
+<li><p>Définir des spécifications de fonctions avec un ou des paramètres de type composé</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./cm"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="6-recursivite.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Récursivité</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="7-fonctions-avancees.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Sous-programme et affectation – aspects avancés</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ph. Langlois<br/>
+  
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
