@@ -47,3 +47,7 @@ parts:
     - file: td/td3
     - file: td/td4
     - file: td/td5
+  - caption: Diapos
+    numbered: 3
+    chapters:
+    - file: slides/1_sl.ipynb
