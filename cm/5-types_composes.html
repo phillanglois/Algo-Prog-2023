@@ -856,7 +856,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="les-types-composes">
 <span id="ch-typescomposes"></span><h1><span class="section-number">1. </span>Les types composés<a class="headerlink" href="#les-types-composes" title="Permalink to this headline">#</a></h1>
-<p>Mis à jour : Jan 26, 2023, lecture : 14
+<p>Mis à jour : Jan 30, 2023, lecture : 14
 minutes minimum, PhL.</p>
 <p>Les types composés ou <em>conteneurs</em> de python sont  introduits  dans ce chapitre :</p>
 <ul class="simple">
@@ -907,7 +907,7 @@ Ce sont aussi des premiers exemples de <em>structures de données</em> en algori
 <section id="la-vision-classique">
 <h3><span class="section-number">1.1.2. </span>La vision classique<a class="headerlink" href="#la-vision-classique" title="Permalink to this headline">#</a></h3>
 <p>Dans la plupart des langages de programmation, les types composés <em>classiques</em> sont les suivants.</p>
-<p><strong>Les tableaux</strong>, déjà revus dans ce <a class="reference internal" href="a0-boucles-avancees.html#ann-boucles"><span class="std std-ref">chapitre</span></a>, sont définis comme des ensembles de valeurs <em>de même type</em> et de nombre <em>connu et fixé</em> “une fois pour toute” lors de leur définition (ce nombre est la <em>taille</em> ou la <em>dimension</em> du tableau) et dont les valeurs sont <em>ainsi stockées de façon contigüe en mémoire</em>.<br />
+<p><strong>Les tableaux</strong>, déjà revus dans ce <span class="xref myst">chapitre</span>, sont définis comme des ensembles de valeurs <em>de même type</em> et de nombre <em>connu et fixé</em> “une fois pour toute” lors de leur définition (ce nombre est la <em>taille</em> ou la <em>dimension</em> du tableau) et dont les valeurs sont <em>ainsi stockées de façon contigüe en mémoire</em>.<br />
 - les valeurs sont accédées par un ou des <em>indice</em> indiqué entre un ou plusieurs <code class="docutils literal notranslate"><span class="pre">[]</span></code></p>
 <p><strong>Les enregistrements</strong> ou <strong>structures</strong> sont définis comme un ensemble de valeurs de <em>types quelconques</em>. Le nombre de valeurs est défini “une fois pour toutes” mais sans hypothèse  sur le mode de stockage.<br />
 - les enregistrements sont composés de <em>champs nommés</em> aussi appelés <em>attributs</em><br />
@@ -1562,14 +1562,14 @@ lst: [&#39;r&#39;, &#39;a&#39;, &#39;n&#39;, &#39;t&#39;, &#39;a&#39;, &#39;n&#3
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 [3, 1, 2] [3, 1, 2]
-140397580662208 140397580662208
+140448550701888 140448550701888
 
 duplication avec copy.copy : 
 False
 [3, 1, 2] [999, 1, 2]
 duplication par affectation de tranche complète : 
 False True
-140397581390080 140397580662208
+140448550757184 140448550701888
 </pre></div>
 </div>
 </div>
@@ -1881,12 +1881,9 @@ bnor! 5
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>abc
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 140397531889456
-abc 140397531889456
-abcdef 140397581391536
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>abc 140448502120112
+abc 140448502120112
+abcdef 140448550729520
 </pre></div>
 </div>
 </div>
@@ -1987,10 +1984,10 @@ BONJOUR ! True False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140397581547952
-140397581547952
-140397581546352
-140397581546352
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140448550720752
+140448550720752
+140448550721072
+140448550721072
 </pre></div>
 </div>
 </div>
@@ -2238,16 +2235,16 @@ Bonjour &quot;collègue&quot; !
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;a&#39;, &#39;u&#39;, &#39;i&#39;, &#39;e&#39;, &#39;y&#39;, &#39;o&#39;} 6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;i&#39;, &#39;e&#39;, &#39;o&#39;, &#39;y&#39;, &#39;a&#39;, &#39;u&#39;} 6
 True
 False
-aie : {&#39;a&#39;, &#39;e&#39;, &#39;i&#39;}
-voyelles : {&#39;a&#39;, &#39;u&#39;, &#39;i&#39;, &#39;e&#39;, &#39;y&#39;, &#39;o&#39;}
-union : {&#39;a&#39;, &#39;u&#39;, &#39;i&#39;, &#39;e&#39;, &#39;y&#39;, &#39;o&#39;}
-autre union : {&#39;a&#39;, &#39;f&#39;, &#39;u&#39;, &#39;i&#39;, &#39;b&#39;, &#39;e&#39;, &#39;y&#39;, &#39;o&#39;}
-intersection : {&#39;a&#39;, &#39;e&#39;, &#39;i&#39;}
-difference :  set() {&#39;b&#39;, &#39;f&#39;}
-difference symétrique:  {&#39;u&#39;, &#39;y&#39;, &#39;o&#39;}
+aie : {&#39;a&#39;, &#39;i&#39;, &#39;e&#39;}
+voyelles : {&#39;i&#39;, &#39;e&#39;, &#39;o&#39;, &#39;y&#39;, &#39;a&#39;, &#39;u&#39;}
+union : {&#39;i&#39;, &#39;e&#39;, &#39;o&#39;, &#39;y&#39;, &#39;a&#39;, &#39;u&#39;}
+autre union : {&#39;i&#39;, &#39;e&#39;, &#39;f&#39;, &#39;b&#39;, &#39;o&#39;, &#39;y&#39;, &#39;a&#39;, &#39;u&#39;}
+intersection : {&#39;a&#39;, &#39;i&#39;, &#39;e&#39;}
+difference :  set() {&#39;f&#39;, &#39;b&#39;}
+difference symétrique:  {&#39;u&#39;, &#39;o&#39;, &#39;y&#39;}
 inclusions : True True False False
 </pre></div>
 </div>
