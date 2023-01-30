@@ -1,5 +1,5 @@
 (ch:intro)=
-# Algorithmique et Programmation en 2022
+# Algorithmique et Programmation en 2023
 
 Mis à jour : {sub-ref}`today`, lecture : {sub-ref}`wordcount-minutes` minutes minimum, PhL.
 
@@ -9,18 +9,18 @@ Mis à jour : {sub-ref}`today`, lecture : {sub-ref}`wordcount-minutes` minutes m
 - Comment me rencontrer : sur RDV _DEMANDÉ PAR E-MAIL_  
 - Où me rencontrer : au bâtiment B, étage 1, à gauche (laboratoire DALI).
 
-## Algo-Prog : version 2022 
+## Algo-Prog : version 2023
 
 
-- Les [supports du CM](https://phillanglois.github.io/Algo-Prog/) régulièrement mis à jour.
+- Les [supports du CM](https://phillanglois.github.io/Algo-Prog-2023/bonjour.html) régulièrement mis à jour.
 - Les autres ressources sont sur l'espace moodle de cet enseignement.
 
-### Version 2022
+### Version 2023
 
 - nouvelle offre de formation 2021-2025 : algo + prog = 1 UE
 - 12 séances de CM : 3h/semaine 
 - 12 séances de TD-TP : 3h/semaine 
-- chargés de TD : Ph. Langlois (2), Vincent Zucca
+- chargés de TD : Ph. Langlois (2), Vincent Zucca (2)
 - Démarrage : CM en semaine 3 (`sd`=s3), TD en s4, vacances en s9, s17-s18
 
 
@@ -32,13 +32,11 @@ CC : contrôle "dit" continu, CT contrôle "dit" terminal
 ```{Warning}
 **Note UE = CC1/2 + CC2/4 + CT/4**
 ```
-- modifié le 04.07.22 ~~CC1 : 0.2 * TP1 + 0.8 * TP2~~ 
-- CC1 : 0.2 * TP1 + 0.4 * TP2 + 0.4 * TP3
-    - 1/3-parcours : TP1 à rendre en `sd`+7
-    - 2/3-parcours : TP2  individuel, en temps limité, sur machine UPVD : 3h à `sd`+12
-    - fin de semestre : TP3 individuel, en temps limité, sur machine UPVD : 3h à `sd`+14
-- CC2 : écrit mi-parcours, 2h à `sd`+8
-- CT : écrit de fin de semestre, 2h pendant semaine examen  
+- CC1 surtout programmation : 0.5 * TP1 + 0.5 * TP2
+    - mi-parcours : TP1 individuel, en temps limité (2h) à `sd`+8.
+    - fin de semestre : TP2 individuel, en temps limité (3h), sur machine UPVD pendant semaine examen
+- CC2 surtout algorithmique : écrit mi-parcours, 2h à `sd`+8.
+- CT surtout algorithmique : écrit de fin de semestre, 2h pendant semaine examen.   
 
 **Dates.** Les dates de ces évaluations sont annoncées en début de [la page d'accueil du cours](ch:bonjour).
 
@@ -179,7 +177,7 @@ Alternance de séquence pour séance de 3 heures :
 
 ## Programme détaillé : aspects plutôt algorithmique
 
-- Utilisation avancée de boucles et de tableaux
+- (Acquis du semestre 1) Utilisation avancée de boucles et de tableaux
     - boucles imbriquées, indépendantes ou non
     - traitements divers avec des tableaux 1D ou plus 
     - premières estimations de complexité 

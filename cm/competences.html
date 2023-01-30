@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1. Fonctions" href="1-fonctions.html" />
-    <link rel="prev" title="1. Algorithmique et Programmation en 2022" href="0-presentation-2023.html" />
+    <link rel="prev" title="1. Algorithmique et Programmation en 2023" href="0-presentation-2023.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -123,7 +123,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="0-presentation-2023.html">
-   1. Algorithmique et Programmation en 2022
+   1. Algorithmique et Programmation en 2023
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -424,8 +424,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fonctions">
-   2.2. Fonctions
+  <a class="reference internal nav-link" href="#boucles-aspects-avances-du-semestre-1">
+   2.2. Boucles : aspects avancés du semestre 1
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -441,8 +441,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#boucles-avancees">
-   2.3. Boucles avancées
+  <a class="reference internal nav-link" href="#fonctions">
+   2.3. Fonctions
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -640,8 +640,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fonctions">
-   2.2. Fonctions
+  <a class="reference internal nav-link" href="#boucles-aspects-avances-du-semestre-1">
+   2.2. Boucles : aspects avancés du semestre 1
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -657,8 +657,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#boucles-avancees">
-   2.3. Boucles avancées
+  <a class="reference internal nav-link" href="#fonctions">
+   2.3. Fonctions
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -845,8 +845,14 @@ title="Print to PDF"
 <h1><span class="section-number">2. </span>Compétences<a class="headerlink" href="#competences" title="Permalink to this headline">#</a></h1>
 <p>Mis à jour : Jan 30, 2023, lecture : 6
 minutes minimum, PhL.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
 <p>Les compétences de cet enseignement sont rassemblées dans ce fichier pour vous aider à contrôler votre apprentissage au long du semestre.</p>
-<p>Les aspects signalés avec une (<span class="math notranslate nohighlight">\(\star\)</span>) relèvent plutôt d’un objectif (d’apprentissage niveau) 20.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Les aspects signalés avec une (<span class="math notranslate nohighlight">\(\star\)</span>) correspondent à l’objectif (d’apprentissage niveau) 20.</p>
+</div>
 <section id="savoir-faire-et-pre-requis-technique">
 <h2><span class="section-number">2.1. </span>Savoir faire et pré-requis technique<a class="headerlink" href="#savoir-faire-et-pre-requis-technique" title="Permalink to this headline">#</a></h2>
 <p>Dans/avec un notebook jupyter :</p>
@@ -855,10 +861,35 @@ minutes minimum, PhL.</p>
 <li><p>savoir documenter cette programmation (énoncés, descriptions, …) avec markdown</p></li>
 </ul>
 </section>
-<section id="fonctions">
-<h2><span class="section-number">2.2. </span>Fonctions<a class="headerlink" href="#fonctions" title="Permalink to this headline">#</a></h2>
+<section id="boucles-aspects-avances-du-semestre-1">
+<h2><span class="section-number">2.2. </span>Boucles : aspects avancés du semestre 1<a class="headerlink" href="#boucles-aspects-avances-du-semestre-1" title="Permalink to this headline">#</a></h2>
 <section id="avoir-les-idees-claires">
 <h3><span class="section-number">2.2.1. </span>Avoir les idées claires<a class="headerlink" href="#avoir-les-idees-claires" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Structure de données : représentation d’un tableau multidimensionnel comme une liste de listes</p></li>
+<li><p>Structure de contrôle de type boucles imbriquées indépendantes et dépendantes :</p>
+<ul>
+<li><p>intérêt et exemples simples,</p></li>
+<li><p>dénombrer les itérations de ces constructions.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="ce-qu-il-faut-savoir-faire">
+<h3><span class="section-number">2.2.2. </span>Ce qu’il faut savoir faire<a class="headerlink" href="#ce-qu-il-faut-savoir-faire" title="Permalink to this headline">#</a></h3>
+<p><strong>Cadre</strong> : en/pour python</p>
+<ul class="simple">
+<li><p>Définir et écrire un traitement classique de tableau multidimensionnel  : parcours simple, parcours conditionnel</p></li>
+<li><p>Ecrire une initialisation de tableau multidimensionnel en python (représenté par des listes)</p></li>
+<li><p>Définir et écrire une spécification de fonction avec des paramètres de type tableau</p></li>
+<li><p>Identifier les cas particuliers liés à la structure de tableau : tableau de dimension 0, tableau vide</p></li>
+</ul>
+</section>
+</section>
+<section id="fonctions">
+<h2><span class="section-number">2.3. </span>Fonctions<a class="headerlink" href="#fonctions" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3><span class="section-number">2.3.1. </span>Avoir les idées claires<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>reconnaître et utiliser une fonction prédéfinie ou existante</p></li>
 <li><p>reconnaître et distinguer :</p>
@@ -887,39 +918,14 @@ minutes minimum, PhL.</p>
 <li><p>se souvenir que l’effet de bord est indésirable</p></li>
 </ul>
 </section>
-<section id="ce-qu-il-faut-savoir-faire">
-<h3><span class="section-number">2.2.2. </span>Ce qu’il faut savoir faire<a class="headerlink" href="#ce-qu-il-faut-savoir-faire" title="Permalink to this headline">#</a></h3>
+<section id="id2">
+<h3><span class="section-number">2.3.2. </span>Ce qu’il faut savoir faire<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p><strong>Cadre</strong> : en/pour python</p>
 <ul class="simple">
 <li><p>utiliser une fonction prédéfinie ou existante</p></li>
 <li><p>définir et écrire la spécification d’une fonction qui réalise un traitement décrit en français, ou qui résoud un problème (simple) décrit en français</p></li>
 <li><p>définir et écrire des appels simples (tests unitaires)</p></li>
 <li><p>définir et écrire l’implémentation d’une fonction associée à une spécification</p></li>
-</ul>
-</section>
-</section>
-<section id="boucles-avancees">
-<h2><span class="section-number">2.3. </span>Boucles avancées<a class="headerlink" href="#boucles-avancees" title="Permalink to this headline">#</a></h2>
-<section id="id1">
-<h3><span class="section-number">2.3.1. </span>Avoir les idées claires<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Structure de données : représentation d’un tableau multidimensionnel comme une liste de listes</p></li>
-<li><p>Structure de contrôle de type boucles imbriquées indépendantes et dépendantes :</p>
-<ul>
-<li><p>intérêt et exemples simples,</p></li>
-<li><p>dénombrer les itérations de ces constructions.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="id2">
-<h3><span class="section-number">2.3.2. </span>Ce qu’il faut savoir faire<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<p><strong>Cadre</strong> : en/pour python</p>
-<ul class="simple">
-<li><p>Définir et écrire un traitement classique de tableau multidimensionnel  : parcours simple, parcours conditionnel</p></li>
-<li><p>Ecrire une initialisation de tableau multidimensionnel en python (représenté par des listes)</p></li>
-<li><p>Définir et écrire une spécification de fonction avec des paramètres de type tableau</p></li>
-<li><p>Identifier les cas particuliers liés à la structure de tableau : tableau de dimension 0, tableau vide</p></li>
 </ul>
 </section>
 </section>
@@ -1162,7 +1168,7 @@ En voici quelques-unes sélectionnées et à exploiter en plus de ceux proposés
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1. </span>Algorithmique et Programmation en 2022</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Algorithmique et Programmation en 2023</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="1-fonctions.html" title="next page">
