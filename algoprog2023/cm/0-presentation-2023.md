@@ -32,10 +32,10 @@ CC : contrôle "dit" continu, CT contrôle "dit" terminal
 ```{Warning}
 **Note UE = CC1/2 + CC2/4 + CT/4**
 ```
-- CC1 surtout programmation : 0.5 * TP1 + 0.5 * TP2
-    - mi-parcours : TP1 individuel, en temps limité (2h) à `sd`+8.
+- CC1 sur ordinateur : 0.5 * TP1 + 0.5 * TP2
+    - mi-semestre : TP1 individuel, en temps limité (2h ou plus selon possibilité edt) .
     - fin de semestre : TP2 individuel, en temps limité (3h), sur machine UPVD pendant semaine examen
-- CC2 surtout algorithmique : écrit mi-parcours, 2h à `sd`+8.
+- CC2 surtout algorithmique : écrit, mi-semestre, 2h.
 - CT surtout algorithmique : écrit de fin de semestre, 2h pendant semaine examen.   
 
 **Dates.** Les dates de ces évaluations sont annoncées en début de [la page d'accueil du cours](ch:bonjour).
