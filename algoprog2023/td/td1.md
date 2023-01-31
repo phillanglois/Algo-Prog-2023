@@ -47,10 +47,8 @@ Fonctions, plutôt numériques et cas scalaire : en-tête, appels,
 
 ### $\blacksquare$ Exercice
 
-1.  Écrire un algorithme qui calcule la moyenne de 4 valeurs entières.
-2.  Écrire (l'en-tête, puis l'appel puis le corps d'une fonction `moy()`
-    qui calcule et retourne la moyenne de 4 valeurs flottantes. On
-    supposera que ces 4 valeurs sont entrées au clavier.
+1.  Écrire un algorithme qui calcule la moyenne de 4 valeurs entières. On supposera que ces 4 valeurs sont entrées au clavier.
+2.  Écrire (l'en-tête, puis l'appel puis le corps d'une fonction `moy()` qui calcule et retourne la moyenne de 4 valeurs flottantes. 
 
 (exo:approx)=
 ### Exercice 
