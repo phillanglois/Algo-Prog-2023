@@ -10,7 +10,7 @@ Ceci est le premier point d'entrée de l'UE Algo-Prog en complément de l'[espac
 
 
 :::{important} Rappels des dates importantes
-
+- 8 mars 2023, 8-10h (2h) : CC1 (TP1) sur ordinateur
 :::
 
 :::{note}
@@ -19,20 +19,19 @@ La première séance de CM a eu lieu en semaine 3.
 - les items indiqués d'une ($\star$) correspondent aux activités _objectif 20_
 :::
  
-## Semaine 4
-
-- Avant le CM : lire les sections **1-1, 1-2 et 1-3** du chapitre "Fonctions"
-- Compétences : Savoir faire et pré-requis technique
-- TD : installer le notebook jupyter sur sa machine personnelle, à défaut savoir utiliser une solution en ligne.
-
 ## Semaine 5
-
 
 - Compétences : Fonctions.
 - Acquisition : reprendre chapitre "Fonctions" en entier et diapos associées.
 - Avant le CM : lire les sections **2-1 et 2-2** du chapitre "Fonctions et tableaux".
 - QCM sur moodle : fonctions.
 - TD : feuille 1, objectif 10.
+
+## Semaine 4
+
+- Avant le CM : lire les sections **1-1, 1-2 et 1-3** du chapitre "Fonctions"
+- Compétences : Savoir faire et pré-requis technique
+- TD : installer le notebook jupyter sur sa machine personnelle, à défaut savoir utiliser une solution en ligne.
 
 
 

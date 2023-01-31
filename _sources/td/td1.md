@@ -47,10 +47,8 @@ Fonctions, plutôt numériques et cas scalaire : en-tête, appels,
 
 ### $\blacksquare$ Exercice
 
-1.  Écrire un algorithme qui calcule la moyenne de 4 valeurs entières.
-2.  Écrire (l'en-tête, puis l'appel puis le corps d'une fonction `moy()`
-    qui calcule et retourne la moyenne de 4 valeurs flottantes. On
-    supposera que ces 4 valeurs sont entrées au clavier.
+1.  Écrire un algorithme qui calcule la moyenne de 4 valeurs entières. On supposera que ces 4 valeurs sont entrées au clavier.
+2.  Écrire (l'en-tête, puis l'appel puis le corps d'une fonction `moy()` qui calcule et retourne la moyenne de 4 valeurs flottantes. 
 
 (exo:approx)=
 ### Exercice 
@@ -72,7 +70,7 @@ après le traitement (voir exercice 4, feuille TD no 2 du semestre 1).
     triangle est rectangle. Aucune hypothèse est effectuée sur les
     paramètres de ce traitement.
 2.  Ecrire un programme qui utilise cette fonction pour traiter un
-    nombre arbitraire de triangles entrées au clavier par l'utilisateur.
+    nombre arbitraire de triangles entrés au clavier par l'utilisateur.
 
 (exo:suites)= 
 ### $\blacksquare$ Exercice 
