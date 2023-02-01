@@ -604,17 +604,42 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variable-locale-vs-variable-globale-portee-des-variables">
+  <a class="reference internal nav-link" href="#variable-locale-vs-variable-globale-portee-des-variables-effet-de-bord">
    1.4. Variable locale
    <em>
     vs.
    </em>
-   variable globale, portée des variables
+   variable globale, portée des variables, effet de bord
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variable-locale-vs-variable-globale">
+     1.4.1. Variable locale
+     <em>
+      vs.
+     </em>
+     variable globale
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#portee-des-variables">
+     1.4.2. Portée des variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     1.4.1. Exercice
+     1.4.3. Exercice
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pas-d-effet-de-bord-pas-de-global">
+     1.4.4. Pas d’effet de bord ! Pas de
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       global
+      </span>
+     </code>
+     !
     </a>
    </li>
   </ul>
@@ -689,17 +714,6 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
      1.5.9. Exercice
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pas-d-effet-de-bord-pas-de-global">
-     1.5.10. Pas d’effet de bord ! Pas de
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       global
-      </span>
-     </code>
-     !
     </a>
    </li>
   </ul>
@@ -912,17 +926,42 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variable-locale-vs-variable-globale-portee-des-variables">
+  <a class="reference internal nav-link" href="#variable-locale-vs-variable-globale-portee-des-variables-effet-de-bord">
    1.4. Variable locale
    <em>
     vs.
    </em>
-   variable globale, portée des variables
+   variable globale, portée des variables, effet de bord
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variable-locale-vs-variable-globale">
+     1.4.1. Variable locale
+     <em>
+      vs.
+     </em>
+     variable globale
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#portee-des-variables">
+     1.4.2. Portée des variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     1.4.1. Exercice
+     1.4.3. Exercice
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pas-d-effet-de-bord-pas-de-global">
+     1.4.4. Pas d’effet de bord ! Pas de
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       global
+      </span>
+     </code>
+     !
     </a>
    </li>
   </ul>
@@ -999,17 +1038,6 @@ title="Print to PDF"
      1.5.9. Exercice
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pas-d-effet-de-bord-pas-de-global">
-     1.5.10. Pas d’effet de bord ! Pas de
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       global
-      </span>
-     </code>
-     !
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1068,7 +1096,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="fonctions">
 <span id="ch-fonctions"></span><h1><span class="section-number">1. </span>Fonctions<a class="headerlink" href="#fonctions" title="Permalink to this headline">#</a></h1>
-<p>Mis à jour : Jan 31, 2023, lecture : 19 minutes minimum, PhL.</p>
+<p>Mis à jour : Feb 01, 2023, lecture : 20 minutes minimum, PhL.</p>
 <p>Dans ce premier chapitre, nous abordons une notion importante qui fait l’objet de différentes appellations : fonction, procédure ou sous-programme. (Le titre de ce chapitre à longtemps été “Fonctions, procédures, sous-programmes”).
 Vous connaissez les fonctions en mathématiques depuis le collège.
 La notion de sous-programme à une consonance très “programmation”.
@@ -1458,9 +1486,7 @@ Morale : “Pas de nouvelle, bonne nouvelle !”</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
-1.0
-1.0
-1.0
+0.9999999999999998
 0.9999999999999999
 1.0
 1.0
@@ -1469,14 +1495,16 @@ Morale : “Pas de nouvelle, bonne nouvelle !”</p>
 1.0
 1.0
 1.0
+1.0000000000000002
+1.0
+1.0
+1.0
+1.0
 1.0
 1.0
 1.0
 0.9999999999999999
-1.0
-1.0
-1.0
-0.9999999999999999
+0.9999999999999998
 </pre></div>
 </div>
 </div>
@@ -1882,17 +1910,25 @@ aa(u: float) -&gt; float
 </div>
 </section>
 </section>
-<section id="variable-locale-vs-variable-globale-portee-des-variables">
-<h2><span class="section-number">1.4. </span>Variable locale <em>vs.</em> variable globale, portée des variables<a class="headerlink" href="#variable-locale-vs-variable-globale-portee-des-variables" title="Permalink to this headline">#</a></h2>
+<section id="variable-locale-vs-variable-globale-portee-des-variables-effet-de-bord">
+<h2><span class="section-number">1.4. </span>Variable locale <em>vs.</em> variable globale, portée des variables, effet de bord<a class="headerlink" href="#variable-locale-vs-variable-globale-portee-des-variables-effet-de-bord" title="Permalink to this headline">#</a></h2>
+<section id="variable-locale-vs-variable-globale">
+<h3><span class="section-number">1.4.1. </span>Variable locale <em>vs.</em> variable globale<a class="headerlink" href="#variable-locale-vs-variable-globale" title="Permalink to this headline">#</a></h3>
 <p>Les notions de variable locale (à une fonction) ou de variable globale sont classiques en programmation.</p>
 <blockquote>
 <div><p><strong>Variable locale</strong> à une fonction : variable définie dans le <em>corps</em> de la fonction pour permettre le traitement réalisé par la fonction.</p>
 </div></blockquote>
-<p>Par extension, les <strong>paramètres formels</strong> de la fonction <strong>sont</strong> aussi <strong>des variables locales</strong>.</p>
+<p>Par extension,</p>
+<blockquote>
+<div><p>les <strong>paramètres formels</strong> de la fonction <strong>sont</strong> aussi <strong>des variables locales</strong>.</p>
+</div></blockquote>
 <blockquote>
 <div><p>Une <strong>variable</strong> est dite  <strong>globale</strong> par rapport à une fonction si elle est définie à l’extérieur de la fonction, et plus particulièrement dans l’appelant de la fonction.</p>
 </div></blockquote>
 <p>Il faut donc introduire la notion de portée d’une variable.</p>
+</section>
+<section id="portee-des-variables">
+<h3><span class="section-number">1.4.2. </span>Portée des variables<a class="headerlink" href="#portee-des-variables" title="Permalink to this headline">#</a></h3>
 <blockquote>
 <div><p><strong>Portée</strong> : zone où une variable est <em>accessible</em>, ou autrement dit : zone où une variable est (re)connue à l’aide de son identifiant.</p>
 </div></blockquote>
@@ -1902,29 +1938,135 @@ Une variable locale <em>n’existe pas à l’extérieur</em> de la définition 
 <ul class="simple">
 <li><p>Reprendre le pythontutor précédent et observer comment <code class="docutils literal notranslate"><span class="pre">res1</span></code> ou <code class="docutils literal notranslate"><span class="pre">res2</span></code> naissent, vivent et meurent.</p></li>
 </ul>
-<p>Une variable globale est définie dans le cadre <em>appelant</em>.<br />
-Une fois définie, sa portée est globale à ce cadre : cette variable est accessible sur l’ensemble de la zone qui contient sa définition et à partir de cette dernière.</p>
+<p>Une variable (dite) globale est définie dans le cadre <em>appelant</em> – ou plus généralement dans un cadre englobant.<br />
+Une fois définie, sa portée est globale à ce cadre.</p>
 <p>Ainsi :</p>
 <ul class="simple">
-<li><p>la portée d’une variable globale inclut les fonctions, (et leurs corps) définies dans cette zone</p></li>
-<li><p>les portées d’une variable globale et d’une variable locale (à une fonction) se recouvrent (dans cette fonction);</p></li>
-<li><p>ce qui nécessitera de clarifier la situation dans le cas où <em>ces 2 variables ont le même identifiant</em>.</p></li>
+<li><p>la portée d’une variable globale inclut les fonctions (et leurs corps) définies dans cette zone;</p></li>
+<li><p>les portées d’une variable globale et d’une variable locale à une fonction se recouvrent dans cette fonction;</p></li>
+<li><p>ce qui nécessite de clarifier la situation dans le cas où <em>ces 2 variables ont le même identifiant</em> :</p>
+<ul>
+<li><p><strong>Règle</strong> : l’identifiant local <em>cache</em> son homonyme extérieur.</p></li>
 </ul>
-<p>Ces trois dernières remarques justifient à l’interdit (à vocation pédagogique) suivant.</p>
-<div class="alert alert-block alert-danger">
+</li>
+</ul>
+<blockquote>
+<div><p>Une variable globale est <strong>potentiellement</strong> accessible sur l’ensemble de la zone à partir de sa définition.</p>
+</div></blockquote>
+<p>Pourquoi <em>potentiellement</em> accessible ?</p>
+<ul class="simple">
+<li><p>accessible en lecture <strong>sauf si</strong> elle est cachée par une variable locale de même identifiant</p></li>
+<li><p>modifiable en écriture <strong>si</strong> elle est désignée comme <code class="docutils literal notranslate"><span class="pre">global</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">un</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1"># a, b et un ont une portée globale</span>
+
+<span class="k">def</span> <span class="nf">increment_bizarre</span><span class="p">(</span><span class="n">u</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="c1"># on utilise la valeur de la &quot;variable&quot; globale un </span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">un</span> <span class="o">+</span> <span class="mi">1</span> 
+    <span class="k">return</span> <span class="n">u</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">increment_bizarre</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># seul a est modifié par la fonction</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a, un :&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">un</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a, un : 3 1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">increment_autrement_bizarre</span><span class="p">(</span><span class="n">u</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="c1"># on définit une variable locale qui s&#39;appelle aussi un  </span>
+    <span class="n">un</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># le un &quot;intérieur&quot; cache le un &quot;extérieur&quot;</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">un</span> <span class="o">+</span> <span class="mi">1</span> 
+    <span class="k">return</span> <span class="n">u</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">increment_autrement_bizarre</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># seul a est modifié par la fonction, </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a, un :&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">un</span><span class="p">)</span>            <span class="c1"># la variable extérieure un est visible </span>
+                                   <span class="c1"># et sa valeur n&#39;a pas été modifiée</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a, un : 12 1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">incremente_avec_effet_de_bord</span><span class="p">(</span><span class="n">u</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">global</span> <span class="n">un</span>     <span class="c1"># un est une variable globale </span>
+    <span class="n">un</span> <span class="o">=</span> <span class="n">un</span> <span class="o">+</span> <span class="mi">1</span>   <span class="c1"># un est modifiée dans la fonction</span>
+    <span class="k">return</span> <span class="n">u</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">incremente_avec_effet_de_bord</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="c1"># b et un sont modifiés </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b, un :&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">un</span><span class="p">)</span>              <span class="c1"># il n&#39;existe qu&#39;une seule variable un </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b, un : 1 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>CONTRAINTE PEDAGOGIQUE :  Dans la définition d’une fonction, il est interdit d’introduire ou d’utiliser des variables globales, excepté si ce sont des <strong>constantes</strong>.</p>
 </div>
 <p>Ainsi, vous ne devez limiter le corps de fonction au traitement de ses paramètres formels et de variables locales.</p>
-<div class="alert alert-block alert-info">
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
 <p>CONVENTION PYTHON : les identifiants de constantes s’écrivent en MAJUSCULES</p>
-<p><code class="docutils literal notranslate"><span class="pre">ANNEE_EN_COURS</span> <span class="pre">=</span> <span class="pre">2020</span></code></p>
-</div><p>Au delà de certaines spécificités de python qui la rendent assez délicate, l’utilisation de variables globale  est à l’origine de la notion <em>d’effet de bord</em> souvent à l’origine de longues phases de debugging. Nous reviendrons sur cet aspect au chapitre suivant.</p>
+<p><code class="docutils literal notranslate"><span class="pre">DEBUT_DU_MILLENAIRE</span> <span class="pre">=</span> <span class="pre">2000</span></code></p>
+</div>
+<p>Au delà de certaines spécificités de python qui la rendent assez délicate, l’utilisation de variables globale  est à l’origine de la notion <em>d’effet de bord</em> souvent à l’origine de  <em>debugging</em> délicats. Nous revenons sur cet aspect au paragraphe suivant.</p>
 <p>Le besoin d’utiliser des variables globales dans des fonctions internes peut être satisfait en ajoutant ces variables comme paramètres de ces fonctions.</p>
+</section>
 <section id="id1">
-<h3><span class="section-number">1.4.1. </span>Exercice<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.4.3. </span>Exercice<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Reprendre les fonctions <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">aa</span></code> et <code class="docutils literal notranslate"><span class="pre">aaa</span></code> précédentes et identifier leurs variables locales et leur portée, dans la définition, dans les appels, dans les appelants.</p></li>
 </ul>
+</section>
+<section id="pas-d-effet-de-bord-pas-de-global">
+<h3><span class="section-number">1.4.4. </span>Pas d’effet de bord ! Pas de <code class="docutils literal notranslate"><span class="pre">global</span></code> !<a class="headerlink" href="#pas-d-effet-de-bord-pas-de-global" title="Permalink to this headline">#</a></h3>
+<p>Une fonction réalise un <em>effet de bord</em> si son traitement modifie (au moins) une variable de l’appelant qui n’est pas la variable d’affectation de son retour, ni un paramètre effectif de l’appel (comme nous le verrons dans un prochain chapitre).</p>
+<p>En pratique (en python), l’éventuel effet de bord peut concerner toute variable de l’appelant qui existe avant l’appel de la fonction, <em>ie.</em> hors du cadre de la fonction, dès lors que cette variable est caractérisée comme  (pour variable globale).</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Pas d’effet de bord implique donc en python  pas d’utilisation du mot-clé <code class="docutils literal notranslate"><span class="pre">global</span></code>.</p>
+</div>
+<p><strong>Exemple.</strong></p>
+<p>Dans l’exemple précédent (repris ici), l’appel modifie aussi la valeur de <code class="docutils literal notranslate"><span class="pre">un</span></code> qui est annoncée <code class="docutils literal notranslate"><span class="pre">global</span></code>. Ce qui est impossible à deviner sans connaître le corps de la fonction. On ne peut donc plus l’utiliser comme une “boîte noire”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">incremente_avec_effet_de_bord</span><span class="p">(</span><span class="n">u</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">global</span> <span class="n">un</span>     <span class="c1"># un est une variable globale </span>
+    <span class="n">un</span> <span class="o">=</span> <span class="n">un</span> <span class="o">+</span> <span class="mi">1</span>   <span class="c1"># un est modifiée dans la fonction</span>
+    <span class="k">return</span> <span class="n">u</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">incremente_avec_effet_de_bord</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="c1"># b et un sont modifiés </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b, un :&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">un</span><span class="p">)</span>              <span class="c1"># il n&#39;existe qu&#39;une seule variable un </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b, un : 2 3
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="complements">
@@ -2342,10 +2484,6 @@ appel tetu 1
 </div>
 </div>
 </div>
-</section>
-<section id="pas-d-effet-de-bord-pas-de-global">
-<h3><span class="section-number">1.5.10. </span>Pas d’effet de bord ! Pas de <code class="docutils literal notranslate"><span class="pre">global</span></code> !<a class="headerlink" href="#pas-d-effet-de-bord-pas-de-global" title="Permalink to this headline">#</a></h3>
-<p>Une fonction réalise un <em>effet de bord</em> si son traitement modifie (au moins) une variable de l’appelant qui n’est pas la variable d’affectation de son retour, ni un paramètre effectif de l’appel (comme nous le verrons dans un prochain chapitre).</p>
 <p>En pratique (en python), l’éventuel effet de bord peut concerner n’importe qu’elle variable de l’appelant qui existe avant l’appel de la fonction, ie. hors du cadre de la fonction, dès lors que cette variable est caractérisée comme  (pour variable globale).</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
