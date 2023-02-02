@@ -37,13 +37,14 @@ Fonctions, plutôt numériques et cas scalaire : en-tête, appels,
 
 1.  Écrire un algorithme qui calcule et affiche le maximum de 3 valeurs
     entières entrées au clavier.
-2.  Écrire l'en-tête d'une fonction `max()` qui calcule et retourne la
+2.  Écrire l'en-tête d'une fonction `max3()` qui calcule et retourne la
     valeur maximale d'un triplet $(x,y,z)$ de valeurs flottantes.
 3.  Écrire un algorithme qui réalise les entrées-sorties nécessaires et
-    appelle plusieurs fois la fonction `max`.
+    appelle plusieurs fois la fonction `max3`.
 4.  Écrire le corps de cette fonction.
-5.  Proposer les modifications minimales pour que la fonction `max()`
-    devienne la fonction `min()`.
+6. Pourquoi a-t-on appelé cette fonction `max3()` et pas `max()` ?
+5.  Proposer les modifications minimales pour que la fonction `max3()`
+    devienne la fonction `min3()`.
 
 ### $\blacksquare$ Exercice
 
