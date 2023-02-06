@@ -150,7 +150,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="3-ES-fichiers.html">
-   3. Entrées-sorties simples avec des fichiers
+   4. Entrées-sorties simples avec des fichiers
   </a>
  </li>
 </ul>
@@ -1096,7 +1096,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="fonctions">
 <span id="ch-fonctions"></span><h1><span class="section-number">1. </span>Fonctions<a class="headerlink" href="#fonctions" title="Permalink to this headline">#</a></h1>
-<p>Mis à jour : Feb 01, 2023, lecture : 20 minutes minimum, PhL.</p>
+<p>Mis à jour : Feb 06, 2023, lecture : 20 minutes minimum, PhL.</p>
 <p>Dans ce premier chapitre, nous abordons une notion importante qui fait l’objet de différentes appellations : fonction, procédure ou sous-programme. (Le titre de ce chapitre à longtemps été “Fonctions, procédures, sous-programmes”).
 Vous connaissez les fonctions en mathématiques depuis le collège.
 La notion de sous-programme à une consonance très “programmation”.
@@ -1485,26 +1485,26 @@ Morale : “Pas de nouvelle, bonne nouvelle !”</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9999999999999999
+1.0
+1.0
+1.0
+1.0
 0.9999999999999998
 0.9999999999999999
-1.0
-1.0
-1.0
-1.0
-1.0
-1.0
+0.9999999999999999
 1.0
 1.0000000000000002
 1.0
 1.0
 1.0
-1.0
-1.0
+0.9999999999999999
+0.9999999999999999
 1.0
 1.0
 0.9999999999999999
-0.9999999999999998
+1.0000000000000002
+1.0
 </pre></div>
 </div>
 </div>
@@ -2042,7 +2042,7 @@ Une fois définie, sa portée est globale à ce cadre.</p>
 <section id="pas-d-effet-de-bord-pas-de-global">
 <h3><span class="section-number">1.4.4. </span>Pas d’effet de bord ! Pas de <code class="docutils literal notranslate"><span class="pre">global</span></code> !<a class="headerlink" href="#pas-d-effet-de-bord-pas-de-global" title="Permalink to this headline">#</a></h3>
 <p>Une fonction réalise un <em>effet de bord</em> si son traitement modifie (au moins) une variable de l’appelant qui n’est pas la variable d’affectation de son retour, ni un paramètre effectif de l’appel (comme nous le verrons dans un prochain chapitre).</p>
-<p>En pratique (en python), l’éventuel effet de bord peut concerner toute variable de l’appelant qui existe avant l’appel de la fonction, <em>ie.</em> hors du cadre de la fonction, dès lors que cette variable est caractérisée comme  (pour variable globale).</p>
+<p>En pratique (en python), l’éventuel effet de bord peut concerner toute variable de l’appelant qui existe avant l’appel de la fonction, <em>ie.</em> hors du cadre de la fonction, dès lors que cette variable est caractérisée par  <code class="docutils literal notranslate"><span class="pre">global</span></code>.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Pas d’effet de bord implique donc en python  pas d’utilisation du mot-clé <code class="docutils literal notranslate"><span class="pre">global</span></code>.</p>
@@ -2269,13 +2269,12 @@ cas particulier
     <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">:</span>
         <span class="k">return</span> <span class="mf">0.0</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;on est dans la boucle&#39;</span><span class="p">)</span>
-            <span class="n">r</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">x</span>
-        <span class="k">return</span> <span class="n">r</span>
+        <span class="k">return</span> <span class="mf">1.0</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;on est dans la boucle&#39;</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">r</span>
 
 
 <span class="c1"># appels avec des valeurs </span>
@@ -2290,7 +2289,7 @@ cas particulier
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0 ** 0 = 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0 ** 0 = 1.0
 10.0 ** 1 = 10.0
 on est dans la boucle
 10.0 ** 2 = 100.0

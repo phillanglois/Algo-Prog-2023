@@ -1,5 +1,10 @@
 # (Intervenant) Suivi des séances
 
+## Semaine 6
+
+- Remédiation : feuille TD 1
+- TD : feuille TD 2
+
 ## Semaine 5
 
 - Rappel des étapes dans l'écriture d'un traitement avec des fonctions

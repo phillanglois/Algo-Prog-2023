@@ -19,6 +19,13 @@ La première séance de CM a eu lieu en semaine 3.
 - les items indiqués d'une ($\star$) correspondent aux activités _objectif 20_
 :::
  
+## Semaine 6
+
+- Compétences : "Fonctions" des chapitres 1 et 2 (sauf 2.3) et diapos associées.
+- TD travail personnel : finir feuille 1 selon vos objectifs.
+- TD semaine : feuille 2, objectif 10. 
+- Avant le CM : lire le chapitre "Complexités" jusqu'à section 1.5 inclus.
+
 ## Semaine 5
 
 - Compétences : Fonctions.
