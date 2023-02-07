@@ -51,3 +51,8 @@ parts:
     numbered: 3
     chapters:
     - file: slides/1_sl.ipynb
+  - caption: (Intervenants) suivi des séances
+    numbered: 3
+    chapters:
+    - file: suivi_seances
+ 

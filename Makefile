@@ -37,7 +37,7 @@ all:book
 #NAME = Complements-2021
 
 # changer si necessaire
-BOOKDIR = Algo-Prog-2023
+BOOKDIR = algoprog2023
 
 # tous d'un coup
 ALLSRC = $(wildcard  $(BOOKDIR)/cm/*.ipynb $(BOOKDIR)/cm/*.md $(BOOKDIR)/td/*.ipynb $(BOOKDIR)/td/*.md)
@@ -45,16 +45,16 @@ ALLSRC = $(wildcard  $(BOOKDIR)/cm/*.ipynb $(BOOKDIR)/cm/*.md $(BOOKDIR)/td/*.ip
 #--------------------------------------------------------------------
 book: $(ALLSRC)
 	@cd /Users/langlois/2023/ens/L1-Algo-Prog
-	@pipenv run jupyter-book build $(BOOKDIR)
+	@jupyter-book build $(BOOKDIR)
 
 enligne: $(ALLSRC)
 	@cd /Users/langlois/2023/ens/L1-Algo-Prog
-	@pipenv run jupyter-book build $(BOOKDIR)
-	@pipenv run ghp-import -n -p -f $(BOOKDIR)/_build/html -m "version en ligne : maj"
+	@jupyter-book build $(BOOKDIR)
+	@ghp-import -n -p -f $(BOOKDIR)/_build/html -m "version en ligne : maj"
 
 tp: $(BOOKDIR)/$(wildcard tp2022/*.ipynb)
 	@cd /Users/langlois/2023/ens/L1-Algo-Prog
-	@pipenv run jupyter-book build tp2023
+	@run jupyter-book build tp2023
 #--------------------------------------------------------------------
 
 SRCDIR = cm
