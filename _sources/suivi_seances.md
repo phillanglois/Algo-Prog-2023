@@ -4,6 +4,7 @@
 
 - Remédiation : interaction-exemples sur qcm fonctions et compétences.
 - TD semaine : feuille TD 2
+- Fin séance groupe 3 : exo 1 (4), exo 2 (4), exo 3 (5), exo 4 (2).
 
 ## Semaine 5
 
