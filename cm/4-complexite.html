@@ -1012,11 +1012,12 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="complexites">
 <span id="ch-complexite"></span><h1><span class="section-number">1. </span>Complexités<a class="headerlink" href="#complexites" title="Permalink to this headline">#</a></h1>
-<p>Mis à jour : Feb 07, 2023, lecture : 21
+<p>Mis à jour : Feb 09, 2023, lecture : 21
 minutes minimum, PhL.</p>
 <p>Chapitre qui définit les notions de base de complexité algorithmique.
 Des exemples d’analyse de complexité en temps ou en espace sont présentés sur des algorithmes itératifs simples.
-Et ce sera l’occasion pour introduire l’algorithme de recherche par dichotomie dans un ensemble trié.</p>
+Ce sera l’occasion pour introduire l’algorithme de recherche par dichotomie dans un ensemble trié.
+Une section sur la complexité d’algorithmes récursifs termine ce chapitre.</p>
 <section id="motivations">
 <h2><span class="section-number">1.1. </span>Motivations<a class="headerlink" href="#motivations" title="Permalink to this headline">#</a></h2>
 <p><strong>Le contexte</strong></p>
@@ -1041,7 +1042,7 @@ Ils dépendent <strong>de certains paramètres</strong> de l’<em>instance</em>
 <h3><span class="section-number">1.2.1. </span>Pb1 : calculer la somme de <span class="math notranslate nohighlight">\(n\)</span> entiers<a class="headerlink" href="#pb1-calculer-la-somme-de-n-entiers" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Le problème : calculer la somme de <span class="math notranslate nohighlight">\(n\)</span> valeurs entières</p></li>
-<li><p>Une instance : un choix du nombre de valeurs <span class="math notranslate nohighlight">\(n\)</span> et ces <span class="math notranslate nohighlight">\(n\)</span> valeurs</p></li>
+<li><p>Une instance : <strong>un choix</strong> du nombre de valeurs <span class="math notranslate nohighlight">\(n\)</span> et ces <span class="math notranslate nohighlight">\(n\)</span> valeurs</p></li>
 </ul>
 <p>On suppose que ces <span class="math notranslate nohighlight">\(n\)</span> valeurs sont stockées dans un tableau <code class="docutils literal notranslate"><span class="pre">t:</span> <span class="pre">list[int]</span></code>.</p>
 <p>Principe d’un algorithme :</p>
@@ -1070,7 +1071,7 @@ Ils dépendent <strong>de certains paramètres</strong> de l’<em>instance</em>
 <section id="pb2-recherche-de-l-indice-d-une-valeur-parmi-n-stockees-dans-un-tableau">
 <h3><span class="section-number">1.2.2. </span>Pb2 : recherche de l’indice d’une valeur parmi <span class="math notranslate nohighlight">\(n\)</span> stockées dans un tableau<a class="headerlink" href="#pb2-recherche-de-l-indice-d-une-valeur-parmi-n-stockees-dans-un-tableau" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>Le problème : recherche l’indice d’une valeur parmi <span class="math notranslate nohighlight">\(n\)</span> valeurs stockées dans un tableau[^rmq:indice]</p></li>
+<li><p>Le problème : recherche l’indice d’une valeur parmi <span class="math notranslate nohighlight">\(n\)</span> valeurs stockées dans un tableau (voir rmq)</p></li>
 <li><p>Une instance : un choix de la valeur cherchée, du nombre <span class="math notranslate nohighlight">\(n\)</span>  de valeurs et de ces <span class="math notranslate nohighlight">\(n\)</span> valeurs du tableau <code class="docutils literal notranslate"><span class="pre">t</span></code></p></li>
 <li><p>Principe d’un algorithme :</p>
 <ul>
@@ -1085,7 +1086,8 @@ Ils dépendent <strong>de certains paramètres</strong> de l’<em>instance</em>
 </ul>
 </li>
 </ul>
-<p>[^rmq:indice] Le cas où il faudrait choisir entre plusieurs indices d’une valeur répétée n’est pas détaillé.</p>
+<p><strong>Rmq.</strong>
+Pour simplifier la présentation, on suppose qu’aucune valeur apparaît plusieurs fois dans le tableau.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rechercheIterative</span><span class="p">(</span><span class="n">val</span> <span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">t</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">dim_t</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -1102,6 +1104,8 @@ Ils dépendent <strong>de certains paramètres</strong> de l’<em>instance</em>
 </div>
 </div>
 </div>
+<p><strong>Question.</strong>
+Expliquer pourquoi choisir <code class="docutils literal notranslate"><span class="pre">-1</span></code> comme “indice significatif de l’absence” n’est pas pertinent en python.</p>
 </section>
 <section id="premiere-analyse-empirique-des-complexites-en-temps-et-en-espace">
 <h3><span class="section-number">1.2.3. </span>Première analyse empirique des complexités en temps et en espace<a class="headerlink" href="#premiere-analyse-empirique-des-complexites-en-temps-et-en-espace" title="Permalink to this headline">#</a></h3>
@@ -1167,17 +1171,17 @@ Coût en espace-mémoire temps nécessaire à la résolution de Pb2 par <code cl
 </li>
 <li><p>rechercher l’indice d’une valeur dans (un tableau <code class="docutils literal notranslate"><span class="pre">t</span></code> de) <span class="math notranslate nohighlight">\(n\)</span> valeurs entières</p>
 <ul>
-<li><p>on va chercher une fonction <span class="math notranslate nohighlight">\(C(n)\)</span> où <span class="math notranslate nohighlight">\(n\)</span> est le nombre de valeurs, <em>ie.</em> <code class="docutils literal notranslate"><span class="pre">lent(t)</span></code></p></li>
+<li><p>on va chercher une fonction <span class="math notranslate nohighlight">\(C(n)\)</span> où <span class="math notranslate nohighlight">\(n\)</span> est le nombre de valeurs, <em>ie.</em> <code class="docutils literal notranslate"><span class="pre">len(t)</span></code></p></li>
 </ul>
 </li>
 <li><p>trier une liste de <span class="math notranslate nohighlight">\(n\)</span> valeurs (stockées dans un tableau <code class="docutils literal notranslate"><span class="pre">t</span></code>)</p>
 <ul>
-<li><p>on va chercher une fonction <span class="math notranslate nohighlight">\(C(n)\)</span> où <span class="math notranslate nohighlight">\(n\)</span> est le nombre de valeurs, <em>ie.</em> <code class="docutils literal notranslate"><span class="pre">lent(t)</span></code></p></li>
+<li><p>on va chercher une fonction <span class="math notranslate nohighlight">\(C(n)\)</span> où <span class="math notranslate nohighlight">\(n\)</span> est le nombre de valeurs, <em>ie.</em> <code class="docutils literal notranslate"><span class="pre">len(t)</span></code></p></li>
 </ul>
 </li>
 <li><p>rechercher l’indice d’une valeur dans un tableau <strong>trié</strong> <code class="docutils literal notranslate"><span class="pre">t</span></code> de <span class="math notranslate nohighlight">\(n\)</span> valeurs entières</p>
 <ul>
-<li><p>on va chercher une fonction <span class="math notranslate nohighlight">\(C(n)\)</span> où <span class="math notranslate nohighlight">\(n\)</span> est le nombre de valeurs, <em>ie.</em> <code class="docutils literal notranslate"><span class="pre">lent(t)</span></code></p></li>
+<li><p>on va chercher une fonction <span class="math notranslate nohighlight">\(C(n)\)</span> où <span class="math notranslate nohighlight">\(n\)</span> est le nombre de valeurs, <em>ie.</em> <code class="docutils literal notranslate"><span class="pre">len(t)</span></code></p></li>
 </ul>
 </li>
 </ul>
