@@ -10,7 +10,7 @@ Ceci est le premier point d'entrée de l'UE Algo-Prog en complément de l'[espac
 
 
 :::{important} Rappels des dates importantes
-- 8 mars 2023, 8-10h (2h) : CC1 (TP1) sur ordinateur
+-  8 mars 2023, 8-10h (2h) : CC1 (TP1) sur ordinateur **Cette date va être retardée**
 :::
 
 :::{note}
@@ -19,9 +19,23 @@ La première séance de CM a eu lieu en semaine 3.
 - les items indiqués d'une ($\star$) correspondent aux activités _objectif 20_
 :::
  
+
+## Semaine 7
+
+- Compétences : "Complexités"
+- Acquisition : reprendre chapitre "Complexités" jusqu'à section 1.5 inclus.
+- QCM sur moodle : complexité
+- TD travail personnel : 
+    - finir feuille 2 selon vos objectifs.
+    - _moodle_ : analyser les corrections de la feuille 1, objectifs 10 et 20
+- TD semaine : feuille 3, objectif 10. 
+- Avant le CM : lire le chapitre "Complexités" sections 1.6 et 1.7 inclus.
+
+ 
 ## Semaine 6
 
 - Compétences : "Fonctions" des chapitres 1 et 2 (sauf 2.3) et diapos associées.
+- QCM sur moodle : fonctions
 - TD travail personnel : finir feuille 1 selon vos objectifs.
 - TD semaine : feuille 2, objectif 10. 
 - Avant le CM : lire le chapitre "Complexités" jusqu'à section 1.5 inclus.

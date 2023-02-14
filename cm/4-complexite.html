@@ -1715,9 +1715,9 @@ On se focalise d’abord sur <strong>la tendance du pire cas</strong>.</p>
 <p>La <em>comparaisons asymptotique de fonctions</em> est adaptée à la description de ces 3 tendances.</p>
 <p>En notant <span class="math notranslate nohighlight">\(C_{\cal{A}}(n)\)</span> la complexité de l’algorithme  <span class="math notranslate nohighlight">\(\cal{A}\)</span>, on introduit <strong>les notations de Landau : <span class="math notranslate nohighlight">\(\Theta(), \Omega()\)</span> et <span class="math notranslate nohighlight">\(\cal{O}()\)</span></strong> pour caractériser respectivement les 3 tendances asymptotiques des pire cas de l’algorithme <span class="math notranslate nohighlight">\(\cal{A}\)</span> :</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(C_{\cal{A}}(n) = \Theta(n^2)\)</span> : notion d’équivalent asymptotique</p></li>
-<li><p><span class="math notranslate nohighlight">\(C_{\cal{A}}(n) = \Omega(n^2)\)</span> : notion de minorant asymptotique</p></li>
 <li><p><span class="math notranslate nohighlight">\(C_{\cal{A}}(n) = \cal{O}(n^2)\)</span> : notion de <strong>majorant asymptotique</strong></p></li>
+<li><p>(<span class="math notranslate nohighlight">\(\star\)</span>) <span class="math notranslate nohighlight">\(C_{\cal{A}}(n) = \Theta(n^2)\)</span> : notion d’équivalent asymptotique</p></li>
+<li><p>(<span class="math notranslate nohighlight">\(\star\)</span>) <span class="math notranslate nohighlight">\(C_{\cal{A}}(n) = \Omega(n^2)\)</span> : notion de minorant asymptotique</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1779,13 +1779,13 @@ asymptotique.</p>
 <ul class="simple">
 <li><p><strong>Somme arithmétique des n premiers entiers</strong> : <span class="math notranslate nohighlight">\(n(n+1)/2 = \Theta(n^2)\)</span> donc aussi <strong><span class="math notranslate nohighlight">\(\cal{O}(n^2)\)</span></strong></p></li>
 <li><p>Somme arithmétique des n premiers carrés : <span class="math notranslate nohighlight">\(n(n+1)(2n+1)/6 = \theta(n^3)\)</span> donc aussi <strong><span class="math notranslate nohighlight">\(\cal{O}(n^3)\)</span></strong></p></li>
-<li><p>Somme arithmétique des n premiers cubes** : <span class="math notranslate nohighlight">\(n^2(n+1)^2/4 = \theta(n^4)\)</span> donc aussi <strong><span class="math notranslate nohighlight">\(\cal{O}(n^4)\)</span></strong></p></li>
-<li><p><strong>Polynôme en n de degré <span class="math notranslate nohighlight">\(\le\)</span> k et à coefficients constants</strong> = <span class="math notranslate nohighlight">\(\Theta(n^k)\)</span> donc aussi <strong><span class="math notranslate nohighlight">\(\cal{O}(n^k)\)</span></strong></p>
+<li><p>Somme arithmétique des n premiers cubes : <span class="math notranslate nohighlight">\(n^2(n+1)^2/4 = \theta(n^4)\)</span> donc aussi <strong><span class="math notranslate nohighlight">\(\cal{O}(n^4)\)</span></strong></p></li>
+<li><p><strong>Polynôme en n de degré <span class="math notranslate nohighlight">\(\le\)</span> k</strong> et à coefficients constants = <span class="math notranslate nohighlight">\(\Theta(n^k)\)</span> donc aussi <strong><span class="math notranslate nohighlight">\(\cal{O}(n^k)\)</span></strong></p>
 <ul>
-<li><p><span class="math notranslate nohighlight">\(a_k n^k + a_{k-1} n^{k-1} + \dots + a_1 n + a_0 = \Theta(n^k)\)</span>.
--<strong>Série harmonique : <span class="math notranslate nohighlight">\(1+1/2+1/3+\dots+1/n = \ln(n) + \cal{O}(1)\)</span></strong></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_k n^k + a_{k-1} n^{k-1} + \dots + a_1 n + a_0 = \Theta(n^k)\)</span>.</p></li>
 </ul>
 </li>
+<li><p><strong>Série harmonique : <span class="math notranslate nohighlight">\(1+1/2+1/3+\dots+1/n = \ln(n) + \cal{O}(1)\)</span></strong></p></li>
 <li><p>Produits <span class="math notranslate nohighlight">\(\to\)</span> Sommes : <span class="math notranslate nohighlight">\(\ln(a_1 \times a_2 \times \dots \times a_n) = \ln(a_1) + ln(a_2) + \dots + \ln(a_n)\)</span></p></li>
 </ul>
 <p><strong>Ordres de grandeur pratiques</strong></p>
@@ -1803,7 +1803,7 @@ asymptotique.</p>
 <td class="text-align:center"><p>1 ns</p></td>
 <td class="text-align:center"><p>rare</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(\cal{O}(log n)\)</span></p></td>
+<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(\cal{O}(\log n)\)</span></p></td>
 <td class="text-align:center"><p>logarithmique</p></td>
 <td class="text-align:center"><p>10 ns</p></td>
 <td class="text-align:center"><p>instantané ou presque. Il y a une constante cachée et du log2 en pratique</p></td>
@@ -1842,20 +1842,23 @@ asymptotique.</p>
     <span class="n">inst_1</span><span class="p">;</span> <span class="n">inst_2</span><span class="p">;</span> <span class="o">...</span><span class="p">,</span> <span class="n">inst_p</span>
 </pre></div>
 </div>
-<p><span class="math notranslate nohighlight">\( \to \Theta(n)\)</span>, asymptotiquement linéaire</p>
+<p><span class="math notranslate nohighlight">\( \to \Theta(n)\)</span>, asymptotiquement linéaire
+donc <em>a fortiori</em>  <span class="math notranslate nohighlight">\(\cal{O}(n)\)</span>, asymptotiquement majorée linéairement</p>
 <p><strong>Boucle de n répétitions dépendantes</strong> : <span class="math notranslate nohighlight">\(1+2+\dots+n = n(n+1)/2\)</span></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">inst_1</span><span class="p">;</span> <span class="o">...</span> <span class="p">;</span> <span class="n">inst_i</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><span class="math notranslate nohighlight">\(\to \Theta(n^2)\)</span>, asymptotiquement quadratique</p>
-<p><strong>Deux boucles imbriquées indépendantes de longueur n qui répètent p instructions</strong> : <span class="math notranslate nohighlight">\(n^2 \times p\)</span> avec p &lt;n quand n est grand</p>
+<p><span class="math notranslate nohighlight">\(\to \Theta(n^2)\)</span>, asymptotiquement quadratique
+donc <em>a fortiori</em>  <span class="math notranslate nohighlight">\(\cal{O}(n^2)\)</span>, asymptotiquement majorée quadratiquement</p>
+<p><strong>Deux boucles imbriquées indépendantes de longueur n qui répètent p instructions</strong> : <span class="math notranslate nohighlight">\(n^2 \times p\)</span> avec <span class="math notranslate nohighlight">\(p &lt;n\)</span> quand <span class="math notranslate nohighlight">\(n\)</span> est grand</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
         <span class="n">inst_1</span><span class="p">;</span> <span class="n">inst_2</span><span class="p">;</span> <span class="o">...</span><span class="p">,</span> <span class="n">inst_p</span>
 </pre></div>
 </div>
-<p><span class="math notranslate nohighlight">\(\to \Theta(n^2)\)</span>, asymptotiquement quadratique</p>
+<p><span class="math notranslate nohighlight">\(\to \Theta(n^2)\)</span>, asymptotiquement quadratique
+donc <em>a fortiori</em>  <span class="math notranslate nohighlight">\(\cal{O}(n^2)\)</span>, asymptotiquement majorée quadratiquement</p>
 <p><strong>Deux boucles imbriquées indépendantes de longueur n et corps de boucle interne dépendant</strong> :
 <span class="math notranslate nohighlight">\(n(1+2+\dots+n) = n \times n(n+1)/2\)</span></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
@@ -1863,7 +1866,8 @@ asymptotique.</p>
         <span class="n">inst_1</span><span class="p">;</span> <span class="o">...</span> <span class="p">;</span> <span class="n">inst_j</span>
 </pre></div>
 </div>
-<p><span class="math notranslate nohighlight">\(\to \Theta(n^3)\)</span>, asymptotiquement cubique</p>
+<p><span class="math notranslate nohighlight">\(\to \Theta(n^3)\)</span>, asymptotiquement cubique
+donc <em>a fortiori</em>  <span class="math notranslate nohighlight">\(\cal{O}(n^2)\)</span>, asymptotiquement majorée cubiquement</p>
 <p><strong>Répétition avec structure <code class="docutils literal notranslate"><span class="pre">while</span></code></strong> :</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">cond</span><span class="p">:</span>
     <span class="n">inst_1</span><span class="p">;</span> <span class="o">...</span> <span class="p">;</span> <span class="n">inst_p</span><span class="p">;</span>
