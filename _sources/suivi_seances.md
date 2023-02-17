@@ -1,5 +1,16 @@
 # (Intervenant) Suivi des séances
 
+## Semaine 7
+
+- TD semaine : feuille 4 (complexité)
+
+## Semaine 7
+
+- TD semaine : feuille 3
+- Gpe vendredi : 
+    - feuille 2 : palindrome, ascii, monte-carlo (80%)
+    - feuille 3 : exos 1, 2  
+
 ## Semaine 6
 
 - Remédiation : interaction-exemples sur qcm fonctions et compétences.

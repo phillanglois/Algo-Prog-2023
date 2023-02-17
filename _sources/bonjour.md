@@ -19,16 +19,23 @@ La première séance de CM a eu lieu en semaine 3.
 - les items indiqués d'une ($\star$) correspondent aux activités _objectif 20_
 :::
  
+## Semaine 8
+
+- Compétences : "Complexités"
+- QCM sur moodle : complexité
+- TD travail personnel : 
+    - Feuille 2 selon vos objectifs
+- Avant le CM : lire chapitre 1 "types composés" (partie Programmation) jusqu'à la section 1.4 inclus.
 
 ## Semaine 7
 
 - Compétences : "Complexités"
-- Acquisition : reprendre chapitre "Complexités" jusqu'à section 1.5 inclus.
+- Acquisition : reprendre chapitre "Complexités" jusqu'à section 1.5 inclus
 - QCM sur moodle : complexité
 - TD travail personnel : 
-    - finir feuille 2 selon vos objectifs.
+    - finir feuille 2 selon vos objectifs
     - _moodle_ : analyser les corrections de la feuille 1, objectifs 10 et 20
-- TD semaine : feuille 3, objectif 10. 
+- TD semaine : feuille 3, objectif 10
 - Avant le CM : lire le chapitre "Complexités" sections 1.6 et 1.7 inclus.
 
  

@@ -1,7 +1,7 @@
 (td:td4)=
 # Feuille 4
 
-- Le symbole $\blacksquare $ indique les exercices ou questions obligatoires. Commencez pas ceux-là.
+- Le symbole $\blacksquare$ indique les exercices ou questions obligatoires. Commencez pas ceux-là.
 - Les symboles $\star$ et $\star \star$ indiquent les exercices ou questions de difficulté relative plus importante.
 
 
@@ -17,8 +17,45 @@
 - Savoir exprimer et exploiter une complexité asymptotique : notations de Landau, principales classes de complexité des algorithmes, interprétation pratique de ces classes
 - Savoir identifier (sans nécessairement le prouver) la complexité, les meilleur-pire cas d'un algorithme 
 
-
 ## Objectif 10
+
+### $\blacksquare$ QCM (Extrait de CC)
+  
+  Dans les questions de cet exercice, le terme ''complexité''
+  (seul) désigne la complexité en temps. On précise ''complexité en
+  espace'' si on s'intéresse à cette notion.    
+
+1. Une analyse de complexité en temps  mesure le temps d'exécution 
+d'un programme sur les ordinateurs des salles info. (Vrai/Faux)
+2. Dans une analyse de complexité en temps, le coût d'une
+    multiplication de 2 entiers codés sur 32 bits est de 1 unité tandis que celui
+    de la multiplication de 2 nombres flottants codés sur 64 bits
+    est de 2 unités. (Vrai/Faux) 
+3. Lors d'une analyse de complexité en temps, le coût d'une
+    répétition \t{while} est égal à trois fois celui du \t{for} à cause
+    du compteur géré de manière explicite : incrémentation et comparaison. (Vrai/Faux) 
+4. Citer un exemple d'algorithme avec une complexité
+    constante dans le meilleur cas et linéaire dans le pire cas. 
+5. Citer un exemple d'algorithme avec une complexité
+    quadratique  dans le pire cas. 
+6. Quel est le meilleur cas dans une recherche séquentielle itérative ? 
+7. Quel est le meilleur cas dans une recherche dichotomique dans $n$ valeurs triées ? 
+8. Un algorithme a une complexité temporelle cubique en la
+    taille de son entrée, que peut-on dire de son temps
+    d'exécution si l'on double la taille de l'entrée ?   
+9. La fonction de complexité $C(n) = 4n^3 + 25n^2 + 10^2$ est
+    asymptotiquement linéaire? quadratique ? ou cubique ?
+    Pourquoi? 
+9. Les complexités asymptotiques des programmes $P1$ et $P2$ sont
+    égales à $\theta(n)$ donc leurs fonctions de complexité $C_1(n)$
+    et $C_2(n)$ sont égales.
+    (Vrai/Faux)
+9. Un algorithme a une complexité en espace quadratique en son
+    paramètre $n$. Pour $n = 100$, il requiert 1Mo d'espace mémoire pour
+    pouvoir s'exécuter.
+    De quelle quantité de mémoire aura-t-il {\it approximativement} besoin
+    pour s'exécuter avec $n = 1000$ ? 
+
 
 (exo:doubleboucle)=
 ### $\blacksquare$ Exercice
@@ -46,15 +83,14 @@
 
 ### $\blacksquare $ Exercice
 
-On reprend [l'exercice précédent](exo:doubleboucle) en introduisant un nombre arbitraire $n$
-d'itérations de chaque boucle.
+On reprend [l'exercice précédent](exo:doubleboucle) en introduisant un nombre arbitraire  $n$ d'itérations de chaque boucle.
 
 1.  Quelle est une mesure naturelle de la complexité de cet algorithme ?
     Quel est le paramètre de cette complexité ?
 
 2.  Pour chacun des cas suivants : compter le nombre d'additions
     effectuées à chaque itération de la boucle intérieure. En déduire le
-    nombre totale d'additions. Quelle est la complexité asymptotique de
+    nombre total d'additions. Quelle est la complexité asymptotique de
     cet algorithme ?
 
 	a.  On modifie la ligne 1 :
@@ -111,7 +147,7 @@ d'itérations de chaque boucle.
 Rappel. Il est utile de connaître la valeur de la somme des $n$ premiers
 entiers et son équivalent asymptotique :
 
-$$1+2 +  \dots + n =  \sum_{k=1}^n k = n(n+1)/2  \approx n^2/2 =  \theta(n^2).$$
+$$1+2 +  \dots + n =  \sum_{k=1}^n k = n(n+1)/2  \approx n^2/2 =  \theta(n^2) et donc = \cal{O}(n^2).$$
 
 
 ### $\blacksquare $ Exercice 
@@ -131,7 +167,7 @@ suivantes (déjà étudiées dans la feuille 2).
 Effectuer une analyse expérimentale de la
 complexité pour comparer l'efficacité des algorithmes de recherche
 itérative et dichotomique (cas de l'entrée triée). Dégager les
-comportements dans le meilleur cas, dans le\pire cas et en moyenne.
+comportements dans le meilleur cas, dans le pire cas de chacun d'entre eux.
 
 ### Exercice
 
