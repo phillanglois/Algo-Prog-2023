@@ -23,9 +23,11 @@ La première séance de CM a eu lieu en semaine 3.
 
 - Compétences : "Complexités"
 - QCM sur moodle : complexité
-- TD travail personnel : 
-    - **Feuille 3** selon vos objectifs
-- Avant le CM : lire chapitre 1 "types composés" (partie Programmation) jusqu'à la section 1.4 inclus.
+- Travail personnel : 
+    - TD **feuille 3** selon vos objectifs
+    - reprendre le chapitre "rechercher" (partie Algorithmique) jusqu'à la section 3.4 inclus et **sans** les parties sur les solutions récursives.
+- Avant le CM : lire
+    - chapitre "types composés" (partie Programmation) jusqu'à la section 1.4 inclus.
 
 ## Semaine 7
 

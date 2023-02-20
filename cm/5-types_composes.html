@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2. Sous-programme et affectation – aspects avancés" href="7-fonctions-avancees.html" />
-    <link rel="prev" title="2. Récursivité" href="6-recursivite.html" />
+    <link rel="prev" title="3. Rechercher" href="8-rechercher.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -168,6 +168,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="6-recursivite.html">
    2. Récursivité
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-rechercher.html">
+   3. Rechercher
   </a>
  </li>
 </ul>
@@ -868,7 +873,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="les-types-composes">
 <span id="ch-typescomposes"></span><h1><span class="section-number">1. </span>Les types composés<a class="headerlink" href="#les-types-composes" title="Permalink to this headline">#</a></h1>
-<p>Mis à jour : Feb 09, 2023, lecture : 14
+<p>Mis à jour : Feb 20, 2023, lecture : 14
 minutes minimum, PhL.</p>
 <p>Les types composés ou <em>conteneurs</em> de python sont  introduits  dans ce chapitre :</p>
 <ul class="simple">
@@ -1574,14 +1579,14 @@ lst: [&#39;r&#39;, &#39;a&#39;, &#39;n&#39;, &#39;t&#39;, &#39;a&#39;, &#39;n&#3
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 [3, 1, 2] [3, 1, 2]
-140711843075584 140711843075584
+140711532053760 140711532053760
 
 duplication avec copy.copy : 
 False
 [3, 1, 2] [999, 1, 2]
 duplication par affectation de tranche complète : 
 False True
-140711844004544 140711843075584
+140711531569088 140711532053760
 </pre></div>
 </div>
 </div>
@@ -1821,7 +1826,9 @@ Averell
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mutable : ajout, retrait, modification
-{&#39;le_mechant&#39;: &#39;Jo&#39;, &#39;2&#39;: &#39;Jack&#39;, 3: &#39;William&#39;, &#39;le_cretin&#39;: &#39;Averell&#39;, &#39;la_maman&#39;: &#39;Ma Dalton&#39;}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;le_mechant&#39;: &#39;Jo&#39;, &#39;2&#39;: &#39;Jack&#39;, 3: &#39;William&#39;, &#39;le_cretin&#39;: &#39;Averell&#39;, &#39;la_maman&#39;: &#39;Ma Dalton&#39;}
 {&#39;2&#39;: &#39;Jack&#39;, 3: &#39;William&#39;, &#39;le_cretin&#39;: &#39;Averell&#39;, &#39;la_maman&#39;: &#39;Ma Dalton&#39;}
 False 4
 
@@ -1893,9 +1900,9 @@ bnor! 5
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>abc 140711794310832
-abc 140711794310832
-abcdef 140711843941936
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>abc 140711483932336
+abc 140711483932336
+abcdef 140711532349040
 </pre></div>
 </div>
 </div>
@@ -1996,10 +2003,10 @@ BONJOUR ! True False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140711843940912
-140711843940912
-140711843943536
-140711843943536
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140711532211888
+140711532211888
+140711532208688
+140711532208688
 </pre></div>
 </div>
 </div>
@@ -2247,16 +2254,16 @@ Bonjour &quot;collègue&quot; !
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;y&#39;, &#39;o&#39;, &#39;a&#39;, &#39;i&#39;, &#39;e&#39;, &#39;u&#39;} 6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;a&#39;, &#39;e&#39;, &#39;y&#39;, &#39;o&#39;, &#39;u&#39;, &#39;i&#39;} 6
 True
 False
-aie : {&#39;a&#39;, &#39;i&#39;, &#39;e&#39;}
-voyelles : {&#39;y&#39;, &#39;o&#39;, &#39;a&#39;, &#39;i&#39;, &#39;e&#39;, &#39;u&#39;}
-union : {&#39;y&#39;, &#39;o&#39;, &#39;i&#39;, &#39;a&#39;, &#39;e&#39;, &#39;u&#39;}
-autre union : {&#39;y&#39;, &#39;o&#39;, &#39;f&#39;, &#39;i&#39;, &#39;a&#39;, &#39;e&#39;, &#39;b&#39;, &#39;u&#39;}
-intersection : {&#39;a&#39;, &#39;i&#39;, &#39;e&#39;}
-difference :  set() {&#39;b&#39;, &#39;f&#39;}
-difference symétrique:  {&#39;y&#39;, &#39;o&#39;, &#39;u&#39;}
+aie : {&#39;a&#39;, &#39;e&#39;, &#39;i&#39;}
+voyelles : {&#39;a&#39;, &#39;e&#39;, &#39;y&#39;, &#39;o&#39;, &#39;u&#39;, &#39;i&#39;}
+union : {&#39;a&#39;, &#39;e&#39;, &#39;y&#39;, &#39;o&#39;, &#39;u&#39;, &#39;i&#39;}
+autre union : {&#39;a&#39;, &#39;e&#39;, &#39;y&#39;, &#39;o&#39;, &#39;u&#39;, &#39;i&#39;, &#39;f&#39;, &#39;b&#39;}
+intersection : {&#39;a&#39;, &#39;e&#39;, &#39;i&#39;}
+difference :  set() {&#39;f&#39;, &#39;b&#39;}
+difference symétrique:  {&#39;o&#39;, &#39;u&#39;, &#39;y&#39;}
 inclusions : True True False False
 </pre></div>
 </div>
@@ -2547,11 +2554,11 @@ tuple, liste, dictionnaire, ensemble, et chaîne de caractères
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="6-recursivite.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="8-rechercher.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2. </span>Récursivité</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>Rechercher</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="7-fonctions-avancees.html" title="next page">
