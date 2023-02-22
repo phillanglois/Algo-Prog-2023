@@ -10,7 +10,9 @@ Ceci est le premier point d'entrée de l'UE Algo-Prog en complément de l'[espac
 
 
 :::{important} Rappels des dates importantes
--  8 mars 2023, 8-10h (2h) : CC1 (TP1) sur ordinateur **Cette date va être retardée**
+- semaine S10, (6-10 mars 2023), séance de TD : CC sur ordinateur 20 min
+-  16 mars 2023, 14h-16h (2h) : CC2 écrit
+-  24 mars 2023, 14h-16h (2h) : CC1 sur ordinateur (TP1) 
 :::
 
 :::{note}
