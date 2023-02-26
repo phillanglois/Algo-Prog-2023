@@ -21,6 +21,13 @@ La première séance de CM a eu lieu en semaine 3.
 - les items indiqués d'une ($\star$) correspondent aux activités _objectif 20_
 :::
  
+## Semaine 9 (vacances)
+
+- Travail personnel :
+    - Finir feuilles 1, 2 et 3 selon ses objectifs
+    - Feuille 4 
+    - TP puissance 4 (pas de remise demandée)
+
 ## Semaine 8
 
 - Compétences : "Complexités"

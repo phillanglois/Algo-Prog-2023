@@ -781,7 +781,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="modules-utiles">
 <span id="ch-modulesutiles"></span><h1><span class="section-number">4. </span>Modules utiles<a class="headerlink" href="#modules-utiles" title="Permalink to this headline">#</a></h1>
-<p>Mis à jour : Feb 22, 2023, lecture : 8
+<p>Mis à jour : Feb 26, 2023, lecture : 8
 minutes minimum, PhL.</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">random</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> et <code class="docutils literal notranslate"><span class="pre">time</span></code></strong>  pour des expériences de complexité, entre autres.</p>
 <p>Petites expériences qui nous permettent de découvrir des modules bien utiles :</p>
@@ -878,7 +878,7 @@ Le module <code class="docutils literal notranslate"><span class="pre">random</s
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 False
 True
-[0.6397978036374152, 0.9743979713913169, 0.34678823210198284, 0.7496728385999648, 0.7280260290080613, 0.8992291094687184, 0.8385123725506518, 0.7604663103270245, 0.3199648693792868, 0.6045613483241989]
+[0.27732741510785697, 0.6986968002152335, 0.621285224983325, 0.7038883975629, 0.7187004276727124, 0.44289048942962994, 0.13504036375799033, 0.5744615676109514, 0.34778168319763814, 0.36936015108011333]
 [0.41661987254534116, 0.010169169457068361, 0.8252065092537432, 0.2986398551995928, 0.3684116894884757, 0.19366134904507426, 0.5660081687288613, 0.1616878239293682, 0.12426688428353017, 0.4329362680099159]
 </pre></div>
 </div>
@@ -1042,7 +1042,7 @@ Il est conseillé de “jouer” avec les différentes commandes jusqu’à obte
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe5c0606490&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd10360b4f0&gt;
 </pre></div>
 </div>
 <img alt="../_images/11-modules-utiles_22_1.png" src="../_images/11-modules-utiles_22_1.png" />
@@ -1125,7 +1125,7 @@ On note les paramètres effectifs qui définissent comment interpréter les vale
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fe5c1afd4f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fd1042eef10&gt;
 </pre></div>
 </div>
 <img alt="../_images/11-modules-utiles_29_1.png" src="../_images/11-modules-utiles_29_1.png" />
@@ -1442,26 +1442,26 @@ réserves précédentes).</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.821e-04 6.700e-04
-6.649e-04 7.059e-04
-6.862e-04 6.589e-04
-6.700e-04 7.953e-04
-6.700e-04 6.448e-04
-8.602e-04 6.470e-04
-6.831e-04 6.628e-04
-6.702e-04 6.477e-04
-6.673e-04 6.567e-04
-6.740e-04 6.519e-04
-6.700e-04 6.466e-04
-6.649e-04 6.518e-04
-6.702e-04 7.309e-04
-6.669e-04 6.447e-04
-8.960e-04 6.505e-04
-6.797e-04 6.432e-04
-7.339e-04 6.465e-04
-6.998e-04 6.440e-04
-6.919e-04 6.460e-04
-6.661e-04 6.452e-04
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.417e-04 6.651e-04
+6.919e-04 6.537e-04
+6.931e-04 7.783e-04
+6.859e-04 6.689e-04
+1.015e-03 6.898e-04
+6.831e-04 6.894e-04
+6.821e-04 6.548e-04
+6.809e-04 6.562e-04
+6.759e-04 6.534e-04
+6.819e-04 6.575e-04
+6.752e-04 6.905e-04
+6.771e-04 6.655e-04
+6.850e-04 6.543e-04
+7.780e-04 6.543e-04
+6.821e-04 6.554e-04
+6.771e-04 6.535e-04
+6.759e-04 6.552e-04
+6.731e-04 6.642e-04
+6.850e-04 7.170e-04
+6.540e-04 6.590e-04
 </pre></div>
 </div>
 </div>
@@ -1552,15 +1552,15 @@ Allons-y pour des mesures comme <em>fonction de cette taille</em>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>00000100 6.700e-06 6.700e-08
-00001000 6.409e-05 6.409e-08
-00010000 6.816e-04 6.816e-08
-00100000 6.780e-03 6.780e-08
-01000000 6.805e-02 6.805e-08
-10000000 6.795e-01 6.795e-08
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>00000100 6.604e-06 6.604e-08
+00001000 6.502e-05 6.502e-08
+00010000 6.721e-04 6.721e-08
+00100000 6.900e-03 6.900e-08
+01000000 6.900e-02 6.900e-08
+10000000 7.036e-01 7.036e-08
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe5c1dbeee0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd104b178e0&gt;
 </pre></div>
 </div>
 <img alt="../_images/11-modules-utiles_61_2.png" src="../_images/11-modules-utiles_61_2.png" />
