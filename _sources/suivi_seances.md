@@ -1,5 +1,10 @@
 # (Intervenant) Suivi des séances
 
+## Semaine 10
+
+- Remédiation : feuille 3, correction tous les exercices O10, mise ne ligne sous moodle et github
+
+
 ## Semaine 8
 
 - TD semaine : feuille 4 (complexité)

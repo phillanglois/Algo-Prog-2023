@@ -232,6 +232,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Diapos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../slides/1_sl.html">
+   1. Fonctions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   TD
  </span>
 </p>
@@ -269,13 +281,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Diapos
+  Corrections TD
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../slides/1_sl.html">
-   1. Fonctions
+  <a class="reference internal" href="../td-corr/td3-o10-corr.html">
+   1. Feuille 3
   </a>
  </li>
 </ul>
@@ -873,7 +885,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="les-types-composes">
 <span id="ch-typescomposes"></span><h1><span class="section-number">1. </span>Les types composés<a class="headerlink" href="#les-types-composes" title="Permalink to this headline">#</a></h1>
-<p>Mis à jour : Feb 26, 2023, lecture : 14
+<p>Mis à jour : Mar 06, 2023, lecture : 14
 minutes minimum, PhL.</p>
 <p>Les types composés ou <em>conteneurs</em> de python sont  introduits  dans ce chapitre :</p>
 <ul class="simple">
@@ -1579,14 +1591,14 @@ lst: [&#39;r&#39;, &#39;a&#39;, &#39;n&#39;, &#39;t&#39;, &#39;a&#39;, &#39;n&#3
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 [3, 1, 2] [3, 1, 2]
-140671462397888 140671462397888
+140406825938880 140406825938880
 
 duplication avec copy.copy : 
 False
 [3, 1, 2] [999, 1, 2]
 duplication par affectation de tranche complète : 
 False True
-140671462385344 140671462397888
+140406825938240 140406825938880
 </pre></div>
 </div>
 </div>
@@ -1898,9 +1910,9 @@ bnor! 5
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>abc 140671385337520
-abc 140671385337520
-abcdef 140671462336560
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>abc 140406749888176
+abc 140406749888176
+abcdef 140406825618160
 </pre></div>
 </div>
 </div>
@@ -2001,10 +2013,10 @@ BONJOUR ! True False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140671462310640
-140671462310640
-140671462310192
-140671462310192
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140406825854960
+140406825854960
+140406825853552
+140406825853552
 </pre></div>
 </div>
 </div>
@@ -2252,14 +2264,14 @@ Bonjour &quot;collègue&quot; !
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;u&#39;, &#39;e&#39;, &#39;y&#39;, &#39;i&#39;, &#39;a&#39;, &#39;o&#39;} 6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;i&#39;, &#39;u&#39;, &#39;y&#39;, &#39;a&#39;, &#39;o&#39;, &#39;e&#39;} 6
 True
 False
-aie : {&#39;a&#39;, &#39;e&#39;, &#39;i&#39;}
-voyelles : {&#39;u&#39;, &#39;e&#39;, &#39;y&#39;, &#39;i&#39;, &#39;a&#39;, &#39;o&#39;}
-union : {&#39;u&#39;, &#39;e&#39;, &#39;y&#39;, &#39;i&#39;, &#39;a&#39;, &#39;o&#39;}
-autre union : {&#39;u&#39;, &#39;f&#39;, &#39;e&#39;, &#39;b&#39;, &#39;y&#39;, &#39;i&#39;, &#39;a&#39;, &#39;o&#39;}
-intersection : {&#39;a&#39;, &#39;e&#39;, &#39;i&#39;}
+aie : {&#39;i&#39;, &#39;a&#39;, &#39;e&#39;}
+voyelles : {&#39;i&#39;, &#39;u&#39;, &#39;y&#39;, &#39;a&#39;, &#39;o&#39;, &#39;e&#39;}
+union : {&#39;i&#39;, &#39;u&#39;, &#39;y&#39;, &#39;a&#39;, &#39;o&#39;, &#39;e&#39;}
+autre union : {&#39;i&#39;, &#39;u&#39;, &#39;y&#39;, &#39;f&#39;, &#39;a&#39;, &#39;b&#39;, &#39;o&#39;, &#39;e&#39;}
+intersection : {&#39;i&#39;, &#39;a&#39;, &#39;e&#39;}
 difference :  set() {&#39;f&#39;, &#39;b&#39;}
 difference symétrique:  {&#39;u&#39;, &#39;y&#39;, &#39;o&#39;}
 inclusions : True True False False

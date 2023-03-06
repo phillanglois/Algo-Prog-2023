@@ -21,12 +21,19 @@ La première séance de CM a eu lieu en semaine 3.
 - les items indiqués d'une ($\star$) correspondent aux activités _objectif 20_
 :::
  
+## Semaine 10 
+
+- Travail personnel : feuille 4 
+- Avant le CM : lire le chapitre "types composés" (partie Programmation) en entier.
+
+
 ## Semaine 9 (vacances)
 
 - Travail personnel :
-    - Finir feuilles 1, 2 et 3 selon ses objectifs
+    - Finir feuilles 1, 2 et 3  selon ses objectifs
     - Feuille 4 
     - TP puissance 4 (pas de remise demandée)
+    - Etudier le chapitre "types composés" (partie Programmation) jusqu'à la section 1.4 inclus.
 
 ## Semaine 8
 
