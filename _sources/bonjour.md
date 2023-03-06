@@ -23,12 +23,16 @@ La première séance de CM a eu lieu en semaine 3.
  
 ## Semaine 10 
 
-- Travail personnel : feuille 4 
+- Compétences : "Complexités"
+- Travail personnel : 
+    - feuille 4
+    - étudier chapitre "Rechercher", toutes les sections avec algorithmes itératifs
 - Avant le CM : lire le chapitre "types composés" (partie Programmation) en entier.
 
 
 ## Semaine 9 (vacances)
 
+- Compétences : "Fonctions", "Rechercher" et "Complexités"
 - Travail personnel :
     - Finir feuilles 1, 2 et 3  selon ses objectifs
     - Feuille 4 
@@ -37,7 +41,6 @@ La première séance de CM a eu lieu en semaine 3.
 
 ## Semaine 8
 
-- Compétences : "Complexités"
 - QCM sur moodle : complexité
 - Travail personnel : 
     - TD **feuille 3** selon vos objectifs
