@@ -3,7 +3,9 @@
 ## Semaine 10
 
 - Remédiation : feuille 3, correction tous les exercices O10, mise ne ligne sous moodle et github
-
+- TD : feuille 3
+    - définition de vecteurs et de matrices avec liste en compréhension "directes" ou de zéros puis remplissage
+    - pré-conditions sur arguments effectifs
 
 ## Semaine 8
 
