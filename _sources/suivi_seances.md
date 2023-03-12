@@ -1,5 +1,12 @@
 # (Intervenant) Suivi des séances
 
+## Semaine 11
+
+- commentaires individualisés du CC0 pour étudiants en difficulté (notebook corrigé sous moodle)
+- Réponse questions sur feuille 4
+- TP SD
+
+
 ## Semaine 10
 
 - Remédiation : feuille 3, correction tous les exercices O10, mise ne ligne sous moodle et github

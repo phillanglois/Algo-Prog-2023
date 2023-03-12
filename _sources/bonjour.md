@@ -21,6 +21,14 @@ La première séance de CM a eu lieu en semaine 3.
 - les items indiqués d'une ($\star$) correspondent aux activités _objectif 20_
 :::
  
+## Semaine 11
+
+- Travail personnel : 
+    - feuille 4
+    - étudier chapitre "types composés" (partie Programmation) en entier
+- Avant le CM : lire le chapitre "entrées-sorties simples" (partie Programmation) en entier.
+
+
 ## Semaine 10 
 
 - Compétences : "Complexités"
