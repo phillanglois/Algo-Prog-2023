@@ -21,16 +21,29 @@ La première séance de CM a eu lieu en semaine 3.
 - les items indiqués d'une ($\star$) correspondent aux activités _objectif 20_
 :::
  
+## Semaine 12
+
+- CC1 sur machine, durée 2h15, tous les chapitres vus à ce jour
+- Compétences : "Types composés"
+- Travail personnel  
+    - étudier chapitre "types composés" (partie Programmation) en entier
+    - TP structures de données (à finir)
+- Avant le CM : 
+    - re-lire le chapitre "entrées-sorties simples" (partie Programmation), sections 4.1 et 4.2.
+    - lire chapitre "Récursivité" jusqu'à section 2.3 inclus
+
+
 ## Semaine 11
 
-- Travail personnel : 
+- CC2 écrit, durée 2h30, tous les chapitres vus à ce jour
+- Travail personnel 
     - feuille 4
     - étudier chapitre "types composés" (partie Programmation) en entier
-- Avant le CM : lire le chapitre "entrées-sorties simples" (partie Programmation) en entier.
-
-
+- Avant le CM : lire le chapitre "entrées-sorties simples" (partie Programmation) en entier
+    
 ## Semaine 10 
 
+- CC exercice court sur machine, durée 0h30, tous les chapitres vus à ce jour
 - Compétences : "Complexités"
 - Travail personnel : 
     - feuille 4
