@@ -150,7 +150,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="3-ES-fichiers.html">
-   4. Entrées-sorties simples avec des fichiers
+   3. Entrées-sorties simples avec des fichiers
   </a>
  </li>
 </ul>
@@ -175,6 +175,11 @@ const thebe_selector_output = ".output, .cell_output"
    3. Rechercher
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-trier.html">
+   4. Trier
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -189,7 +194,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="7-fonctions-avancees.html">
-   2. Sous-programme et affectation – aspects avancés
+   2. Affectation et appel de fonction – aspects avancés
   </a>
  </li>
  <li class="toctree-l1">
@@ -781,7 +786,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="modules-utiles">
 <span id="ch-modulesutiles"></span><h1><span class="section-number">4. </span>Modules utiles<a class="headerlink" href="#modules-utiles" title="Permalink to this headline">#</a></h1>
-<p>Mis à jour : Mar 20, 2023, lecture : 8
+<p>Mis à jour : Apr 02, 2023, lecture : 8
 minutes minimum, PhL.</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">random</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> et <code class="docutils literal notranslate"><span class="pre">time</span></code></strong>  pour des expériences de complexité, entre autres.</p>
 <p>Petites expériences qui nous permettent de découvrir des modules bien utiles :</p>
@@ -878,7 +883,7 @@ Le module <code class="docutils literal notranslate"><span class="pre">random</s
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 False
 True
-[0.8087256445719923, 0.46584330877719127, 0.724577566303629, 0.23039732758001907, 0.9888958095574363, 0.15587608804992836, 0.6370038916412979, 0.1620874207051125, 0.9060559716707857, 0.36751041572068344]
+[0.6453652705658732, 0.6639800178007987, 0.5411631715402754, 0.8113153874896907, 0.8672460860420366, 0.8214552728042429, 0.6339661168230561, 0.4084154383945704, 0.5173894701362205, 0.54216464115154]
 [0.41661987254534116, 0.010169169457068361, 0.8252065092537432, 0.2986398551995928, 0.3684116894884757, 0.19366134904507426, 0.5660081687288613, 0.1616878239293682, 0.12426688428353017, 0.4329362680099159]
 </pre></div>
 </div>
@@ -1042,7 +1047,7 @@ Il est conseillé de “jouer” avec les différentes commandes jusqu’à obte
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd650e0b4c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f803720a4f0&gt;
 </pre></div>
 </div>
 <img alt="../_images/11-modules-utiles_22_1.png" src="../_images/11-modules-utiles_22_1.png" />
@@ -1125,7 +1130,7 @@ On note les paramètres effectifs qui définissent comment interpréter les vale
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fd651c02580&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f8037e034c0&gt;
 </pre></div>
 </div>
 <img alt="../_images/11-modules-utiles_29_1.png" src="../_images/11-modules-utiles_29_1.png" />
@@ -1442,26 +1447,26 @@ réserves précédentes).</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.299e-04 8.088e-04
-8.497e-04 7.956e-04
-9.830e-04 9.283e-04
-8.330e-04 7.837e-04
-8.080e-04 1.137e-03
-1.018e-03 8.088e-04
-8.559e-04 7.748e-04
-8.142e-04 7.759e-04
-1.053e-03 7.805e-04
-8.011e-04 8.931e-04
-7.939e-04 7.751e-04
-7.741e-04 1.263e-03
-7.749e-04 8.108e-04
-7.720e-04 9.548e-04
-7.751e-04 7.830e-04
-1.035e-03 8.133e-04
-8.209e-04 7.483e-04
-8.037e-04 7.514e-04
-8.063e-04 7.519e-04
-9.029e-04 7.576e-04
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.842e-04 6.726e-04
+8.340e-04 6.678e-04
+7.632e-04 9.573e-04
+1.555e-03 7.193e-04
+7.849e-04 9.215e-04
+7.820e-04 6.938e-04
+7.510e-04 8.487e-04
+7.732e-04 7.120e-04
+7.498e-04 7.897e-04
+7.432e-04 6.972e-04
+7.210e-04 7.037e-04
+7.229e-04 6.657e-04
+7.131e-04 6.688e-04
+7.260e-04 6.821e-04
+7.701e-04 6.723e-04
+7.198e-04 7.391e-04
+7.381e-04 6.684e-04
+6.962e-04 6.768e-04
+6.919e-04 7.399e-04
+7.849e-04 6.674e-04
 </pre></div>
 </div>
 </div>
@@ -1552,15 +1557,15 @@ Allons-y pour des mesures comme <em>fonction de cette taille</em>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>00000100 6.413e-06 6.413e-08
-00001000 6.552e-05 6.552e-08
-00010000 6.979e-04 6.979e-08
-00100000 6.896e-03 6.896e-08
-01000000 6.920e-02 6.920e-08
-10000000 7.404e-01 7.404e-08
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>00000100 8.798e-06 8.798e-08
+00001000 6.640e-05 6.640e-08
+00010000 7.974e-04 7.974e-08
+00100000 6.882e-03 6.882e-08
+01000000 6.833e-02 6.833e-08
+10000000 6.566e-01 6.566e-08
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd651f9c040&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f8038286a30&gt;
 </pre></div>
 </div>
 <img alt="../_images/11-modules-utiles_61_2.png" src="../_images/11-modules-utiles_61_2.png" />

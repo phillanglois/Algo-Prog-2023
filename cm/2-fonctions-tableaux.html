@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. Entrées-sorties simples avec des fichiers" href="3-ES-fichiers.html" />
+    <link rel="next" title="3. Entrées-sorties simples avec des fichiers" href="3-ES-fichiers.html" />
     <link rel="prev" title="1. Fonctions" href="1-fonctions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -150,7 +150,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="3-ES-fichiers.html">
-   4. Entrées-sorties simples avec des fichiers
+   3. Entrées-sorties simples avec des fichiers
   </a>
  </li>
 </ul>
@@ -175,6 +175,11 @@ const thebe_selector_output = ".output, .cell_output"
    3. Rechercher
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-trier.html">
+   4. Trier
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -189,7 +194,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="7-fonctions-avancees.html">
-   2. Sous-programme et affectation – aspects avancés
+   2. Affectation et appel de fonction – aspects avancés
   </a>
  </li>
  <li class="toctree-l1">
@@ -464,128 +469,121 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   2. Fonctions et tableaux
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exemples-et-conventions">
-   3.
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rappels-et-conventions">
+   2.1.
    <strong>
-    Exemples et conventions.
+    Rappels et conventions.
    </strong>
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#specifications-de-fonctions-avec-parametre-list-en-python">
-     3.1. Spécifications de fonctions avec paramètre
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specifications-de-fonctions-avec-parametre-list-en-python">
+   2.2. Spécifications de fonctions avec paramètre
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     list
+    </span>
+   </code>
+   en python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comment-indiquer-le-type-d-un-parametre-formel-d-une-fonction-lorsque-celui-ci-est-une-liste">
+     2.2.1. Comment indiquer le type d’un paramètre formel d’une fonction lorsque celui-ci est une liste ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comment-specifier-une-fonction-avec-des-parametres-formels-de-type-tableau">
+     2.2.2. Comment spécifier une fonction avec des paramètres formels de type tableau ?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemples">
+   2.3. Exemples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#min1">
+     2.3.1.
      <code class="docutils literal notranslate">
       <span class="pre">
-       list
+       min1()
       </span>
      </code>
-     en python
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#comment-indiquer-le-type-d-un-parametre-formel-d-une-fonction-lorsque-celui-ci-est-une-liste">
-       3.1.1. Comment indiquer le type d’un paramètre formel d’une fonction lorsque celui-ci est une liste ?
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#comment-specifier-une-fonction-avec-des-parametres-formels-de-type-tableau">
-       3.1.2. Comment spécifier une fonction avec des paramètres formels de type tableau ?
-      </a>
-     </li>
-    </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemples">
-     3.2. Exemples
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#star-star-quelle-specification-pour-une-fonction-generique">
+   2.4. (
+   <span class="math notranslate nohighlight">
+    \(\star\star\)
+   </span>
+   ) Quelle spécification pour une fonction générique ?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     2.4.1. Généricité
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#min1">
-       3.2.1.
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         min1()
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#star-star-quelle-specification-pour-une-fonction-generique">
-     3.3. (
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#union-dans-le-module-typing-ou-pour-python-ge-3-10">
+     2.4.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Union
+      </span>
+     </code>
+     dans le module
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       typing
+      </span>
+     </code>
+     ou
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       |
+      </span>
+     </code>
+     pour python
      <span class="math notranslate nohighlight">
-      \(\star\star\)
+      \(\ge\)
      </span>
-     ) Quelle spécification pour une fonction générique ?
+     3.10
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       3.3.1. Généricité
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#union-dans-le-module-typing-ou-pour-python-ge-3-10">
-       3.3.2.
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         Union
-        </span>
-       </code>
-       dans le module
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         typing
-        </span>
-       </code>
-       ou
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         |
-        </span>
-       </code>
-       pour python
-       <span class="math notranslate nohighlight">
-        \(\ge\)
-       </span>
-       3.10
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#a-lire">
-       3.3.3. A lire
-      </a>
-     </li>
-    </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#synthese">
-     3.4. Synthèse
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-lire">
+     2.4.3. A lire
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ce-qui-a-ete-vu">
-       3.4.1. Ce qui a été vu
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ce-qui-n-a-pas-ete-vu">
-       3.4.2. Ce qui n’a pas été vu
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice-de-synthese">
-       3.4.3. Exercice de synthèse
-      </a>
-     </li>
-    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synthese">
+   2.5. Synthèse
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ce-qui-a-ete-vu">
+     2.5.1. Ce qui a été vu
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ce-qui-n-a-pas-ete-vu">
+     2.5.2. Ce qui n’a pas été vu
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-de-synthese">
+     2.5.3. Exercice de synthèse
+    </a>
    </li>
   </ul>
  </li>
@@ -608,128 +606,121 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   2. Fonctions et tableaux
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exemples-et-conventions">
-   3.
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rappels-et-conventions">
+   2.1.
    <strong>
-    Exemples et conventions.
+    Rappels et conventions.
    </strong>
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#specifications-de-fonctions-avec-parametre-list-en-python">
-     3.1. Spécifications de fonctions avec paramètre
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specifications-de-fonctions-avec-parametre-list-en-python">
+   2.2. Spécifications de fonctions avec paramètre
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     list
+    </span>
+   </code>
+   en python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comment-indiquer-le-type-d-un-parametre-formel-d-une-fonction-lorsque-celui-ci-est-une-liste">
+     2.2.1. Comment indiquer le type d’un paramètre formel d’une fonction lorsque celui-ci est une liste ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comment-specifier-une-fonction-avec-des-parametres-formels-de-type-tableau">
+     2.2.2. Comment spécifier une fonction avec des paramètres formels de type tableau ?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemples">
+   2.3. Exemples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#min1">
+     2.3.1.
      <code class="docutils literal notranslate">
       <span class="pre">
-       list
+       min1()
       </span>
      </code>
-     en python
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#comment-indiquer-le-type-d-un-parametre-formel-d-une-fonction-lorsque-celui-ci-est-une-liste">
-       3.1.1. Comment indiquer le type d’un paramètre formel d’une fonction lorsque celui-ci est une liste ?
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#comment-specifier-une-fonction-avec-des-parametres-formels-de-type-tableau">
-       3.1.2. Comment spécifier une fonction avec des paramètres formels de type tableau ?
-      </a>
-     </li>
-    </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemples">
-     3.2. Exemples
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#star-star-quelle-specification-pour-une-fonction-generique">
+   2.4. (
+   <span class="math notranslate nohighlight">
+    \(\star\star\)
+   </span>
+   ) Quelle spécification pour une fonction générique ?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     2.4.1. Généricité
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#min1">
-       3.2.1.
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         min1()
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#star-star-quelle-specification-pour-une-fonction-generique">
-     3.3. (
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#union-dans-le-module-typing-ou-pour-python-ge-3-10">
+     2.4.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Union
+      </span>
+     </code>
+     dans le module
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       typing
+      </span>
+     </code>
+     ou
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       |
+      </span>
+     </code>
+     pour python
      <span class="math notranslate nohighlight">
-      \(\star\star\)
+      \(\ge\)
      </span>
-     ) Quelle spécification pour une fonction générique ?
+     3.10
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       3.3.1. Généricité
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#union-dans-le-module-typing-ou-pour-python-ge-3-10">
-       3.3.2.
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         Union
-        </span>
-       </code>
-       dans le module
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         typing
-        </span>
-       </code>
-       ou
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         |
-        </span>
-       </code>
-       pour python
-       <span class="math notranslate nohighlight">
-        \(\ge\)
-       </span>
-       3.10
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#a-lire">
-       3.3.3. A lire
-      </a>
-     </li>
-    </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#synthese">
-     3.4. Synthèse
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-lire">
+     2.4.3. A lire
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ce-qui-a-ete-vu">
-       3.4.1. Ce qui a été vu
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ce-qui-n-a-pas-ete-vu">
-       3.4.2. Ce qui n’a pas été vu
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice-de-synthese">
-       3.4.3. Exercice de synthèse
-      </a>
-     </li>
-    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synthese">
+   2.5. Synthèse
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ce-qui-a-ete-vu">
+     2.5.1. Ce qui a été vu
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ce-qui-n-a-pas-ete-vu">
+     2.5.2. Ce qui n’a pas été vu
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-de-synthese">
+     2.5.3. Exercice de synthèse
+    </a>
    </li>
   </ul>
  </li>
@@ -745,7 +736,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="fonctions-et-tableaux">
 <span id="ch-fonctions-tableaux"></span><h1><span class="section-number">2. </span>Fonctions et tableaux<a class="headerlink" href="#fonctions-et-tableaux" title="Permalink to this headline">#</a></h1>
-<p>Mis à jour : Mar 20, 2023, lecture : 8 minutes minimum, PhL.</p>
+<p>Mis à jour : Apr 02, 2023, lecture : 8 minutes minimum, PhL.</p>
 <p>Dans ce chapitre, nous complétons l’étude des fonctions en python en présentant le cas des <strong>fonctions avec paramètre de type tableau</strong>, c-a-d. le cas de fonctions qui manipulent des arguments <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
 <p>Les tableaux mis en oeuvre avec des listes python sont entre autres rapellés dans l’annexe <a class="reference external" href="#ann:boucle-tableaux">a0 Boucles avancées</a>.</p>
 <div class="alert alert-block alert-info">
@@ -760,9 +751,8 @@ title="Print to PDF"
 <li><p>Chacune des dimensions d’un tableau est composée d’un certain nombre de <em>valeurs de l’indice de cette dimension</em>.</p></li>
 <li><p>La taille de ce tableau est <em>l’ensemble ordonné</em> de chacun de ces nombres pour chacune de ses dimensions.</p></li>
 </ul>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="exemples-et-conventions">
-<h1><span class="section-number">3. </span><strong>Exemples et conventions.</strong><a class="headerlink" href="#exemples-et-conventions" title="Permalink to this headline">#</a></h1>
+<section id="rappels-et-conventions">
+<h2><span class="section-number">2.1. </span><strong>Rappels et conventions.</strong><a class="headerlink" href="#rappels-et-conventions" title="Permalink to this headline">#</a></h2>
 <p>Le vecteur <span class="math notranslate nohighlight">\((2, 4, 6)\)</span> est de dimension 1 et de taille 3.</p>
 <p>La matrice</p>
 <div class="math notranslate nohighlight">
@@ -912,8 +902,9 @@ Il vaut mieux s’interdire toute mauvaise habitude – même pour les listes 1D
 <li><p>~~<code class="docutils literal notranslate"><span class="pre">[[0]</span> <span class="pre">*</span> <span class="pre">3]</span> <span class="pre">*</span> <span class="pre">5</span></code>~~</p></li>
 </ul>
 </div>
+</section>
 <section id="specifications-de-fonctions-avec-parametre-list-en-python">
-<h2><span class="section-number">3.1. </span>Spécifications de fonctions avec paramètre <code class="docutils literal notranslate"><span class="pre">list</span></code>  en python<a class="headerlink" href="#specifications-de-fonctions-avec-parametre-list-en-python" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.2. </span>Spécifications de fonctions avec paramètre <code class="docutils literal notranslate"><span class="pre">list</span></code>  en python<a class="headerlink" href="#specifications-de-fonctions-avec-parametre-list-en-python" title="Permalink to this headline">#</a></h2>
 <p>La spécification d’une fonction doit comporter le type de ses paramètres formels.<br />
 On s’était limité aux paramètres formels de types scalaires <code class="docutils literal notranslate"><span class="pre">bool</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">complex</span></code>.</p>
 <p><strong>Pourquoi introduire cette notion maintenant ?</strong></p>
@@ -929,7 +920,7 @@ On s’était limité aux paramètres formels de types scalaires <code class="do
 <p>Nous allons écrire des traitements un peu complexes sur des tableaux.
 Donc nous avons besoin de <em>fonctions</em> qui manipulent des <em>tableaux</em>, et donc de leur <em>spécification</em>.</p>
 <section id="comment-indiquer-le-type-d-un-parametre-formel-d-une-fonction-lorsque-celui-ci-est-une-liste">
-<h3><span class="section-number">3.1.1. </span>Comment indiquer le type d’un paramètre formel d’une fonction lorsque celui-ci est une liste ?<a class="headerlink" href="#comment-indiquer-le-type-d-un-parametre-formel-d-une-fonction-lorsque-celui-ci-est-une-liste" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.1. </span>Comment indiquer le type d’un paramètre formel d’une fonction lorsque celui-ci est une liste ?<a class="headerlink" href="#comment-indiquer-le-type-d-un-parametre-formel-d-une-fonction-lorsque-celui-ci-est-une-liste" title="Permalink to this headline">#</a></h3>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Evolutions des annotations de typage</p>
@@ -954,7 +945,7 @@ Donc nous avons besoin de <em>fonctions</em> qui manipulent des <em>tableaux</em
 <p>Cette syntaxe permet d’expliciter le type (unique) des valeurs contenues dans un tableau.</p>
 </section>
 <section id="comment-specifier-une-fonction-avec-des-parametres-formels-de-type-tableau">
-<h3><span class="section-number">3.1.2. </span>Comment spécifier une fonction avec des paramètres formels de type tableau ?<a class="headerlink" href="#comment-specifier-une-fonction-avec-des-parametres-formels-de-type-tableau" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.2. </span>Comment spécifier une fonction avec des paramètres formels de type tableau ?<a class="headerlink" href="#comment-specifier-une-fonction-avec-des-parametres-formels-de-type-tableau" title="Permalink to this headline">#</a></h3>
 <p>Pour chaque paramètre formel de type tableau (représenté par une liste python), on <em>complète</em> la spécification de la fonction <em>avec</em> autant de <em>paramètres</em> nécessaires à la définition de <em>la dimension du tableau</em> : un paramètre supplémentaire pour un tableau 1D, deux pour un tableau 2D, …</p>
 <p>Montrons avec des exemples comment préciser la (ou les) taille(s) fixe(s) d’un tableau.</p>
 <p><strong>Exemple :</strong>
@@ -998,7 +989,7 @@ la fonction <code class="docutils literal notranslate"><span class="pre">min1()<
 </section>
 </section>
 <section id="exemples">
-<h2><span class="section-number">3.2. </span>Exemples<a class="headerlink" href="#exemples" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.3. </span>Exemples<a class="headerlink" href="#exemples" title="Permalink to this headline">#</a></h2>
 <p>On présente ici la fonction <code class="docutils literal notranslate"><span class="pre">min1()</span></code> qui calcule la valeur minimale d’un tableau 1D d’entiers.</p>
 <p>Se référer ensuite à l’annexe <a class="reference internal" href="a0-boucles-avancees.html#ann-boucles"><span class="std std-ref">a0 - Boucles avancées</span></a> dont <strong>tous</strong> les exemples définissent des fonctions avec des paramètres tableaux.</p>
 <ul class="simple">
@@ -1007,7 +998,7 @@ la fonction <code class="docutils literal notranslate"><span class="pre">min1()<
 <li><p><code class="docutils literal notranslate"><span class="pre">existe_doublon()</span></code> calcule si il existe ou non une valeur qui apparaît au moins deux fois dans un tableau.</p></li>
 </ul>
 <section id="min1">
-<h3><span class="section-number">3.2.1. </span><code class="docutils literal notranslate"><span class="pre">min1()</span></code><a class="headerlink" href="#min1" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.3.1. </span><code class="docutils literal notranslate"><span class="pre">min1()</span></code><a class="headerlink" href="#min1" title="Permalink to this headline">#</a></h3>
 <p>La fonction <code class="docutils literal notranslate"><span class="pre">min1</span></code> qui retourne la valeur minimale d’un tableau 1 D d’entiers (par exemple) et de taille <span class="math notranslate nohighlight">\(n\)</span> quelconque.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1093,12 +1084,12 @@ Réponse<div class="sd-summary-down docutils">
 </details></section>
 </section>
 <section id="star-star-quelle-specification-pour-une-fonction-generique">
-<span id="genericite"></span><h2><span class="section-number">3.3. </span>(<span class="math notranslate nohighlight">\(\star\star\)</span>) Quelle spécification pour une fonction générique ?<a class="headerlink" href="#star-star-quelle-specification-pour-une-fonction-generique" title="Permalink to this headline">#</a></h2>
+<span id="genericite"></span><h2><span class="section-number">2.4. </span>(<span class="math notranslate nohighlight">\(\star\star\)</span>) Quelle spécification pour une fonction générique ?<a class="headerlink" href="#star-star-quelle-specification-pour-une-fonction-generique" title="Permalink to this headline">#</a></h2>
 <div class="alert alert-warning">
 <p>Objectif 20 : compléments.</p>
 <p>Sauter cette section en première lecture.</p>
 </div><section id="id1">
-<h3><span class="section-number">3.3.1. </span>Généricité<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.4.1. </span>Généricité<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>Cette section s’est d’abord appelée :</p>
 <blockquote>
 <div><p>“Comment spécifier un traitement générique ?”</p>
@@ -1124,7 +1115,7 @@ Cette fonction <code class="docutils literal notranslate"><span class="pre">mon_
 Il est facile de l’écrire avec une seule fonction <em>python</em> mais sans indication de spécification – ce qui est <em>mal</em> :)</p>
 </section>
 <section id="union-dans-le-module-typing-ou-pour-python-ge-3-10">
-<h3><span class="section-number">3.3.2. </span><code class="docutils literal notranslate"><span class="pre">Union</span></code> dans le module <code class="docutils literal notranslate"><span class="pre">typing</span></code> ou <code class="docutils literal notranslate"><span class="pre">|</span></code> pour python <span class="math notranslate nohighlight">\(\ge\)</span> 3.10<a class="headerlink" href="#union-dans-le-module-typing-ou-pour-python-ge-3-10" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.4.2. </span><code class="docutils literal notranslate"><span class="pre">Union</span></code> dans le module <code class="docutils literal notranslate"><span class="pre">typing</span></code> ou <code class="docutils literal notranslate"><span class="pre">|</span></code> pour python <span class="math notranslate nohighlight">\(\ge\)</span> 3.10<a class="headerlink" href="#union-dans-le-module-typing-ou-pour-python-ge-3-10" title="Permalink to this headline">#</a></h3>
 <p><strong>Question.</strong> Comment écrire sa spécification sans perdre d’information par rapport aux deux spécifications ci-dessus ?</p>
 <p><strong>Réponse.</strong></p>
 <ul class="simple">
@@ -1190,7 +1181,7 @@ Il est facile de l’écrire avec une seule fonction <em>python</em> mais sans i
 </div>
 </section>
 <section id="a-lire">
-<h3><span class="section-number">3.3.3. </span>A lire<a class="headerlink" href="#a-lire" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.4.3. </span>A lire<a class="headerlink" href="#a-lire" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Sur les annotations de types : cet <a class="reference external" href="https://inventwithpython.com/blog/2019/11/24/type-hints-for-busy-python-programmers/">article</a> (déjà mentionné plus haut) est l’un des plus intéressants que j’ai rencontré sur le web en préparant ce cours.  En effet, la documentation de réference sur les <a class="reference external" href="https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html">annotations python</a> est assez peu commode à exploiter dans ce cas.</p></li>
 </ul>
@@ -1206,9 +1197,9 @@ Réponses.<div class="sd-summary-down docutils">
 </details></section>
 </section>
 <section id="synthese">
-<h2><span class="section-number">3.4. </span>Synthèse<a class="headerlink" href="#synthese" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.5. </span>Synthèse<a class="headerlink" href="#synthese" title="Permalink to this headline">#</a></h2>
 <section id="ce-qui-a-ete-vu">
-<h3><span class="section-number">3.4.1. </span>Ce qui a été vu<a class="headerlink" href="#ce-qui-a-ete-vu" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.5.1. </span>Ce qui a été vu<a class="headerlink" href="#ce-qui-a-ete-vu" title="Permalink to this headline">#</a></h3>
 <p><strong>Spécifier pour vérifier</strong> une fonction avec paramètre(s) de type tableau :</p>
 <ul class="simple">
 <li><p>avant python 3.9 : <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">typing</span> <span class="pre">import</span> <span class="pre">List</span></code>  # avec un <code class="docutils literal notranslate"><span class="pre">L</span></code> majuscule</p></li>
@@ -1221,11 +1212,11 @@ Réponses.<div class="sd-summary-down docutils">
 </ul>
 </section>
 <section id="ce-qui-n-a-pas-ete-vu">
-<h3><span class="section-number">3.4.2. </span>Ce qui n’a pas été vu<a class="headerlink" href="#ce-qui-n-a-pas-ete-vu" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.5.2. </span>Ce qui n’a pas été vu<a class="headerlink" href="#ce-qui-n-a-pas-ete-vu" title="Permalink to this headline">#</a></h3>
 <p>Les <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> du module <code class="docutils literal notranslate"><span class="pre">numpy</span></code> sont très utilisés en pratique et présentés dans <a class="reference internal" href="a2-ndarray.html#ann-ndarray"><span class="std std-ref">une annexe dédiée</span></a></p>
 </section>
 <section id="exercice-de-synthese">
-<h3><span class="section-number">3.4.3. </span>Exercice de synthèse<a class="headerlink" href="#exercice-de-synthese" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.5.3. </span>Exercice de synthèse<a class="headerlink" href="#exercice-de-synthese" title="Permalink to this headline">#</a></h3>
 <p>Dans un notebook jupyter dédié, s’intéresser aux problèmes de l’égalité, de la similarité et de la comparaison de deux tableaux 1D.</p>
 <p><strong>Définitions</strong></p>
 <ul class="simple">
@@ -1274,7 +1265,7 @@ Réponses.<div class="sd-summary-down docutils">
     <a class='right-next' id="next-link" href="3-ES-fichiers.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Entrées-sorties simples avec des fichiers</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Entrées-sorties simples avec des fichiers</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

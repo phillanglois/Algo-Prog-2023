@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="4. Modules utiles" href="11-modules-utiles.html" />
-    <link rel="prev" title="2. Sous-programme et affectation – aspects avancés" href="7-fonctions-avancees.html" />
+    <link rel="prev" title="2. Affectation et appel de fonction – aspects avancés" href="7-fonctions-avancees.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -150,7 +150,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="3-ES-fichiers.html">
-   4. Entrées-sorties simples avec des fichiers
+   3. Entrées-sorties simples avec des fichiers
   </a>
  </li>
 </ul>
@@ -175,6 +175,11 @@ const thebe_selector_output = ".output, .cell_output"
    3. Rechercher
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-trier.html">
+   4. Trier
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -189,7 +194,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="7-fonctions-avancees.html">
-   2. Sous-programme et affectation – aspects avancés
+   2. Affectation et appel de fonction – aspects avancés
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -781,12 +786,12 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="les-entrees-sorties-e-s-aspects-avances">
 <span id="ch-es-avancees"></span><h1><span class="section-number">3. </span>Les entrées-sorties (E/S) : aspects avancés<a class="headerlink" href="#les-entrees-sorties-e-s-aspects-avances" title="Permalink to this headline">#</a></h1>
-<p><strong>Partie Programmation</strong><br />
-version 2021, v1 PhL.</p>
-<p>Chapitre où on étudie comment peaufiner le format ses entrées-sorties à l’écran ou dans des fichiers de texte.</p>
-<p>Ce chapitre complète le chapitre “Entrées-sorties avec des fichiers”.</p>
-<h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Les-entrées-sorties-(E/S)-:-aspects-avancés" data-toc-modified-id="Les-entrées-sorties-(E/S)-:-aspects-avancés-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Les entrées-sorties (E/S) : aspects avancés</a></span><ul class="toc-item"><li><span><a href="#Les-formats-d'écriture,-de-lecture-et-d'affichage" data-toc-modified-id="Les-formats-d'écriture,-de-lecture-et-d'affichage-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Les formats d'écriture, de lecture et d'affichage</a></span><ul class="toc-item"><li><span><a href="#Spécifier-le-format-de-nombres-et-des-chaînes-de-caractères" data-toc-modified-id="Spécifier-le-format-de-nombres-et-des-chaînes-de-caractères-1.1.1"><span class="toc-item-num">1.1.1&nbsp;&nbsp;</span>Spécifier le format de nombres et des chaînes de caractères</a></span><ul class="toc-item"><li><span><a href="#Formatage-de-nombres-int" data-toc-modified-id="Formatage-de-nombres-int-1.1.1.1"><span class="toc-item-num">1.1.1.1&nbsp;&nbsp;</span>Formatage de nombres <code>int</code></a></span></li><li><span><a href="#Formatage-de-nombres-float" data-toc-modified-id="Formatage-de-nombres-float-1.1.1.2"><span class="toc-item-num">1.1.1.2&nbsp;&nbsp;</span>Formatage de nombres <code>float</code></a></span></li><li><span><a href="#Formatages-de-chaînes-de-caractères" data-toc-modified-id="Formatages-de-chaînes-de-caractères-1.1.1.3"><span class="toc-item-num">1.1.1.3&nbsp;&nbsp;</span>Formatages de chaînes de caractères</a></span></li><li><span><a href="#Les-caractères-spéciaux-\..." data-toc-modified-id="Les-caractères-spéciaux-\...-1.1.1.4"><span class="toc-item-num">1.1.1.4&nbsp;&nbsp;</span>Les caractères spéciaux <code>\...</code></a></span></li></ul></li><li><span><a href="#Les--expressions-ou-chaînes--formatées" data-toc-modified-id="Les--expressions-ou-chaînes--formatées-1.1.2"><span class="toc-item-num">1.1.2&nbsp;&nbsp;</span>Les  <em>expressions</em> ou <em>chaînes  formatées</em></a></span></li><li><span><a href="#La-méthode-.format()." data-toc-modified-id="La-méthode-.format().-1.1.3"><span class="toc-item-num">1.1.3&nbsp;&nbsp;</span>La méthode <code>.format()</code>.</a></span></li><li><span><a href="#($\star$)-Compléments" data-toc-modified-id="($\star$)-Compléments-1.1.4"><span class="toc-item-num">1.1.4&nbsp;&nbsp;</span>($\star$) Compléments</a></span><ul class="toc-item"><li><span><a href="#str()-et-repr()" data-toc-modified-id="str()-et-repr()-1.1.4.1"><span class="toc-item-num">1.1.4.1&nbsp;&nbsp;</span><code>str()</code> et <code>repr()</code></a></span></li><li><span><a href="#Souplesses-de-l'arg-de-.format()." data-toc-modified-id="Souplesses-de-l'arg-de-.format().-1.1.4.2"><span class="toc-item-num">1.1.4.2&nbsp;&nbsp;</span>Souplesses de l'<code>arg</code> de <code>.format()</code>.</a></span></li><li><span><a href="#Méthodes-spécifiques-(sans-.format())" data-toc-modified-id="Méthodes-spécifiques-(sans-.format())-1.1.4.3"><span class="toc-item-num">1.1.4.3&nbsp;&nbsp;</span>Méthodes spécifiques (sans <code>.format()</code>)</a></span></li></ul></li></ul></li><li><span><a href="#Synthèse" data-toc-modified-id="Synthèse-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Synthèse</a></span><ul class="toc-item"><li><span><a href="#Avoir-les-idées-claires" data-toc-modified-id="Avoir-les-idées-claires-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>Avoir les idées claires</a></span></li><li><span><a href="#Savoir-faire" data-toc-modified-id="Savoir-faire-1.2.2"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>Savoir-faire</a></span></li></ul></li></ul></li></ul></div><section id="les-formats-d-ecriture-de-lecture-et-d-affichage">
+<p><strong>Partie Programmation</strong></p>
+<p>Mis à jour : Apr 02, 2023, lecture : 7
+minutes minimum, PhL.</p>
+<p>Ce chapitre complète le chapitre “Entrées-sorties avec des fichiers”.<br />
+On y présente comment peaufiner le format ses entrées-sorties à l’écran ou dans des fichiers de texte.</p>
+<section id="les-formats-d-ecriture-de-lecture-et-d-affichage">
 <h2><span class="section-number">3.1. </span>Les formats d’écriture, de lecture et d’affichage<a class="headerlink" href="#les-formats-d-ecriture-de-lecture-et-d-affichage" title="Permalink to this headline">#</a></h2>
 <p>Il s’agit de <em>définir la façon dont s’écrivent, se lisent ou s’affichent à l’écran</em> les informations textuelles, <em>i.e.</em> les chaînes de caractères.<br />
 Exemple : combien de chiffres après la virgule d’un <code class="docutils literal notranslate"><span class="pre">float</span></code>, utiliser une notation scientifique (<span class="math notranslate nohighlight">\(\pm 1.xxxx \cdot 10^E\)</span>), insérer ou non des caractères avant la <code class="docutils literal notranslate"><span class="pre">str</span></code> à afficher, …</p>
@@ -1213,27 +1218,27 @@ La température du 12  janvier   2021 est 5.6oC.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La température du  1  janvier   2021 est  +8.5 oC.
-La température du  5  janvier   2021 est  +2.1 oC.
-La température du  9  janvier   2021 est +11.3 oC.
-La température du 13  janvier   2021 est +10.0 oC.
-La température du 17  janvier   2021 est  -1.5 oC.
-La température du 21  janvier   2021 est +10.9 oC.
-La température du 25  janvier   2021 est +13.3 oC.
-La température du  1  février   2021 est  +7.0 oC.
-La température du  5  février   2021 est  -0.9 oC.
-La température du  9  février   2021 est  +3.4 oC.
-La température du 13  février   2021 est +11.6 oC.
-La température du 17  février   2021 est  +1.7 oC.
-La température du 21  février   2021 est  +6.2 oC.
-La température du 25  février   2021 est +13.9 oC.
-La température du  1    mars    2021 est  -1.9 oC.
-La température du  5    mars    2021 est  +6.0 oC.
-La température du  9    mars    2021 est +12.6 oC.
-La température du 13    mars    2021 est  +2.0 oC.
-La température du 17    mars    2021 est  +8.1 oC.
-La température du 21    mars    2021 est +10.7 oC.
-La température du 25    mars    2021 est  +2.6 oC.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La température du  1  janvier   2021 est  -0.6 oC.
+La température du  5  janvier   2021 est  +0.8 oC.
+La température du  9  janvier   2021 est +13.9 oC.
+La température du 13  janvier   2021 est  +8.5 oC.
+La température du 17  janvier   2021 est  -0.9 oC.
+La température du 21  janvier   2021 est  +9.0 oC.
+La température du 25  janvier   2021 est  +8.6 oC.
+La température du  1  février   2021 est  +3.8 oC.
+La température du  5  février   2021 est  +9.0 oC.
+La température du  9  février   2021 est  +6.5 oC.
+La température du 13  février   2021 est  -1.6 oC.
+La température du 17  février   2021 est +14.6 oC.
+La température du 21  février   2021 est  +3.7 oC.
+La température du 25  février   2021 est  +1.6 oC.
+La température du  1    mars    2021 est  +2.3 oC.
+La température du  5    mars    2021 est  +7.3 oC.
+La température du  9    mars    2021 est  +7.5 oC.
+La température du 13    mars    2021 est +14.5 oC.
+La température du 17    mars    2021 est  +5.2 oC.
+La température du 21    mars    2021 est  +5.2 oC.
+La température du 25    mars    2021 est +13.5 oC.
 </pre></div>
 </div>
 </div>
@@ -1494,7 +1499,7 @@ le soleil est chaud
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2. </span>Sous-programme et affectation – aspects avancés</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Affectation et appel de fonction – aspects avancés</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="11-modules-utiles.html" title="next page">

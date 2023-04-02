@@ -1,6 +1,17 @@
 # (Intervenant) Suivi des séances
 
 
+## Semaine 14
+
+- Remédiation : récursivité
+- TD feuille 5 : récursivité
+- TP anagrammes pour les plus avancés (à finir hors séance)
+
+## Semaine 13
+
+- TP SD (finir vraiment)
+- TP anagrammes pour les plus avancés (à finir hors séance)
+
 ## Semaine 12
 
 - TP SD (finir)

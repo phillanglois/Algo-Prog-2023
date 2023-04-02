@@ -10,9 +10,9 @@ Ceci est le premier point d'entrée de l'UE Algo-Prog en complément de l'[espac
 
 
 :::{important} Rappels des dates importantes
-- semaine S10, (6-10 mars 2023), séance de TD : CC sur ordinateur 20 min
--  16 mars 2023, 14h-16h (2h) : CC2 écrit
--  24 mars 2023, 14h-16h (2h) : CC1 sur ordinateur (TP1) 
+- semaine 10, (6-10 mars 2023), séance de TD : CC sur ordinateur 20 min
+- semaine 11 : 16 mars 2023, 14h-16h (2h) : CC2 écrit
+- semaine 12 : 24 mars 2023, 14h-16h (2h) : CC1 sur ordinateur (TP1) 
 :::
 
 :::{note}
@@ -20,6 +20,25 @@ Ceci est le premier point d'entrée de l'UE Algo-Prog en complément de l'[espac
 La première séance de CM a eu lieu en semaine 3.
 - les items indiqués d'une ($\star$) correspondent aux activités _objectif 20_
 :::
+ 
+
+## Semaine 14
+
+- Attention : pas de séance de CM cette semaine mais du travail personnel sur un chapitre de cours
+- Travail personnel :
+    - re-lire de façon approfondie le chapitre "Récursivité"
+    - étudier chapitre "Rechercher", toutes les sections avec algorithmes récursifs
+    - lire le chapitre "Modules utiles" 
+    - TD : feuille 5 (récursivité)
+
+## Semaine 13
+
+- Attention : 2 séances de CM (rattrapage CM de la semaine 11)
+- Travail personnel : finir TP structures de données
+- Avant le CM de *mercredi* : 
+    - re-lire le chapitre "entrées-sorties simples" (partie Programmation), sections 4.1 et 4.2.
+    - lire chapitre "Récursivité" jusqu'à section 2.3 inclus
+
  
 ## Semaine 12
 
@@ -36,10 +55,10 @@ La première séance de CM a eu lieu en semaine 3.
 ## Semaine 11
 
 - CC2 écrit, durée 2h30, tous les chapitres vus à ce jour
+- Attention : pas de séance de CM
 - Travail personnel 
     - feuille 4
     - étudier chapitre "types composés" (partie Programmation) en entier
-- Avant le CM : lire le chapitre "entrées-sorties simples" (partie Programmation) en entier
     
 ## Semaine 10 
 

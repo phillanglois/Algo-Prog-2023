@@ -61,7 +61,7 @@ Dans/avec un notebook jupyter :
 **Cadre** : en/pour python 
 
 - utiliser une fonction prédéfinie ou existante
-- définir et écrire la spécification d'une fonction qui réalise un traitement décrit en français, ou qui résoud un problème (simple) décrit en français  
+- définir et écrire la spécification d'une fonction qui réalise un traitement décrit en français, ou qui résout un problème (simple) décrit en français  
 - définir et écrire des appels simples (tests unitaires) 
 - définir et écrire l'implémentation d'une fonction associée à une spécification 
 
@@ -133,8 +133,8 @@ Dans/avec un notebook jupyter :
  
 ### Savoir-faire
 
-- Savoir écrire des traitements récursifs en place de tableaux (indices \[g, d \[)
-- Savoir écrire les tris insertion, quicksort et fusion sous une forme simple (itérative vs. récursive)
+- Savoir écrire des traitements récursifs en place de tableaux (indices $[g, d[$)
+- Savoir écrire les tris insertion, _quicksort_ et fusion sous une forme simple (itérative vs. récursive)
 - Savoir écrire des tests unitaires pertinents pour ces traitements  
 
 ## Types composés

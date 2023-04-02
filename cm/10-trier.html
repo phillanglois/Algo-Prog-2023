@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4. Trier &#8212; Algo-Prog 2022</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>4. Trier &#8212; Algo-Prog 2023</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -64,7 +63,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -73,46 +86,48 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="../_static/logo2022.png" class="logo" alt="logo">
+      <img src="../_static/logo2023.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Algo-Prog 2022</h1>
+      <h1 class="site-logo" id="site-title">Algo-Prog 2023</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../bonjour.html">
-   Bienvenu en Algo-Prog !
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../bonjour.html">
+                    Bienvenu en Algo-Prog !
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Présentation
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="0-presentation-2022.html">
-   1. Algorithmique et Programmation en 2022
+  <a class="reference internal" href="0-presentation-2023.html">
+   1. Algorithmique et Programmation en 2023
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="competences-2022.html">
+  <a class="reference internal" href="competences.html">
    2. Compétences
   </a>
  </li>
@@ -129,8 +144,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="2-boucles-avancees.html">
-   2. Boucles, tableaux et fonctions
+  <a class="reference internal" href="2-fonctions-tableaux.html">
+   2. Fonctions et tableaux
   </a>
  </li>
  <li class="toctree-l1">
@@ -179,7 +194,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="7-fonctions-avancees.html">
-   2. Sous-programme et affectation – aspects avancés
+   2. Affectation et appel de fonction – aspects avancés
   </a>
  </li>
  <li class="toctree-l1">
@@ -200,18 +215,35 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="a0-boucles-avancees.html">
+   1. Boucles et tableaux
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="a1-booleens.html">
-   1. Annexe : les booléens en python (&gt;3.6)
+   2. Annexe : les booléens en python (&gt;3.6)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="a2-ndarray.html">
-   2. Les ‘ndarray’ : de vrais tableaux en python
+   3. Les ‘ndarray’ : de vrais tableaux en python
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="a3-exceptions.html">
-   3. Exceptions
+   4. Exceptions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Diapos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../slides/1_sl.html">
+   1. Fonctions
   </a>
  </li>
 </ul>
@@ -252,106 +284,191 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  (Intervenants) suivi des séances
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../suivi_seances.html">
+   1. (Intervenant) Suivi des séances
+  </a>
+ </li>
+</ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
-                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/cm/10-trier.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        
-        <a class="issues-button"
-            href="https://github.com/phillanglois/Algo-Prog/issues/new?title=Issue%20on%20page%20%2Fcm/10-trier.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
-        title="Mode plein écran"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/phillanglois/Algo-Prog/main?urlpath=tree/algoprog2022/cm/10-trier.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="lancement Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contenu
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/phillanglois/Algo-Prog-2023/main?urlpath=tree/algoprog2023/cm/10-trier.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/phillanglois/Algo-Prog-2023/issues/new?title=Issue%20on%20page%20%2Fcm/10-trier.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/cm/10-trier.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
    4.1. Introduction
@@ -595,12 +712,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Trier</h1>
@@ -609,7 +725,7 @@ const thebe_selector_output = ".output, .cell_output"
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Contenu </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -860,17 +976,18 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="trier">
-<span id="ch-trier"></span><h1><span class="section-number">4. </span>Trier<a class="headerlink" href="#trier" title="Permalink to this headline">¶</a></h1>
-<p>Mis à jour : Apr 13, 2022, lecture : 10
+  <section class="tex2jax_ignore mathjax_ignore" id="trier">
+<span id="ch-trier"></span><h1><span class="section-number">4. </span>Trier<a class="headerlink" href="#trier" title="Permalink to this headline">#</a></h1>
+<p>Mis à jour : Apr 02, 2023, lecture : 11
 minutes minimum, PhL.</p>
-<div class="section" id="introduction">
-<h2><span class="section-number">4.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="vocabulaire">
-<h3><span class="section-number">4.1.1. </span>Vocabulaire<a class="headerlink" href="#vocabulaire" title="Permalink to this headline">¶</a></h3>
+<section id="introduction">
+<h2><span class="section-number">4.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<section id="vocabulaire">
+<h3><span class="section-number">4.1.1. </span>Vocabulaire<a class="headerlink" href="#vocabulaire" title="Permalink to this headline">#</a></h3>
 <p><strong>Trier</strong> : classer, <strong>ordonner</strong> des valeurs, des objets</p>
 <ul class="simple">
 <li><p>trier des copies par notes</p></li>
@@ -888,9 +1005,9 @@ minutes minimum, PhL.</p>
 <li><p>recherche efficace : <span class="math notranslate nohighlight">\(\cal{O}(n) \to \cal{O}(\log(n))\)</span></p></li>
 <li><p>applications multiples : <em>binpack</em>, correction orthographique, …</p></li>
 </ul>
-</div>
-<div class="section" id="complexites">
-<h3><span class="section-number">4.1.2. </span>Complexités<a class="headerlink" href="#complexites" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="complexites">
+<h3><span class="section-number">4.1.2. </span>Complexités<a class="headerlink" href="#complexites" title="Permalink to this headline">#</a></h3>
 <p><strong>Tris <em>en place</em></strong></p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\cal{O}(1)\)</span> : complexité <em>en espace</em> constante <em>vs.</em> nombre de valeurs à trier</p></li>
@@ -904,16 +1021,16 @@ minutes minimum, PhL.</p>
 <li><p>pires cas <em>vs.</em> meilleurs cas</p></li>
 </ul>
 </li>
-<li><p><span class="math notranslate nohighlight">\(\cal{O}(n\log(n))\)</span> : complexité <em>optimale</em> des tris par comparaisons</p></li>
+<li><p><span class="math notranslate nohighlight">\(\cal{O}(n\log(n))\)</span> : complexité <strong>optimale du tri par comparaisons</strong></p></li>
 </ul>
 <p><strong>Trier <span class="math notranslate nohighlight">\(\nRightarrow\)</span> comparer !</strong></p>
 <ul class="simple">
-<li><p>Tris par comparaisons <em>vs.</em>  tris par dénombrements</p></li>
+<li><p>Tris par comparaisons <em>vs.</em>  tris par dénombrement</p></li>
 <li><p>complexité en temps <span class="math notranslate nohighlight">\(\cal{O}(n)\)</span> : très très efficaces</p></li>
 </ul>
-</div>
-<div class="section" id="principaux-algorithmes-de-tri">
-<h3><span class="section-number">4.1.3. </span>Principaux algorithmes de tri<a class="headerlink" href="#principaux-algorithmes-de-tri" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="principaux-algorithmes-de-tri">
+<h3><span class="section-number">4.1.3. </span>Principaux algorithmes de tri<a class="headerlink" href="#principaux-algorithmes-de-tri" title="Permalink to this headline">#</a></h3>
 <p><strong>Tris par comparaisons : algorithmes lents</strong></p>
 <ul class="simple">
 <li><p>pire cas : <span class="math notranslate nohighlight">\(\cal{O}(n^2)\)</span></p></li>
@@ -940,13 +1057,13 @@ minutes minimum, PhL.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="tri-insertion">
-<h2><span class="section-number">4.2. </span>Tri insertion<a class="headerlink" href="#tri-insertion" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="tri-insertion">
+<h2><span class="section-number">4.2. </span>Tri insertion<a class="headerlink" href="#tri-insertion" title="Permalink to this headline">#</a></h2>
 <p>Un exemple de tri par comparaisons, en place et de complexité au pire quadratique.</p>
-<div class="section" id="principe">
-<h3><span class="section-number">4.2.1. </span>Principe<a class="headerlink" href="#principe" title="Permalink to this headline">¶</a></h3>
+<section id="principe">
+<h3><span class="section-number">4.2.1. </span>Principe<a class="headerlink" href="#principe" title="Permalink to this headline">#</a></h3>
 <p>Analogue au tri d’une main de cartes</p>
 <ul class="simple">
 <li><p>je parcours la partie triée de la main de cartes</p></li>
@@ -956,9 +1073,9 @@ minutes minimum, PhL.</p>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="star-invariant">
-<h3><span class="section-number">4.2.2. </span>(<span class="math notranslate nohighlight">\(\star\)</span>) Invariant<a class="headerlink" href="#star-invariant" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="star-invariant">
+<h3><span class="section-number">4.2.2. </span>(<span class="math notranslate nohighlight">\(\star\)</span>) Invariant<a class="headerlink" href="#star-invariant" title="Permalink to this headline">#</a></h3>
 <blockquote>
 <div><p>(P) : Avant l’itération <span class="math notranslate nohighlight">\(i\)</span>, le sous-tableau t[0, <span class="math notranslate nohighlight">\(i\)</span>[ est trié.</p>
 </div></blockquote>
@@ -968,13 +1085,13 @@ minutes minimum, PhL.</p>
 <li><p>Que signifie la terminaison de (P) ?</p></li>
 <li><p>(<span class="math notranslate nohighlight">\(\star\)</span>) Prouver (P).</p></li>
 </ul>
-</div>
-<div class="section" id="algorithme">
-<h3><span class="section-number">4.2.3. </span>Algorithme<a class="headerlink" href="#algorithme" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="algorithme">
+<h3><span class="section-number">4.2.3. </span>Algorithme<a class="headerlink" href="#algorithme" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">triInsertion</span><span class="p">(</span><span class="n">t</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-    <span class="sd">&#39;&#39;&#39;tri insertion : version itérative</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;tri insertion : version itérative</span>
 <span class="sd">    entrées. t : tableau d entiers de longueur n = len(t)</span>
 <span class="sd">    sortie. t est trié par ordre croissant&#39;&#39;&#39;</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)):</span> <span class="c1"># pour chaque valeur en partant de la gauche</span>
@@ -1008,16 +1125,22 @@ minutes minimum, PhL.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[44, 22, 5, 34, 39]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[43, 10, 2, 22, 21]
 Trions !
-[5, 22, 34, 39, 44]
+[2, 10, 21, 22, 43]
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="pire-cas-meilleur-cas">
-<h3><span class="section-number">4.2.4. </span>Pire cas, meilleur cas<a class="headerlink" href="#pire-cas-meilleur-cas" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="pire-cas-meilleur-cas">
+<h3><span class="section-number">4.2.4. </span>Pire cas, meilleur cas<a class="headerlink" href="#pire-cas-meilleur-cas" title="Permalink to this headline">#</a></h3>
+<p>Ces cas dépendent de l’ordre de parcours des valeurs à trier<br />
+- Nous avons choisi de parcourir ces valeurs par indices croissants : c-a-d. 1, 2, …, n-1</p>
+<p>Pire cas : les valeurs sont dans un ordre inverse de l’ordre trié<br />
+- les valeurs sont décroissantes des indices 0 vers n-1</p>
+<p>Meilleur cas : les valeurs sont déjà triées<br />
+- les valeurs sont croissantes des indices 0 vers n-1</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pire et meilleur cas</span>
@@ -1056,15 +1179,19 @@ meilleur cas
 </div>
 </div>
 </div>
-<div class="section" id="exercices">
-<h4>Exercices<a class="headerlink" href="#exercices" title="Permalink to this headline">¶</a></h4>
+<section id="exercices">
+<h4>Exercices<a class="headerlink" href="#exercices" title="Permalink to this headline">#</a></h4>
 <ol class="simple">
-<li><p>Modifier <code class="docutils literal notranslate"><span class="pre">triInsertion()</span></code> pour décompter le nombre de comparaisons. Vérifier que les cas extrêmes exhibés sont bien ceux-là. Expérimenter en mesurant aussi les temps d’exécution.</p></li>
+<li><p>Expérimentation des pire et meilleurs cas du tri insertion<br />
+a. Modifier <code class="docutils literal notranslate"><span class="pre">triInsertion()</span></code> pour décompter le nombre de comparaisons.<br />
+b. Vérifier que les cas extrêmes exhibés sont bien ceux-là.<br />
+C. Expérimenter en mesurant aussi les temps d’exécution.</p></li>
 <li><p>(*) Ecrire une version récursive de <code class="docutils literal notranslate"><span class="pre">triInsertion()</span></code></p></li>
 </ol>
-</div>
-<div class="section" id="corrections">
-<h4>Corrections<a class="headerlink" href="#corrections" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="corrections">
+<h4>Corrections<a class="headerlink" href="#corrections" title="Permalink to this headline">#</a></h4>
+<p><strong>Sauter ce passage en première lecture</strong></p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
@@ -1080,7 +1207,7 @@ meilleur cas
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valmax</span> <span class="o">=</span> <span class="mi">99</span>
 
 <span class="k">def</span> <span class="nf">triinsertion</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-    <span class="sd">&#39;&#39;&#39;Même version sans le paramètre n&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Même version sans le paramètre n&#39;&#39;&#39;</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)):</span>
         <span class="n">v</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="n">j</span> <span class="o">=</span> <span class="n">i</span>
@@ -1092,7 +1219,7 @@ meilleur cas
 
 
 <span class="k">def</span> <span class="nf">comptriinsertion</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot; version avec decompte du nb comparaisons&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; version avec decompte du nb comparaisons&quot;&quot;&quot;</span>
     <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span> 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)):</span>
         <span class="n">v</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
@@ -1182,7 +1309,7 @@ meilleur cas
 
 
 <span class="k">def</span> <span class="nf">plottestcomp</span><span class="p">():</span>
-    <span class="sd">&#39;&#39;&#39;Pour tracer cette analyse. A effectuer hors notebook.&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Pour tracer cette analyse. A effectuer hors notebook.&#39;&#39;&#39;</span>
     <span class="c1"># calculs</span>
     <span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">testcomp</span><span class="p">()</span>
 
@@ -1232,9 +1359,9 @@ meilleur cas
 [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 45 comparaisons pour n =  10
-[92, 51, 82, 80, 87, 84, 87, 6, 5, 37]
-[5, 6, 37, 51, 80, 82, 84, 87, 87, 92]
-36 comparaisons pour n =  10
+[21, 32, 46, 38, 69, 21, 54, 69, 4, 27]
+[4, 21, 21, 27, 32, 38, 46, 54, 69, 69]
+28 comparaisons pour n =  10
 </pre></div>
 </div>
 </div>
@@ -1249,128 +1376,128 @@ meilleur cas
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Meilleur cas : au plus  9 comparaisons pour n =  10
 Pire cas : au moins  45 comparaisons pour n =  10
 Moyenne de  10 cas aleatoires :
-32 comparaisons pour n =  10
-34 comparaisons pour n =  10
+31 comparaisons pour n =  10
+33 comparaisons pour n =  10
+30 comparaisons pour n =  10
+23 comparaisons pour n =  10
+19 comparaisons pour n =  10
+30 comparaisons pour n =  10
+19 comparaisons pour n =  10
+23 comparaisons pour n =  10
 28 comparaisons pour n =  10
-35 comparaisons pour n =  10
-22 comparaisons pour n =  10
-31 comparaisons pour n =  10
-24 comparaisons pour n =  10
-27 comparaisons pour n =  10
-21 comparaisons pour n =  10
-31 comparaisons pour n =  10
-Conclusion :  28 comparaisons en moyenne pour n =  10 ( 10 echantillons)
+28 comparaisons pour n =  10
+Conclusion :  26 comparaisons en moyenne pour n =  10 ( 10 echantillons)
 ---------
 Meilleur cas : au plus  49 comparaisons pour n =  50
 Pire cas : au moins  1225 comparaisons pour n =  50
 Moyenne de  10 cas aleatoires :
-596 comparaisons pour n =  50
-645 comparaisons pour n =  50
-641 comparaisons pour n =  50
-683 comparaisons pour n =  50
-564 comparaisons pour n =  50
-701 comparaisons pour n =  50
-746 comparaisons pour n =  50
-692 comparaisons pour n =  50
-629 comparaisons pour n =  50
-631 comparaisons pour n =  50
-Conclusion :  652 comparaisons en moyenne pour n =  50 ( 10 echantillons)
+637 comparaisons pour n =  50
+714 comparaisons pour n =  50
+649 comparaisons pour n =  50
+573 comparaisons pour n =  50
+514 comparaisons pour n =  50
+591 comparaisons pour n =  50
+664 comparaisons pour n =  50
+691 comparaisons pour n =  50
+686 comparaisons pour n =  50
+601 comparaisons pour n =  50
+Conclusion :  632 comparaisons en moyenne pour n =  50 ( 10 echantillons)
 ---------
 Meilleur cas : au plus  99 comparaisons pour n =  100
 Pire cas : au moins  4950 comparaisons pour n =  100
 Moyenne de  10 cas aleatoires :
-2645 comparaisons pour n =  100
-2725 comparaisons pour n =  100
-2735 comparaisons pour n =  100
-2291 comparaisons pour n =  100
-2797 comparaisons pour n =  100
-2705 comparaisons pour n =  100
-2275 comparaisons pour n =  100
-2411 comparaisons pour n =  100
-2724 comparaisons pour n =  100
-2376 comparaisons pour n =  100
-Conclusion :  2568 comparaisons en moyenne pour n =  100 ( 10 echantillons)
+2641 comparaisons pour n =  100
+2412 comparaisons pour n =  100
+2851 comparaisons pour n =  100
+2621 comparaisons pour n =  100
+2445 comparaisons pour n =  100
+2616 comparaisons pour n =  100
+2232 comparaisons pour n =  100
+2589 comparaisons pour n =  100
+2470 comparaisons pour n =  100
+2432 comparaisons pour n =  100
+Conclusion :  2530 comparaisons en moyenne pour n =  100 ( 10 echantillons)
 ---------
 Meilleur cas : au plus  199 comparaisons pour n =  200
 Pire cas : au moins  19900 comparaisons pour n =  200
 Moyenne de  10 cas aleatoires :
-10286 comparaisons pour n =  200
-10083 comparaisons pour n =  200
-9405 comparaisons pour n =  200
-10089 comparaisons pour n =  200
-9747 comparaisons pour n =  200
-10463 comparaisons pour n =  200
-10367 comparaisons pour n =  200
-10083 comparaisons pour n =  200
-9872 comparaisons pour n =  200
-10094 comparaisons pour n =  200
-Conclusion :  10048 comparaisons en moyenne pour n =  200 ( 10 echantillons)
+10459 comparaisons pour n =  200
+10220 comparaisons pour n =  200
+9957 comparaisons pour n =  200
+9395 comparaisons pour n =  200
+10383 comparaisons pour n =  200
+10184 comparaisons pour n =  200
+9744 comparaisons pour n =  200
+9917 comparaisons pour n =  200
+9344 comparaisons pour n =  200
+9802 comparaisons pour n =  200
+Conclusion :  9940 comparaisons en moyenne pour n =  200 ( 10 echantillons)
 ---------
 Meilleur cas : au plus  299 comparaisons pour n =  300
 Pire cas : au moins  44850 comparaisons pour n =  300
 Moyenne de  10 cas aleatoires :
-21865 comparaisons pour n =  300
-22350 comparaisons pour n =  300
-20861 comparaisons pour n =  300
-22204 comparaisons pour n =  300
-23187 comparaisons pour n =  300
-23284 comparaisons pour n =  300
-22433 comparaisons pour n =  300
-24012 comparaisons pour n =  300
-21991 comparaisons pour n =  300
-22365 comparaisons pour n =  300
-Conclusion :  22455 comparaisons en moyenne pour n =  300 ( 10 echantillons)
+21641 comparaisons pour n =  300
+22616 comparaisons pour n =  300
+21706 comparaisons pour n =  300
+21702 comparaisons pour n =  300
+21129 comparaisons pour n =  300
+23189 comparaisons pour n =  300
+23466 comparaisons pour n =  300
+24370 comparaisons pour n =  300
+21626 comparaisons pour n =  300
+21006 comparaisons pour n =  300
+Conclusion :  22245 comparaisons en moyenne pour n =  300 ( 10 echantillons)
 ---------
 Meilleur cas : au plus  499 comparaisons pour n =  500
 Pire cas : au moins  124750 comparaisons pour n =  500
 Moyenne de  10 cas aleatoires :
-62983 comparaisons pour n =  500
-62332 comparaisons pour n =  500
-60664 comparaisons pour n =  500
-63308 comparaisons pour n =  500
+63123 comparaisons pour n =  500
+62336 comparaisons pour n =  500
+63295 comparaisons pour n =  500
+63599 comparaisons pour n =  500
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>63703 comparaisons pour n =  500
-61587
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> comparaisons pour n =  500
-65332 comparaisons pour n =  500
-63267 comparaisons pour n =  500
-58953 comparaisons pour n =  500
-61758 comparaisons pour n =  500
-Conclusion :  62388 comparaisons en moyenne pour n =  500 ( 10 echantillons)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>61812 comparaisons pour n =  500
+61120 comparaisons pour n =  500
+60431 comparaisons pour n =  500
+63205 comparaisons pour n =  500
+62635 comparaisons pour n =  500
+58050 comparaisons pour n =  500
+Conclusion :  61960 comparaisons en moyenne pour n =  500 ( 10 echantillons)
 ---------
 Meilleur cas : au plus  999 comparaisons pour n =  1000
-Pire cas : au moins  499500 comparaisons pour n =  1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pire cas : au moins  499500 comparaisons pour n =  1000
 Moyenne de  10 cas aleatoires :
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>239259
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>242381 comparaisons pour n =  1000
+240213 comparaisons pour n =  1000
+246120 comparaisons pour n =  1000
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> comparaisons pour n =  1000
-238624 comparaisons pour n =  1000
-242647 comparaisons pour n =  1000
-246961 comparaisons pour n =  1000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>248318 comparaisons pour n =  1000
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>249912 comparaisons pour n =  1000
-253579 comparaisons pour n =  1000
-243168 comparaisons pour n =  1000
-251583 comparaisons pour n =  1000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>247007 comparaisons pour n =  1000
+248487 comparaisons pour n =  1000
+257068 comparaisons pour n =  1000
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>242393 comparaisons pour n =  1000
-247015 comparaisons pour n =  1000
-Conclusion :  245514 comparaisons en moyenne pour n =  1000 ( 10 echantillons)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240231 comparaisons pour n =  1000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>242894 comparaisons pour n =  1000
+243594 comparaisons pour n =  1000
+Conclusion :  245631 comparaisons en moyenne pour n =  1000 ( 10 echantillons)
 ---------
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((10, 50, 100, 200, 300, 500, 1000),
  [9, 49, 99, 199, 299, 499, 999],
  [45, 1225, 4950, 19900, 44850, 124750, 499500],
- [28, 652, 2568, 10048, 22455, 62388, 245514])
+ [26, 632, 2530, 9940, 22245, 61960, 245631])
 </pre></div>
 </div>
 </div>
@@ -1385,133 +1512,127 @@ Conclusion :  245514 comparaisons en moyenne pour n =  1000 ( 10 echantillons)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Meilleur cas : au plus  9 comparaisons pour n =  10
 Pire cas : au moins  45 comparaisons pour n =  10
 Moyenne de  10 cas aleatoires :
-36 comparaisons pour n =  10
-32 comparaisons pour n =  10
-31 comparaisons pour n =  10
-25 comparaisons pour n =  10
-23 comparaisons pour n =  10
 24 comparaisons pour n =  10
-21 comparaisons pour n =  10
 28 comparaisons pour n =  10
-42 comparaisons pour n =  10
+34 comparaisons pour n =  10
+41 comparaisons pour n =  10
+26 comparaisons pour n =  10
+31 comparaisons pour n =  10
 36 comparaisons pour n =  10
-Conclusion :  29 comparaisons en moyenne pour n =  10 ( 10 echantillons)
+30 comparaisons pour n =  10
+33 comparaisons pour n =  10
+35 comparaisons pour n =  10
+Conclusion :  31 comparaisons en moyenne pour n =  10 ( 10 echantillons)
 ---------
 Meilleur cas : au plus  49 comparaisons pour n =  50
 Pire cas : au moins  1225 comparaisons pour n =  50
 Moyenne de  10 cas aleatoires :
-639 comparaisons pour n =  50
-741 comparaisons pour n =  50
-633 comparaisons pour n =  50
-534 comparaisons pour n =  50
-788 comparaisons pour n =  50
-716 comparaisons pour n =  50
-552 comparaisons pour n =  50
-571 comparaisons pour n =  50
-630 comparaisons pour n =  50
-627 comparaisons pour n =  50
-Conclusion :  643 comparaisons en moyenne pour n =  50 ( 10 echantillons)
+766 comparaisons pour n =  50
+684 comparaisons pour n =  50
+643 comparaisons pour n =  50
+619 comparaisons pour n =  50
+648 comparaisons pour n =  50
+679 comparaisons pour n =  50
+559 comparaisons pour n =  50
+634 comparaisons pour n =  50
+537 comparaisons pour n =  50
+696 comparaisons pour n =  50
+Conclusion :  646 comparaisons en moyenne pour n =  50 ( 10 echantillons)
 ---------
 Meilleur cas : au plus  99 comparaisons pour n =  100
 Pire cas : au moins  4950 comparaisons pour n =  100
 Moyenne de  10 cas aleatoires :
-2663 comparaisons pour n =  100
-2858 comparaisons pour n =  100
-2600 comparaisons pour n =  100
-2640 comparaisons pour n =  100
-2644 comparaisons pour n =  100
-2634 comparaisons pour n =  100
-2779 comparaisons pour n =  100
-2503 comparaisons pour n =  100
-2720 comparaisons pour n =  100
-2530 comparaisons pour n =  100
-Conclusion :  2657 comparaisons en moyenne pour n =  100 ( 10 echantillons)
+2497 comparaisons pour n =  100
+2642 comparaisons pour n =  100
+2342 comparaisons pour n =  100
+2240 comparaisons pour n =  100
+2195 comparaisons pour n =  100
+2501 comparaisons pour n =  100
+2660 comparaisons pour n =  100
+2757 comparaisons pour n =  100
+2466 comparaisons pour n =  100
+2917 comparaisons pour n =  100
+Conclusion :  2521 comparaisons en moyenne pour n =  100 ( 10 echantillons)
 ---------
 Meilleur cas : au plus  199 comparaisons pour n =  200
 Pire cas : au moins  19900 comparaisons pour n =  200
 Moyenne de  10 cas aleatoires :
-10027 comparaisons pour n =  200
-9724 comparaisons pour n =  200
-10088 comparaisons pour n =  200
-9836 comparaisons pour n =  200
-10042 comparaisons pour n =  200
-10919 comparaisons pour n =  200
-10031 comparaisons pour n =  200
-11132 comparaisons pour n =  200
-9361 comparaisons pour n =  200
-10368 comparaisons pour n =  200
-Conclusion :  10152 comparaisons en moyenne pour n =  200 ( 10 echantillons)
+9561 comparaisons pour n =  200
+10085 comparaisons pour n =  200
+10416 comparaisons pour n =  200
+9104 comparaisons pour n =  200
+9778 comparaisons pour n =  200
+9205 comparaisons pour n =  200
+10716 comparaisons pour n =  200
+10102 comparaisons pour n =  200
+10107 comparaisons pour n =  200
+9889 comparaisons pour n =  200
+Conclusion :  9896 comparaisons en moyenne pour n =  200 ( 10 echantillons)
 ---------
 Meilleur cas : au plus  299 comparaisons pour n =  300
 Pire cas : au moins  44850 comparaisons pour n =  300
 Moyenne de  10 cas aleatoires :
-22224 comparaisons pour n =  300
-20745 comparaisons pour n =  300
-22164 comparaisons pour n =  300
-22503 comparaisons pour n =  300
-20559 comparaisons pour n =  300
-22100 comparaisons pour n =  300
-22151 comparaisons pour n =  300
-20957 comparaisons pour n =  300
-20825 comparaisons pour n =  300
-22967 comparaisons pour n =  300
-Conclusion :  21719 comparaisons en moyenne pour n =  300 ( 10 echantillons)
+22674 comparaisons pour n =  300
+23520 comparaisons pour n =  300
+22765 comparaisons pour n =  300
+22527 comparaisons pour n =  300
+22717 comparaisons pour n =  300
+22237 comparaisons pour n =  300
+23694 comparaisons pour n =  300
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23135 comparaisons pour n =  300
+22188 comparaisons pour n =  300
+23323 comparaisons pour n =  300
+Conclusion :  22878 comparaisons en moyenne pour n =  300 ( 10 echantillons)
 ---------
 Meilleur cas : au plus  499 comparaisons pour n =  500
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pire cas : au moins  124750 comparaisons pour n =  500
+Pire cas : au moins  124750 comparaisons pour n =  500
 Moyenne de  10 cas aleatoires :
-60162 comparaisons pour n =  500
-60938 comparaisons pour n =  500
-62672 comparaisons pour n =  500
-60834 comparaisons pour n =  500
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>63935 comparaisons pour n =  500
-65557 comparaisons pour n =  500
-61584 comparaisons pour n =  500
-62516 comparaisons pour n =  500
-62907 comparaisons pour n =  500
-61303 comparaisons pour n =  500
-Conclusion :  62240 comparaisons en moyenne pour n =  500 ( 10 echantillons)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>62681 comparaisons pour n =  500
+59494 comparaisons pour n =  500
+60573 comparaisons pour n =  500
+63482 comparaisons pour n =  500
+62313 comparaisons pour n =  500
+65579 comparaisons pour n =  500
+62778 comparaisons pour n =  500
+63349 comparaisons pour n =  500
+62275 comparaisons pour n =  500
+61716 comparaisons pour n =  500
+Conclusion :  62424 comparaisons en moyenne pour n =  500 ( 10 echantillons)
 ---------
 Meilleur cas : au plus  999 comparaisons pour n =  1000
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pire cas : au moins  499500 comparaisons pour n =  1000
 Moyenne de  10 cas aleatoires :
+253501 comparaisons pour n =  1000
+241681 comparaisons pour n =  1000
+244330 comparaisons pour n =  1000
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>249422 comparaisons pour n =  1000
-250638 comparaisons pour n =  1000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>252123 comparaisons pour n =  1000
+242437 comparaisons pour n =  1000
+244586 comparaisons pour n =  1000
+243135 comparaisons pour n =  1000
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>260546 comparaisons pour n =  1000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>253429 comparaisons pour n =  1000
-240988 comparaisons pour n =  1000
-246026 comparaisons pour n =  1000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>256014 comparaisons pour n =  1000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>242578 comparaisons pour n =  1000
-244870 comparaisons pour n =  1000
-258595 comparaisons pour n =  1000
-Conclusion :  250310 comparaisons en moyenne pour n =  1000 ( 10 echantillons)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>252478 comparaisons pour n =  1000
+256888 comparaisons pour n =  1000
+243551 comparaisons pour n =  1000
+Conclusion :  247471 comparaisons en moyenne pour n =  1000 ( 10 echantillons)
 ---------
 </pre></div>
 </div>
-<img alt="../_images/10-trier_25_9.png" src="../_images/10-trier_25_9.png" />
+<img alt="../_images/10-trier_25_6.png" src="../_images/10-trier_25_6.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="vers-l-analyse-de-la-complexite">
-<h3><span class="section-number">4.2.5. </span>Vers l’analyse de la complexité<a class="headerlink" href="#vers-l-analyse-de-la-complexite" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="vers-l-analyse-de-la-complexite">
+<h3><span class="section-number">4.2.5. </span>Vers l’analyse de la complexité<a class="headerlink" href="#vers-l-analyse-de-la-complexite" title="Permalink to this headline">#</a></h3>
 <p>Le tri insertion se compose de deux boucles imbriquées : <code class="docutils literal notranslate"><span class="pre">for</span> </code> puis <code class="docutils literal notranslate"><span class="pre">while</span></code></p>
 <ul class="simple">
 <li><p>Quel paramètre de la complexité en temps de ce tri ?</p></li>
@@ -1527,13 +1648,16 @@ Conclusion :  250310 comparaisons en moyenne pour n =  1000 ( 10 echantillons)
 </li>
 <li><p>En déduire la complexité asymptotique dans le pire cas.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="tri-rapide-ou-quicksort">
-<h2><span class="section-number">4.3. </span>Tri rapide (ou <em>quicksort</em>)<a class="headerlink" href="#tri-rapide-ou-quicksort" title="Permalink to this headline">¶</a></h2>
-<p>Un premier exemple de tri (par comparaisons) récursif très efficace en pratique</p>
-<div class="section" id="id1">
-<h3><span class="section-number">4.3.1. </span>Principe<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="tri-rapide-ou-quicksort">
+<h2><span class="section-number">4.3. </span>Tri rapide (ou <em>quicksort</em>)<a class="headerlink" href="#tri-rapide-ou-quicksort" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Un premier exemple de tri (par comparaisons) récursif très efficace en pratique.</p></li>
+<li><p>Introduit par l’informaticien britannique C.A.R Hoare en 1961 (<a class="reference external" href="https://fr.wikipedia.org/wiki/Tri_rapide">page wikipedia</a>)</p></li>
+</ul>
+<section id="id1">
+<h3><span class="section-number">4.3.1. </span>Principe<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <p>Ranger une valeur à sa place définitive</p>
 <ul class="simple">
 <li><p>toutes celles à sa gauche sont plus petites</p></li>
@@ -1543,9 +1667,9 @@ Conclusion :  250310 comparaisons en moyenne pour n =  1000 ( 10 echantillons)
 <p>Dans la figure suivante, la valeur <code class="docutils literal notranslate"><span class="pre">v</span></code> est définitivement bien placée :
 <img alt="Illustration de l'invariant du tri rapide" src="../_images/quicksort-invariant.png" /></p>
 <p>Cette propriété est un <em>invariant</em> du tri rapide.</p>
-</div>
-<div class="section" id="recursion">
-<h3><span class="section-number">4.3.2. </span>Récursion<a class="headerlink" href="#recursion" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="recursion">
+<h3><span class="section-number">4.3.2. </span>Récursion<a class="headerlink" href="#recursion" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>Hypothèse de départ :</p>
 <ul class="simple">
@@ -1574,9 +1698,9 @@ Conclusion :  250310 comparaisons en moyenne pour n =  1000 ( 10 echantillons)
 </ul>
 </li>
 </ol>
-</div>
-<div class="section" id="principe-de-mise-en-oeuvre-avec-duplication-du-tableau-t">
-<h3><span class="section-number">4.3.3. </span>Principe de mise en oeuvre  avec duplication du tableau <code class="docutils literal notranslate"><span class="pre">t</span></code><a class="headerlink" href="#principe-de-mise-en-oeuvre-avec-duplication-du-tableau-t" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="principe-de-mise-en-oeuvre-avec-duplication-du-tableau-t">
+<h3><span class="section-number">4.3.3. </span>Principe de mise en oeuvre  avec duplication du tableau <code class="docutils literal notranslate"><span class="pre">t</span></code><a class="headerlink" href="#principe-de-mise-en-oeuvre-avec-duplication-du-tableau-t" title="Permalink to this headline">#</a></h3>
 <p>Une première mise en oeuvre “à vocation pédagogique” s’appuie sur la duplication du tableau de valeurs à chaque étape de la récursion.</p>
 <p><strong>Etape 1 :</strong> placer correctement le pivot <code class="docutils literal notranslate"><span class="pre">v</span></code></p>
 <ul class="simple">
@@ -1609,14 +1733,14 @@ Conclusion :  250310 comparaisons en moyenne pour n =  1000 ( 10 echantillons)
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">t[*]</span></code> peuvent à nouveau être “les <code class="docutils literal notranslate"><span class="pre">t[0]</span></code>” de chacun des sous-tableaux.</p></li>
 </ul>
-<div class="section" id="exemple">
-<h4>Exemple<a class="headerlink" href="#exemple" title="Permalink to this headline">¶</a></h4>
+<section id="exemple">
+<h4>Exemple<a class="headerlink" href="#exemple" title="Permalink to this headline">#</a></h4>
 <p>On déroule à la main ce tri rapide pour trier le tableau <code class="docutils literal notranslate"><span class="pre">t=</span> <span class="pre">[4,3,5,8,2,6,7]</span></code>.</p>
 <p><img alt="exemple" src="../_images/quicksort-exemple.png" /></p>
-</div>
-</div>
-<div class="section" id="mise-en-oeuvre-en-place">
-<h3><span class="section-number">4.3.4. </span>Mise en oeuvre en place<a class="headerlink" href="#mise-en-oeuvre-en-place" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="mise-en-oeuvre-en-place">
+<h3><span class="section-number">4.3.4. </span>Mise en oeuvre en place<a class="headerlink" href="#mise-en-oeuvre-en-place" title="Permalink to this headline">#</a></h3>
 <p>Le principe étant bien compris, on effectue un traitement équivalent <em>en place</em>, c-a-d. sans dupliquer le tableau de valeurs.</p>
 <p><strong>Rmq:</strong> <em>Les valeurs entre <code class="docutils literal notranslate"><span class="pre">[.]</span></code> sont les numéros de ligne dans le code de <code class="docutils literal notranslate"><span class="pre">partition</span></code> qui suit.<br />
 Hélas les numéros de lignes n’apparaissent pas dans la version html ;
@@ -1664,7 +1788,7 @@ et le return en ligne 23.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">g</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;partitionne t[g,d[</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;partitionne t[g,d[</span>
 <span class="sd">    invariant : avant la boucle i</span>
 <span class="sd">    si g&lt;=k &lt; m, t[k] &lt;= pivot</span>
 <span class="sd">    si m+1&lt;=k &lt;= i-1, t[k]  &gt; pivot</span>
@@ -1694,7 +1818,7 @@ et le return en ligne 23.</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trirapide0</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">g</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="sd">&#39;&#39;&#39;partitionne t[g,d[ </span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;partitionne t[g,d[ </span>
 <span class="sd">    et appels récursifs sur t[g,m[ et t[m+1,d[&#39;&#39;&#39;</span>
     <span class="k">if</span> <span class="n">d</span> <span class="o">-</span> <span class="n">g</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span> <span class="c1">#il reste au moins 2 elmnts ds cette sous-partie de t</span>
         <span class="n">m</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
@@ -1702,7 +1826,7 @@ et le return en ligne 23.</em></p>
         <span class="n">trirapide0</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>  
 
 <span class="k">def</span> <span class="nf">trirapide</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="sd">&#39;&#39;&#39;tri rapide de t[0, len(t)[&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;tri rapide de t[0, len(t)[&#39;&#39;&#39;</span>
     <span class="n">trirapide0</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> 
 </pre></div>
 </div>
@@ -1725,20 +1849,21 @@ après : [0, 1, 2, 4, 8, 15, 17, 23]
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id2">
-<h3><span class="section-number">4.3.5. </span>Exercices<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id2">
+<h3><span class="section-number">4.3.5. </span>Exercices<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Ecrire une version (<code class="docutils literal notranslate"><span class="pre">partition2</span></code>) plus simple avec duplication du tableau</p></li>
 <li><p>Ecrire une version qui affiche les évolutions successives de <code class="docutils literal notranslate"><span class="pre">t</span></code> après chaque pivot</p></li>
 </ul>
-</div>
-<div class="section" id="id3">
-<h3><span class="section-number">4.3.6. </span>Corrections<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id3">
+<h3><span class="section-number">4.3.6. </span>Corrections<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p><strong>Sauter ce passage en première lecture</strong></p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">partition2</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Quicksort avec duplication tableaux</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Quicksort avec duplication tableaux</span>
 <span class="sd">    partitionne t[g, d[ autour du pivot (ici l élément de gauche t[g])</span>
 <span class="sd">    retourne la position finale du pivot&#39;&#39;&#39;</span>
     <span class="k">assert</span> <span class="n">g</span> <span class="o">&lt;</span> <span class="n">d</span>
@@ -1797,24 +1922,23 @@ après : [0, 1, 2, 4, 8, 15, 17, 23]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>avant : [7, 85, 55, 19, 45, 18, 26]
-dem : [0, 0, 0, 0, 0, 0, 0] [7, 85, 55, 19, 45, 18, 26]
-partition [g, d[:m -&gt; [ 0 , 7 [: 0 [7, 26, 18, 45, 19, 55, 85] [7, 26, 18, 45, 19, 55, 85]
-partition [g, d[:m -&gt; [ 1 , 7 [: 3 [18, 19, 26, 85, 55, 45] [18, 19, 26, 85, 55, 45]
-partition [g, d[:m -&gt; [ 1 , 3 [: 1 [18, 19] [18, 19]
-partition [g, d[:m -&gt; [ 4 , 7 [: 6 [55, 45, 85] [55, 45, 85]
-partition [g, d[:m -&gt; [ 4 , 6 [: 5 [45, 55] [45, 55]
-après : [7, 18, 19, 26, 45, 55, 85]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>avant : [45, 5, 99, 59, 39, 22, 76]
+dem : [0, 0, 0, 0, 0, 0, 0] [45, 5, 99, 59, 39, 22, 76]
+partition [g, d[:m -&gt; [ 0 , 7 [: 3 [5, 39, 22, 45, 76, 59, 99] [5, 39, 22, 45, 76, 59, 99]
+partition [g, d[:m -&gt; [ 0 , 3 [: 0 [5, 22, 39] [5, 22, 39]
+partition [g, d[:m -&gt; [ 1 , 3 [: 1 [22, 39] [22, 39]
+partition [g, d[:m -&gt; [ 4 , 7 [: 5 [59, 76, 99] [59, 76, 99]
+après : [5, 22, 39, 45, 59, 76, 99]
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="performances-pire-cas-meilleur-cas">
-<h3><span class="section-number">4.3.7. </span>Performances, pire cas, meilleur cas<a class="headerlink" href="#performances-pire-cas-meilleur-cas" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="performances-pire-cas-meilleur-cas">
+<h3><span class="section-number">4.3.7. </span>Performances, pire cas, meilleur cas<a class="headerlink" href="#performances-pire-cas-meilleur-cas" title="Permalink to this headline">#</a></h3>
 <p>S’inspirer de la démarche sur <code class="docutils literal notranslate"><span class="pre">triInsertion(</span> <span class="pre">)</span></code> avec les exercices suivants. Bon travail !</p>
-<div class="section" id="id4">
-<h4>Exercices<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<section id="id4">
+<h4>Exercices<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>Ecrire une version qui compte le nombre de comparaisons</p></li>
 <li><p>Générer le pire cas , et le meilleur cas, puis vérifier</p></li>
@@ -1822,7 +1946,7 @@ après : [7, 18, 19, 26, 45, 55, 85]
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">partitionCompte</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;version avec decompte nbre comp :&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;version avec decompte nbre comp :&quot;&quot;&quot;</span>
     <span class="k">global</span> <span class="n">nb</span> 
     <span class="k">assert</span> <span class="n">g</span> <span class="o">&lt;</span> <span class="n">d</span><span class="o">-</span><span class="mi">1</span> <span class="c1"># t contient au moins 2 éléments</span>
     <span class="n">pivot</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">d</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -1842,14 +1966,14 @@ après : [7, 18, 19, 26, 45, 55, 85]
     <span class="k">return</span> <span class="n">m</span>
 
 <span class="k">def</span> <span class="nf">trirapide0Compte</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;version avec decompte nbre comp :&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;version avec decompte nbre comp :&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">d</span> <span class="o">-</span> <span class="n">g</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span> <span class="c1">#il reste au moins 2 elmnts ds cette sous-partie de t</span>
         <span class="n">m</span> <span class="o">=</span> <span class="n">partitionCompte</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
         <span class="n">trirapide0Compte</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> 
         <span class="n">trirapide0Compte</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">trirapideCompte</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;version avec decompte nbre comp :</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;version avec decompte nbre comp :</span>
 <span class="sd">    tri rapide de t[0, len(t)[&#39;&#39;&#39;</span>
     <span class="k">global</span> <span class="n">nb</span>
     <span class="n">nb</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1915,10 +2039,10 @@ nb comparaisons : 9
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id5">
-<h3><span class="section-number">4.3.8. </span>Vers l’analyse de la complexité<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id5">
+<h3><span class="section-number">4.3.8. </span>Vers l’analyse de la complexité<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>Le tri rapide :</p>
 <ul class="simple">
 <li><p>consiste en des appels récursifs qui effectuent des partitions successives (en 2 sous-tableaux de taille strictement inférieure) jusqu’à terminaison (sous-tableau de taille 1 ou 0).</p></li>
@@ -1949,13 +2073,13 @@ nb comparaisons : 9
 <li><p>A partir de ces deux cas, que penser du tri rapide  ?</p></li>
 <li><p>En déduire les complexités asymptotiques des meilleurs et pires cas.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="tri-fusion">
-<h2><span class="section-number">4.4. </span>Tri fusion<a class="headerlink" href="#tri-fusion" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="tri-fusion">
+<h2><span class="section-number">4.4. </span>Tri fusion<a class="headerlink" href="#tri-fusion" title="Permalink to this headline">#</a></h2>
 <p>Un exemple de tri de complexité optimale (semi-logarithmique : <span class="math notranslate nohighlight">\(n\log(n)\)</span>) issu de la stratégie <strong>diviser pour régner</strong>.</p>
-<div class="section" id="id6">
-<h3><span class="section-number">4.4.1. </span>Principe<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<section id="id6">
+<h3><span class="section-number">4.4.1. </span>Principe<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p><strong>Fusionner</strong> 2 tableaux <em>triés</em> pour obtenir un tableau unique <em>trié</em></p></li>
 </ol>
@@ -1983,19 +2107,19 @@ nb comparaisons : 9
 <p>La figure suivante illustre ce principe.
 <img alt="source openclassroom" src="../_images/tri_fusion.png" /> (source openclassroom)</p>
 <p>La forme récursive du tri fusion est issue d’une stratégie “diviser pour régner” similaire à celle utilisée pour la recherche dichotomique. En pratique, les appels récursifs définissent les moitiés de tableaux à manipuler. Le “coeur” de l’algorithme est donc la phase de fusion que nous détaillons maintenant.</p>
-</div>
-<div class="section" id="exemple-de-la-fusion-de-2-tableaux-tries">
-<h3><span class="section-number">4.4.2. </span>Exemple de la fusion de 2 tableaux triés<a class="headerlink" href="#exemple-de-la-fusion-de-2-tableaux-tries" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exemple-de-la-fusion-de-2-tableaux-tries">
+<h3><span class="section-number">4.4.2. </span>Exemple de la fusion de 2 tableaux triés<a class="headerlink" href="#exemple-de-la-fusion-de-2-tableaux-tries" title="Permalink to this headline">#</a></h3>
 <p>On illustre la fusion de 2 tableaux triés quelconques à l’aide de l’exemple suivant.</p>
 <p>Fusionnons les 8 valeurs stockées dans les tableaux triés  <code class="docutils literal notranslate"><span class="pre">t_g</span> <span class="pre">=</span>&#160; <span class="pre">[1,3,5,8,11]</span></code> et <code class="docutils literal notranslate"><span class="pre">t_d</span> <span class="pre">=</span> <span class="pre">[2,6,7]</span></code>.</p>
 <p><strong>Rmq.</strong> La récursion du tri fusion conduirait ici à 2 tableaux triés de taille 4 chacun.</p>
 <p><strong>Fusion</strong></p>
 <p><img alt="Fusionner 2 tableaux triés" src="../_images/fusion.png" /></p>
-</div>
-<div class="section" id="algorithme-analyse-et-une-ecriture">
-<h3><span class="section-number">4.4.3. </span>Algorithme : analyse et (une) écriture<a class="headerlink" href="#algorithme-analyse-et-une-ecriture" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="fusion">
-<h4>Fusion<a class="headerlink" href="#fusion" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="algorithme-analyse-et-une-ecriture">
+<h3><span class="section-number">4.4.3. </span>Algorithme : analyse et (une) écriture<a class="headerlink" href="#algorithme-analyse-et-une-ecriture" title="Permalink to this headline">#</a></h3>
+<section id="fusion">
+<h4>Fusion<a class="headerlink" href="#fusion" title="Permalink to this headline">#</a></h4>
 <p><strong>Entrées</strong> : 2 tableaux <code class="docutils literal notranslate"><span class="pre">t1</span></code> et <code class="docutils literal notranslate"><span class="pre">t2</span></code>, de longueurs <code class="docutils literal notranslate"><span class="pre">n1</span></code> et <code class="docutils literal notranslate"><span class="pre">n2</span></code>, <strong>triés</strong><br />
 <strong>Sortie</strong> : 1 tableau <code class="docutils literal notranslate"><span class="pre">t</span></code> de taille <code class="docutils literal notranslate"><span class="pre">n1+n2</span></code> qui sera trié</p>
 <p>Plusieurs cas de figures sont possibles.</p>
@@ -2027,7 +2151,7 @@ nb comparaisons : 9
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fusion</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">b</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">g</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">m</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot; fusion des 2 moitiés du tableau a en le tableau b.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; fusion des 2 moitiés du tableau a en le tableau b.</span>
 <span class="sd">    a et b sont passés en arguments (pas de copie locale, pas de return) : on prend dans a, on range dans b.</span>
 <span class="sd">    entrées. a, b : 2 tableaux (de même taille).</span>
 <span class="sd">    g, m, d : le sous-tab gauche est a[g,m[, celui de droite est a[m,d[</span>
@@ -2072,14 +2196,14 @@ nb comparaisons : 9
 <div class="alert alert-block alert-info">
 En première lecture, sauter la section suivante et aller en section 4.4 _Diviser pour régner._
 </div>
-</div>
-<div class="section" id="analyse-plus-detaillee-de-la-programmation-de-la-fusion">
-<h4>Analyse plus détaillée de la programmation de la fusion<a class="headerlink" href="#analyse-plus-detaillee-de-la-programmation-de-la-fusion" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="analyse-plus-detaillee-de-la-programmation-de-la-fusion">
+<h4>Analyse plus détaillée de la programmation de la fusion<a class="headerlink" href="#analyse-plus-detaillee-de-la-programmation-de-la-fusion" title="Permalink to this headline">#</a></h4>
 <p>Affichons les états successifs du tableau fusionné.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fusionPrint</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">b</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">g</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">m</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot; version avec affichages de :</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; version avec affichages de :</span>
 <span class="sd">    fusion avec deux tableaux a et b passés en arguments</span>
 <span class="sd">    (pas de copie locale, pas de return) : on prend dans a, on range dans b.</span>
 <span class="sd">    entrées. a, b : 2 tableaux (de même taille).</span>
@@ -2131,8 +2255,8 @@ En première lecture, sauter la section suivante et aller en section 4.4 _Divise
 </div>
 </div>
 </div>
-<div class="section" id="petite-amelioration">
-<h5>Petite amélioration<a class="headerlink" href="#petite-amelioration" title="Permalink to this headline">¶</a></h5>
+<section id="petite-amelioration">
+<h5>Petite amélioration<a class="headerlink" href="#petite-amelioration" title="Permalink to this headline">#</a></h5>
 <p>On voit ce qui se passe à chaque itération.
 Ce qui va permettre de constater qu’on traite inutilement des sous-tableaux vides.</p>
 <div class="cell docutils container">
@@ -2177,15 +2301,15 @@ Objectif : ne pas aller inutilement jusqu’au bout d’un sous-tableau alors qu
 <ul class="simple">
 <li><p>exemple : une très grande valeur (un “infini”) si on trie par ordre croissant</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="exercice-de-programmation">
-<h4>Exercice de programmation<a class="headerlink" href="#exercice-de-programmation" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="exercice-de-programmation">
+<h4>Exercice de programmation<a class="headerlink" href="#exercice-de-programmation" title="Permalink to this headline">#</a></h4>
 <p>Une seule version avec et sans affichage</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fusion</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">b</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">g</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">m</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">verb</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot; version avec choix d&#39;affichage de :</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; version avec choix d&#39;affichage de :</span>
 <span class="sd">    fusion avec deux tableaux a et b passés en arguments</span>
 <span class="sd">    (pas de copie locale, pas de return) : on prend dans a, on range dans b.</span>
 <span class="sd">    entrées. a, b : 2 tableaux (de même taille).</span>
@@ -2243,10 +2367,10 @@ avec affichages
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="diviser-pour-regner">
-<h3><span class="section-number">4.4.4. </span>Diviser pour régner<a class="headerlink" href="#diviser-pour-regner" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="diviser-pour-regner">
+<h3><span class="section-number">4.4.4. </span>Diviser pour régner<a class="headerlink" href="#diviser-pour-regner" title="Permalink to this headline">#</a></h3>
 <p>L’algorithme complet du tri fusion peut maintenant s’écrire à partir de l’analyse “diviser pour régner”  appliquée au tableau au tabelau à trier.</p>
 <ul class="simple">
 <li><p>Principe récursif de division en 2 parties de taille moitié jusqu’à obtenir un tableau de longueur 0 ou 1</p></li>
@@ -2260,7 +2384,7 @@ avec affichages
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trifusion</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">dim_a</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;tri fusion qui utilise fusion(a,b,g,m,d)</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;tri fusion qui utilise fusion(a,b,g,m,d)</span>
 <span class="sd">    avec une fonction récursive locale pour travailler sur 1 seul tableau&quot;&quot;&quot;</span>
     <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span> <span class="c1"># copie de a</span>
     
@@ -2299,14 +2423,14 @@ avec affichages
 </div>
 </div>
 <p><strong>A venir :</strong> le même principe “divise pour régner” avec des variations d’implémentation.</p>
-</div>
-<div class="section" id="id7">
-<h3><span class="section-number">4.4.5. </span>Performances, pire cas, meilleur cas<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id7">
+<h3><span class="section-number">4.4.5. </span>Performances, pire cas, meilleur cas<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p>S’inspirer des démarches précédentes. Bon travail !</p>
 <div class="cell tag_hide-cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fusionOpt</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">verb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">compteFusion</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; version avec choix d&#39;affichage et decompte comparaison de :</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; version avec choix d&#39;affichage et decompte comparaison de :</span>
 <span class="sd">    fusion avec deux tableaux a et b passés en arguments</span>
 <span class="sd">    (pas de copie locale, pas de return) : on prend dans a, on range dans b.</span>
 <span class="sd">    entrées. a, b : 2 tableaux (de même taille).</span>
@@ -2361,7 +2485,7 @@ avec affichages
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trifusionOpt</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">dim_a</span><span class="p">,</span> <span class="n">compte</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;version avec decompte comparaisons de </span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;version avec decompte comparaisons de </span>
 <span class="sd">    tri fusion qui utilise fusion(a,b,g,m,d)</span>
 <span class="sd">    avec une fonction récursive locale pour travailler sur 1 seul tableau&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">compte</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
@@ -2402,18 +2526,18 @@ avec affichages
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 3, 3, 8, 0, 5, 0, 1] [6, 4, 3, 4, 6, 1, 8, 1]
-[0, 0, 1, 3, 3, 5, 6, 8]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 2, 8, 6, 4, 0, 6, 1] [8, 8, 6, 4, 4, 0, 4, 3]
+[0, 1, 2, 2, 4, 6, 6, 8]
 nb comparaisons: 24
-[1, 1, 3, 4, 4, 6, 6, 8]
+[0, 3, 4, 4, 4, 6, 8, 8]
 nb comparaisons: 24
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id8">
-<h3><span class="section-number">4.4.6. </span>Vers l’analyse de la complexité<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id8">
+<h3><span class="section-number">4.4.6. </span>Vers l’analyse de la complexité<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>Le tri fusion consiste en des appels récursifs qui :</p>
 <ul class="simple">
 <li><p>effectuent des <em>partitions</em> successives en 2 sous-tableaux de taille moitié jusqu’à terminaison (sous-tableau de taille 1 ou 0 donc trié),</p></li>
@@ -2437,10 +2561,10 @@ nb comparaisons: 24
 <li><p>Que penser du tri rapide  ?</p></li>
 <li><p>En déduire le complexité asymptotique du tri fusion.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="complexites-de-ces-algorithmes-de-tri">
-<h2><span class="section-number">4.5. </span>Complexités de ces algorithmes de tri<a class="headerlink" href="#complexites-de-ces-algorithmes-de-tri" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="complexites-de-ces-algorithmes-de-tri">
+<h2><span class="section-number">4.5. </span>Complexités de ces algorithmes de tri<a class="headerlink" href="#complexites-de-ces-algorithmes-de-tri" title="Permalink to this headline">#</a></h2>
 <p>On synthétise les différents résultats de complexité de ces algorithmes de tri.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -2483,19 +2607,19 @@ nb comparaisons: 24
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="star-prouver-la-correction-de-ces-algorithmes-de-tri">
-<h2><span class="section-number">4.6. </span>(<span class="math notranslate nohighlight">\(\star\)</span>) Prouver la correction de ces algorithmes de tri<a class="headerlink" href="#star-prouver-la-correction-de-ces-algorithmes-de-tri" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="star-prouver-la-correction-de-ces-algorithmes-de-tri">
+<h2><span class="section-number">4.6. </span>(<span class="math notranslate nohighlight">\(\star\)</span>) Prouver la correction de ces algorithmes de tri<a class="headerlink" href="#star-prouver-la-correction-de-ces-algorithmes-de-tri" title="Permalink to this headline">#</a></h2>
 <p>On explicite les invariants des algorithmes présentés dans ce chapitre.
 On laisse en exercice la preuve de ces invariants.</p>
-<div class="section" id="id9">
-<h3><span class="section-number">4.6.1. </span>Tri insertion<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<section id="id9">
+<h3><span class="section-number">4.6.1. </span>Tri insertion<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <blockquote>
 <div><p>(P) Avant l’itération i, le sous-tableau <code class="docutils literal notranslate"><span class="pre">t[0,</span> <span class="pre">i[</span></code> est trié.</p>
 </div></blockquote>
-</div>
-<div class="section" id="tri-rapide-quicksort">
-<h3><span class="section-number">4.6.2. </span>Tri rapide (<em>quicksort</em>)<a class="headerlink" href="#tri-rapide-quicksort" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="tri-rapide-quicksort">
+<h3><span class="section-number">4.6.2. </span>Tri rapide (<em>quicksort</em>)<a class="headerlink" href="#tri-rapide-quicksort" title="Permalink to this headline">#</a></h3>
 <p>Invariant de <code class="docutils literal notranslate"><span class="pre">partition(t,</span> <span class="pre">g,</span> <span class="pre">d)</span></code> :</p>
 <blockquote>
 <div><p>au début de l’itération <span class="math notranslate nohighlight">\(i\)</span> : pour tout <span class="math notranslate nohighlight">\(k\)</span> dans <span class="math notranslate nohighlight">\([g, d[\)</span>, on a :</p>
@@ -2506,9 +2630,9 @@ On laisse en exercice la preuve de ces invariants.</p>
 </ul>
 </div></blockquote>
 <p>Remarque : on ne dit rien sur la tranche <span class="math notranslate nohighlight">\(t[i, d-1[\)</span> qui sont a priori quelconques.</p>
-</div>
-<div class="section" id="id10">
-<h3><span class="section-number">4.6.3. </span>Tri fusion<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id10">
+<h3><span class="section-number">4.6.3. </span>Tri fusion<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p>Invariant de la boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> dans <code class="docutils literal notranslate"><span class="pre">fusion(t,</span> <span class="pre">g,</span> <span class="pre">m,</span> <span class="pre">d)</span></code> :</p>
 <blockquote>
 <div><p>au début de l’itération <span class="math notranslate nohighlight">\(i\)</span> :</p>
@@ -2517,10 +2641,10 @@ On laisse en exercice la preuve de ces invariants.</p>
 <li><p><span class="math notranslate nohighlight">\(G[i1]\)</span> et <span class="math notranslate nohighlight">\(D[i2]\)</span> sont les plus petits éléments respectifs de G et D a ne pas avoir été copiés dans t.</p></li>
 </ul>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="conclusion">
-<h2><span class="section-number">4.7. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="conclusion">
+<h2><span class="section-number">4.7. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Trois algorithmes de tris de complexités différentes</p>
 <ul>
@@ -2536,8 +2660,8 @@ On laisse en exercice la preuve de ces invariants.</p>
 </ul>
 </li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2561,9 +2685,11 @@ On laisse en exercice la preuve de ces invariants.</p>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="8-rechercher.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2579,23 +2705,27 @@ On laisse en exercice la preuve de ces invariants.</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ph. Langlois<br/>
+  
+</p>
+        </footer>
+    </div>
     
-      Par Ph. Langlois<br/>
-    
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

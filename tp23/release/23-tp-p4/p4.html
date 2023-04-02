@@ -1,0 +1,2216 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>1. Présentation &#8212; Algo-Prog 2023</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="1. (Intervenant) Suivi des séances" href="../../../suivi_seances.html" />
+    <link rel="prev" title="6. Feuille 5" href="../../../td/td5.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/logo2023.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Algo-Prog 2023</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../bonjour.html">
+                    Bienvenu en Algo-Prog !
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Présentation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../cm/0-presentation-2023.html">
+   1. Algorithmique et Programmation en 2023
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../cm/competences.html">
+   2. Compétences
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Les bases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../cm/1-fonctions.html">
+   1. Fonctions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../cm/2-fonctions-tableaux.html">
+   2. Fonctions et tableaux
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../cm/3-ES-fichiers.html">
+   4. Entrées-sorties simples avec des fichiers
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithmique
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../cm/4-complexite.html">
+   1. Complexités
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../cm/6-recursivite.html">
+   2. Récursivité
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../cm/8-rechercher.html">
+   3. Rechercher
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programmation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../cm/5-types_composes.html">
+   1. Les types composés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../cm/7-fonctions-avancees.html">
+   2. Sous-programme et affectation – aspects avancés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../cm/9-ES-avancees.html">
+   3. Les entrées-sorties (E/S) : aspects avancés
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../cm/11-modules-utiles.html">
+   4. Modules utiles
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Annexes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../cm/a0-boucles-avancees.html">
+   1. Boucles et tableaux
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../cm/a1-booleens.html">
+   2. Annexe : les booléens en python (&gt;3.6)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../cm/a2-ndarray.html">
+   3. Les ‘ndarray’ : de vrais tableaux en python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../cm/a3-exceptions.html">
+   4. Exceptions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Diapos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../slides/1_sl.html">
+   1. Fonctions
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  TD
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../td/prealable-td.html">
+   1. Préalables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../td/td1.html">
+   2. Feuille 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../td/td2.html">
+   3. Feuille 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../td/td3.html">
+   4. Feuille 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../td/td4.html">
+   5. Feuille 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../td/td5.html">
+   6. Feuille 5
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  TP
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Présentation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  (Intervenants) suivi des séances
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../suivi_seances.html">
+   1. (Intervenant) Suivi des séances
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/phillanglois/Algo-Prog-2023/main?urlpath=tree/algoprog2023/tp23/release/23-tp-p4/p4.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/phillanglois/Algo-Prog-2023/issues/new?title=Issue%20on%20page%20%2Ftp23/release/23-tp-p4/p4.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/tp23/release/23-tp-p4/p4.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   1. Présentation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-jeu-puissance-4">
+     1.1. Le jeu
+     <strong>
+      puissance 4
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-grille-et-les-jetons-de-couleurs">
+     1.2. La grille et les jetons de couleurs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quelques-primitives-utiles">
+   2. Quelques primitives utiles
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-couleur">
+     2.1. code(couleur)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#auto-validation">
+       2.1.1. Auto-validation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#couleur-code">
+     2.2. couleur(code)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       2.2.1. Auto-validation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nbjetons">
+     2.3. nbJetons()
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#jaunes-ou-rouges">
+       2.3.1. Jaunes ou rouges
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Auto-validation
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#jaunes-rouges-ou-les-2">
+       2.3.2. Jaunes, rouges ou les 2
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id3">
+         Auto-validation
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nbcaseslibres">
+     2.4. NbCasesLibres()
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       2.4.1. Auto-validation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#affichages-de-la-grille">
+   3. Affichages de la grille
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#star-grille-en-str">
+     3.1. (
+     <span class="math notranslate nohighlight">
+      \(\star\)
+     </span>
+     ) grille_en_str()
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#star-afficher-avec-numeros-lignes-et-colonnes-vues-par-le-joueur">
+     3.2. (
+     <span class="math notranslate nohighlight">
+      \(\star\)
+     </span>
+     ) afficher avec numéros lignes et colonnes
+     <em>
+      vues par le joueur
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estvalide">
+   4. estValide()
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     4.1. Auto-validation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gagne-ou-pas-encore">
+   5. Gagné ou pas encore ?
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#horiz">
+     5.1. horiz()
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       5.1.1. Auto-validation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vertic">
+     5.2. vertic()
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       5.2.1. Auto-validation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diagoseno">
+     5.3. diagoSENO()
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       5.3.1. Auto-validation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diagosone">
+     5.4. diagoSONE()
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       5.4.1. Auto-validation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#est-gagnante">
+     5.5. est_gagnante()
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       5.5.1. Auto-validation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jouons">
+   6. Jouons !
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-toi-de-jouer">
+     6.1. à toi de jouer
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       6.1.1. Auto-validation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jouer">
+     6.2. jouer()
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id12">
+       6.2.1. Auto-validation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jeu">
+     6.3. jeu()
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#auto-validation-1">
+       6.3.1. Auto-validation 1
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#auto-validation-2">
+       6.3.2. Auto-validation 2
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Présentation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   1. Présentation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-jeu-puissance-4">
+     1.1. Le jeu
+     <strong>
+      puissance 4
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-grille-et-les-jetons-de-couleurs">
+     1.2. La grille et les jetons de couleurs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quelques-primitives-utiles">
+   2. Quelques primitives utiles
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-couleur">
+     2.1. code(couleur)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#auto-validation">
+       2.1.1. Auto-validation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#couleur-code">
+     2.2. couleur(code)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       2.2.1. Auto-validation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nbjetons">
+     2.3. nbJetons()
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#jaunes-ou-rouges">
+       2.3.1. Jaunes ou rouges
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Auto-validation
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#jaunes-rouges-ou-les-2">
+       2.3.2. Jaunes, rouges ou les 2
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id3">
+         Auto-validation
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nbcaseslibres">
+     2.4. NbCasesLibres()
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       2.4.1. Auto-validation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#affichages-de-la-grille">
+   3. Affichages de la grille
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#star-grille-en-str">
+     3.1. (
+     <span class="math notranslate nohighlight">
+      \(\star\)
+     </span>
+     ) grille_en_str()
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#star-afficher-avec-numeros-lignes-et-colonnes-vues-par-le-joueur">
+     3.2. (
+     <span class="math notranslate nohighlight">
+      \(\star\)
+     </span>
+     ) afficher avec numéros lignes et colonnes
+     <em>
+      vues par le joueur
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estvalide">
+   4. estValide()
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     4.1. Auto-validation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gagne-ou-pas-encore">
+   5. Gagné ou pas encore ?
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#horiz">
+     5.1. horiz()
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       5.1.1. Auto-validation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vertic">
+     5.2. vertic()
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       5.2.1. Auto-validation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diagoseno">
+     5.3. diagoSENO()
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       5.3.1. Auto-validation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diagosone">
+     5.4. diagoSONE()
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       5.4.1. Auto-validation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#est-gagnante">
+     5.5. est_gagnante()
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       5.5.1. Auto-validation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jouons">
+   6. Jouons !
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-toi-de-jouer">
+     6.1. à toi de jouer
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       6.1.1. Auto-validation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jouer">
+     6.2. jouer()
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id12">
+       6.2.1. Auto-validation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jeu">
+     6.3. jeu()
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#auto-validation-1">
+       6.3.1. Auto-validation 1
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#auto-validation-2">
+       6.3.2. Auto-validation 2
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="presentation">
+<h1><span class="section-number">1. </span>Présentation<a class="headerlink" href="#presentation" title="Permalink to this headline">#</a></h1>
+<p>Ce sujet propose de développer un jeu <em>puissance 4</em>.
+Les questions vous guident dans ce développement.
+Des tests d’auto-validation suivent chaque question et vous aident à valider vos traitements.
+<strong>Ne pas continuer dès qu’un test déclenche une exception ou produit des messages d’erreur.</strong>
+Dans ce cas, vos traitements sont erronés et vous devez les corriger avant d’aller plus loin
+dans la résolution du sujet.</p>
+<section id="le-jeu-puissance-4">
+<h2><span class="section-number">1.1. </span>Le jeu <strong>puissance 4</strong><a class="headerlink" href="#le-jeu-puissance-4" title="Permalink to this headline">#</a></h2>
+<p>Le jeu <strong>puissance 4</strong> est un jeu de stratégie dont le but est d’aligner une suite de 4 pions de même couleur sur une grille comptant 6 lignes horizontales et 7 colonnes verticales.</p>
+<p><img alt="Un debut de partie" src="../../../_images/p4.png" /></p>
+<p>Il y a deux joueurs. Chacun dispose de 21 pions d’une couleur, en général jaune ou rouge.</p>
+<p>Tour à tour, les joueurs placent un pion dans la colonne de leur choix. <strong>Le pion tombe dans la colonne jusqu’à la position la plus basse possible</strong>.  Puis c’est à l’adversaire de jouer de façon similaire avec ses jetons.</p>
+<p>Le vainqueur est le joueur qui réalise le premier un <strong>alignement horizontal ou vertical ou diagonal d’au moins quatre pions consécutifs de sa couleur</strong>.</p>
+<p>Si, alors que toutes les cases de la grille de jeu sont remplies, aucun des deux joueurs n’a réalisé un tel alignement, la partie est déclarée nulle.</p>
+</section>
+<section id="la-grille-et-les-jetons-de-couleurs">
+<h2><span class="section-number">1.2. </span>La grille et les jetons de couleurs<a class="headerlink" href="#la-grille-et-les-jetons-de-couleurs" title="Permalink to this headline">#</a></h2>
+<p><strong>Constantes.</strong></p>
+<ul class="simple">
+<li><p>Les couleurs <code class="docutils literal notranslate"><span class="pre">JAUNE</span></code> et <code class="docutils literal notranslate"><span class="pre">ROUGE</span></code> sont des constantes entières  égales à 1 et 2 respectivement.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NBL</span></code> et <code class="docutils literal notranslate"><span class="pre">NBC</span></code> sont des constantes entières égales à 6 et 7 respectivement. Elles représentent le nombre de lignes et le nombre de colonnes du jeu réel.</p></li>
+</ul>
+<p>L’énumératif <code class="docutils literal notranslate"><span class="pre">couleurs</span></code> regroupe les constantes <code class="docutils literal notranslate"><span class="pre">JAUNE</span></code> et <code class="docutils literal notranslate"><span class="pre">ROUGE</span></code>. Il sert pour noter le type de paramètre(s) de couleur dans la définition de fonctions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">JAUNE</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">ROUGE</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">couleurs</span> <span class="o">=</span> <span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">ROUGE</span><span class="p">)</span>
+
+<span class="n">NBL</span> <span class="o">=</span> <span class="mi">6</span> <span class="c1"># nbre de lignes</span>
+<span class="n">NBC</span> <span class="o">=</span> <span class="mi">7</span> <span class="c1"># nbre de colonnes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Grille de jeu.</strong></p>
+<ul class="simple">
+<li><p>La grille du jeu est un tableau 2D de valeurs entières.</p></li>
+<li><p>Dans la suite, la grille de jeu sera de taille <code class="docutils literal notranslate"><span class="pre">NBL</span> <span class="pre">x</span> <span class="pre">NBC</span></code>.</p></li>
+<li><p>Cependant les fonctions qui définissent les traitements de la grille de jeu seront paramétrés par  <code class="docutils literal notranslate"><span class="pre">dimv</span></code> et <code class="docutils literal notranslate"><span class="pre">dimh</span></code> pour représenter des grilles de taille quelconque <code class="docutils literal notranslate"><span class="pre">dimv</span> <span class="pre">x</span> <span class="pre">dimh</span></code>.</p></li>
+<li><p><strong>IMPORTANT :</strong> la grille de jeu est stockée ligne par ligne <strong>à partir de la ligne du bas</strong> – la ligne 0 du tableau représente la ligne du bas de la grille de jeu, cad. la ligne qui accueille le premier pion joué dans une partie.</p></li>
+</ul>
+<p>La cellule suivante définit deux états de la grille de jeu.</p>
+<ul class="simple">
+<li><p>la grille <code class="docutils literal notranslate"><span class="pre">g0</span></code> est vide – comme en début de jeu. Elle est représentée comme un tableau 2D de zéros : la valeur 0 représente une case vide</p></li>
+<li><p>la grille <code class="docutils literal notranslate"><span class="pre">g1</span></code> correspond à l’image du début du sujet.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g0</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBC</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBL</span><span class="p">)]</span>
+
+<span class="n">g1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+      <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+      <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+      <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+      <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+      <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">g0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">g1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]]
+[[2, 1, 1, 1, 2, 2, 0], [0, 1, 2, 2, 1, 0, 0], [0, 0, 2, 1, 2, 0, 0], [0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="quelques-primitives-utiles">
+<h1><span class="section-number">2. </span>Quelques primitives utiles<a class="headerlink" href="#quelques-primitives-utiles" title="Permalink to this headline">#</a></h1>
+<section id="code-couleur">
+<h2><span class="section-number">2.1. </span>code(couleur)<a class="headerlink" href="#code-couleur" title="Permalink to this headline">#</a></h2>
+<p>Ecrire selon l’en-tête suivant, une fonction <code class="docutils literal notranslate"><span class="pre">code(c</span> <span class="pre">:</span> <span class="pre">couleurs)</span> <span class="pre">-&gt;</span> <span class="pre">int</span></code> qui retourne la valeur entière correspondant à JAUNE ou ROUGE.</p>
+<p><strong>Rmq.</strong> On illustre ainsi la spécification d’une fonction avec un paramètre formel de “type <code class="docutils literal notranslate"><span class="pre">couleurs</span></code>” issu de la définition :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">couleurs</span> <span class="o">=</span> <span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">ROUGE</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">code</span><span class="p">(</span><span class="n">c</span> <span class="p">:</span> <span class="n">couleurs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="c1"># ENTRER VOTRE CODE A LA PLACE DE CES 2 LIGNES</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<section id="auto-validation">
+<h3><span class="section-number">2.1.1. </span>Auto-validation<a class="headerlink" href="#auto-validation" title="Permalink to this headline">#</a></h3>
+<p><strong>Rappel.</strong> La cellule suivante (tests unitaires) doit s’exécuter sans déclencher d’exception ni de message d’erreur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">code</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="k">assert</span> <span class="n">code</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">assert</span> <span class="n">code</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">assert</span> <span class="n">code</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+
+<span class="ne">NameError</span>: name &#39;code&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="couleur-code">
+<h2><span class="section-number">2.2. </span>couleur(code)<a class="headerlink" href="#couleur-code" title="Permalink to this headline">#</a></h2>
+<p>Ecrire selon l’en-tête suivant, une fonction <code class="docutils literal notranslate"><span class="pre">couleur(c</span> <span class="pre">:</span> <span class="pre">int)</span> <span class="pre">-&gt;</span> <span class="pre">str</span></code> qui retourne la chaine de caractères “jaune” ou “rouge” pour les valeurs entières correspondant à JAUNE et ROUGE, respectivement.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">couleur</span><span class="p">(</span><span class="n">c</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="c1"># ENTRER VOTRE CODE A LA PLACE DE CES 2 LIGNES</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id1">
+<h3><span class="section-number">2.2.1. </span>Auto-validation<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">couleur</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;jaune&quot;</span>
+<span class="k">assert</span> <span class="n">couleur</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;rouge&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">assert</span> <span class="n">couleur</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;jaune&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">assert</span> <span class="n">couleur</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;rouge&quot;</span>
+
+<span class="ne">NameError</span>: name &#39;couleur&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="nbjetons">
+<h2><span class="section-number">2.3. </span>nbJetons()<a class="headerlink" href="#nbjetons" title="Permalink to this headline">#</a></h2>
+<p>On va écrire plusieurs versions successives d’une fonction nbJetons() qui retourne le nombre de jetons d’une grille donnée.</p>
+<section id="jaunes-ou-rouges">
+<h3><span class="section-number">2.3.1. </span>Jaunes ou rouges<a class="headerlink" href="#jaunes-ou-rouges" title="Permalink to this headline">#</a></h3>
+<p>Ecrire selon l’en-tête suivant, la fonction nbJetons() qui retourne le nombre de jetons de couleur <code class="docutils literal notranslate"><span class="pre">c</span></code> d’une grille <code class="docutils literal notranslate"><span class="pre">g</span></code> de taille <code class="docutils literal notranslate"><span class="pre">dimv</span> <span class="pre">x</span> <span class="pre">dimh</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nbJetons</span><span class="p">(</span><span class="n">c</span> <span class="p">:</span> <span class="n">couleurs</span><span class="p">,</span> <span class="n">g</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">dimv</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dimh</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="c1"># ENTRER VOTRE CODE A LA PLACE DE CES 2 LIGNES</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id2">
+<h4>Auto-validation<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">nbJetons</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="k">assert</span> <span class="n">nbJetons</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="k">assert</span> <span class="n">nbJetons</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">7</span>
+<span class="k">assert</span> <span class="n">nbJetons</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">assert</span> <span class="n">nbJetons</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">assert</span> <span class="n">nbJetons</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">assert</span> <span class="n">nbJetons</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">7</span>
+
+<span class="ne">NameError</span>: name &#39;nbJetons&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="jaunes-rouges-ou-les-2">
+<h3><span class="section-number">2.3.2. </span>Jaunes, rouges ou les 2<a class="headerlink" href="#jaunes-rouges-ou-les-2" title="Permalink to this headline">#</a></h3>
+<p>On définit la constante TOUS :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TOUS</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Reprendre nbJetons() et la compléter de façon à ce que le paramètre couleur <code class="docutils literal notranslate"><span class="pre">c</span></code> prenne aussi la valeur
+<code class="docutils literal notranslate"><span class="pre">TOUS</span></code> et retourne dans ce cas tous les jetons présents dans la grille de jeu.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nbJetons</span><span class="p">(</span><span class="n">c</span> <span class="p">:</span> <span class="n">couleurs</span><span class="p">,</span> <span class="n">g</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">dimv</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dimh</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="c1"># ENTRER VOTRE CODE A LA PLACE DE CES 2 LIGNES</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id3">
+<h4>Auto-validation<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">nbJetons</span><span class="p">(</span><span class="n">TOUS</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">14</span>
+<span class="k">assert</span> <span class="n">nbJetons</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">7</span>
+<span class="k">assert</span> <span class="n">nbJetons</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">assert</span> <span class="n">nbJetons</span><span class="p">(</span><span class="n">TOUS</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">14</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">assert</span> <span class="n">nbJetons</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">assert</span> <span class="n">nbJetons</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">7</span>
+
+<span class="ne">NameError</span>: name &#39;nbJetons&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g0</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBC</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBL</span><span class="p">)]</span>
+<span class="k">assert</span> <span class="n">nbJetons</span><span class="p">(</span><span class="n">TOUS</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="k">assert</span> <span class="n">nbJetons</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="k">assert</span> <span class="n">nbJetons</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">g0</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBC</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBL</span><span class="p">)]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">assert</span> <span class="n">nbJetons</span><span class="p">(</span><span class="n">TOUS</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">assert</span> <span class="n">nbJetons</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">assert</span> <span class="n">nbJetons</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+
+<span class="ne">NameError</span>: name &#39;nbJetons&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="nbcaseslibres">
+<h2><span class="section-number">2.4. </span>NbCasesLibres()<a class="headerlink" href="#nbcaseslibres" title="Permalink to this headline">#</a></h2>
+<p>Ecrire selon l’en-tête suivant, une fonction NbCasesLibres() qui retourne le nombre de cases vides (sans jeton) d’une grille de taille <code class="docutils literal notranslate"><span class="pre">dimv</span> <span class="pre">x</span> <span class="pre">dimh</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">NbCasesLibres</span><span class="p">(</span><span class="n">g</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">dimv</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dimh</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="c1"># ENTRER VOTRE CODE A LA PLACE DE CES 2 LIGNES</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id4">
+<h3><span class="section-number">2.4.1. </span>Auto-validation<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">NbCasesLibres</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">28</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">assert</span> <span class="n">NbCasesLibres</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">28</span>
+
+<span class="ne">NameError</span>: name &#39;NbCasesLibres&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="affichages-de-la-grille">
+<h1><span class="section-number">3. </span>Affichages de la grille<a class="headerlink" href="#affichages-de-la-grille" title="Permalink to this headline">#</a></h1>
+<p><strong>Objectif 10.</strong>
+La grille de jeu étant représentée par un tableau 2D, on peut utiliser la fonction d’affichage <code class="docutils literal notranslate"><span class="pre">print()</span></code> appliquée à un tableau. Bien sûr, on gardera bien en tête que l’affichage alors obtenu correspond <strong>aux lignes à partir du bas de la grille</strong>.</p>
+<p><strong>Exemple.</strong> L’exécution de</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">g1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>pour la grille <code class="docutils literal notranslate"><span class="pre">g1</span></code>de la figure du début donne :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p><strong>Objectif 20.</strong>
+Un affichage plus agréable va être développé en 2 étapes :</p>
+<ul class="simple">
+<li><p>d’abord un affichage de la grille uniquement,</p></li>
+<li><p>puis un affichage complété avec les numéros des lignes et des colonnes tels que les voient les joueurs.</p></li>
+</ul>
+<section id="star-grille-en-str">
+<h2><span class="section-number">3.1. </span>(<span class="math notranslate nohighlight">\(\star\)</span>) grille_en_str()<a class="headerlink" href="#star-grille-en-str" title="Permalink to this headline">#</a></h2>
+<p>Le premier affichage sera tel que :</p>
+<ul class="simple">
+<li><p>les cases vides sont affichées avec le caractère <code class="docutils literal notranslate"><span class="pre">'.'</span></code></p></li>
+<li><p>les pions jaunes sont affichées avec le caractère <code class="docutils literal notranslate"><span class="pre">'O'</span></code></p></li>
+<li><p>les pions rouge sont affichées avec le caractère <code class="docutils literal notranslate"><span class="pre">'X'</span></code></p></li>
+</ul>
+<p>Pour cela, on va écrire une fonction <code class="docutils literal notranslate"><span class="pre">grille_en_str(</span> <span class="pre">)</span></code> qui transforme la grille de jeu en une chaîne de caractères adaptée qui, ensuite, pourra être affichée d’un seul <code class="docutils literal notranslate"><span class="pre">print</span></code> et donner l’affichage souhaité.</p>
+<ul class="simple">
+<li><p>L’en-tête de cette fonction est définie dans la cellule suivante.</p></li>
+<li><p>Cette fonction retourne la chaîne de caractère construite par l’algorithme suivant :</p>
+<ul>
+<li><p>chaque ligne de la grille est interprétée comme une chaîne de 6 caractères séparés par des espaces ;</p></li>
+<li><p>chaque chaîne de caractères est concaténée dans un ordre adéquat dans une chaîne globale qui représentera la grille complète ;</p></li>
+<li><p>cette chaîne globale sera retournée pour obtenir l’affichage demandé.</p></li>
+</ul>
+</li>
+</ul>
+<p>On rappelle que le <em>caractère</em> spécial <code class="docutils literal notranslate"><span class="pre">\n</span></code> permet un saut de ligne.</p>
+<p>Ainsi</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">grille_en_str</span><span class="p">(</span><span class="n">g1</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>donnera l’affichage de la grille <code class="docutils literal notranslate"><span class="pre">g1</span></code> suivant.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>. . . . . . . 
+. . . . . . . 
+. . O . . . .`
+. . X O X . . 
+. O X X O . . 
+X O O O X X .
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">grille_en_str</span><span class="p">(</span><span class="n">g</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">dimv</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dimh</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="c1"># ENTRER VOTRE CODE A LA PLACE DE CES 2 LIGNES</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ne pas écrire dans cette cellule</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<span class="math notranslate nohighlight">\(\star\)</span>) <strong>application</strong></p>
+<p>Vérifier que l’affichage suivnt de <code class="docutils literal notranslate"><span class="pre">g1</span></code> est identique à celui indiqué au dessus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">grille_en_str</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">grille_en_str</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;grille_en_str&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="star-afficher-avec-numeros-lignes-et-colonnes-vues-par-le-joueur">
+<h2><span class="section-number">3.2. </span>(<span class="math notranslate nohighlight">\(\star\)</span>) afficher avec numéros lignes et colonnes <em>vues par le joueur</em><a class="headerlink" href="#star-afficher-avec-numeros-lignes-et-colonnes-vues-par-le-joueur" title="Permalink to this headline">#</a></h2>
+<p><strong>Attention : bien lire ce passage qui définit 2 numérotations différentes.</strong></p>
+<ul class="simple">
+<li><p><em>numérotation-joueur</em> : le <em>joueur</em> compte les lignes et les colonnes à partir de 1 et en partant de la ligne du bas  et de la colonne de gauche de la grille (voir exemple ci-dessous).</p></li>
+<li><p><em>numérotation-développeur</em> : le <em>développeur</em> que vous êtes utilise la numérotation du tableau qui représente la grille (attention à l’ordre des lignes). <code class="docutils literal notranslate"><span class="pre">print()</span></code> permet un affichage</p></li>
+</ul>
+<p>Par la suite, nous indiquerons <strong>explicitement</strong> les cas où cette numérotation-joueur devra être utilisée (pour <code class="docutils literal notranslate"><span class="pre">afficher()</span></code>, <code class="docutils literal notranslate"><span class="pre">atoidejouer()</span></code> et <code class="docutils literal notranslate"><span class="pre">jeu()</span></code>).
+Sinon, la numérotation-développeur reste celle à utiliser.</p>
+<p>Si besoin :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">afficher()</span></code> est adapté pour visualiser la <em>numérotation-joueur</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print()</span></code> est adapté pour visualiser la <em>numérotation-développeur.</em></p></li>
+</ul>
+<p>Ecrire la fonction <code class="docutils literal notranslate"><span class="pre">afficher()</span></code> selon l’en-tête suivant où le paramètre booléen <code class="docutils literal notranslate"><span class="pre">debug</span></code> permet de compléter l’affichage précédent avec les numéros-joueur des lignes et des colonnes de la grille comme ci-dessous pour <code class="docutils literal notranslate"><span class="pre">g1</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">|</span><span class="mi">6</span>
+<span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">|</span><span class="mi">5</span>
+<span class="o">.</span> <span class="o">.</span> <span class="n">O</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">|</span><span class="mi">4</span>
+<span class="o">.</span> <span class="o">.</span> <span class="n">X</span> <span class="n">O</span> <span class="n">X</span> <span class="o">.</span> <span class="o">.</span> <span class="o">|</span><span class="mi">3</span>
+<span class="o">.</span> <span class="n">O</span> <span class="n">X</span> <span class="n">X</span> <span class="n">O</span> <span class="o">.</span> <span class="o">.</span> <span class="o">|</span><span class="mi">2</span>
+<span class="n">X</span> <span class="n">O</span> <span class="n">O</span> <span class="n">O</span> <span class="n">X</span> <span class="n">X</span> <span class="o">.</span> <span class="o">|</span><span class="mi">1</span>
+<span class="o">-------------</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span>
+</pre></div>
+</div>
+<p>Si <code class="docutils literal notranslate"><span class="pre">debug</span> <span class="pre">==</span> <span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">afficher()</span></code> réalisera l’affichage ci-dessus.</p>
+<p>Si <code class="docutils literal notranslate"><span class="pre">debug</span> <span class="pre">==</span> <span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">afficher()</span></code> réalisera l’affichage sans numéro de lignes, ni de colonnes.</p>
+<p>Cette fonction pourra s’inspirer de la fonction <code class="docutils literal notranslate"><span class="pre">grille_en_str()</span></code>.
+Elle réalise l’affichage demandé : il s’agit donc d’une <em>procédure</em> d’affichage (qui mélange des traitements spécifiques et des entrées-sorties).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">afficher</span><span class="p">(</span><span class="n">g</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">dimv</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dimh</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">debug</span> <span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="c1"># ENTRER VOTRE CODE A LA PLACE DE CES 2 LIGNES</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ne pas écrire dans cette cellule</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(<span class="math notranslate nohighlight">\(\star\)</span>) <strong>application</strong></p>
+<p>Vérifier que les affichages de <code class="docutils literal notranslate"><span class="pre">g1</span></code> sont identiques à ceux indiqués au dessus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">afficher</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">afficher</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">afficher</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">afficher</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;afficher&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="estvalide">
+<h1><span class="section-number">4. </span>estValide()<a class="headerlink" href="#estvalide" title="Permalink to this headline">#</a></h1>
+<p>Cette question n’est pas indispensable pour la suite des traitements.</p>
+<p>Une grille est valide si les conditions suivantes sont satisfaites.</p>
+<ul class="simple">
+<li><p>la grille comporte 6 lignes et 7 colonnes</p></li>
+<li><p>les pions jaunes commençant, il y a le même nombre de pions jaunes et de pions rouges ou un pion jaune de plus</p></li>
+<li><p>il y a 21 pions jaunes au plus</p></li>
+<li><p>il n’y a pas de case vide “sous” une case non vide</p></li>
+</ul>
+<p>Ecrire une fonction <code class="docutils literal notranslate"><span class="pre">estValide()</span></code>
+selon l’en-tête suivante qui vérifie la validité d’une grille.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">estValide</span><span class="p">(</span><span class="n">g</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">dimv</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dimh</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="c1"># ENTRER VOTRE CODE A LA PLACE DE CES 2 LIGNES</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id5">
+<h2><span class="section-number">4.1. </span>Auto-validation<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<p>Validez la cellule suivante qui défini la grille <strong>non-valide</strong> <code class="docutils literal notranslate"><span class="pre">gbad</span></code> utilisée pour les tests et les auto-validations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="n">gbad</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>La cellule d’auto-validation suivante doit s’exécuter sans erreur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">estValide</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span>
+<span class="k">assert</span> <span class="n">estValide</span><span class="p">(</span><span class="n">gbad</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">assert</span> <span class="n">estValide</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">assert</span> <span class="n">estValide</span><span class="p">(</span><span class="n">gbad</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span>
+
+<span class="ne">NameError</span>: name &#39;estValide&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="gagne-ou-pas-encore">
+<h1><span class="section-number">5. </span>Gagné ou pas encore ?<a class="headerlink" href="#gagne-ou-pas-encore" title="Permalink to this headline">#</a></h1>
+<p>On va examiner les 4 alignements gagnants d’une couleur donnée.</p>
+<ul class="simple">
+<li><p>alignement horizontal : 4 pions de même couleur consécutivement alignés sur une ligne</p></li>
+<li><p>alignement vertical : 4 pions de même couleur consécutivement alignés sur une colonne</p></li>
+<li><p>alignement selon une diagonale SudEst-NordOuest : 4 pions de même couleur consécutivement alignés sur une diagonale “d’en bas à gauche vers le haut à droite”</p></li>
+<li><p>alignement selon une diagonale SudOuest-NordEst : 4 pions de même couleur consécutivement alignés sur une diagonale “d’en bas à droite vers le haut à gauche”</p></li>
+</ul>
+<section id="horiz">
+<h2><span class="section-number">5.1. </span>horiz()<a class="headerlink" href="#horiz" title="Permalink to this headline">#</a></h2>
+<p>Ecrire selon l’en-tête suivant, la fonction <code class="docutils literal notranslate"><span class="pre">horiz()</span></code> qui vérifie si la grille présente un alignement horizontal gagnant d’une couleur donnée : 4 pions de même couleurs consécutivement alignés sur une ligne.</p>
+<p>Cette fonction retourne le numéro de la ligne de l’alignement trouvé ou -1 sinon.</p>
+<p><strong>Attention :</strong> les lignes sont en numéro-développeur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">horiz</span><span class="p">(</span><span class="n">c</span> <span class="p">:</span> <span class="n">couleurs</span><span class="p">,</span> <span class="n">g</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>  <span class="n">dimv</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dimh</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="c1"># ENTRER VOTRE CODE A LA PLACE DE CES 2 LIGNES</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ne pas écrire dans cette cellule</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id6">
+<h3><span class="section-number">5.1.1. </span>Auto-validation<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<p>L’auto-validation suivante doit s’exécuter sans erreur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g0</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBC</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBL</span><span class="p">)]</span>
+<span class="n">g0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">g0</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">g0</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="k">assert</span> <span class="n">horiz</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">assert</span> <span class="n">horiz</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">g0</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">g0</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="k">assert</span> <span class="n">horiz</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">assert</span> <span class="n">horiz</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+
+<span class="ne">NameError</span>: name &#39;horiz&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="vertic">
+<h2><span class="section-number">5.2. </span>vertic()<a class="headerlink" href="#vertic" title="Permalink to this headline">#</a></h2>
+<p>Ecrire selon l’en-tête suivant, la fonction <code class="docutils literal notranslate"><span class="pre">vertic()</span></code> qui vérifie si la grille présente un alignement vertical gagnant d’une couleur donnée (4 pions de même couleur consécutivement alignés sur une colonne).</p>
+<p>Cette fonction retourne le numéro de la colonne de l’alignement trouvé ou -1 sinon.</p>
+<p><strong>Attention :</strong> les colonnes sont en numéro-développeur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vertic</span><span class="p">(</span><span class="n">c</span> <span class="p">:</span> <span class="n">couleurs</span><span class="p">,</span> <span class="n">g</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>  <span class="n">dimv</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dimh</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="c1"># ENTRER VOTRE CODE A LA PLACE DE CES 2 LIGNES</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">27</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ne pas écrire dans cette cellule</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id7">
+<h3><span class="section-number">5.2.1. </span>Auto-validation<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<p>On définit deux configurations <strong>non valides</strong> d’une grille qui permettent de vérifier l’alignement vertical gagnant pour chacune des couleurs.</p>
+<p>L’auto-validation suivante doit s’exécuter sans erreur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g_testvert</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBC</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBL</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBL</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">g_testvert</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBL</span><span class="o">-</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">g_testvert</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">NBC</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+    
+<span class="k">assert</span> <span class="n">vertic</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g_testvert</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
+<span class="k">assert</span> <span class="n">vertic</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g_testvert</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="n">g_testvert</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">g_testvert</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="n">NBC</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">assert</span> <span class="n">vertic</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g_testvert</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">assert</span> <span class="n">vertic</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g_testvert</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBL</span><span class="o">-</span><span class="mi">3</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">g_testvert</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">NBC</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="k">assert</span> <span class="n">vertic</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g_testvert</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">assert</span> <span class="n">vertic</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g_testvert</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">g_testvert</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="ne">NameError</span>: name &#39;vertic&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="diagoseno">
+<h2><span class="section-number">5.3. </span>diagoSENO()<a class="headerlink" href="#diagoseno" title="Permalink to this headline">#</a></h2>
+<p>Ecrire selon l’en-tête suivant, la fonction <code class="docutils literal notranslate"><span class="pre">diagoSENO()</span></code> qui vérifie si la grille présente un alignement diagonal gagnant d’une couleur donnée : 4 pions consécutifs de même couleur diagonalement alignés.</p>
+<p><strong>Attention.</strong></p>
+<ul class="simple">
+<li><p>L’orientation <strong>Nord-Sud</strong> est celle <strong>du tableau python</strong> qui représente la grille de jeu, <em>ie.</em> celle de la numérotation-développeur.
+Elle est donc inverse à l’orientation de la grille vue par le joueur .</p></li>
+<li><p>L’orientation Est-Ouest est identique pour la grille vue par le joueur et le tableau python qui la représente.</p></li>
+</ul>
+<p>Cette fonction retourne 1 si un tel alignement est présent ou -1 sinon.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">diagoSENO</span><span class="p">(</span><span class="n">c</span> <span class="p">:</span> <span class="n">couleurs</span><span class="p">,</span> <span class="n">g</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>  <span class="n">dimv</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dimh</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="c1"># ENTRER VOTRE CODE A LA PLACE DE CES 2 LIGNES</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">30</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ne pas écrire dans cette cellule</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id8">
+<h3><span class="section-number">5.3.1. </span>Auto-validation<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<p>L’auto-validation suivante doit s’exécuter sans erreur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g_testdiago1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBC</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBL</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+        <span class="n">g_testdiago1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> 
+
+<span class="c1">#afficher(g_testdiago1, NBL, NBC, debug=True)</span>
+<span class="k">assert</span> <span class="n">diagoSENO</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g_testdiago1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">assert</span> <span class="n">diagoSENO</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g_testdiago1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+
+<span class="n">g_testdiago1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1">#afficher(g_testdiago1, NBL, NBC, debug=True)</span>
+<span class="k">assert</span> <span class="n">diagoSENO</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g_testdiago1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">assert</span> <span class="n">diagoSENO</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g_testdiago1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="n">g_testdiago1</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="c1">#afficher(g_testdiago1, NBL, NBC, debug=True)</span>
+<span class="k">assert</span> <span class="n">diagoSENO</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g_testdiago1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">assert</span> <span class="n">diagoSENO</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g_testdiago1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">32</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="n">g_testdiago1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1">#afficher(g_testdiago1, NBL, NBC, debug=True)</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="k">assert</span> <span class="n">diagoSENO</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g_testdiago1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">assert</span> <span class="n">diagoSENO</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g_testdiago1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">g_testdiago1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="ne">NameError</span>: name &#39;diagoSENO&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="diagosone">
+<h2><span class="section-number">5.4. </span>diagoSONE()<a class="headerlink" href="#diagosone" title="Permalink to this headline">#</a></h2>
+<p>Ecrire selon l’en-tête suivant, la fonction <code class="docutils literal notranslate"><span class="pre">diagoSONE()</span></code> qui vérifie l’autre  alignement diagonal gagnant d’une couleur donnée.<br />
+Cette fonction retourne 1 si un tel alignement est présent, ou -1 sinon.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">diagoSONE</span><span class="p">(</span><span class="n">c</span> <span class="p">:</span> <span class="n">couleurs</span><span class="p">,</span> <span class="n">g</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>  <span class="n">dimv</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dimh</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="c1"># ENTRER VOTRE CODE A LA PLACE DE CES 2 LIGNES</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">33</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ne pas écrire dans cette cellule</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id9">
+<h3><span class="section-number">5.4.1. </span>Auto-validation<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<p>L’auto-validation suivante doit s’exécuter sans erreur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g_testdiago1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBC</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBL</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+        <span class="n">g_testdiago1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> 
+
+<span class="k">assert</span> <span class="n">diagoSONE</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g_testdiago1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">assert</span> <span class="n">diagoSONE</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g_testdiago1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+
+<span class="n">g_testdiago1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">assert</span> <span class="n">diagoSONE</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g_testdiago1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">assert</span> <span class="n">diagoSONE</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g_testdiago1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="n">g_testdiago1</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="c1">#afficher(g_testdiago1, NBL, NBC, debug=True)</span>
+<span class="k">assert</span> <span class="n">diagoSONE</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g_testdiago1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">assert</span> <span class="n">diagoSONE</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g_testdiago1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">35</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="n">g_testdiago1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> 
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="k">assert</span> <span class="n">diagoSONE</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g_testdiago1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">assert</span> <span class="n">diagoSONE</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g_testdiago1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">g_testdiago1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="ne">NameError</span>: name &#39;diagoSONE&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="est-gagnante">
+<h2><span class="section-number">5.5. </span>est_gagnante()<a class="headerlink" href="#est-gagnante" title="Permalink to this headline">#</a></h2>
+<p>Ecrire selon l’en-tête suivant, la fonction <code class="docutils literal notranslate"><span class="pre">est_gagnante()</span></code> qui vérifie si la grille <code class="docutils literal notranslate"><span class="pre">g</span></code> est gagnante pour la couleur <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p>
+<p>Cette fonction retourne un booléen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">est_gagnante</span><span class="p">(</span><span class="n">c</span> <span class="p">:</span> <span class="n">couleurs</span><span class="p">,</span> <span class="n">g</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">dimv</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dimh</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="c1"># ENTRER VOTRE CODE A LA PLACE DE CES 2 LIGNES</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">36</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ne pas écrire dans cette cellule</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id10">
+<h3><span class="section-number">5.5.1. </span>Auto-validation<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<p>L’auto-validation suivante doit s’exécuter sans erreur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g0</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBC</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBL</span><span class="p">)]</span>
+<span class="n">faux</span> <span class="o">=</span> <span class="n">est_gagnante</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">faux</span> <span class="o">==</span> <span class="kc">False</span>
+<span class="n">faux</span> <span class="o">=</span> <span class="n">est_gagnante</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">faux</span> <span class="o">==</span> <span class="kc">False</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">g0</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">g0</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">g0</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">vrai</span> <span class="o">=</span> <span class="n">est_gagnante</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">vrai</span> <span class="o">==</span> <span class="kc">True</span>
+<span class="n">faux</span> <span class="o">=</span> <span class="n">est_gagnante</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">faux</span> <span class="o">==</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">38</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">g0</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBC</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBL</span><span class="p">)]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">faux</span> <span class="o">=</span> <span class="n">est_gagnante</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">assert</span> <span class="n">faux</span> <span class="o">==</span> <span class="kc">False</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">faux</span> <span class="o">=</span> <span class="n">est_gagnante</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;est_gagnante&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="jouons">
+<h1><span class="section-number">6. </span>Jouons !<a class="headerlink" href="#jouons" title="Permalink to this headline">#</a></h1>
+<p>On commence avec une fonction qui réalise l’interface entre le joueur et le jeu.</p>
+<section id="a-toi-de-jouer">
+<h2><span class="section-number">6.1. </span>à toi de jouer<a class="headerlink" href="#a-toi-de-jouer" title="Permalink to this headline">#</a></h2>
+<p>Ecrire selon l’en-tête suivant, une fonction <code class="docutils literal notranslate"><span class="pre">atoidejouer()</span></code> qui demande au joueur dans quelle colonne de <code class="docutils literal notranslate"><span class="pre">g</span></code> il dépose son jeton de couleur <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p>
+<p><strong>Attention : numérotation.</strong> Cette fonction :</p>
+<ul class="simple">
+<li><p>prend “en entrée” le <strong>numéro-joueur</strong> de colonne saisi au clavier,</p></li>
+<li><p>retourne le <strong>numéro-développeur</strong> correspondant pour les traitements à suivre.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">atoidejouer</span><span class="p">(</span><span class="n">c</span> <span class="p">:</span> <span class="n">couleurs</span><span class="p">,</span> <span class="n">g</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">dimv</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dimh</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="c1"># ENTRER VOTRE CODE A LA PLACE DE CES 2 LIGNES</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">39</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id11">
+<h3><span class="section-number">6.1.1. </span>Auto-validation<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<p>Entrez successivement <code class="docutils literal notranslate"><span class="pre">1</span></code> et <code class="docutils literal notranslate"><span class="pre">2</span></code> et l’auto-validation suivante doit s’exécuter sans erreur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g0</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBC</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBL</span><span class="p">)]</span>
+
+<span class="n">zero</span> <span class="o">=</span> <span class="n">atoidejouer</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">zero</span> <span class="o">==</span> <span class="mi">0</span>                   
+                   
+<span class="n">un</span> <span class="o">=</span> <span class="n">atoidejouer</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">un</span> <span class="o">==</span> <span class="mi">1</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">40</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">g0</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBC</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NBL</span><span class="p">)]</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">zero</span> <span class="o">=</span> <span class="n">atoidejouer</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">assert</span> <span class="n">zero</span> <span class="o">==</span> <span class="mi">0</span>                   
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">un</span> <span class="o">=</span> <span class="n">atoidejouer</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="n">g0</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;atoidejouer&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="jouer">
+<h2><span class="section-number">6.2. </span>jouer()<a class="headerlink" href="#jouer" title="Permalink to this headline">#</a></h2>
+<p>Ecrire selon l’en-tête suivant, la fonction <code class="docutils literal notranslate"><span class="pre">jouer()</span></code> qui ajoute un pion de couleur <code class="docutils literal notranslate"><span class="pre">c</span></code> à la colonne <code class="docutils literal notranslate"><span class="pre">colonne</span></code> à la grille de jeu en cours <code class="docutils literal notranslate"><span class="pre">g</span></code> (de dimensions habituelles).</p>
+<p>Cette fonction modifie l’état de la grille <code class="docutils literal notranslate"><span class="pre">g</span></code>. C’est donc une procédure qui ne retourne aucun résultat (autre que <code class="docutils literal notranslate"><span class="pre">None</span></code> en python).</p>
+<p><strong>Attention : numérotation</strong>. <code class="docutils literal notranslate"><span class="pre">colonne</span></code> désigne la numérotation-développeur.</p>
+<p>Pour cette version simple de <code class="docutils literal notranslate"><span class="pre">jouer()</span></code>, on supposera que les valeurs de <code class="docutils literal notranslate"><span class="pre">c</span></code> et de <code class="docutils literal notranslate"><span class="pre">colonne</span></code> ont du sens et ne rendent pas la grille non valide.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">jouer</span><span class="p">(</span><span class="n">c</span> <span class="p">:</span> <span class="n">couleurs</span><span class="p">,</span> <span class="n">colonne</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">g</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">dimv</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dimh</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="c1"># ENTRER VOTRE CODE A LA PLACE DE CES 2 LIGNES</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">41</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id12">
+<h3><span class="section-number">6.2.1. </span>Auto-validation<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<p>L’auto-validation suivante doit s’exécuter sans erreur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># g1 dans son état initial</span>
+<span class="n">g1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+
+<span class="c1"># un tour de jeu</span>
+<span class="n">jouer</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span>
+<span class="n">jouer</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span>
+
+<span class="c1"># vérifications</span>
+<span class="k">assert</span> <span class="n">g1</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">code</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">g1</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="n">code</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">42</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">g1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># un tour de jeu</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">jouer</span><span class="p">(</span><span class="n">JAUNE</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">jouer</span><span class="p">(</span><span class="n">ROUGE</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># vérifications</span>
+
+<span class="ne">NameError</span>: name &#39;jouer&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="jeu">
+<h2><span class="section-number">6.3. </span>jeu()<a class="headerlink" href="#jeu" title="Permalink to this headline">#</a></h2>
+<p>On peut maintenant utiliser les développements précédents pour écrire selon l’en-tête suivant, une fonction <code class="docutils literal notranslate"><span class="pre">jeu()</span></code> qui permet à deux joueurs de jouer comme suit.</p>
+<ul class="simple">
+<li><p>Avec <code class="docutils literal notranslate"><span class="pre">atoidejouer()</span></code>, demander à chaque joueur de jouer à son tour, en commençant par les jaunes.</p>
+<ul>
+<li><p>On suppose (ici) que le joueur choisit une colonne valide</p></li>
+</ul>
+</li>
+<li><p>La grille de jeu est affichée après chaque action de jeu</p></li>
+<li><p>Le jeu s’arrête quand un des joueurs a gagné ou en cas d’égalité (blocage)</p></li>
+<li><p>Le résultat est <strong>affiché à l’écran</strong>  comme suit :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Les pions jaunes/rouges gagnent. Bravo !
+</pre></div>
+</div>
+<p>ou en cas d’égalité (blocage) :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Egalité ... Recommencez !
+</pre></div>
+</div>
+<p>La partie s’effectue en complétant la grille <code class="docutils literal notranslate"><span class="pre">g</span></code> qui est :</p>
+<ul class="simple">
+<li><p>soit une grille vide à créer avant l’appel,</p></li>
+<li><p>soit une grille partiellement remplie provenant de la lecture d’un fichier (comme G1.txt). Dans ce cas, il faut donc vérifier la validité de la grille lue dans le fichier et, si besoin afficher le message :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Grille</span> <span class="n">invalide</span><span class="o">.</span> <span class="n">Jeu</span> <span class="n">stoppé</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">jeu</span><span class="p">(</span><span class="n">g</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">dimv</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dimh</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="c1"># ENTRER VOTRE CODE A LA PLACE DE CES 2 LIGNES</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">43</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<section id="auto-validation-1">
+<h3><span class="section-number">6.3.1. </span>Auto-validation 1<a class="headerlink" href="#auto-validation-1" title="Permalink to this headline">#</a></h3>
+<p>Entrez successivement <code class="docutils literal notranslate"><span class="pre">2,</span> <span class="pre">2</span></code> pour que l’exécution de la cellule suivante fasse gagner les rouges (<code class="docutils literal notranslate"><span class="pre">X</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># g1 dans son état initial</span>
+<span class="n">g1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Entrer 2 puis 2 et les rouges gagnent&quot;</span><span class="p">)</span>
+<span class="n">jeu</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Entrer 2 puis 2 et les rouges gagnent
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">44</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">g1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Entrer 2 puis 2 et les rouges gagnent&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">jeu</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;jeu&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="auto-validation-2">
+<h3><span class="section-number">6.3.2. </span>Auto-validation 2<a class="headerlink" href="#auto-validation-2" title="Permalink to this headline">#</a></h3>
+<p>Entrez successivement <code class="docutils literal notranslate"><span class="pre">2,</span> <span class="pre">1,</span> <span class="pre">2</span></code> pour que l’exécution de la cellule suivante fasse gagner les jaunes (<code class="docutils literal notranslate"><span class="pre">O</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Entrer 212 et les jaunes gagnent&quot;</span><span class="p">)</span>
+<span class="n">jeu</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Entrer 212 et les jaunes gagnent
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">45</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">g1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Entrer 212 et les jaunes gagnent&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">jeu</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span> <span class="n">NBL</span><span class="p">,</span> <span class="n">NBC</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;jeu&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tp23/release/23-tp-p4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../../../td/td5.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">6. </span>Feuille 5</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../../suivi_seances.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>(Intervenant) Suivi des séances</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Ph. Langlois<br/>
+  
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

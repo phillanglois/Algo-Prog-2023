@@ -214,7 +214,7 @@ La récursion s'appuie sur la notion de _fonction_ présentée dans les aspects 
 
 - Compléments si assez de temps : prouver la terminaison et la correction d'un algorithme
     - l'algo fournit la/les solution/s en un temps fini
-    - l'algo résoud bien le pb
+    - l'algo résout bien le pb
     - notions : invariant de boucle, preuve de terminaison
 
 ## Programme détaillé : aspects plus programmation 
@@ -308,7 +308,7 @@ Elle peut sembler longue mais en pratique, ces composants "arrivent" d'un seul c
     - éditeur, interpréteur, débugger utilisé en TP au semestre 1
 
 - `jupyter notebook`  
-    - pour intégrer dans _un unique fichier_ du texte, des maths ($\LaTeX$) et du code python qui s'exécute, les résultats de ces éxecutions (valeurs, courbes, images, ...) et exporter tout ça en `html`ou `pdf` ou en `slide`  
+    - pour intégrer dans _un unique fichier_ du texte, des maths ($\LaTeX\ $) et du code python qui s'exécute, les résultats de ces éxecutions (valeurs, courbes, images, ...) et exporter tout ça en `html`ou `pdf` ou en `slide`  
     - très utile pour les exercices 
     - _utilisé pour les TP de programmation à rendre_
     - utilisable dans toutes les matières ou presque    

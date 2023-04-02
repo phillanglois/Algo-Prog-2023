@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2. Récursivité" href="6-recursivite.html" />
-    <link rel="prev" title="4. Entrées-sorties simples avec des fichiers" href="3-ES-fichiers.html" />
+    <link rel="prev" title="3. Entrées-sorties simples avec des fichiers" href="3-ES-fichiers.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -150,7 +150,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="3-ES-fichiers.html">
-   4. Entrées-sorties simples avec des fichiers
+   3. Entrées-sorties simples avec des fichiers
   </a>
  </li>
 </ul>
@@ -175,6 +175,11 @@ const thebe_selector_output = ".output, .cell_output"
    3. Rechercher
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-trier.html">
+   4. Trier
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -189,7 +194,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="7-fonctions-avancees.html">
-   2. Sous-programme et affectation – aspects avancés
+   2. Affectation et appel de fonction – aspects avancés
   </a>
  </li>
  <li class="toctree-l1">
@@ -596,10 +601,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#complexite-et-log-2">
-   1.6. Complexité et
-   <span class="math notranslate nohighlight">
-    \(\log_2\)
-   </span>
+   1.6. Complexité et \log_2
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -630,12 +632,8 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#star-expression-formalisee-et-principales-proprietes-de-ces-notations">
-       (
-       <span class="math notranslate nohighlight">
-        \(\star\)
-       </span>
-       ) Expression formalisée et principales propriétés de ces notations
+      <a class="reference internal nav-link" href="#expression-formalisee-et-principales-proprietes-de-ces-notations">
+       Expression formalisée et principales propriétés de ces notations
       </a>
      </li>
     </ul>
@@ -876,10 +874,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#complexite-et-log-2">
-   1.6. Complexité et
-   <span class="math notranslate nohighlight">
-    \(\log_2\)
-   </span>
+   1.6. Complexité et \log_2
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -910,12 +905,8 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#star-expression-formalisee-et-principales-proprietes-de-ces-notations">
-       (
-       <span class="math notranslate nohighlight">
-        \(\star\)
-       </span>
-       ) Expression formalisée et principales propriétés de ces notations
+      <a class="reference internal nav-link" href="#expression-formalisee-et-principales-proprietes-de-ces-notations">
+       Expression formalisée et principales propriétés de ces notations
       </a>
      </li>
     </ul>
@@ -1017,7 +1008,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="complexites">
 <span id="ch-complexite"></span><h1><span class="section-number">1. </span>Complexités<a class="headerlink" href="#complexites" title="Permalink to this headline">#</a></h1>
-<p>Mis à jour : Mar 20, 2023, lecture : 21
+<p>Mis à jour : Apr 02, 2023, lecture : 21
 minutes minimum, PhL.</p>
 <p>Chapitre qui définit les notions de base de complexité algorithmique.
 Des exemples d’analyse de complexité en temps ou en espace sont présentés sur des algorithmes itératifs simples.
@@ -1573,7 +1564,7 @@ particulier)</p>
 </section>
 </section>
 <section id="complexite-et-log-2">
-<h2><span class="section-number">1.6. </span>Complexité et <span class="math notranslate nohighlight">\(\log_2\)</span><a class="headerlink" href="#complexite-et-log-2" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.6. </span>Complexité et \log_2<a class="headerlink" href="#complexite-et-log-2" title="Permalink to this headline">#</a></h2>
 <div class="admonition-remarque-motivante admonition">
 <p class="admonition-title">Remarque motivante</p>
 <p>La fonction <span class="math notranslate nohighlight">\(\log_2(x)\)</span> croît <strong>beaucoup</strong> moins vite que toute fonction polynomiale en <span class="math notranslate nohighlight">\(x\)</span> : <span class="math notranslate nohighlight">\(x, x^2, x^3, \dots\)</span> – et même que toute fonction à puissance rationnelle en <span class="math notranslate nohighlight">\(x\)</span> : <span class="math notranslate nohighlight">\(\sqrt x, x^{1/3}, \dots\)</span></p>
@@ -1730,8 +1721,8 @@ On se focalise d’abord sur <strong>la tendance du pire cas</strong>.</p>
 </div>
 <p>En pratique, la complexité asymptotique dans le pire des cas sera souvent décrite par son majorant asymptotique, <em>ie.</em> avec la notation <span class="math notranslate nohighlight">\(\cal{O}\)</span>. En effet, le décompte du coût du traitement s’exprime souvent plus facilement sous forme de majoration d’une certaine quantité atteinte dans le pire cas.</p>
 <p>Attention : on n’a pas écrit que l’analyse d’un pire cas ne pouvait conduire qu’à une majoration.</p>
-<section id="star-expression-formalisee-et-principales-proprietes-de-ces-notations">
-<h4>(<span class="math notranslate nohighlight">\(\star\)</span>) Expression formalisée et principales propriétés de ces notations<a class="headerlink" href="#star-expression-formalisee-et-principales-proprietes-de-ces-notations" title="Permalink to this headline">#</a></h4>
+<section id="expression-formalisee-et-principales-proprietes-de-ces-notations">
+<h4>Expression formalisée et principales propriétés de ces notations<a class="headerlink" href="#expression-formalisee-et-principales-proprietes-de-ces-notations" title="Permalink to this headline">#</a></h4>
 <p>Majorant asymptotique  : <span class="math notranslate nohighlight">\(f = \cal{O}(g)\)</span> ssi :<br />
 il existe une constante <span class="math notranslate nohighlight">\(c &gt; 0\)</span> et un entier <span class="math notranslate nohighlight">\(n_0\)</span> telle que pour tout <span class="math notranslate nohighlight">\(n \ge n_0\)</span>, <span class="math notranslate nohighlight">\(f(n) \le c \times g(n)\)</span>.</p>
 <p>Minorant asymptotique  : <span class="math notranslate nohighlight">\(f = \cal{\Omega}(g)\)</span> ssi :<br />
@@ -1955,7 +1946,7 @@ avec <span class="math notranslate nohighlight">\(b' = b/(a-1)\)</span> pour <sp
 <p><strong><span class="math notranslate nohighlight">\(C(n) = C(n/2) + b\)</span></strong></p>
 <ul class="simple">
 <li><p>exemples : exponentiation rapide, élimination de la moitié des valeurs en temps constant, recherche dichotomique</p></li>
-<li><p>cas <strong>logarithmique</strong>: <span class="math notranslate nohighlight">\(C(n) = C(1) + b \times log_2(n) = \cal{O}(\log(n))\)</span></p></li>
+<li><p>cas <strong>logarithmique</strong>: <span class="math notranslate nohighlight">\(C(n) = C(1) + b \times \log_2(n) = \cal{O}(\log(n))\)</span></p></li>
 </ul>
 <p><strong><span class="math notranslate nohighlight">\(C(n) = C(n/2) + n\)</span></strong></p>
 <ul class="simple">
@@ -2109,7 +2100,7 @@ automates, …</p></li>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4. </span>Entrées-sorties simples avec des fichiers</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>Entrées-sorties simples avec des fichiers</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="6-recursivite.html" title="next page">
