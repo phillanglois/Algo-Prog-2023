@@ -744,22 +744,15 @@ récursif</p></li>
 <span id="exo-fibo"></span><h3><span class="section-number">6.1.1. </span><span class="math notranslate nohighlight">\(\blacksquare\)</span> Exercice.<a class="headerlink" href="#blacksquare-exercice" title="Permalink to this headline">#</a></h3>
 <p>On rappelle la suite de Fibonacci :</p>
 <p><span class="math notranslate nohighlight">\(F(0)=F(1)=1\)</span> et <span class="math notranslate nohighlight">\(F(n+1) = F(n)+F(n-1)\)</span>.</p>
-<p>Elle permet entre autres de modéliser l’évolution d’une population de
-lapins.</p>
+<p>Elle permet entre autres de modéliser l’évolution d’une population de lapins.</p>
 <ol class="simple">
 <li><p>Ecrire une version itérative du calcul de <span class="math notranslate nohighlight">\(F(n)\)</span> et calculer les
 premières valeurs de <span class="math notranslate nohighlight">\(F\)</span> pour se convaincre qu’elles augmentent
 rapidement.</p></li>
-</ol>
-<ol class="simple">
 <li><p>Rappeler l’algorithme récursif du calcul de <span class="math notranslate nohighlight">\(F(n)\)</span>.</p></li>
-</ol>
-<ol class="simple">
 <li><p>Expliciter l’arbre des appels récursifs du calcul de <span class="math notranslate nohighlight">\(F(4)\)</span> puis de
 <span class="math notranslate nohighlight">\(F(5)\)</span> — prévoir une feuille A4 en largeur. Dénombrer le nombre des
 appels nécessaires dans les 2 cas.</p></li>
-</ol>
-<ol class="simple">
 <li><p>Détailler l’exécution du calcul de <span class="math notranslate nohighlight">\(F(3)\)</span> en explicitant l’évolution
 de la pile des appels.</p></li>
 </ol>
@@ -774,21 +767,15 @@ de la pile des appels.</p></li>
 <li><p>la valeur <span class="math notranslate nohighlight">\(u(n)= 2^n\)</span> pour <span class="math notranslate nohighlight">\(n&gt;0\)</span></p></li>
 </ol>
 </li>
-</ol>
-<ol class="simple">
 <li><p>Écrire puis coder une version récursive des calculs suivants.</p>
 <ol class="simple">
 <li><p>la somme <span class="math notranslate nohighlight">\(s(n)\)</span> des <span class="math notranslate nohighlight">\(n\)</span> premiers entiers</p></li>
 <li><p>la valeur <span class="math notranslate nohighlight">\(u(n)= 2^n\)</span> pour <span class="math notranslate nohighlight">\(n&gt;0\)</span></p></li>
 </ol>
 </li>
-</ol>
-<ol class="simple">
 <li><p>Expliciter l’arbre des appels et les calculs associés lors de
 l’évaluation de <span class="math notranslate nohighlight">\(s(4)\)</span>. Combien d’appels récursifs à <span class="math notranslate nohighlight">\(s\)</span> sont
 nécessaires ?</p></li>
-</ol>
-<ol class="simple">
 <li><p>Même question pour <span class="math notranslate nohighlight">\(u(5)\)</span>.</p></li>
 </ol>
 </section>
@@ -802,16 +789,12 @@ nécessaires ?</p></li>
 <li><p>Combien de multiplications sont nécessaires à ce calcul ?</p></li>
 </ol>
 </li>
-</ol>
-<ol class="simple">
 <li><ol class="simple">
 <li><p>Utiliser la propriété <span class="math notranslate nohighlight">\(x^p = x \times x^{p-1}\)</span> pour écrire un
 algorithme récursif qui calcule <span class="math notranslate nohighlight">\(x^n\)</span>.</p></li>
 <li><p>Combien de multiplications sont nécessaires à ce calcul ?</p></li>
 </ol>
 </li>
-</ol>
-<ol class="simple">
 <li><ol class="simple">
 <li><p>Utiliser la propriété <span class="math notranslate nohighlight">\(x^p \times x^p = x^{2p}\)</span> pour écrire un
 algorithme récursif qui calcule <span class="math notranslate nohighlight">\(x^n\)</span>. On pourra utiliser
@@ -820,11 +803,7 @@ l’opérateur python <code class="docutils literal notranslate"><span class="pr
 <span class="math notranslate nohighlight">\(n=2, 4, 8, 16, \dots, 2^p\)</span> ?</p></li>
 </ol>
 </li>
-</ol>
-<ol class="simple">
 <li><p>Que pensez vous de ces deux versions récursives ?</p></li>
-</ol>
-<ol class="simple">
 <li><p>Dans ces deux cas, compter le nombre d’appels récursifs pour les
 valeurs suivantes de <span class="math notranslate nohighlight">\(n = 4, 7, 8, 9, 63, 64, 65\)</span>.</p></li>
 </ol>
@@ -836,8 +815,6 @@ valeurs suivantes de <span class="math notranslate nohighlight">\(n = 4, 7, 8, 9
 <li><p>Donner la forme récursive qui produit le même traitement que celui
 d’une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> qui (parcourt et) affiche les indices entiers
 successifs de 11 à 1.</p></li>
-</ol>
-<ol class="simple">
 <li><p>Même question pour obtenir l’affichage : 1, 2, …, 10, 11.</p></li>
 </ol>
 </section>
@@ -847,8 +824,6 @@ successifs de 11 à 1.</p></li>
 <li><p>Écrire un algorithme itératif qui calcule un booléen indiquant si un
 tableau d’entiers <strong>donné trié</strong> par ordre croissant contient une
 valeur donnée. La recherche sera effectuée par dichotomie.</p></li>
-</ol>
-<ol class="simple">
 <li><p>Écrire une fonction récursive <code class="docutils literal notranslate"><span class="pre">trouve</span></code> (c’est-à-dire son en-tête,
 puis l’appel puis le corps) qui retourne le booléen précédent en
 appliquant aussi une recherche par dichotomie.</p></li>
@@ -859,15 +834,9 @@ appliquant aussi une recherche par dichotomie.</p></li>
 <ol class="simple">
 <li><p>Dérouler l’algorithme de recherche dichotomique (version itérative)
 pour rechercher la valeur 3 dans la tableau [0,1,2,3,4,5,6,7,8,9].</p></li>
-</ol>
-<ol class="simple">
 <li><p>Donner une valeur à rechercher qui minimise le nombre d’itérations
 de la recherche.</p></li>
-</ol>
-<ol class="simple">
 <li><p>Même question pour celle qui maximise ce nombre.</p></li>
-</ol>
-<ol class="simple">
 <li><p>Coder ces traitements et vérifier votre analyse.</p></li>
 </ol>
 </section>
@@ -878,8 +847,6 @@ de la recherche.</p></li>
 <span id="exo-fibo2"></span><h3><span class="section-number">6.2.1. </span>Exercice. Fibonacci (encore).<a class="headerlink" href="#exercice-fibonacci-encore" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>Tracer les appels successifs en ajoutant un <code class="docutils literal notranslate"><span class="pre">print</span></code>.</p></li>
-</ol>
-<ol class="simple">
 <li><p>Tester pour <code class="docutils literal notranslate"><span class="pre">fibo(5)</span></code>.</p></li>
 </ol>
 </section>
@@ -887,8 +854,6 @@ de la recherche.</p></li>
 <span id="exo-exporapide2"></span><h3><span class="section-number">6.2.2. </span>Exercice. Exponentiation rapide (encore).<a class="headerlink" href="#exercice-exponentiation-rapide-encore" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>Tracer les appels successifs en ajoutant un <code class="docutils literal notranslate"><span class="pre">print</span></code></p></li>
-</ol>
-<ol class="simple">
 <li><p>Quels sont appels à <code class="docutils literal notranslate"><span class="pre">expo(x,n)</span></code> évités par <code class="docutils literal notranslate"><span class="pre">expo_rapide(x,n)</span></code> ?
 Commencer avec des valeurs de <span class="math notranslate nohighlight">\(n\)</span> arbitrairement choisies.</p></li>
 </ol>
@@ -918,12 +883,8 @@ départ <span class="math notranslate nohighlight">\(N\)</span>. Qu’en déduir
 terminaison de cette suite ?</p></li>
 </ol>
 </li>
-</ol>
-<ol class="simple">
 <li><p>La coder de façon récursive et observer son comportement pour l’une
 de ces valeurs de <span class="math notranslate nohighlight">\(N\)</span>. Attention !!!</p></li>
-</ol>
-<ol class="simple">
 <li><p>Terminaison : on arrête la suite <span class="math notranslate nohighlight">\(s(n)\)</span> quand on rencontre <span class="math notranslate nohighlight">\(n = 1\)</span>
 (c’est-à-dire <span class="math notranslate nohighlight">\(s(2)\)</span>). D’après la conjecture de Collatz, cette
 valeur est rencontrée quelque soit le terme de départ <span class="math notranslate nohighlight">\(N\)</span>.</p>
@@ -933,8 +894,6 @@ valeur est rencontrée quelque soit le terme de départ <span class="math notran
 calculée avant la terminaison.</p></li>
 </ol>
 </li>
-</ol>
-<ol class="simple">
 <li><p>Écrire des fonctions qui calculent les notions suivantes (source
 Wikipédia) :</p>
 <ol class="simple">
@@ -946,14 +905,8 @@ que <span class="math notranslate nohighlight">\(s(n) \le N\)</span>.</p></li>
 suite.</p></li>
 </ol>
 </li>
-</ol>
-<ol class="simple">
 <li><p>Coder ces fonctions et proposer des graphiques instructifs.</p></li>
-</ol>
-<ol class="simple">
 <li><p>Coder ces fonctions et proposer des graphiques instructifs.</p></li>
-</ol>
-<ol class="simple">
 <li><p>Coder le calcul avec terminaison de façon itérative.</p></li>
 </ol>
 </section>
@@ -977,15 +930,9 @@ cherché est le terme précédent de la suite.</p>
 </div></blockquote>
 <ol class="simple">
 <li><p>Ecrire (à nouveau) un algorithme itératif qui calcule ce pgcd.</p></li>
-</ol>
-<ol class="simple">
 <li><p>Écrire un algorithme récursif qui calcule ce pgcd.</p></li>
-</ol>
-<ol class="simple">
 <li><p>Proposer une formulation synthétique de l’algorithme d’Euclide (qui
 remplacerait avantageusement l’extrait de Wikipédia).</p></li>
-</ol>
-<ol class="simple">
 <li><p>Profiter de la page Wikipédia pour lire comment sont prouvées la
 correction et la terminaison l’algorithme d’Euclide, ainsi que sa
 complexité (problème beaucoup plus difficile).</p></li>
@@ -1018,12 +965,8 @@ décroissantes (numération de position habituelle).</p>
 somme de deux entiers <span class="math notranslate nohighlight">\(n1\)</span> et <span class="math notranslate nohighlight">\(n2\)</span> respectivement représentés par
 les tableaux <span class="math notranslate nohighlight">\(N1\)</span> et <span class="math notranslate nohighlight">\(N2\)</span>. Le résultat <span class="math notranslate nohighlight">\(s = n1+n2\)</span> sera aussi
 représenté par un tableau adapté.</p></li>
-</ol>
-<ol class="simple">
 <li><p>Soient <span class="math notranslate nohighlight">\(n1 = 1234\)</span>, <span class="math notranslate nohighlight">\(n2=4567\)</span> et <span class="math notranslate nohighlight">\(n3=9876\)</span>. Dérouler l’algorithme
 pour les deux calculs <span class="math notranslate nohighlight">\(n1+n2\)</span> et <span class="math notranslate nohighlight">\(n1+n3\)</span>.</p></li>
-</ol>
-<ol class="simple">
 <li><p>Coder et valider ces fonctions.</p></li>
 </ol>
 </section>
