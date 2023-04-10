@@ -21,6 +21,12 @@ La première séance de CM a eu lieu en semaine 3.
 - les items indiqués d'une ($\star$) correspondent aux activités _objectif 20_
 :::
  
+## Semaine 15
+
+- Avant le CM : relire les chapitres "Rechercher" et "Modules utiles"
+- Travail personnel :
+    - TD : finir la feuille 5 (récursivité)
+    - TP anagrammes
 
 ## Semaine 14
 
