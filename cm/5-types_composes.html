@@ -878,7 +878,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="les-types-composes">
 <span id="ch-typescomposes"></span><h1><span class="section-number">1. </span>Les types composés<a class="headerlink" href="#les-types-composes" title="Permalink to this headline">#</a></h1>
-<p>Mis à jour : Apr 10, 2023, lecture : 15
+<p>Mis à jour : Apr 14, 2023, lecture : 15
 minutes minimum, PhL.</p>
 <p>Les types composés ou <em>conteneurs</em> de python sont  introduits  dans ce chapitre :</p>
 <ul class="simple">
@@ -1632,7 +1632,7 @@ lst: [&#39;r&#39;, &#39;a&#39;, &#39;n&#39;, &#39;t&#39;, &#39;a&#39;, &#39;n&#3
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 [3, 1, 2] [3, 1, 2]
-140332480447808 140332480447808
+140543026506560 140543026506560
 </pre></div>
 </div>
 </div>
@@ -1668,7 +1668,7 @@ False
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>duplication par affectation de tranche complète : 
 False True
-140332480689664 140332480447808
+140543026499840 140543026506560
 </pre></div>
 </div>
 </div>
@@ -2069,9 +2069,9 @@ bnor! 5
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>abc 140332415319856
-abc 140332415319856
-abcdef 140332480703920
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>abc 140542960991920
+abc 140542960991920
+abcdef 140543026452528
 </pre></div>
 </div>
 </div>
@@ -2097,20 +2097,25 @@ Les identifiants sont en général bien explicites.</p>
 <p>ou aussi :</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">.replace(old,</span> <span class="pre">new,</span> <span class="pre">count)</span></code> où <code class="docutils literal notranslate"><span class="pre">count</span></code> est le nombre de remplacements à effectuer,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.join(cont)</span></code> concatène les chaînes du conteneur <code class="docutils literal notranslate"><span class="pre">cont</span></code> en intercalant <code class="docutils literal notranslate"><span class="pre">arg</span></code>,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.split(seps)</span></code> partage la chaîne <code class="docutils literal notranslate"><span class="pre">arg</span></code> selons <code class="docutils literal notranslate"><span class="pre">seps</span></code> et retourne le tout sous forme de <code class="docutils literal notranslate"><span class="pre">list</span></code> de <code class="docutils literal notranslate"><span class="pre">str</span></code> ;</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">arg.join(cont)</span></code> concatène les chaînes du conteneur <code class="docutils literal notranslate"><span class="pre">cont</span></code> en intercalant <code class="docutils literal notranslate"><span class="pre">arg</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arg.split(seps)</span></code> partage la chaîne <code class="docutils literal notranslate"><span class="pre">arg</span></code> selon <code class="docutils literal notranslate"><span class="pre">seps</span></code> et retourne le tout sous forme de <code class="docutils literal notranslate"><span class="pre">list</span></code> de <code class="docutils literal notranslate"><span class="pre">str</span></code> ;</p>
 <ul>
-<li><p><strong>très utile en pratique</strong> pour manipuler les mots d’un texte par exemple.</p></li>
+<li><p><strong>très utile en pratique</strong> pour manipuler les mots d’un texte par exemple</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arg.split()</span></code> (sans argument <code class="docutils literal notranslate"><span class="pre">seps</span></code>) partage la chaîne <code class="docutils literal notranslate"><span class="pre">arg</span></code> selon le (ou les) caractères espaces qu’elle comporte, la liste retournée ne comporte aucun mot vide.</p></li>
+<li><p>Plus de détail avec <code class="docutils literal notranslate"><span class="pre">help(str.split)</span></code>.</p></li>
 </ul>
 </li>
 </ul>
 <p>On finit en mentionnant cette dernière méthode de recherche :</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">.find(substr,</span> <span class="pre">deb,</span> <span class="pre">fin)</span></code> qui retourne l’indice de <code class="docutils literal notranslate"><span class="pre">substr</span></code> dans <code class="docutils literal notranslate"><span class="pre">arg[deb,fin]</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arg.find(substr,</span> <span class="pre">deb,</span> <span class="pre">fin)</span></code> qui retourne l’indice de <code class="docutils literal notranslate"><span class="pre">substr</span></code> dans <code class="docutils literal notranslate"><span class="pre">arg[deb,fin]</span></code>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hello</span> <span class="o">=</span> <span class="s1">&#39;bonjour !&#39;</span>
+
+<span class="n">t0</span> <span class="o">=</span> <span class="n">hello</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t0</span><span class="p">)</span>
 
 <span class="n">t</span> <span class="o">=</span> <span class="n">hello</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
@@ -2119,7 +2124,8 @@ Les identifiants sont en général bien explicites.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;b&#39;, &#39;nj&#39;, &#39;ur !&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;bonjour&#39;, &#39;!&#39;]
+[&#39;b&#39;, &#39;nj&#39;, &#39;ur !&#39;]
 False True
 </pre></div>
 </div>
@@ -2214,10 +2220,10 @@ BONJOUR ! True False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140332480401200
-140332480401200
-140332480400240
-140332480400240
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140543026463536
+140543026463536
+140543026465584
+140543026465584
 </pre></div>
 </div>
 </div>
@@ -2459,7 +2465,7 @@ Bonjour &quot;collègue&quot; !
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;i&#39;, &#39;u&#39;, &#39;e&#39;, &#39;y&#39;, &#39;o&#39;, &#39;a&#39;} 6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;i&#39;, &#39;u&#39;, &#39;o&#39;, &#39;a&#39;, &#39;e&#39;, &#39;y&#39;} 6
 </pre></div>
 </div>
 </div>
@@ -2486,8 +2492,8 @@ False
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aie : {&#39;i&#39;, &#39;a&#39;, &#39;e&#39;}
-voyelles : {&#39;i&#39;, &#39;u&#39;, &#39;e&#39;, &#39;y&#39;, &#39;o&#39;, &#39;a&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aie : {&#39;e&#39;, &#39;a&#39;, &#39;i&#39;}
+voyelles : {&#39;i&#39;, &#39;u&#39;, &#39;o&#39;, &#39;a&#39;, &#39;e&#39;, &#39;y&#39;}
 </pre></div>
 </div>
 </div>
@@ -2506,11 +2512,11 @@ voyelles : {&#39;i&#39;, &#39;u&#39;, &#39;e&#39;, &#39;y&#39;, &#39;o&#39;, &#3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>union : {&#39;i&#39;, &#39;u&#39;, &#39;e&#39;, &#39;y&#39;, &#39;o&#39;, &#39;a&#39;}
-autre union : {&#39;i&#39;, &#39;b&#39;, &#39;u&#39;, &#39;e&#39;, &#39;f&#39;, &#39;y&#39;, &#39;o&#39;, &#39;a&#39;}
-intersection : {&#39;i&#39;, &#39;a&#39;, &#39;e&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>union : {&#39;i&#39;, &#39;u&#39;, &#39;o&#39;, &#39;a&#39;, &#39;e&#39;, &#39;y&#39;}
+autre union : {&#39;i&#39;, &#39;u&#39;, &#39;f&#39;, &#39;o&#39;, &#39;b&#39;, &#39;a&#39;, &#39;e&#39;, &#39;y&#39;}
+intersection : {&#39;a&#39;, &#39;i&#39;, &#39;e&#39;}
 difference :  set() {&#39;b&#39;, &#39;f&#39;}
-difference symétrique:  {&#39;y&#39;, &#39;o&#39;, &#39;u&#39;}
+difference symétrique:  {&#39;u&#39;, &#39;o&#39;, &#39;y&#39;}
 inclusions : True True False False
 </pre></div>
 </div>

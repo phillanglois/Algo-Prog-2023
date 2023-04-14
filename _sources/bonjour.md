@@ -20,6 +20,15 @@ Ceci est le premier point d'entrée de l'UE Algo-Prog en complément de l'[espac
 La première séance de CM a eu lieu en semaine 3.
 - les items indiqués d'une ($\star$) correspondent aux activités _objectif 20_
 :::
+
+ 
+## Semaine 16 : dernière semaine
+
+- Avant le CM de jeudi : lire le chapitre "Trier"
+- Avant le CM de vendredi : lire le chapitre "Affectation et appels de fonction : aspects avancés" et "ES : aspects avancés"
+- Travail personnel :
+    - finir le TP anagrammes
+
  
 ## Semaine 15
 
